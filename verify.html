@@ -17,6 +17,7 @@
                 colors: {
                   'blue-night': '#0A2540',
                   'mint': '#3BE2B0',
+                  'mint-text': '#0D9B6A',
                   'blue-medium': '#4A90E2',
                   'gray-text': '#425466',
                   'success': '#24B47E',
@@ -51,25 +52,41 @@
           
           <div class="hidden md:flex items-center space-x-8">
             <a href="como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
-            <a href="nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a>
+            <!-- HIDDEN: <a href="nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a> -->
             <a href="estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
             <a href="propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
             <a href="inversionista.html" class="text-gray-text hover:text-blue-medium transition">Inversionistas</a>
-            <a href="validar-qr.html" class="text-mint hover:text-mint/80 transition font-semibold">
+            <!-- HIDDEN: <a href="validar-qr.html" class="text-mint-text hover:text-mint-text/80 transition font-semibold">
               <i class="fas fa-qrcode mr-1"></i>Validar QR
-            </a>
+            </a> -->
             <a href="precios.html" class="text-gray-text hover:text-blue-medium transition">Precios</a>
           </div>
 
-          <div class="flex items-center space-x-4">
+          <div class="hidden md:flex items-center space-x-4">
             
               <a href="auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
               <a href="auth/register.html" 
-                 class="bg-mint text-white px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                 class="bg-mint text-blue-night px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
                 Comenzar
               </a>
             
           </div>
+
+          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-blue-night text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 px-4 py-4 space-y-3">
+        <a href="como-funciona.html" class="block text-gray-text hover:text-blue-medium transition py-2">Cómo funciona</a>
+        <a href="estudiante.html" class="block text-gray-text hover:text-blue-medium transition py-2">Estudiantes</a>
+        <a href="propietario.html" class="block text-gray-text hover:text-blue-medium transition py-2">Propietarios</a>
+        <a href="inversionista.html" class="block text-gray-text hover:text-blue-medium transition py-2">Inversionistas</a>
+        <a href="precios.html" class="block text-gray-text hover:text-blue-medium transition py-2">Precios</a>
+        <div class="pt-3 border-t border-gray-200 flex gap-3">
+          <a href="auth/login.html" class="text-gray-text hover:text-blue-medium transition py-2">Iniciar sesión</a>
+          <a href="auth/register.html" class="bg-mint text-blue-night px-5 py-2 rounded-xl font-medium">Comenzar</a>
         </div>
       </div>
     </nav>
@@ -121,14 +138,14 @@
                 Verificación segura y encriptada
               </p>
               <p>
-                ¿Necesitas ayuda? <a href="placeholder.html" class="text-mint hover:underline">Contáctanos</a>
+                ¿Necesitas ayuda? <a href="placeholder.html" class="text-mint-text hover:underline">Contáctanos</a>
               </p>
             </div>
           </div>
         </div>
       </main>
         
-    <footer class="bg-blue-night text-white mt-20">
+    <footer class="bg-blue-night text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -141,30 +158,30 @@
           <div>
             <h4 class="text-sm font-semibold mb-4">Producto</h4>
             <ul class="space-y-2 text-sm text-gray-400">
-              <li><a href="como-funciona.html" class="hover:text-mint transition">Cómo funciona</a></li>
-              <li><a href="estudiante.html" class="hover:text-mint transition">Para estudiantes</a></li>
-              <li><a href="propietario.html" class="hover:text-mint transition">Para propietarios</a></li>
-              <li><a href="precios.html" class="hover:text-mint transition">Precios</a></li>
+              <li><a href="como-funciona.html" class="hover:text-mint-text transition">Cómo funciona</a></li>
+              <li><a href="estudiante.html" class="hover:text-mint-text transition">Para estudiantes</a></li>
+              <li><a href="propietario.html" class="hover:text-mint-text transition">Para propietarios</a></li>
+              <li><a href="precios.html" class="hover:text-mint-text transition">Precios</a></li>
             </ul>
           </div>
           
           <div>
             <h4 class="text-sm font-semibold mb-4">Empresa</h4>
             <ul class="space-y-2 text-sm text-gray-400">
-              <li><a href="nosotros.html" class="hover:text-mint transition">Nosotros</a></li>
-              <li><a href="partners.html" class="hover:text-mint transition">Partners</a></li>
-              <li><a href="blog.html" class="hover:text-mint transition">Blog</a></li>
-              <li><a href="contacto.html" class="hover:text-mint transition">Contacto</a></li>
+              <!-- HIDDEN: <li><a href="nosotros.html" class="hover:text-mint-text transition">Nosotros</a></li> -->
+              <li><a href="partners.html" class="hover:text-mint-text transition">Partners</a></li>
+              <li><a href="blog.html" class="hover:text-mint-text transition">Blog</a></li>
+              <li><a href="contacto.html" class="hover:text-mint-text transition">Contacto</a></li>
             </ul>
           </div>
           
           <div>
             <h4 class="text-sm font-semibold mb-4">Legal</h4>
             <ul class="space-y-2 text-sm text-gray-400">
-              <li><a href="legal/privacidad.html" class="hover:text-mint transition">Privacidad</a></li>
-              <li><a href="legal/terminos.html" class="hover:text-mint transition">Términos</a></li>
-              <li><a href="legal/modelo-garantia.html" class="hover:text-mint transition">Modelo de garantía</a></li>
-              <li><a href="legal/reclamaciones.html" class="hover:text-mint transition">Reclamaciones</a></li>
+              <li><a href="legal/privacidad.html" class="hover:text-mint-text transition">Privacidad</a></li>
+              <li><a href="legal/terminos.html" class="hover:text-mint-text transition">Términos</a></li>
+              <li><a href="legal/modelo-garantia.html" class="hover:text-mint-text transition">Modelo de garantía</a></li>
+              <li><a href="legal/reclamaciones.html" class="hover:text-mint-text transition">Reclamaciones</a></li>
             </ul>
           </div>
         </div>

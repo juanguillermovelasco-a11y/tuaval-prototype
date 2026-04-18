@@ -13,6 +13,7 @@
             colors: {
               'blue-night': '#0A2540',
               'mint': '#3BE2B0',
+                  'mint-text': '#0D9B6A',
               'blue-medium': '#4A90E2',
               'gray-text': '#425466',
               'success': '#24B47E'
@@ -40,7 +41,21 @@
             </div>
             <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
           </a>
-          <a href="login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+          <a href="login.html" class="hidden md:inline text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-blue-night text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 px-4 py-4 space-y-3">
+        <a href="../como-funciona.html" class="block text-gray-text hover:text-blue-medium transition py-2">Cómo funciona</a>
+        <a href="../estudiante.html" class="block text-gray-text hover:text-blue-medium transition py-2">Estudiantes</a>
+        <a href="../propietario.html" class="block text-gray-text hover:text-blue-medium transition py-2">Propietarios</a>
+        <a href="../inversionista.html" class="block text-gray-text hover:text-blue-medium transition py-2">Inversionistas</a>
+        <a href="../precios.html" class="block text-gray-text hover:text-blue-medium transition py-2">Precios</a>
+        <div class="pt-3 border-t border-gray-200 flex gap-3">
+          <a href="../auth/login.html" class="text-gray-text hover:text-blue-medium transition py-2">Iniciar sesión</a>
+          <a href="../auth/register.html" class="bg-mint text-blue-night px-5 py-2 rounded-xl font-medium">Comenzar</a>
         </div>
       </div>
     </nav>
@@ -75,7 +90,7 @@
               placeholder="••••••••" />
           </div>
           <label class="flex items-start gap-3 text-sm text-gray-700">
-            <input type="checkbox" required class="mt-1 w-5 h-5 text-mint" />
+            <input type="checkbox" required class="mt-1 w-5 h-5 text-mint-text" />
             Acepto los términos y condiciones de Tu Aval Capital
           </label>
           <button type="submit"
