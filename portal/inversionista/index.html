@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal inversionista | Tu Aval</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'blue-night': '#0A2540',
+              'mint': '#3BE2B0',
+              'blue-medium': '#4A90E2',
+              'gray-text': '#425466',
+              'success': '#24B47E',
+              'warning': '#F6A609',
+              'danger': '#E45858'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            heading: ['Poppins', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+      body { font-family: Inter, system-ui, sans-serif; }
+      .portal-hero { position: relative; overflow: hidden; background: #0A2540; }
+      .portal-hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%); }
+      .portal-glow-a { position: absolute; width: 420px; height: 420px; border-radius: 9999px; filter: blur(80px); opacity: .35; background: #3BE2B0; top: -160px; left: -120px; }
+      .portal-glow-b { position: absolute; width: 380px; height: 380px; border-radius: 9999px; filter: blur(80px); opacity: .25; background: #4A90E2; bottom: -180px; right: -100px; }
+      .headline-gradient { background: linear-gradient(135deg, #ffffff 0%, #3BE2B0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .live-dot { position: relative; display: inline-block; width: 8px; height: 8px; background: #3BE2B0; border-radius: 9999px; }
+      .live-dot::after { content: ''; position: absolute; inset: 0; border-radius: 9999px; background: #3BE2B0; animation: pulseDot 2s ease-out infinite; }
+      @keyframes pulseDot { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(2.6); opacity: 0; } }
+      .glass-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-text">
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="../../index.html" class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval Capital</span>
+          </a>
+          <div class="flex items-center gap-3">
+            <span id="userName" class="text-gray-text font-medium"><i class="fas fa-user-circle mr-1"></i>Inversionista</span>
+            <a href="javascript:void(0)" onclick="logout()" class="text-sm text-danger hover:underline">Salir</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- DARK PORTAL HERO -->
+      <section class="portal-hero text-white">
+        <div class="portal-glow-a"></div>
+        <div class="portal-glow-b"></div>
+        <div class="portal-hero-grid"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="live-dot"></span>
+            <span class="text-xs uppercase tracking-wider text-mint font-semibold">Sesión activa · Inversionista</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-3 leading-tight">
+            Hola, <span class="headline-gradient" id="firstName">Inversionista</span>.
+          </h1>
+          <p class="text-lg text-gray-300 max-w-2xl">
+            Tu capital respalda contratos de alquiler verificados en España con un retorno fijo del 8% anual y liquidez trimestral.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#kpis" class="inline-flex items-center gap-2 bg-mint text-blue-night px-5 py-3 rounded-xl font-bold hover:shadow-[0_10px_40px_-10px_#3BE2B0] transition">
+              <i class="fas fa-chart-line"></i> Ver mi posición
+            </a>
+            <a href="onboarding/chat.html" class="inline-flex items-center gap-2 glass-card text-white px-5 py-3 rounded-xl font-medium hover:bg-white/10 transition">
+              <i class="fas fa-comments"></i> Ajustar perfil
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 -mt-6 relative">
+
+      <!-- Onboarding banner (si no completó) -->
+      <div id="onboardingBanner" class="hidden bg-gradient-to-r from-warning/10 to-mint/10 border-2 border-warning rounded-2xl p-6 mb-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div class="bg-warning rounded-full p-3">
+              <i class="fas fa-comments text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-blue-night">Completa tu onboarding</h3>
+              <p class="text-sm text-gray-700">Habla con nuestro asistente para activar tu posición en el fondo.</p>
+            </div>
+          </div>
+          <a href="onboarding/chat.html" class="bg-warning text-white px-6 py-3 rounded-xl font-medium hover:bg-opacity-90 transition">
+            Empezar conversación →
+          </a>
+        </div>
+      </div>
+
+      <!-- KPIs -->
+      <div id="kpis" class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div class="bg-white rounded-2xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-gray-600">Capital invertido</span>
+            <i class="fas fa-coins text-mint"></i>
+          </div>
+          <div class="text-3xl font-heading font-bold text-blue-night" id="capital">€10.000</div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-gray-600">Retorno esperado anual</span>
+            <i class="fas fa-chart-line text-success"></i>
+          </div>
+          <div class="text-3xl font-heading font-bold text-success" id="retorno">€940</div>
+          <div class="text-xs text-gray-500 mt-1">9.4% anual</div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-gray-600">Próximo pago</span>
+            <i class="fas fa-calendar text-blue-medium"></i>
+          </div>
+          <div class="text-3xl font-heading font-bold text-blue-night">€235</div>
+          <div class="text-xs text-gray-500 mt-1">en 47 días</div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-6">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm text-gray-600">Contratos respaldados</span>
+            <i class="fas fa-file-signature text-blue-medium"></i>
+          </div>
+          <div class="text-3xl font-heading font-bold text-blue-night" id="migrantes">12</div>
+          <div class="text-xs text-gray-500 mt-1">activos en cartera</div>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <!-- Track record -->
+        <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm p-6">
+          <h2 class="text-xl font-heading font-bold text-blue-night mb-4">Histórico de pagos trimestrales</h2>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+              <div>
+                <div class="font-semibold text-blue-night">Q1 2026</div>
+                <div class="text-xs text-gray-500">15 marzo 2026</div>
+              </div>
+              <div class="text-right">
+                <div class="font-bold text-success">+€235</div>
+                <div class="text-xs text-success"><i class="fas fa-check-circle"></i> Pagado</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+              <div>
+                <div class="font-semibold text-blue-night">Q4 2025</div>
+                <div class="text-xs text-gray-500">15 diciembre 2025</div>
+              </div>
+              <div class="text-right">
+                <div class="font-bold text-success">+€228</div>
+                <div class="text-xs text-success"><i class="fas fa-check-circle"></i> Pagado</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+              <div>
+                <div class="font-semibold text-blue-night">Q3 2025</div>
+                <div class="text-xs text-gray-500">15 septiembre 2025</div>
+              </div>
+              <div class="text-right">
+                <div class="font-bold text-success">+€242</div>
+                <div class="text-xs text-success"><i class="fas fa-check-circle"></i> Pagado</div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-mint/10 border-2 border-mint rounded-xl">
+              <div>
+                <div class="font-semibold text-blue-night">Q2 2026 (próximo)</div>
+                <div class="text-xs text-gray-500">15 junio 2026</div>
+              </div>
+              <div class="text-right">
+                <div class="font-bold text-blue-night">€235</div>
+                <div class="text-xs text-warning"><i class="fas fa-clock"></i> En 47 días</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumen lateral -->
+        <div class="bg-gradient-to-br from-blue-night to-blue-medium rounded-2xl shadow-sm p-6 text-white">
+          <div class="flex items-center gap-2 mb-4">
+            <i class="fas fa-shield-alt text-mint"></i>
+            <span class="text-xs uppercase tracking-wider text-mint font-semibold">Estado de cartera</span>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <div class="text-xs text-gray-300 uppercase tracking-wide mb-1">Diversificación</div>
+              <div class="text-2xl font-heading font-bold">12 contratos</div>
+              <div class="text-xs text-gray-300">distribuidos en 6 ciudades</div>
+            </div>
+            <div class="border-t border-white/10 pt-4">
+              <div class="text-xs text-gray-300 uppercase tracking-wide mb-1">Tasa de impago</div>
+              <div class="text-2xl font-heading font-bold text-mint">0,3%</div>
+              <div class="text-xs text-gray-300">muy por debajo del mercado</div>
+            </div>
+            <div class="border-t border-white/10 pt-4">
+              <div class="text-xs text-gray-300 uppercase tracking-wide mb-1">Próxima liquidación</div>
+              <div class="text-2xl font-heading font-bold">15 jun 2026</div>
+              <div class="text-xs text-gray-300">cobro automático en cuenta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA aumentar -->
+      <div class="mt-8 bg-white rounded-2xl shadow-sm p-6 flex items-center justify-between">
+        <div>
+          <h3 class="font-heading font-bold text-blue-night text-lg">¿Quieres aumentar tu posición?</h3>
+          <p class="text-sm text-gray-600">Aporta capital adicional al fondo y amplía tu retorno mensual.</p>
+        </div>
+        <button onclick="alert('Demo: en producción esto abriría el flujo de aporte adicional')" class="bg-mint text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-90 transition">
+          <i class="fas fa-plus mr-2"></i>Aportar más
+        </button>
+      </div>
+      </div>
+    </main>
+
+    <script>
+      function logout() {
+        localStorage.removeItem('tu_aval_user');
+        localStorage.removeItem('investorOnboardingComplete');
+        localStorage.removeItem('investorData');
+        window.location.href = '../../index.html';
+      }
+
+      // Hydrate from chat data
+      const user = JSON.parse(localStorage.getItem('tu_aval_user') || '{}');
+      const investorData = JSON.parse(localStorage.getItem('investorData') || '{}');
+      const completed = localStorage.getItem('investorOnboardingComplete') === 'true';
+
+      if (user.name) {
+        document.getElementById('firstName').textContent = user.name.split(' ')[0];
+        document.getElementById('userName').innerHTML = '<i class="fas fa-user-circle mr-1"></i>' + user.name;
+      }
+
+      if (!completed) {
+        document.getElementById('onboardingBanner').classList.remove('hidden');
+      }
+
+      if (investorData.amount) {
+        const amt = parseInt(investorData.amount);
+        const annual = Math.round(amt * 0.094);
+        const quarterly = Math.round(annual / 4);
+        const migrants = Math.max(1, Math.round(amt / 850));
+        document.getElementById('capital').textContent = '€' + amt.toLocaleString('es-ES');
+        document.getElementById('retorno').textContent = '€' + annual.toLocaleString('es-ES');
+        document.getElementById('migrantes').textContent = migrants;
+      }
+    </script>
+  </body>
+</html>

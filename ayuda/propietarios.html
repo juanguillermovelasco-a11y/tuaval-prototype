@@ -1,0 +1,750 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Centro de Ayuda para Propietarios | Tu Aval</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+          rel="stylesheet"
+        />
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  'blue-night': '#0A2540',
+                  'mint': '#3BE2B0',
+                  'blue-medium': '#4A90E2',
+                  'gray-text': '#425466',
+                  'success': '#24B47E',
+                  'warning': '#F6A609',
+                  'danger': '#E45858'
+                }
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                heading: ['Poppins', 'system-ui', 'sans-serif']
+              }
+            }
+          }
+        </script>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+        </style>
+      </head>
+      <body class="bg-gray-50 text-gray-text">
+        
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="../index.html" class="flex items-center space-x-2">
+              <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+                <i class="fas fa-shield-alt text-white text-xl"></i>
+              </div>
+              <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
+            </a>
+          </div>
+          
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="../como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
+            <a href="../nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a>
+            <a href="../estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
+            <a href="../propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
+            <a href="../inversionista.html" class="text-gray-text hover:text-blue-medium transition">Inversionistas</a>
+            <a href="../validar-qr.html" class="text-mint hover:text-mint/80 transition font-semibold">
+              <i class="fas fa-qrcode mr-1"></i>Validar QR
+            </a>
+            <a href="../precios.html" class="text-gray-text hover:text-blue-medium transition">Precios</a>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            
+              <a href="../auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+              <a href="../auth/register.html" 
+                 class="bg-mint text-white px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                Comenzar
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+        <main>
+        <div class="min-h-screen bg-gray-50 py-8">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-12">
+              <div class="inline-block bg-blue-medium bg-opacity-10 rounded-full px-6 py-2 mb-4">
+                <i class="fas fa-home text-blue-medium mr-2"></i>
+                <span class="text-blue-medium font-semibold">Para Propietarios</span>
+              </div>
+              <h1 class="text-4xl md:text-5xl font-heading font-bold text-blue-night mb-4">
+                Centro de Ayuda para Propietarios
+              </h1>
+              <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Todo lo que necesitas saber sobre Tu Aval
+              </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <a href="#verificar-qr" class="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition group">
+                <div class="bg-mint bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:bg-opacity-20 transition">
+                  <i class="fas fa-qrcode text-mint text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-night mb-2">Verificar QR</h3>
+                <p class="text-gray-600 text-sm">Cómo validar la garantía de un inquilino</p>
+              </a>
+
+              <a href="#reclamar-impago" class="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition group">
+                <div class="bg-red-500 bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:bg-opacity-20 transition">
+                  <i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-night mb-2">Reclamar Impago</h3>
+                <p class="text-gray-600 text-sm">Qué hacer si el inquilino no paga</p>
+              </a>
+
+              <a href="#beneficios" class="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition group">
+                <div class="bg-success bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:bg-opacity-20 transition">
+                  <i class="fas fa-shield-alt text-success text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-night mb-2">Beneficios</h3>
+                <p class="text-gray-600 text-sm">Por qué Tu Aval es mejor que un aval tradicional</p>
+              </a>
+            </div>
+
+            <!-- Detailed Guides -->
+            <div class="space-y-8">
+              <!-- Guide 1: Verify QR -->
+              <div id="verificar-qr" class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-mint to-mint-dark text-white px-8 py-6">
+                  <h2 class="text-2xl font-bold">
+                    <i class="fas fa-qrcode mr-3"></i>
+                    Cómo Verificar una Garantía QR
+                  </h2>
+                  <p class="text-mint-light mt-2">Validación instantánea en 30 segundos</p>
+                </div>
+                <div class="p-8">
+                  <div class="prose max-w-none">
+                    <h3 class="text-xl font-bold text-blue-night mb-4">¿Qué es una Garantía QR de Tu Aval?</h3>
+                    <p class="text-gray-600 mb-6">
+                      Es una <strong>garantía directa de pago emitida en España</strong> que sustituye al avalista tradicional. 
+                      El estudiante internacional la obtiene tras verificar su solvencia con su banco de origen.
+                    </p>
+
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded mb-6">
+                      <h4 class="font-bold text-green-900 mb-2">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        ¿Por qué aceptar Tu Aval?
+                      </h4>
+                      <ul class="space-y-2 text-sm text-green-800">
+                        <li>✅ <strong>Cobertura de 12 meses de renta:</strong> Si el inquilino no paga, nosotros pagamos</li>
+                        <li>✅ <strong>Gestión legal incluida:</strong> Nos encargamos del desahucio si es necesario</li>
+                        <li>✅ <strong>Pago en 72 horas:</strong> Una vez aprobada la reclamación</li>
+                        <li>✅ <strong>Sin trámites extras:</strong> La fianza legal (1 mes) es suficiente</li>
+                      </ul>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-blue-night mb-4">Paso a paso para verificar:</h3>
+                    <div class="space-y-6">
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">1</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">El estudiante te muestra su código</h4>
+                          <p class="text-gray-600 mb-3">
+                            Formato: <code class="bg-gray-100 px-2 py-1 rounded">AVAL-XXXX-YYYY</code> (ej: AVAL-LF11-2025)
+                          </p>
+                          <p class="text-gray-600">
+                            Puede mostrártelo en su celular, impreso, o por WhatsApp/email.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">2</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Ve al verificador QR</h4>
+                          <p class="text-gray-600 mb-3">
+                            Opciones:
+                          </p>
+                          <ul class="list-disc pl-6 text-gray-600 space-y-1">
+                            <li>
+                              <strong>Desde tu portal:</strong> 
+                              <a href="../portal/propietario/index.html" class="text-mint hover:underline">
+                                Dashboard → Verificador QR
+                              </a>
+                            </li>
+                            <li>
+                              <strong>Página pública:</strong> 
+                              <a href="../validar-qr.html" class="text-mint hover:underline">
+                                tuaval.com/validar-qr
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">3</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Ingresa el código</h4>
+                          <p class="text-gray-600 mb-3">
+                            Copia y pega, o escribe el código en el campo central.
+                          </p>
+                          <div class="bg-gray-50 rounded-lg p-4 border">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100'%3E%3Crect fill='%23f9fafb' width='400' height='100'/%3E%3Ctext x='200' y='50' font-family='monospace' font-size='24' text-anchor='middle' fill='%23374151'%3EAVAL-LF11-2025%3C/text%3E%3C/svg%3E" 
+                                 alt="Example QR Code" 
+                                 class="w-full rounded" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">4</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Revisa la información de la garantía</h4>
+                          <p class="text-gray-600 mb-3">
+                            Verás al instante:
+                          </p>
+                          <div class="bg-blue-50 rounded-lg p-4">
+                            <ul class="space-y-2 text-sm text-blue-900">
+                              <li><strong>Nombre del estudiante</strong></li>
+                              <li><strong>Universidad y programa</strong></li>
+                              <li><strong>Número de garantía</strong> (ej: TUAVAL-2025-001150)</li>
+                              <li><strong>Cobertura:</strong> Hasta 12 meses de renta</li>
+                              <li><strong>Renta máxima cubierta</strong> (ej: €1,150/mes)</li>
+                              <li><strong>Vigencia:</strong> Fechas inicio y fin</li>
+                              <li><strong>Estado:</strong> Activa / Expirada / Sin siniestros</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">5</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Decide si aceptas al inquilino</h4>
+                          <p class="text-gray-600 mb-3">
+                            Si la garantía está <strong class="text-green-600">activa</strong> y la 
+                            <strong>renta cubierta ≥ tu renta mensual</strong>, estás protegido.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded">
+                      <h4 class="font-bold text-yellow-900 mb-2">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Tip importante
+                      </h4>
+                      <p class="text-sm text-yellow-800">
+                        La garantía debe estar <strong>amarrada</strong> a tu contrato específico. 
+                        Si el estudiante gestionó el contrato fuera de nuestra plataforma, 
+                        puedes usar la opción <strong>"Usar Garantía para Propiedad NO Gestionada"</strong> 
+                        en tu portal para vincularla oficialmente.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Guide 2: Claim Payment -->
+              <div id="reclamar-impago" class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-6">
+                  <h2 class="text-2xl font-bold">
+                    <i class="fas fa-exclamation-triangle mr-3"></i>
+                    Cómo Reclamar un Impago
+                  </h2>
+                  <p class="text-red-100 mt-2">Proceso rápido y sin complicaciones</p>
+                </div>
+                <div class="p-8">
+                  <div class="prose max-w-none">
+                    <h3 class="text-xl font-bold text-blue-night mb-4">¿Cuándo puedo reclamar?</h3>
+                    <p class="text-gray-600 mb-6">
+                      Puedes iniciar una reclamación cuando el inquilino <strong>no haya pagado la renta 
+                      en la fecha acordada</strong> en el contrato. No necesitas esperar meses.
+                    </p>
+
+                    <div class="space-y-6">
+                      <div class="flex items-start">
+                        <span class="bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">1</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Intenta contactar al inquilino primero</h4>
+                          <p class="text-gray-600 mb-3">
+                            Email, WhatsApp, llamada. Documenta tus intentos (capturas, fechas).
+                          </p>
+                          <p class="text-sm text-gray-500 italic">
+                            Plazo recomendado: 5-10 días después de la fecha de pago
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">2</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Accede a "Gestionar Siniestros" en tu portal</h4>
+                          <p class="text-gray-600 mb-3">
+                            Ruta: 
+                            <a href="../portal/propietario/claims.html" class="text-mint hover:underline">
+                              Dashboard → Acciones rápidas → Gestionar siniestros
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">3</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Selecciona la propiedad afectada</h4>
+                          <p class="text-gray-600 mb-3">
+                            Elige la propiedad donde ocurrió el impago. Verás el inquilino y la garantía asociada.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">4</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Completa el formulario de reclamación</h4>
+                          <p class="text-gray-600 mb-3">
+                            Información requerida:
+                          </p>
+                          <ul class="list-disc pl-6 text-gray-600 space-y-1">
+                            <li>Número de meses impagados</li>
+                            <li>Fecha del primer impago</li>
+                            <li>Total adeudado (calculado automáticamente)</li>
+                            <li>Si intentaste contactar al inquilino</li>
+                            <li>Descripción breve del problema</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">5</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Espera la revisión (24 horas)</h4>
+                          <p class="text-gray-600 mb-3">
+                            Nuestro equipo verifica:
+                          </p>
+                          <ul class="list-disc pl-6 text-gray-600 space-y-1">
+                            <li>Garantía activa y vigente</li>
+                            <li>Contrato amarrado correctamente</li>
+                            <li>Fechas de impago válidas</li>
+                            <li>Documentación completa</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">6</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Recibe el pago (48-72 horas tras aprobación)</h4>
+                          <p class="text-gray-600 mb-3">
+                            Una vez aprobado, transferimos las rentas impagadas a tu cuenta bancaria.
+                          </p>
+                          <div class="bg-green-50 rounded-lg p-4 mt-3">
+                            <p class="text-sm text-green-800">
+                              <strong>Ejemplo:</strong> Si reclamas 2 meses impagados de €1,150/mes, 
+                              recibirás €2,300 en tu cuenta.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-red-500 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">7</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Nosotros gestionamos el desahucio (si necesario)</h4>
+                          <p class="text-gray-600 mb-3">
+                            Tu Aval se encarga de:
+                          </p>
+                          <ul class="list-disc pl-6 text-gray-600 space-y-1">
+                            <li>Contactar al inquilino para intentar cobrar</li>
+                            <li>Iniciar proceso legal si no responde</li>
+                            <li>Coordinar con abogados especializados</li>
+                            <li>Gestionar el desalojo si procede</li>
+                          </ul>
+                          <p class="text-sm text-gray-500 mt-3 italic">
+                            Tú solo recibes tu dinero y recuperas tu propiedad. Nosotros hacemos el resto.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 p-6 rounded">
+                      <h4 class="font-bold text-blue-900 mb-2">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        ¿Qué pasa después?
+                      </h4>
+                      <p class="text-sm text-blue-800 mb-3">
+                        Una vez que cobres, Tu Aval intenta recuperar el importe del inquilino. 
+                        Si lo conseguimos, excelente. Si no, nosotros asumimos la pérdida. 
+                        <strong>Tú ya recibiste tu dinero.</strong>
+                      </p>
+                      <p class="text-sm text-blue-800">
+                        La garantía puede cubrir hasta <strong>12 meses de impago</strong> 
+                        (o el importe total de cobertura contratado, lo que sea menor).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Guide 3: Benefits -->
+              <div id="beneficios" class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-success to-green-600 text-white px-8 py-6">
+                  <h2 class="text-2xl font-bold">
+                    <i class="fas fa-shield-alt mr-3"></i>
+                    Por Qué Elegir Tu Aval
+                  </h2>
+                  <p class="text-green-100 mt-2">Ventajas sobre el aval tradicional</p>
+                </div>
+                <div class="p-8">
+                  <div class="prose max-w-none">
+                    <h3 class="text-xl font-bold text-blue-night mb-6">Comparativa: Tu Aval vs Aval Tradicional</h3>
+                    
+                    <div class="overflow-x-auto">
+                      <table class="w-full text-sm">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="p-3 text-left">Característica</th>
+                            <th class="p-3 text-center bg-mint bg-opacity-10">✅ Tu Aval</th>
+                            <th class="p-3 text-center">❌ Aval Tradicional</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="border-b">
+                            <td class="p-3 font-medium">Verificación</td>
+                            <td class="p-3 text-center text-green-600">Instantánea (30 seg)</td>
+                            <td class="p-3 text-center text-red-600">Días/semanas</td>
+                          </tr>
+                          <tr class="border-b bg-gray-50">
+                            <td class="p-3 font-medium">Documentación avalista</td>
+                            <td class="p-3 text-center text-green-600">No necesaria</td>
+                            <td class="p-3 text-center text-red-600">Nóminas, IRPF, propiedades</td>
+                          </tr>
+                          <tr class="border-b">
+                            <td class="p-3 font-medium">Cobro en caso de impago</td>
+                            <td class="p-3 text-center text-green-600">48-72h tras aprobación</td>
+                            <td class="p-3 text-center text-red-600">Meses (demanda judicial)</td>
+                          </tr>
+                          <tr class="border-b bg-gray-50">
+                            <td class="p-3 font-medium">Gestión legal</td>
+                            <td class="p-3 text-center text-green-600">Incluida</td>
+                            <td class="p-3 text-center text-red-600">Tú pagas abogado</td>
+                          </tr>
+                          <tr class="border-b">
+                            <td class="p-3 font-medium">Cobertura garantizada</td>
+                            <td class="p-3 text-center text-green-600">Hasta 12 meses</td>
+                            <td class="p-3 text-center text-red-600">Depende solvencia avalista</td>
+                          </tr>
+                          <tr class="border-b bg-gray-50">
+                            <td class="p-3 font-medium">Estudiantes internacionales</td>
+                            <td class="p-3 text-center text-green-600">Sí, especializado</td>
+                            <td class="p-3 text-center text-red-600">Muy difícil</td>
+                          </tr>
+                          <tr class="border-b">
+                            <td class="p-3 font-medium">Coste para propietario</td>
+                            <td class="p-3 text-center text-green-600">€0 (paga estudiante)</td>
+                            <td class="p-3 text-center text-red-600">€0</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="bg-mint bg-opacity-10 rounded-xl p-6">
+                        <h4 class="font-bold text-mint mb-3">
+                          <i class="fas fa-check-circle mr-2"></i>
+                          Beneficios clave
+                        </h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                          <li>✅ Sin trámites burocráticos</li>
+                          <li>✅ Validación digital instantánea</li>
+                          <li>✅ Pago garantizado en caso de impago</li>
+                          <li>✅ Gestión 100% automatizada</li>
+                          <li>✅ Compatible con Idealista/Fotocasa</li>
+                          <li>✅ Legal y regulado en España</li>
+                        </ul>
+                      </div>
+
+                      <div class="bg-blue-50 rounded-xl p-6">
+                        <h4 class="font-bold text-blue-900 mb-3">
+                          <i class="fas fa-users mr-2"></i>
+                          Perfil ideal de inquilino
+                        </h4>
+                        <p class="text-sm text-blue-800 mb-3">
+                          Los estudiantes con Tu Aval:
+                        </p>
+                        <ul class="space-y-2 text-sm text-blue-700">
+                          <li>✅ Han verificado su solvencia bancaria</li>
+                          <li>✅ Tienen ingresos recurrentes demostrables</li>
+                          <li>✅ Ratio renta/ingreso saludable (&lt;40%)</li>
+                          <li>✅ Matrícula universitaria válida</li>
+                          <li>✅ Sin historial de impagos</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded">
+                      <h4 class="font-bold text-yellow-900 mb-3">
+                        <i class="fas fa-star mr-2"></i>
+                        Casos de éxito
+                      </h4>
+                      <div class="space-y-4 text-sm text-yellow-800">
+                        <div>
+                          <p class="font-semibold mb-1">Carlos M., Chamberí:</p>
+                          <p class="italic">
+                            "Alquilé a una estudiante chilena con Tu Aval. Al principio dudé, pero la verificación 
+                            fue instantánea y todo funcionó perfecto. Ahora solo acepto inquilinos con Tu Aval."
+                          </p>
+                        </div>
+                        <div>
+                          <p class="font-semibold mb-1">María L., Malasaña:</p>
+                          <p class="italic">
+                            "Mi inquilino brasileño dejó de pagar el mes 4. Reporté el impago y en 3 días 
+                            tenía el dinero en mi cuenta. Tu Aval se encargó de todo el proceso legal."
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Support -->
+            <div class="mt-12 bg-blue-night text-white rounded-2xl p-8 text-center">
+              <h3 class="text-2xl font-bold mb-4">¿Tienes más preguntas?</h3>
+              <p class="text-blue-100 mb-6">
+                Estamos aquí para ayudarte a maximizar la rentabilidad de tus propiedades
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="../portal/propietario/support.html" 
+                   class="bg-mint text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-90 transition">
+                  <i class="fas fa-comments mr-2"></i>
+                  Chat con soporte
+                </a>
+                <a href="tel:+34900123456" 
+                   class="bg-white bg-opacity-10 border-2 border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-20 transition">
+                  <i class="fas fa-phone mr-2"></i>
+                  +34 900 123 456
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+        
+    <footer class="bg-blue-night text-white mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-heading font-bold mb-4">Tu Aval</h3>
+            <p class="text-gray-400 text-sm">
+              Garantía de alquiler verificada para estudiantes internacionales en España.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Producto</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="../como-funciona.html" class="hover:text-mint transition">Cómo funciona</a></li>
+              <li><a href="../estudiante.html" class="hover:text-mint transition">Para estudiantes</a></li>
+              <li><a href="../propietario.html" class="hover:text-mint transition">Para propietarios</a></li>
+              <li><a href="../precios.html" class="hover:text-mint transition">Precios</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Empresa</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="../nosotros.html" class="hover:text-mint transition">Nosotros</a></li>
+              <li><a href="../partners.html" class="hover:text-mint transition">Partners</a></li>
+              <li><a href="../blog.html" class="hover:text-mint transition">Blog</a></li>
+              <li><a href="../contacto.html" class="hover:text-mint transition">Contacto</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="../legal/privacidad.html" class="hover:text-mint transition">Privacidad</a></li>
+              <li><a href="../legal/terminos.html" class="hover:text-mint transition">Términos</a></li>
+              <li><a href="../legal/modelo-garantia.html" class="hover:text-mint transition">Modelo de garantía</a></li>
+              <li><a href="../legal/reclamaciones.html" class="hover:text-mint transition">Reclamaciones</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400">
+          <p>
+            © 2026 Tu Aval. Garantías directas de alquiler respaldadas por fondo propio.
+          </p>
+        </div>
+      </div>
+    </footer>
+  
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+      
+<script>
+(function() {
+  // --- Fake login ---
+  // Intercept any form that posts to /auth/login. Accept anything. If the
+  // email contains "land" or "propiet" -> landlord, else -> student.
+  document.addEventListener('submit', function(e) {
+    var f = e.target;
+    if (!f || f.tagName !== 'FORM') return;
+    var action = f.getAttribute('action') || '';
+    // Normalize: it may have been rewritten already
+    if (action.indexOf('login.html') !== -1 || action.indexOf('auth/login') !== -1) {
+      e.preventDefault();
+      var email = (f.querySelector('input[name=email]') || {}).value || '';
+      var role = /land|propiet/i.test(email) ? 'landlord' : 'student';
+      localStorage.setItem('tu_aval_user', JSON.stringify({
+        id: 'demo', name: role === 'student' ? 'Ana García' : 'Carlos Propietario', role: role
+      }));
+      window.location.href = role === 'student' ? "../portal/estudiante/index.html" : "../portal/propietario/index.html";
+      return;
+    }
+    if (action.indexOf('register.html') !== -1 || action.indexOf('auth/register') !== -1) {
+      e.preventDefault();
+      var roleInput = f.querySelector('input[name=role]');
+      var role = roleInput ? roleInput.value : 'student';
+      // Re-read from URL if hidden input absent
+      if (!roleInput) {
+        var u = new URL(window.location.href);
+        role = u.searchParams.get('role') || 'student';
+      }
+      var nameEl = f.querySelector('input[name=name]');
+      var name = nameEl ? nameEl.value : (role === 'student' ? 'Ana García' : 'Carlos Propietario');
+      localStorage.setItem('tu_aval_user', JSON.stringify({ id: 'demo', name: name, role: role }));
+      window.location.href = role === 'student' ? "../portal/estudiante/index.html" : "../portal/propietario/index.html";
+      return;
+    }
+    // Any other form: prevent default (they'd 404 statically) and show a toast.
+    if (action && action !== '#' && action.indexOf('javascript:') !== 0) {
+      e.preventDefault();
+      showToast('Formulario enviado (demo estático — no hay backend).');
+    }
+  }, true);
+
+  // --- Toast helper ---
+  window.showToast = function(msg) {
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0A2540;color:#fff;padding:14px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);z-index:99999;opacity:0;transition:opacity .25s;';
+    document.body.appendChild(t);
+    requestAnimationFrame(function() { t.style.opacity = '1'; });
+    setTimeout(function() { t.style.opacity = '0'; setTimeout(function(){ t.remove(); }, 300); }, 2400);
+  };
+
+  // --- Navbar: show logged-in user if present ---
+  try {
+    var u = JSON.parse(localStorage.getItem('tu_aval_user') || 'null');
+    if (u && u.name) {
+      var loginLinks = document.querySelectorAll('a[href*="auth/login"], a[href*="auth/register"]');
+      // We don't mutate these here; the portal pages are already "logged in" visually.
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function() {
+  function getUser() {
+    try { return JSON.parse(localStorage.getItem('tu_aval_user') || 'null'); }
+    catch (e) { return null; }
+  }
+  function relPrefix() {
+    // Count how deep the current page is so we can build a relative path back
+    // to the site root. e.g. /portal/estudiante/index.html -> "../../"
+    var p = window.location.pathname;
+    var i = p.indexOf('/tuaval-static/');
+    var rel;
+    if (i >= 0) rel = p.substring(i + '/tuaval-static/'.length);
+    else rel = p.replace(/^\/+/, '');
+    var depth = (rel.match(/\//g) || []).length;
+    return '../'.repeat(depth);
+  }
+  function rewriteNav() {
+    var u = getUser();
+    if (!u) return;
+    var prefix = relPrefix();
+    // Find login/register links in the top nav (skip ones inside the shim itself)
+    var loginLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      return /auth\/login\.html$/.test(h) || /^auth\/login\.html/.test(h) ||
+             /\.\.\/auth\/login\.html/.test(h) || /\.\.\/\.\.\/auth\/login\.html/.test(h);
+    });
+    var registerLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      // Match the "Comenzar" CTA — has bg-mint class and points to register
+      return (/auth\/register\.html/.test(h)) && /bg-mint/.test(a.className || '');
+    });
+    if (loginLinks.length === 0 && registerLinks.length === 0) return;
+
+    var portalUrl = u.role === 'landlord'
+      ? prefix + 'portal/propietario/index.html'
+      : prefix + 'portal/estudiante/index.html';
+    var homeUrl = prefix + 'index.html';
+
+    // Build the new user pill
+    var pill = document.createElement('a');
+    pill.href = portalUrl;
+    pill.className = 'flex items-center gap-2 text-gray-text hover:text-blue-medium transition';
+    pill.innerHTML = '<i class="fas fa-user-circle text-xl"></i><span class="font-medium">' +
+                     escapeHtml(u.name || 'Usuario') + '</span>';
+
+    var logout = document.createElement('a');
+    logout.href = 'javascript:void(0)';
+    logout.className = 'text-sm text-gray-text hover:text-danger transition';
+    logout.textContent = 'Salir';
+    logout.onclick = function(){
+      localStorage.removeItem('tu_aval_user');
+      localStorage.removeItem('tu_aval_session');
+      localStorage.removeItem('onboardingProgress');
+      window.location.href = homeUrl;
+    };
+
+    // Replace the first login link's parent block with [pill, logout]
+    if (loginLinks.length > 0) {
+      var loginEl = loginLinks[0];
+      var parent = loginEl.parentNode;
+      // Remove all login + register links inside this parent
+      Array.from(parent.querySelectorAll('a')).forEach(function(a){
+        var h = a.getAttribute('href') || '';
+        if (/auth\/(login|register)/.test(h)) a.remove();
+      });
+      parent.appendChild(pill);
+      parent.appendChild(logout);
+    }
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  // Run after DOM is ready (body already exists since we're at end of body)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', rewriteNav);
+  } else {
+    rewriteNav();
+  }
+
+  // Also expose a global "reset demo" helper
+  window.resetTuAvalDemo = function() {
+    localStorage.clear();
+    window.location.href = relPrefix() + 'index.html';
+  };
+})();
+</script>
+</body>
+    </html>
+  

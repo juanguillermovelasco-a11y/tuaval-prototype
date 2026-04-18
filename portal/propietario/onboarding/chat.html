@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onboarding propietario | Tu Aval</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'blue-night': '#0A2540',
+              'mint': '#3BE2B0',
+              'blue-medium': '#4A90E2',
+              'gray-text': '#425466',
+              'success': '#24B47E',
+              'warning': '#F6A609',
+              'danger': '#E45858'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            heading: ['Poppins', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+      body { font-family: Inter, system-ui, sans-serif; }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-text">
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="../../../index.html" class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
+          </a>
+          <a href="../index.html" class="text-sm text-gray-text hover:text-blue-medium">
+            <i class="fas fa-times mr-1"></i> Salir del onboarding
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div id="chat-root"></div>
+    </main>
+
+    <script src="../../../static/chat-engine.js"></script>
+    <script>
+      const script = [
+        { bot: '¡Bienvenido a Tu Aval! 👋 Soy tu asistente. Voy a ayudarte a registrar tus propiedades y configurar las garantías para tus inquilinos.' },
+        { bot: 'Todo por chat — sin formularios largos ni subir documentos. ¿Empezamos?' },
+        { id: 'ready', bot: '', input: 'choice', choices: ['Sí, vamos', 'Cuéntame primero cómo funciona'] },
+        {
+          bot: (d) => d.ready === 'Cuéntame primero cómo funciona'
+            ? 'Tranquilo. Lo que hacemos es simple: tu inquilino nos muestra un QR, tú lo escaneas, y en segundos sabes si está cubierto. Si deja de pagar, nosotros te pagamos directo desde nuestro fondo. Sin seguros intermediarios. ¿Listo?'
+            : '¡Genial! 🚀'
+        },
+        { id: 'name', bot: 'Para empezar, ¿cuál es tu nombre?', input: 'text', placeholder: 'Tu nombre completo' },
+        { id: 'role', bot: (d) => `Encantado, ${d.name.split(' ')[0]} 🤝. ¿Eres propietario individual o gestionas múltiples propiedades?`, input: 'choice', choices: ['Propietario individual', 'Tengo 2-5 propiedades', 'Gestor inmobiliario (5+)'] },
+        { id: 'city', bot: '¿En qué ciudad están tus propiedades?', input: 'choice', choices: ['Madrid', 'Barcelona', 'Valencia', 'Sevilla', 'Otra'] },
+        { id: 'count', bot: '¿Cuántas propiedades quieres registrar para empezar?', input: 'number', placeholder: 'Ej: 1' },
+        { id: 'property_type', bot: '¿Qué tipo de propiedad es la principal?', input: 'choice', choices: ['Piso', 'Estudio', 'Casa', 'Habitación'] },
+        { id: 'rent_avg', bot: '¿Cuál es el alquiler mensual aproximado? (en euros)', input: 'number', placeholder: 'Ej: 950' },
+        { id: 'tenant_type', bot: '¿Qué tipo de inquilinos sueles aceptar?', input: 'choice', choices: ['Estudiantes internacionales', 'Profesionales jóvenes', 'Cualquiera con buen perfil', 'Aún no estoy seguro'] },
+        { id: 'concern', bot: '¿Cuál es tu mayor preocupación al alquilar?', input: 'choice', choices: ['Impago de rentas', 'Daños al inmueble', 'Ocupación / desahucio', 'Falta de avalistas'] },
+        { bot: 'Te entiendo. Justamente para eso existimos. Cuando un inquilino llega con QR de Tu Aval, ya está respaldado por nuestro fondo.' },
+        { id: 'payout_pref', bot: 'Si hay impago, nosotros te pagamos. ¿En cuántos días te gustaría recibir el dinero?', input: 'choice', choices: ['Lo antes posible', 'En 15 días está bien', 'No me preocupa el plazo'] },
+        { id: 'iban', bot: 'Para enviarte pagos en caso de impago, necesito tu IBAN español. (Demo: puedes inventar uno)', input: 'text', placeholder: 'ES00 0000 0000 0000 0000 0000' },
+        { id: 'phone', bot: '¿Cuál es tu teléfono de contacto?', input: 'text', placeholder: '+34 ...' },
+        { bot: (d) => `Perfecto, ${d.name.split(' ')[0]}. Ya tengo todo lo necesario. Voy a configurar tu cuenta...` },
+        { bot: '🔄 Creando tu portal de propietario...', delay: 1200 },
+        { bot: '🔄 Activando validador de QR...', delay: 1200 },
+        { bot: '🔄 Conectando con el fondo de garantía...', delay: 1200 },
+        { bot: '✅ ¡Listo! Tu cuenta está activa. Ya puedes recibir inquilinos verificados por Tu Aval y validar QRs en segundos.' },
+        { id: 'final', bot: '¿Quieres ir ahora a tu portal?', input: 'choice', choices: ['Sí, ir al portal', 'Más tarde'] }
+      ];
+
+      TuAvalChat.init({
+        mountSelector: '#chat-root',
+        storageKey: 'tu_aval_onboarding_propietario',
+        botName: 'Asistente Tu Aval',
+        script,
+        onComplete: (data) => {
+          localStorage.setItem('landlordOnboardingComplete', 'true');
+          if (data.final === 'Sí, ir al portal') {
+            setTimeout(() => { window.location.href = '../index.html'; }, 800);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

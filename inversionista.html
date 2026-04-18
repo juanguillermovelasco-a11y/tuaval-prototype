@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inversionistas | Tu Aval</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'blue-night': '#0A2540',
+              'mint': '#3BE2B0',
+              'blue-medium': '#4A90E2',
+              'gray-text': '#425466',
+              'success': '#24B47E',
+              'warning': '#F6A609',
+              'danger': '#E45858'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            heading: ['Poppins', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+      body { font-family: Inter, system-ui, sans-serif; }
+    </style>
+  </head>
+  <body class="bg-white text-gray-text">
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="index.html" class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
+          </a>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
+            <a href="nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a>
+            <a href="estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
+            <a href="propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
+            <a href="inversionista.html" class="text-blue-medium hover:text-blue-medium transition font-semibold">Inversionistas</a>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a href="auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+            <a href="auth/register-investor.html" class="bg-mint text-white px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+              Invertir
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="bg-gradient-to-br from-blue-night via-blue-night to-blue-medium text-white py-20 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-10 left-10 w-72 h-72 bg-mint rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-blue-medium rounded-full blur-3xl"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="inline-block bg-mint/20 text-mint border border-mint/30 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <i class="fas fa-seedling mr-2"></i>Ronda abierta · Limitada
+            </span>
+            <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+              Renta fija respaldada en
+              <span class="bg-gradient-to-r from-mint to-white bg-clip-text text-transparent">alquileres verificados</span>
+            </h1>
+            <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+              Aporta capital al fondo que respalda contratos de alquiler en España. <strong class="text-mint">8% anual fijo</strong>, liquidez trimestral, diversificación automática y reportes auditados.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="auth/register-investor.html" class="bg-mint text-blue-night px-8 py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition text-center">
+                Quiero invertir <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a href="#como" class="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition text-center">
+                Ver cómo funciona
+              </a>
+            </div>
+            <div class="mt-8 flex items-center gap-6 text-sm text-gray-300">
+              <div><i class="fas fa-check-circle text-mint mr-2"></i>Auditado trimestralmente</div>
+              <div><i class="fas fa-check-circle text-mint mr-2"></i>Desde €1.000</div>
+            </div>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur border border-white/20 rounded-3xl p-8">
+            <h3 class="text-mint font-semibold text-sm uppercase tracking-wide mb-4">Rentabilidad estimada</h3>
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-7xl font-heading font-bold text-white">8-10<span class="text-3xl">%</span></span>
+              <span class="text-gray-300">anual</span>
+            </div>
+            <p class="text-gray-300 text-sm mb-6">Pagos trimestrales sobre el capital aportado al fondo de garantía.</p>
+
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between border-t border-white/10 pt-3">
+                <span class="text-gray-300">Riesgo</span>
+                <span class="font-semibold text-mint">Muy bajo</span>
+              </div>
+              <div class="flex justify-between border-t border-white/10 pt-3">
+                <span class="text-gray-300">Plazo mínimo</span>
+                <span class="font-semibold text-white">12 meses</span>
+              </div>
+              <div class="flex justify-between border-t border-white/10 pt-3">
+                <span class="text-gray-300">Inversión mínima</span>
+                <span class="font-semibold text-white">€1.000</span>
+              </div>
+              <div class="flex justify-between border-t border-white/10 pt-3">
+                <span class="text-gray-300">Tasa de impago histórica</span>
+                <span class="font-semibold text-white">&lt; 1.2%</span>
+              </div>
+              <div class="flex justify-between border-t border-white/10 pt-3">
+                <span class="text-gray-300">Diversificación</span>
+                <span class="font-semibold text-white">+1.500 garantías</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORYLINE -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="inline-block bg-mint/10 text-success px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          <i class="fas fa-info-circle mr-2"></i>La oportunidad
+        </span>
+        <h2 class="text-4xl font-heading font-bold text-blue-night mb-8 leading-tight">
+          Renta fija respaldada por garantías de alquiler verificadas.
+        </h2>
+        <div class="text-lg text-gray-text leading-relaxed space-y-6 text-left max-w-3xl mx-auto">
+          <p>
+            Tu Aval gestiona un fondo de garantías de alquiler para inquilinos verificados en España. El capital aportado respalda contratos reales firmados entre propietarios y arrendatarios solventes, evaluados con un modelo propio de scoring crediticio.
+          </p>
+          <p>
+            Cada contrato genera comisiones recurrentes que financian un <strong class="text-blue-night">retorno fijo del 8% anual</strong> al inversor, con liquidez trimestral y diversificación automática entre cientos de contratos para reducir el riesgo individual.
+          </p>
+          <p>
+            La estructura es transparente: dashboard en tiempo real, reportes mensuales auditados y un equipo gestor con experiencia en fintech, real estate y riesgo crediticio.
+          </p>
+          <p class="text-xl font-heading text-blue-night font-semibold text-center pt-4">
+            Producto financiero claro. Activo subyacente real. Retorno predecible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="como" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-heading font-bold text-blue-night mb-4">¿Cómo se genera la rentabilidad?</h2>
+          <p class="text-xl text-gray-text max-w-2xl mx-auto">
+            Modelo simple, transparente y respaldado por un fondo auditado.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-2xl shadow-sm p-8 hover:shadow-lg transition">
+            <div class="w-14 h-14 bg-mint/10 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-coins text-mint text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-blue-night mb-3">1. Aportas al fondo</h3>
+            <p class="text-gray-text">
+              Tu capital se suma al fondo de garantía Tu Aval, regulado y auditado por una Big 4. Desde €1.000 hasta €500.000.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-sm p-8 hover:shadow-lg transition">
+            <div class="w-14 h-14 bg-blue-medium/10 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-handshake text-blue-medium text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-blue-night mb-3">2. Emitimos garantías</h3>
+            <p class="text-gray-text">
+              Con ese fondo respaldamos garantías de alquiler para inquilinos verificados. Cada contrato cobra una prima recurrente.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-sm p-8 hover:shadow-lg transition">
+            <div class="w-14 h-14 bg-success/10 rounded-2xl flex items-center justify-center mb-6">
+              <i class="fas fa-chart-line text-success text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-blue-night mb-3">3. Recibes rentabilidad</h3>
+            <p class="text-gray-text">
+              Esas primas, menos los pocos siniestros (&lt;1.2% histórico), generan tu retorno trimestral del 8-10% anual.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ ES BAJO RIESGO -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="inline-block bg-success/10 text-success px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <i class="fas fa-shield-alt mr-2"></i>Riesgo controlado
+            </span>
+            <h2 class="text-4xl font-heading font-bold text-blue-night mb-6">
+              Diversificación radical, datos reales
+            </h2>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-mint text-xl mt-1"></i>
+                <div>
+                  <strong class="text-blue-night">Más de 1.500 garantías activas:</strong> tu capital nunca depende de un solo inquilino.
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-mint text-xl mt-1"></i>
+                <div>
+                  <strong class="text-blue-night">Scoring propio:</strong> verificamos solvencia internacional cruzando datos bancarios, académicos y de open banking.
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-mint text-xl mt-1"></i>
+                <div>
+                  <strong class="text-blue-night">Reservas obligatorias:</strong> el fondo mantiene 3x el siniestro máximo histórico siempre líquido.
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-mint text-xl mt-1"></i>
+                <div>
+                  <strong class="text-blue-night">Auditoría trimestral:</strong> Big 4 audita los movimientos del fondo cada 90 días.
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-check text-mint text-xl mt-1"></i>
+                <div>
+                  <strong class="text-blue-night">Capital senior:</strong> tú cobras antes que el equipo y los accionistas en caso de pérdida.
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-gradient-to-br from-blue-night to-blue-medium rounded-3xl p-10 text-white">
+            <div class="text-mint text-sm font-semibold uppercase tracking-wide mb-2">Track record 2023-2025</div>
+            <div class="grid grid-cols-2 gap-6 mb-8">
+              <div>
+                <div class="text-4xl font-heading font-bold">€42M</div>
+                <div class="text-gray-300 text-sm">Capital gestionado</div>
+              </div>
+              <div>
+                <div class="text-4xl font-heading font-bold">9.4%</div>
+                <div class="text-gray-300 text-sm">Retorno medio anual</div>
+              </div>
+              <div>
+                <div class="text-4xl font-heading font-bold">1.2%</div>
+                <div class="text-gray-300 text-sm">Tasa de siniestro</div>
+              </div>
+              <div>
+                <div class="text-4xl font-heading font-bold">0</div>
+                <div class="text-gray-300 text-sm">Trimestres en pérdida</div>
+              </div>
+            </div>
+            <div class="border-t border-white/20 pt-6 text-sm text-gray-300">
+              Datos demo basados en proyecciones del modelo. Auditados por Big 4 cada trimestre.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-20 bg-gradient-to-br from-mint to-blue-medium">
+      <div class="max-w-4xl mx-auto px-4 text-center text-white">
+        <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">
+          Renta fija. Activo real. Reportes claros.
+        </h2>
+        <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+          Solicita acceso al fondo y revisa la tesis completa con el equipo gestor.
+        </p>
+        <a href="auth/register-investor.html" class="inline-block bg-white text-blue-night px-10 py-5 rounded-xl font-bold text-lg hover:bg-gray-100 transition">
+          Hablar con el asistente <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </section>
+
+    <footer class="bg-blue-night text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-heading font-bold mb-4">Tu Aval</h3>
+            <p class="text-gray-400 text-sm">Garantía de alquiler verificada respaldada por un fondo propio.</p>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Producto</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="estudiante.html" class="hover:text-mint transition">Estudiantes</a></li>
+              <li><a href="propietario.html" class="hover:text-mint transition">Propietarios</a></li>
+              <li><a href="inversionista.html" class="hover:text-mint transition">Inversionistas</a></li>
+              <li><a href="precios.html" class="hover:text-mint transition">Precios</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Empresa</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="nosotros.html" class="hover:text-mint transition">Nosotros</a></li>
+              <li><a href="partners.html" class="hover:text-mint transition">Partners</a></li>
+              <li><a href="blog.html" class="hover:text-mint transition">Blog</a></li>
+              <li><a href="contacto.html" class="hover:text-mint transition">Contacto</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="legal/privacidad.html" class="hover:text-mint transition">Privacidad</a></li>
+              <li><a href="legal/terminos.html" class="hover:text-mint transition">Términos</a></li>
+              <li><a href="legal/modelo-garantia.html" class="hover:text-mint transition">Modelo de garantía</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400">
+          <p>© 2026 Tu Aval. Garantías directas de alquiler respaldadas por fondo propio.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

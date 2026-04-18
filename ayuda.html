@@ -1,0 +1,666 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Centro de Ayuda para Estudiantes | Tu Aval</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+          rel="stylesheet"
+        />
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  'blue-night': '#0A2540',
+                  'mint': '#3BE2B0',
+                  'blue-medium': '#4A90E2',
+                  'gray-text': '#425466',
+                  'success': '#24B47E',
+                  'warning': '#F6A609',
+                  'danger': '#E45858'
+                }
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                heading: ['Poppins', 'system-ui', 'sans-serif']
+              }
+            }
+          }
+        </script>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+        </style>
+      </head>
+      <body class="bg-gray-50 text-gray-text">
+        
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+              <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+                <i class="fas fa-shield-alt text-white text-xl"></i>
+              </div>
+              <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
+            </a>
+          </div>
+          
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
+            <a href="nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a>
+            <a href="estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
+            <a href="propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
+            <a href="inversionista.html" class="text-gray-text hover:text-blue-medium transition">Inversionistas</a>
+            <a href="validar-qr.html" class="text-mint hover:text-mint/80 transition font-semibold">
+              <i class="fas fa-qrcode mr-1"></i>Validar QR
+            </a>
+            <a href="precios.html" class="text-gray-text hover:text-blue-medium transition">Precios</a>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            
+              <a href="auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+              <a href="auth/register.html" 
+                 class="bg-mint text-white px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                Comenzar
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+        <main>
+        <div class="min-h-screen bg-gray-50 py-8">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-12">
+              <div class="inline-block bg-mint bg-opacity-10 rounded-full px-6 py-2 mb-4">
+                <i class="fas fa-graduation-cap text-mint mr-2"></i>
+                <span class="text-mint font-semibold">Para Estudiantes</span>
+              </div>
+              <h1 class="text-4xl md:text-5xl font-heading font-bold text-blue-night mb-4">
+                Centro de Ayuda
+              </h1>
+              <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Guías paso a paso para aprovechar al máximo Tu Aval
+              </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <a href="#conectar-banco" class="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition group">
+                <div class="bg-mint bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:bg-opacity-20 transition">
+                  <i class="fas fa-university text-mint text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-night mb-2">Conectar tu Banco</h3>
+                <p class="text-gray-600 text-sm">Vincula tu cuenta bancaria con Belvo</p>
+              </a>
+
+              <a href="#obtener-qr" class="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition group">
+                <div class="bg-blue-medium bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:bg-opacity-20 transition">
+                  <i class="fas fa-qrcode text-blue-medium text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-night mb-2">Obtener tu QR</h3>
+                <p class="text-gray-600 text-sm">Cómo conseguir tu garantía QR</p>
+              </a>
+
+              <a href="#buscar-piso" class="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition group">
+                <div class="bg-success bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:bg-opacity-20 transition">
+                  <i class="fas fa-home text-success text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-night mb-2">Buscar Piso</h3>
+                <p class="text-gray-600 text-sm">Usa tu QR para encontrar alojamiento</p>
+              </a>
+            </div>
+
+            <!-- Detailed Guides -->
+            <div class="space-y-8">
+              <!-- Guide 1: Connect Bank -->
+              <div id="conectar-banco" class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-mint to-mint-dark text-white px-8 py-6">
+                  <h2 class="text-2xl font-bold">
+                    <i class="fas fa-university mr-3"></i>
+                    1. Conectar tu Banco con Belvo
+                  </h2>
+                  <p class="text-mint-light mt-2">Tiempo estimado: 5-10 minutos</p>
+                </div>
+                <div class="p-8">
+                  <div class="prose max-w-none">
+                    <h3 class="text-xl font-bold text-blue-night mb-4">¿Por qué necesito conectar mi banco?</h3>
+                    <p class="text-gray-600 mb-6">
+                      Tu Aval necesita verificar tu solvencia financiera para emitir la garantía. Usamos Belvo, 
+                      una plataforma segura y regulada, para acceder a tus datos bancarios de forma encriptada.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-blue-night mb-4">Paso a paso:</h3>
+                    <div class="space-y-6">
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">1</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Accede al Paso 2 del Onboarding</h4>
+                          <p class="text-gray-600 mb-3">
+                            Ve a tu dashboard y haz clic en "Continuar Onboarding" → Paso 2: Finanzas
+                          </p>
+                          <div class="bg-gray-50 rounded-lg p-4">
+                            <p class="text-sm text-gray-700 mb-2"><strong>Ejemplo de URL:</strong></p>
+                            <code class="text-xs bg-white px-3 py-2 rounded border">
+                              /portal/estudiante/onboarding/step2
+                            </code>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">2</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Haz clic en "Conectar con Belvo"</h4>
+                          <p class="text-gray-600 mb-3">
+                            Se abrirá un widget seguro de Belvo. NO estás dando acceso directo a Tu Aval, 
+                            sino que Belvo actúa como intermediario regulado.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">3</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Selecciona tu banco</h4>
+                          <p class="text-gray-600 mb-3">
+                            Belvo soporta más de 50 bancos en Latinoamérica:
+                          </p>
+                          <ul class="list-disc pl-6 text-gray-600 space-y-1">
+                            <li><strong>México:</strong> BBVA, Santander, Banorte, HSBC</li>
+                            <li><strong>Chile:</strong> Banco de Chile, Santander, BCI, Itaú</li>
+                            <li><strong>Colombia:</strong> Bancolombia, Davivienda, BBVA</li>
+                            <li><strong>Brasil:</strong> Itaú, Bradesco, Banco do Brasil</li>
+                            <li><strong>Argentina:</strong> Galicia, Santander, BBVA</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">4</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Introduce tus credenciales bancarias</h4>
+                          <p class="text-gray-600 mb-3">
+                            Usa el usuario y contraseña que usas para tu banca en línea. 
+                            <strong class="text-red-600">Nunca compartas tu PIN o códigos 2FA.</strong>
+                          </p>
+                          <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                            <p class="text-sm text-blue-900">
+                              <i class="fas fa-shield-alt mr-2"></i>
+                              <strong>Seguridad:</strong> Tus credenciales van directamente al banco, 
+                              encriptadas de extremo a extremo. Ni Belvo ni Tu Aval las almacenamos.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">5</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Autoriza el acceso</h4>
+                          <p class="text-gray-600 mb-3">
+                            El banco te pedirá autorización (puede ser OTP, token, etc.). Completa este paso.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-mint text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">6</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">¡Listo! Datos verificados</h4>
+                          <p class="text-gray-600 mb-3">
+                            Tu Aval recibirá tu información financiera y calculará tu capacidad de pago automáticamente.
+                          </p>
+                          <div class="bg-green-50 rounded-lg p-4 mt-3">
+                            <p class="text-sm text-green-800">
+                              <strong>Datos analizados:</strong>
+                            </p>
+                            <ul class="list-disc pl-6 text-sm text-green-700 mt-2">
+                              <li>Saldo promedio (últimos 3 meses)</li>
+                              <li>Ingresos recurrentes</li>
+                              <li>Gastos mensuales</li>
+                              <li>Ratio renta/ingreso recomendado</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded">
+                      <h4 class="font-bold text-yellow-900 mb-2">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        Problemas comunes
+                      </h4>
+                      <ul class="space-y-2 text-sm text-yellow-800">
+                        <li><strong>Error de credenciales:</strong> Verifica usuario y contraseña en tu app bancaria primero</li>
+                        <li><strong>Sesión expiró:</strong> Algunos bancos tienen sesiones cortas, vuelve a intentar</li>
+                        <li><strong>Banco no compatible:</strong> Contacta soporte, podemos usar extractos PDF</li>
+                        <li><strong>Problema con 2FA:</strong> Asegúrate de tener tu token/celular disponible</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Guide 2: Get QR Code -->
+              <div id="obtener-qr" class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-medium to-blue-600 text-white px-8 py-6">
+                  <h2 class="text-2xl font-bold">
+                    <i class="fas fa-qrcode mr-3"></i>
+                    2. Obtener tu Código QR de Garantía
+                  </h2>
+                  <p class="text-blue-100 mt-2">Tiempo estimado: 24-48 horas después de completar onboarding</p>
+                </div>
+                <div class="p-8">
+                  <div class="prose max-w-none">
+                    <h3 class="text-xl font-bold text-blue-night mb-4">¿Qué es el código QR?</h3>
+                    <p class="text-gray-600 mb-6">
+                      Es tu <strong>garantía digital verificable</strong>. Los propietarios pueden escanear o ingresar 
+                      tu código (formato: AVAL-XXXX-YYYY) para ver tu garantía activa al instante.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-blue-night mb-4">Cómo obtenerlo:</h3>
+                    <div class="space-y-6">
+                      <div class="flex items-start">
+                        <span class="bg-blue-medium text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">1</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Completa los 5 pasos del onboarding</h4>
+                          <ul class="list-disc pl-6 text-gray-600 space-y-1">
+                            <li>Paso 1: Identidad (nombre, pasaporte, universidad)</li>
+                            <li>Paso 2: Finanzas (conexión Belvo)</li>
+                            <li>Paso 3: Documentos (pasaporte, carta admisión)</li>
+                            <li>Paso 4: Scoring (aprobación automática)</li>
+                            <li>Paso 5: Emisión de QR</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-blue-medium text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">2</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Espera la aprobación automática</h4>
+                          <p class="text-gray-600 mb-3">
+                            Nuestro sistema analiza tu perfil en minutos:
+                          </p>
+                          <div class="bg-gray-50 rounded-lg p-4">
+                            <p class="text-sm font-semibold text-gray-900 mb-2">Criterios de aprobación:</p>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                              <li>✅ Ratio renta/ingreso ≤ 40%</li>
+                              <li>✅ Saldo promedio ≥ 3 meses de renta</li>
+                              <li>✅ Ingresos recurrentes verificados</li>
+                              <li>✅ Matrícula universitaria válida</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-blue-medium text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">3</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Recibe tu QR en el Paso 5</h4>
+                          <p class="text-gray-600 mb-3">
+                            Una vez aprobado, verás tu código QR en grande:
+                          </p>
+                          <div class="bg-mint bg-opacity-10 border-2 border-mint rounded-xl p-6 text-center">
+                            <div class="inline-block bg-mint p-4 rounded-xl mb-3">
+                              <i class="fas fa-qrcode text-white text-5xl"></i>
+                            </div>
+                            <p class="text-2xl font-bold text-blue-night mb-2">AVAL-LF11-2025</p>
+                            <p class="text-sm text-gray-600">Tu código de garantía único</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="flex items-start">
+                        <span class="bg-blue-medium text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold">4</span>
+                        <div>
+                          <h4 class="font-bold text-gray-900 mb-2">Descarga y comparte</h4>
+                          <p class="text-gray-600 mb-3">
+                            Opciones disponibles:
+                          </p>
+                          <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                            <li><strong>Copiar código:</strong> Para pegar en Idealista, Fotocasa</li>
+                            <li><strong>Descargar QR (PNG):</strong> Para enviar por WhatsApp/email</li>
+                            <li><strong>Compartir link:</strong> URL pública tipo tuaval.com/verify/AVAL-LF11-2025</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-8 bg-green-50 border-l-4 border-green-500 p-6 rounded">
+                      <h4 class="font-bold text-green-900 mb-2">
+                        <i class="fas fa-lightbulb mr-2"></i>
+                        Consejos para usar tu QR
+                      </h4>
+                      <ul class="space-y-2 text-sm text-green-800">
+                        <li>✅ Ponlo en tu perfil de Idealista/Fotocasa como foto principal</li>
+                        <li>✅ Menciónalo en el primer mensaje al propietario</li>
+                        <li>✅ Llévalo impreso o en tu celular a las visitas</li>
+                        <li>✅ Explica que es una garantía emitida en España, no extranjera</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Guide 3: Find Apartment -->
+              <div id="buscar-piso" class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-success to-green-600 text-white px-8 py-6">
+                  <h2 class="text-2xl font-bold">
+                    <i class="fas fa-home mr-3"></i>
+                    3. Buscar Piso con tu Garantía QR
+                  </h2>
+                  <p class="text-green-100 mt-2">Tips para acelerar tu búsqueda</p>
+                </div>
+                <div class="p-8">
+                  <div class="prose max-w-none">
+                    <h3 class="text-xl font-bold text-blue-night mb-4">Estrategia de búsqueda</h3>
+                    
+                    <div class="space-y-6">
+                      <div class="bg-blue-50 rounded-xl p-6">
+                        <h4 class="font-bold text-blue-900 mb-3">
+                          <i class="fas fa-search mr-2"></i>
+                          Dónde buscar
+                        </h4>
+                        <ul class="space-y-2 text-sm text-blue-800">
+                          <li><strong>Idealista:</strong> Mayor volumen, usa filtros "Admite mascotas" si aplica</li>
+                          <li><strong>Fotocasa:</strong> Buena interfaz, muchos particulares</li>
+                          <li><strong>Grupos Facebook:</strong> "Pisos Madrid", "Alquiler Barcelona Estudiantes"</li>
+                          <li><strong>Badi:</strong> Especializado en compartir piso</li>
+                          <li><strong>Spotahome/Uniplaces:</strong> Enfocados en estudiantes internacionales</li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 class="font-bold text-gray-900 mb-3">Cómo presentar tu QR</h4>
+                        <p class="text-gray-600 mb-4">
+                          <strong>Plantilla de mensaje inicial:</strong>
+                        </p>
+                        <div class="bg-gray-50 rounded-lg p-4 border-l-4 border-mint">
+                          <p class="text-sm text-gray-700 mb-2 italic">
+                            "Hola, soy [Nombre], estudiante internacional de [Universidad]. 
+                            Me interesa mucho tu piso en [Dirección]. 
+                            <strong class="text-mint">Cuento con garantía Tu Aval (código AVAL-XXXX-YYYY)</strong>, 
+                            una garantía directa de pago emitida en España que cubre 12 meses de renta. 
+                            ¿Podríamos agendar una visita? Puedo verificar mi garantía al instante."
+                          </p>
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 class="font-bold text-gray-900 mb-3">En la visita</h4>
+                        <ol class="list-decimal pl-6 text-gray-600 space-y-3">
+                          <li>
+                            <strong>Muestra tu QR primero:</strong> Deja que el propietario lo escanee o 
+                            ingrese el código en tuaval.com/validar-qr
+                          </li>
+                          <li>
+                            <strong>Explica la cobertura:</strong> "Cubre hasta 12 meses de impago + gestión legal del desahucio"
+                          </li>
+                          <li>
+                            <strong>Muestra tu solvencia:</strong> El QR también muestra que tu ratio renta/ingreso es saludable
+                          </li>
+                          <li>
+                            <strong>Ofrece firmar rápido:</strong> "Podemos firmar por DocuSign hoy mismo si te interesa"
+                          </li>
+                        </ol>
+                      </div>
+
+                      <div class="bg-yellow-50 rounded-xl p-6">
+                        <h4 class="font-bold text-yellow-900 mb-3">
+                          <i class="fas fa-trophy mr-2"></i>
+                          Ventajas competitivas de Tu Aval
+                        </h4>
+                        <p class="text-sm text-yellow-800 mb-3">
+                          Los propietarios prefieren inquilinos con Tu Aval porque:
+                        </p>
+                        <ul class="space-y-2 text-sm text-yellow-800">
+                          <li>✅ <strong>Verificación instantánea:</strong> No esperan extractos bancarios</li>
+                          <li>✅ <strong>Garantía española:</strong> No es un aval extranjero complicado</li>
+                          <li>✅ <strong>Cero gestión:</strong> Tu Aval maneja todo el proceso si hay impago</li>
+                          <li>✅ <strong>Sin depósitos extra:</strong> La fianza legal (1 mes) es suficiente</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Support -->
+            <div class="mt-12 bg-blue-night text-white rounded-2xl p-8 text-center">
+              <h3 class="text-2xl font-bold mb-4">¿Necesitas más ayuda?</h3>
+              <p class="text-blue-100 mb-6">
+                Nuestro equipo está disponible para ayudarte en cualquier paso del proceso
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="portal/propietario/support.html" 
+                   class="bg-mint text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-90 transition">
+                  <i class="fas fa-comments mr-2"></i>
+                  Chat con soporte
+                </a>
+                <a href="mailto:soporte@tuaval.com" 
+                   class="bg-white bg-opacity-10 border-2 border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-20 transition">
+                  <i class="fas fa-envelope mr-2"></i>
+                  soporte@tuaval.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+        
+    <footer class="bg-blue-night text-white mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-heading font-bold mb-4">Tu Aval</h3>
+            <p class="text-gray-400 text-sm">
+              Garantía de alquiler verificada para estudiantes internacionales en España.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Producto</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="como-funciona.html" class="hover:text-mint transition">Cómo funciona</a></li>
+              <li><a href="estudiante.html" class="hover:text-mint transition">Para estudiantes</a></li>
+              <li><a href="propietario.html" class="hover:text-mint transition">Para propietarios</a></li>
+              <li><a href="precios.html" class="hover:text-mint transition">Precios</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Empresa</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="nosotros.html" class="hover:text-mint transition">Nosotros</a></li>
+              <li><a href="partners.html" class="hover:text-mint transition">Partners</a></li>
+              <li><a href="blog.html" class="hover:text-mint transition">Blog</a></li>
+              <li><a href="contacto.html" class="hover:text-mint transition">Contacto</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="legal/privacidad.html" class="hover:text-mint transition">Privacidad</a></li>
+              <li><a href="legal/terminos.html" class="hover:text-mint transition">Términos</a></li>
+              <li><a href="legal/modelo-garantia.html" class="hover:text-mint transition">Modelo de garantía</a></li>
+              <li><a href="legal/reclamaciones.html" class="hover:text-mint transition">Reclamaciones</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400">
+          <p>
+            © 2026 Tu Aval. Garantías directas de alquiler respaldadas por fondo propio.
+          </p>
+        </div>
+      </div>
+    </footer>
+  
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+      
+<script>
+(function() {
+  // --- Fake login ---
+  // Intercept any form that posts to /auth/login. Accept anything. If the
+  // email contains "land" or "propiet" -> landlord, else -> student.
+  document.addEventListener('submit', function(e) {
+    var f = e.target;
+    if (!f || f.tagName !== 'FORM') return;
+    var action = f.getAttribute('action') || '';
+    // Normalize: it may have been rewritten already
+    if (action.indexOf('login.html') !== -1 || action.indexOf('auth/login') !== -1) {
+      e.preventDefault();
+      var email = (f.querySelector('input[name=email]') || {}).value || '';
+      var role = /land|propiet/i.test(email) ? 'landlord' : 'student';
+      localStorage.setItem('tu_aval_user', JSON.stringify({
+        id: 'demo', name: role === 'student' ? 'Ana García' : 'Carlos Propietario', role: role
+      }));
+      window.location.href = role === 'student' ? "portal/estudiante/index.html" : "portal/propietario/index.html";
+      return;
+    }
+    if (action.indexOf('register.html') !== -1 || action.indexOf('auth/register') !== -1) {
+      e.preventDefault();
+      var roleInput = f.querySelector('input[name=role]');
+      var role = roleInput ? roleInput.value : 'student';
+      // Re-read from URL if hidden input absent
+      if (!roleInput) {
+        var u = new URL(window.location.href);
+        role = u.searchParams.get('role') || 'student';
+      }
+      var nameEl = f.querySelector('input[name=name]');
+      var name = nameEl ? nameEl.value : (role === 'student' ? 'Ana García' : 'Carlos Propietario');
+      localStorage.setItem('tu_aval_user', JSON.stringify({ id: 'demo', name: name, role: role }));
+      window.location.href = role === 'student' ? "portal/estudiante/index.html" : "portal/propietario/index.html";
+      return;
+    }
+    // Any other form: prevent default (they'd 404 statically) and show a toast.
+    if (action && action !== '#' && action.indexOf('javascript:') !== 0) {
+      e.preventDefault();
+      showToast('Formulario enviado (demo estático — no hay backend).');
+    }
+  }, true);
+
+  // --- Toast helper ---
+  window.showToast = function(msg) {
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0A2540;color:#fff;padding:14px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);z-index:99999;opacity:0;transition:opacity .25s;';
+    document.body.appendChild(t);
+    requestAnimationFrame(function() { t.style.opacity = '1'; });
+    setTimeout(function() { t.style.opacity = '0'; setTimeout(function(){ t.remove(); }, 300); }, 2400);
+  };
+
+  // --- Navbar: show logged-in user if present ---
+  try {
+    var u = JSON.parse(localStorage.getItem('tu_aval_user') || 'null');
+    if (u && u.name) {
+      var loginLinks = document.querySelectorAll('a[href*="auth/login"], a[href*="auth/register"]');
+      // We don't mutate these here; the portal pages are already "logged in" visually.
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function() {
+  function getUser() {
+    try { return JSON.parse(localStorage.getItem('tu_aval_user') || 'null'); }
+    catch (e) { return null; }
+  }
+  function relPrefix() {
+    // Count how deep the current page is so we can build a relative path back
+    // to the site root. e.g. /portal/estudiante/index.html -> "../../"
+    var p = window.location.pathname;
+    var i = p.indexOf('/tuaval-static/');
+    var rel;
+    if (i >= 0) rel = p.substring(i + '/tuaval-static/'.length);
+    else rel = p.replace(/^\/+/, '');
+    var depth = (rel.match(/\//g) || []).length;
+    return '../'.repeat(depth);
+  }
+  function rewriteNav() {
+    var u = getUser();
+    if (!u) return;
+    var prefix = relPrefix();
+    // Find login/register links in the top nav (skip ones inside the shim itself)
+    var loginLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      return /auth\/login\.html$/.test(h) || /^auth\/login\.html/.test(h) ||
+             /\.\.\/auth\/login\.html/.test(h) || /\.\.\/\.\.\/auth\/login\.html/.test(h);
+    });
+    var registerLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      // Match the "Comenzar" CTA — has bg-mint class and points to register
+      return (/auth\/register\.html/.test(h)) && /bg-mint/.test(a.className || '');
+    });
+    if (loginLinks.length === 0 && registerLinks.length === 0) return;
+
+    var portalUrl = u.role === 'landlord'
+      ? prefix + 'portal/propietario/index.html'
+      : prefix + 'portal/estudiante/index.html';
+    var homeUrl = prefix + 'index.html';
+
+    // Build the new user pill
+    var pill = document.createElement('a');
+    pill.href = portalUrl;
+    pill.className = 'flex items-center gap-2 text-gray-text hover:text-blue-medium transition';
+    pill.innerHTML = '<i class="fas fa-user-circle text-xl"></i><span class="font-medium">' +
+                     escapeHtml(u.name || 'Usuario') + '</span>';
+
+    var logout = document.createElement('a');
+    logout.href = 'javascript:void(0)';
+    logout.className = 'text-sm text-gray-text hover:text-danger transition';
+    logout.textContent = 'Salir';
+    logout.onclick = function(){
+      localStorage.removeItem('tu_aval_user');
+      localStorage.removeItem('tu_aval_session');
+      localStorage.removeItem('onboardingProgress');
+      window.location.href = homeUrl;
+    };
+
+    // Replace the first login link's parent block with [pill, logout]
+    if (loginLinks.length > 0) {
+      var loginEl = loginLinks[0];
+      var parent = loginEl.parentNode;
+      // Remove all login + register links inside this parent
+      Array.from(parent.querySelectorAll('a')).forEach(function(a){
+        var h = a.getAttribute('href') || '';
+        if (/auth\/(login|register)/.test(h)) a.remove();
+      });
+      parent.appendChild(pill);
+      parent.appendChild(logout);
+    }
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  // Run after DOM is ready (body already exists since we're at end of body)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', rewriteNav);
+  } else {
+    rewriteNav();
+  }
+
+  // Also expose a global "reset demo" helper
+  window.resetTuAvalDemo = function() {
+    localStorage.clear();
+    window.location.href = relPrefix() + 'index.html';
+  };
+})();
+</script>
+</body>
+    </html>
+  

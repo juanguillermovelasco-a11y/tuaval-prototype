@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onboarding | Tu Aval</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'blue-night': '#0A2540',
+              'mint': '#3BE2B0',
+              'blue-medium': '#4A90E2',
+              'gray-text': '#425466',
+              'success': '#24B47E',
+              'warning': '#F6A609',
+              'danger': '#E45858'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            heading: ['Poppins', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+      body { font-family: Inter, system-ui, sans-serif; }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-text">
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="../../../index.html" class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
+          </a>
+          <a href="../index.html" class="text-sm text-gray-text hover:text-blue-medium">
+            <i class="fas fa-times mr-1"></i> Salir del onboarding
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div id="chat-root"></div>
+    </main>
+
+    <script src="../../../static/chat-engine.js"></script>
+    <script>
+      const script = [
+        { bot: '¡Hola! 👋 Soy tu asistente de Tu Aval. Voy a ayudarte a generar tu garantía de alquiler para España, todo por aquí en chat. Sin papeleos ni subidas de archivos.' },
+        { bot: 'Antes de empezar — esto toma unos 3-4 minutos. ¿Listo?' },
+        {
+          id: 'ready',
+          bot: '',
+          input: 'choice',
+          choices: ['Sí, vamos', 'Tengo dudas primero']
+        },
+        {
+          bot: (d) => d.ready === 'Tengo dudas primero'
+            ? 'Tranquilo, te explico: nosotros emitimos una garantía verificada que tu casero acepta como aval. Sin necesidad de codeudor español ni 6 meses de fianza. Solo necesito conocerte un poco. ¿Empezamos?'
+            : '¡Genial! 🚀'
+        },
+        {
+          id: 'name',
+          bot: 'Primero lo básico: ¿cómo te llamas?',
+          input: 'text',
+          placeholder: 'Tu nombre completo'
+        },
+        {
+          id: 'country',
+          bot: (d) => `Mucho gusto, ${d.name.split(' ')[0]} 🤝. ¿De qué país vienes?`,
+          input: 'choice',
+          choices: ['México', 'Colombia', 'Chile', 'Argentina', 'Perú', 'Brasil', 'Otro']
+        },
+        {
+          id: 'age',
+          bot: '¿Cuántos años tienes?',
+          input: 'number',
+          placeholder: 'Edad'
+        },
+        {
+          id: 'university',
+          bot: '¿En qué universidad o centro vas a estudiar en España?',
+          input: 'text',
+          placeholder: 'Ej: IE University, UC3M...'
+        },
+        {
+          id: 'program',
+          bot: '¿Qué programa vas a hacer?',
+          input: 'text',
+          placeholder: 'Ej: Master en Finanzas'
+        },
+        {
+          id: 'duration',
+          bot: '¿Cuánto dura el programa?',
+          input: 'choice',
+          choices: ['6 meses', '9 meses', '12 meses', '24 meses']
+        },
+        {
+          id: 'city',
+          bot: '¿En qué ciudad piensas alquilar?',
+          input: 'choice',
+          choices: ['Madrid', 'Barcelona', 'Valencia', 'Sevilla', 'Otra']
+        },
+        {
+          id: 'rent',
+          bot: '¿Qué presupuesto mensual tienes para el alquiler? (en euros)',
+          input: 'number',
+          placeholder: 'Ej: 850'
+        },
+        {
+          bot: 'Perfecto. Ahora la parte importante: necesito entender tu solvencia para emitir la garantía. No te pido archivos — solo cuéntame.'
+        },
+        {
+          id: 'income_source',
+          bot: '¿Cuál es tu fuente principal de ingresos o respaldo económico?',
+          input: 'choice',
+          choices: ['Mis padres me apoyan', 'Tengo ahorros propios', 'Trabajo remoto', 'Beca', 'Combinación']
+        },
+        {
+          id: 'monthly_support',
+          bot: 'Aproximadamente, ¿cuánto recibes/dispones al mes en euros?',
+          input: 'number',
+          placeholder: 'Ej: 1500'
+        },
+        {
+          id: 'savings',
+          bot: '¿Cuánto tienes ahorrado actualmente? (aproximado, en euros)',
+          input: 'number',
+          placeholder: 'Ej: 8000'
+        },
+        {
+          id: 'bank_country',
+          bot: '¿En qué país tienes tu cuenta bancaria principal?',
+          input: 'text',
+          placeholder: 'Ej: México'
+        },
+        {
+          bot: (d) => `Excelente, ${d.name.split(' ')[0]}. Con esto ya tengo lo necesario. Voy a calcular tu score de garantía...`
+        },
+        { bot: '🔄 Verificando solvencia internacional...', delay: 1500 },
+        { bot: '🔄 Cruzando con histórico de migrantes en España...', delay: 1500 },
+        { bot: '🔄 Calculando límite de garantía...', delay: 1500 },
+        {
+          bot: (d) => `✅ ¡Aprobado! Tu garantía está lista. Cubre alquileres hasta <strong>€${Math.max(800, Math.round((parseInt(d.rent) || 800) * 1.2))}/mes</strong> en ${d.city}.`
+        },
+        {
+          bot: 'Tu QR de garantía ya está disponible en tu portal. Puedes mostrarlo a cualquier propietario y validarán tu solvencia en segundos.'
+        },
+        {
+          id: 'final',
+          bot: '¿Quieres ir ahora a tu portal para ver tu QR?',
+          input: 'choice',
+          choices: ['Sí, ir al portal', 'Más tarde']
+        }
+      ];
+
+      TuAvalChat.init({
+        mountSelector: '#chat-root',
+        storageKey: 'tu_aval_onboarding_estudiante',
+        botName: 'Asistente Tu Aval',
+        script,
+        onComplete: (data) => {
+          // Mark onboarding complete
+          localStorage.setItem('onboardingProgress', JSON.stringify({ step: 6, data, completed: true }));
+          if (data.final === 'Sí, ir al portal') {
+            setTimeout(() => { window.location.href = '../index.html'; }, 800);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

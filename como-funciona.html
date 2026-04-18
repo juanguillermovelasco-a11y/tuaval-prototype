@@ -1,0 +1,525 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cómo funciona | Tu Aval</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+          rel="stylesheet"
+        />
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  'blue-night': '#0A2540',
+                  'mint': '#3BE2B0',
+                  'blue-medium': '#4A90E2',
+                  'gray-text': '#425466',
+                  'success': '#24B47E',
+                  'warning': '#F6A609',
+                  'danger': '#E45858'
+                }
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                heading: ['Poppins', 'system-ui', 'sans-serif']
+              }
+            }
+          }
+        </script>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+        </style>
+      </head>
+      <body class="bg-gray-50 text-gray-text">
+        
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+              <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+                <i class="fas fa-shield-alt text-white text-xl"></i>
+              </div>
+              <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
+            </a>
+          </div>
+          
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
+            <a href="nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a>
+            <a href="estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
+            <a href="propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
+            <a href="inversionista.html" class="text-gray-text hover:text-blue-medium transition">Inversionistas</a>
+            <a href="validar-qr.html" class="text-mint hover:text-mint/80 transition font-semibold">
+              <i class="fas fa-qrcode mr-1"></i>Validar QR
+            </a>
+            <a href="precios.html" class="text-gray-text hover:text-blue-medium transition">Precios</a>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            
+              <a href="auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+              <a href="auth/register.html" 
+                 class="bg-mint text-white px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                Comenzar
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+        <style>
+          .step-line { position: relative; }
+          .step-line::before { content: ''; position: absolute; left: 27px; top: 60px; bottom: -32px; width: 2px; background: linear-gradient(180deg, #3BE2B0, rgba(74,144,226,0.3)); }
+          .step-line:last-child::before { display: none; }
+          .actor-pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+          .grad-text { background: linear-gradient(135deg, #0A2540, #3BE2B0); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        </style>
+        <main>
+        <!-- HERO -->
+        <section class="bg-blue-night text-white py-20 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-mint/10 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-medium/20 rounded-full blur-3xl"></div>
+          <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+            <span class="inline-block bg-mint/15 text-mint border border-mint/30 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <i class="fas fa-diagram-project mr-2"></i>Cómo funciona Tu Aval
+            </span>
+            <h1 class="text-5xl md:text-6xl font-heading font-extrabold mb-6 leading-[1.05] tracking-tight">
+              Tres partes. <span class="bg-gradient-to-r from-mint to-white bg-clip-text text-transparent">Un sistema circular.</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Estudiantes que necesitan vivienda. Propietarios que necesitan tranquilidad. Inversionistas que cubren el riesgo. Esto es lo que pasa por debajo.
+            </p>
+          </div>
+        </section>
+
+        <!-- ACTOR FLOW -->
+        <section class="py-24 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-heading font-extrabold text-blue-night mb-4 tracking-tight">
+                Las 3 partes y <span class="grad-text">cómo se conectan</span>
+              </h2>
+              <p class="text-xl text-gray-text max-w-2xl mx-auto">
+                Todo gira alrededor del fondo. Cada actor aporta algo y recibe algo a cambio.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-20 relative">
+              <!-- ESTUDIANTE -->
+              <div class="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition relative">
+                <div class="actor-pill bg-mint/15 text-mint mb-4">
+                  <i class="fas fa-user-graduate"></i> Estudiante
+                </div>
+                <h3 class="text-2xl font-heading font-bold text-blue-night mb-3">Aporta solvencia internacional</h3>
+                <p class="text-gray-text text-sm mb-5 leading-relaxed">Conecta sus cuentas bancarias del país de origen. Tu Aval verifica ingresos, ahorros y patrón de gasto.</p>
+                <div class="bg-mint/5 border border-mint/20 rounded-xl p-4">
+                  <div class="text-xs text-gray-500 mb-1">Recibe</div>
+                  <div class="font-bold text-blue-night">Garantía QR verificable</div>
+                </div>
+              </div>
+
+              <!-- TU AVAL -->
+              <div class="bg-blue-night text-white border border-mint/40 rounded-3xl p-8 shadow-2xl lg:scale-105 relative">
+                <div class="actor-pill bg-mint text-blue-night mb-4">
+                  <i class="fas fa-shield-alt"></i> Tu Aval
+                </div>
+                <h3 class="text-2xl font-heading font-bold text-white mb-3">Conecta y respalda</h3>
+                <p class="text-gray-300 text-sm mb-5 leading-relaxed">Emite la garantía con respaldo del fondo. Si hay impago, paga directo al propietario y recupera al inquilino.</p>
+                <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                  <div class="text-xs text-gray-400 mb-1">Núcleo</div>
+                  <div class="font-bold text-white">Fondo €42M auditado</div>
+                </div>
+              </div>
+
+              <!-- PROPIETARIO -->
+              <div class="bg-white border border-gray-200 rounded-3xl p-8 shadow-sm hover:shadow-xl transition relative">
+                <div class="actor-pill bg-blue-medium/15 text-blue-medium mb-4">
+                  <i class="fas fa-home"></i> Propietario
+                </div>
+                <h3 class="text-2xl font-heading font-bold text-blue-night mb-3">Aporta confianza al alquilar</h3>
+                <p class="text-gray-text text-sm mb-5 leading-relaxed">Escanea el QR del candidato. Si está vigente, alquila tranquilo sabiendo que su renta está cubierta.</p>
+                <div class="bg-blue-medium/5 border border-blue-medium/20 rounded-xl p-4">
+                  <div class="text-xs text-gray-500 mb-1">Recibe</div>
+                  <div class="font-bold text-blue-night">Cobro garantizado en 15 días</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- INVESTOR LAYER -->
+            <div class="bg-gradient-to-br from-blue-night to-blue-medium rounded-3xl p-10 text-white relative overflow-hidden mb-20">
+              <div class="absolute -top-20 -right-20 w-80 h-80 bg-mint/10 rounded-full blur-3xl"></div>
+              <div class="grid lg:grid-cols-3 gap-8 items-center relative">
+                <div class="lg:col-span-2">
+                  <div class="actor-pill bg-mint/20 text-mint mb-4">
+                    <i class="fas fa-seedling"></i> Inversionista
+                  </div>
+                  <h3 class="text-3xl md:text-4xl font-heading font-bold mb-3 leading-tight">
+                    La capa financiera: <span class="bg-gradient-to-r from-mint to-white bg-clip-text text-transparent">fondo de garantía</span>
+                  </h3>
+                  <p class="text-gray-300 text-lg max-w-2xl">
+                    Inversores acreditados aportan capital al fondo que respalda cada contrato. Reciben un 8% anual fijo con liquidez trimestral y exposición diversificada al mercado de alquiler español.
+                  </p>
+                </div>
+                <div class="text-center lg:text-right">
+                  <a href="inversionista.html" class="inline-flex items-center gap-2 bg-mint text-blue-night px-6 py-4 rounded-xl font-bold hover:shadow-[0_10px_40px_-10px_#3BE2B0] transition">
+                    Ver tesis <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP BY STEP -->
+            <div class="text-center mb-12">
+              <h2 class="text-4xl font-heading font-extrabold text-blue-night mb-4 tracking-tight">
+                El recorrido completo, paso a paso
+              </h2>
+              <p class="text-xl text-gray-text">Desde que el estudiante crea su cuenta hasta el cobro final.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-8">
+              <div class="step-line flex gap-6">
+                <div class="flex-shrink-0 w-14 h-14 bg-mint text-blue-night rounded-2xl flex items-center justify-center font-heading font-bold text-xl shadow-lg">1</div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 flex-1 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2"><span class="actor-pill bg-mint/15 text-mint">Estudiante</span><i class="fas fa-arrow-right text-gray-300 text-xs"></i><span class="actor-pill bg-blue-night text-mint">Tu Aval</span></div>
+                  <h4 class="text-xl font-heading font-bold text-blue-night mb-2">Verificación financiera</h4>
+                  <p class="text-gray-text">Conecta sus cuentas de origen mediante open banking (Belvo, Tink). Datos cifrados, lectura sólo.</p>
+                </div>
+              </div>
+
+              <div class="step-line flex gap-6">
+                <div class="flex-shrink-0 w-14 h-14 bg-mint text-blue-night rounded-2xl flex items-center justify-center font-heading font-bold text-xl shadow-lg">2</div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 flex-1 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2"><span class="actor-pill bg-blue-night text-mint">Tu Aval</span></div>
+                  <h4 class="text-xl font-heading font-bold text-blue-night mb-2">Scoring automático</h4>
+                  <p class="text-gray-text">Nuestro modelo calcula elegibilidad cruzando ingresos, ahorros, ratio renta/ingreso y país de origen.</p>
+                </div>
+              </div>
+
+              <div class="step-line flex gap-6">
+                <div class="flex-shrink-0 w-14 h-14 bg-mint text-blue-night rounded-2xl flex items-center justify-center font-heading font-bold text-xl shadow-lg">3</div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 flex-1 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2"><span class="actor-pill bg-blue-night text-mint">Tu Aval</span><i class="fas fa-arrow-right text-gray-300 text-xs"></i><span class="actor-pill bg-mint/15 text-mint">Estudiante</span></div>
+                  <h4 class="text-xl font-heading font-bold text-blue-night mb-2">Emisión de la Garantía QR</h4>
+                  <p class="text-gray-text">Si pasa el scoring, emitimos la garantía respaldada por el fondo. Recibe un QR único en menos de 10 minutos.</p>
+                </div>
+              </div>
+
+              <div class="step-line flex gap-6">
+                <div class="flex-shrink-0 w-14 h-14 bg-blue-medium text-white rounded-2xl flex items-center justify-center font-heading font-bold text-xl shadow-lg">4</div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 flex-1 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2"><span class="actor-pill bg-mint/15 text-mint">Estudiante</span><i class="fas fa-arrow-right text-gray-300 text-xs"></i><span class="actor-pill bg-blue-medium/15 text-blue-medium">Propietario</span></div>
+                  <h4 class="text-xl font-heading font-bold text-blue-night mb-2">Validación en 10 segundos</h4>
+                  <p class="text-gray-text">El propietario escanea el QR. Ve cobertura, vigencia, renta cubierta y estado del fondo. Sin dudas.</p>
+                </div>
+              </div>
+
+              <div class="step-line flex gap-6">
+                <div class="flex-shrink-0 w-14 h-14 bg-blue-medium text-white rounded-2xl flex items-center justify-center font-heading font-bold text-xl shadow-lg">5</div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 flex-1 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2"><span class="actor-pill bg-mint/15 text-mint">Estudiante</span><i class="fas fa-arrow-right text-gray-300 text-xs"></i><span class="actor-pill bg-blue-medium/15 text-blue-medium">Propietario</span></div>
+                  <h4 class="text-xl font-heading font-bold text-blue-night mb-2">Firma del contrato</h4>
+                  <p class="text-gray-text">Firman el contrato LAU normal. Tu Aval queda registrado como garante. Plantilla incluida.</p>
+                </div>
+              </div>
+
+              <div class="step-line flex gap-6">
+                <div class="flex-shrink-0 w-14 h-14 bg-success text-white rounded-2xl flex items-center justify-center font-heading font-bold text-xl shadow-lg">6</div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 flex-1 shadow-sm">
+                  <div class="flex items-center gap-2 mb-2"><span class="actor-pill bg-blue-medium/15 text-blue-medium">Propietario</span><i class="fas fa-arrow-right text-gray-300 text-xs"></i><span class="actor-pill bg-blue-night text-mint">Tu Aval</span></div>
+                  <h4 class="text-xl font-heading font-bold text-blue-night mb-2">Sólo si hay impago</h4>
+                  <p class="text-gray-text">El propietario nos avisa. Validamos en 5 días, pagamos directo en 15 días desde el fondo. Después recuperamos con el inquilino.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WHY DIFFERENT -->
+        <section class="py-24 bg-gray-50">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span class="inline-block bg-success/10 text-success px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                  <i class="fas fa-landmark mr-2"></i>Garantía directa
+                </span>
+                <h2 class="text-4xl font-heading font-extrabold text-blue-night mb-6 tracking-tight">
+                  Sin aseguradoras intermedias
+                </h2>
+                <p class="text-lg text-gray-text mb-6 leading-relaxed">
+                  A diferencia de los seguros de impago tradicionales, Tu Aval paga al propietario directamente desde su propio fondo. No hay aseguradoras, peritajes externos ni autorizaciones de terceros.
+                </p>
+                <a href="legal/modelo-garantia.html" class="text-mint font-semibold inline-flex items-center gap-2 hover:gap-3 transition-all">
+                  Leer el modelo de garantía completo <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+              <div class="bg-white rounded-3xl shadow-lg p-8 border border-gray-100">
+                <div class="space-y-5">
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-mint/15 rounded-xl flex items-center justify-center flex-shrink-0"><span class="text-mint font-bold">1</span></div>
+                    <div>
+                      <div class="font-bold text-blue-night mb-1">Notificación del impago</div>
+                      <div class="text-sm text-gray-text">Aviso desde el portal o por email.</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-mint/15 rounded-xl flex items-center justify-center flex-shrink-0"><span class="text-mint font-bold">2</span></div>
+                    <div>
+                      <div class="font-bold text-blue-night mb-1">Validación en 5 días</div>
+                      <div class="text-sm text-gray-text">Verificamos contrato y garantía vigente.</div>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 bg-mint/15 rounded-xl flex items-center justify-center flex-shrink-0"><span class="text-mint font-bold">3</span></div>
+                    <div>
+                      <div class="font-bold text-blue-night mb-1">Pago en 15 días</div>
+                      <div class="text-sm text-gray-text">Transferencia directa al propietario.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3 PATHS CTA -->
+        <section class="py-20 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-heading font-bold text-blue-night text-center mb-12">¿Cuál es tu rol?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <a href="estudiante.html" class="block bg-mint/5 border-2 border-mint rounded-2xl p-8 hover:shadow-xl transition group">
+                <i class="fas fa-user-graduate text-mint text-3xl mb-4"></i>
+                <h3 class="text-xl font-heading font-bold text-blue-night mb-2">Soy estudiante</h3>
+                <p class="text-gray-text text-sm mb-4">Quiero alquilar en España sin aval.</p>
+                <span class="text-mint font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all">Ver más <i class="fas fa-arrow-right text-xs"></i></span>
+              </a>
+              <a href="propietario.html" class="block bg-blue-medium/5 border-2 border-blue-medium rounded-2xl p-8 hover:shadow-xl transition group">
+                <i class="fas fa-home text-blue-medium text-3xl mb-4"></i>
+                <h3 class="text-xl font-heading font-bold text-blue-night mb-2">Soy propietario</h3>
+                <p class="text-gray-text text-sm mb-4">Quiero alquilar tranquilo y cobrar seguro.</p>
+                <span class="text-blue-medium font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all">Ver más <i class="fas fa-arrow-right text-xs"></i></span>
+              </a>
+              <a href="inversionista.html" class="block bg-blue-night text-white rounded-2xl p-8 hover:shadow-xl transition group border-2 border-mint">
+                <i class="fas fa-chart-line text-mint text-3xl mb-4"></i>
+                <h3 class="text-xl font-heading font-bold text-white mb-2">Soy inversionista</h3>
+                <p class="text-gray-300 text-sm mb-4">Quiero respaldar el fondo y rentabilizar.</p>
+                <span class="text-mint font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all">Ver tesis <i class="fas fa-arrow-right text-xs"></i></span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+        
+    <footer class="bg-blue-night text-white mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-heading font-bold mb-4">Tu Aval</h3>
+            <p class="text-gray-400 text-sm">
+              Garantía de alquiler verificada para estudiantes internacionales en España.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Producto</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="como-funciona.html" class="hover:text-mint transition">Cómo funciona</a></li>
+              <li><a href="estudiante.html" class="hover:text-mint transition">Para estudiantes</a></li>
+              <li><a href="propietario.html" class="hover:text-mint transition">Para propietarios</a></li>
+              <li><a href="precios.html" class="hover:text-mint transition">Precios</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Empresa</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="nosotros.html" class="hover:text-mint transition">Nosotros</a></li>
+              <li><a href="partners.html" class="hover:text-mint transition">Partners</a></li>
+              <li><a href="blog.html" class="hover:text-mint transition">Blog</a></li>
+              <li><a href="contacto.html" class="hover:text-mint transition">Contacto</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="legal/privacidad.html" class="hover:text-mint transition">Privacidad</a></li>
+              <li><a href="legal/terminos.html" class="hover:text-mint transition">Términos</a></li>
+              <li><a href="legal/modelo-garantia.html" class="hover:text-mint transition">Modelo de garantía</a></li>
+              <li><a href="legal/reclamaciones.html" class="hover:text-mint transition">Reclamaciones</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400">
+          <p>
+            © 2026 Tu Aval. Garantías directas de alquiler respaldadas por fondo propio.
+          </p>
+        </div>
+      </div>
+    </footer>
+  
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+      
+<script>
+(function() {
+  // --- Fake login ---
+  // Intercept any form that posts to /auth/login. Accept anything. If the
+  // email contains "land" or "propiet" -> landlord, else -> student.
+  document.addEventListener('submit', function(e) {
+    var f = e.target;
+    if (!f || f.tagName !== 'FORM') return;
+    var action = f.getAttribute('action') || '';
+    // Normalize: it may have been rewritten already
+    if (action.indexOf('login.html') !== -1 || action.indexOf('auth/login') !== -1) {
+      e.preventDefault();
+      var email = (f.querySelector('input[name=email]') || {}).value || '';
+      var role = /land|propiet/i.test(email) ? 'landlord' : 'student';
+      localStorage.setItem('tu_aval_user', JSON.stringify({
+        id: 'demo', name: role === 'student' ? 'Ana García' : 'Carlos Propietario', role: role
+      }));
+      window.location.href = role === 'student' ? "portal/estudiante/index.html" : "portal/propietario/index.html";
+      return;
+    }
+    if (action.indexOf('register.html') !== -1 || action.indexOf('auth/register') !== -1) {
+      e.preventDefault();
+      var roleInput = f.querySelector('input[name=role]');
+      var role = roleInput ? roleInput.value : 'student';
+      // Re-read from URL if hidden input absent
+      if (!roleInput) {
+        var u = new URL(window.location.href);
+        role = u.searchParams.get('role') || 'student';
+      }
+      var nameEl = f.querySelector('input[name=name]');
+      var name = nameEl ? nameEl.value : (role === 'student' ? 'Ana García' : 'Carlos Propietario');
+      localStorage.setItem('tu_aval_user', JSON.stringify({ id: 'demo', name: name, role: role }));
+      window.location.href = role === 'student' ? "portal/estudiante/index.html" : "portal/propietario/index.html";
+      return;
+    }
+    // Any other form: prevent default (they'd 404 statically) and show a toast.
+    if (action && action !== '#' && action.indexOf('javascript:') !== 0) {
+      e.preventDefault();
+      showToast('Formulario enviado (demo estático — no hay backend).');
+    }
+  }, true);
+
+  // --- Toast helper ---
+  window.showToast = function(msg) {
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0A2540;color:#fff;padding:14px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);z-index:99999;opacity:0;transition:opacity .25s;';
+    document.body.appendChild(t);
+    requestAnimationFrame(function() { t.style.opacity = '1'; });
+    setTimeout(function() { t.style.opacity = '0'; setTimeout(function(){ t.remove(); }, 300); }, 2400);
+  };
+
+  // --- Navbar: show logged-in user if present ---
+  try {
+    var u = JSON.parse(localStorage.getItem('tu_aval_user') || 'null');
+    if (u && u.name) {
+      var loginLinks = document.querySelectorAll('a[href*="auth/login"], a[href*="auth/register"]');
+      // We don't mutate these here; the portal pages are already "logged in" visually.
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function() {
+  function getUser() {
+    try { return JSON.parse(localStorage.getItem('tu_aval_user') || 'null'); }
+    catch (e) { return null; }
+  }
+  function relPrefix() {
+    // Count how deep the current page is so we can build a relative path back
+    // to the site root. e.g. /portal/estudiante/index.html -> "../../"
+    var p = window.location.pathname;
+    var i = p.indexOf('/tuaval-static/');
+    var rel;
+    if (i >= 0) rel = p.substring(i + '/tuaval-static/'.length);
+    else rel = p.replace(/^\/+/, '');
+    var depth = (rel.match(/\//g) || []).length;
+    return '../'.repeat(depth);
+  }
+  function rewriteNav() {
+    var u = getUser();
+    if (!u) return;
+    var prefix = relPrefix();
+    // Find login/register links in the top nav (skip ones inside the shim itself)
+    var loginLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      return /auth\/login\.html$/.test(h) || /^auth\/login\.html/.test(h) ||
+             /\.\.\/auth\/login\.html/.test(h) || /\.\.\/\.\.\/auth\/login\.html/.test(h);
+    });
+    var registerLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      // Match the "Comenzar" CTA — has bg-mint class and points to register
+      return (/auth\/register\.html/.test(h)) && /bg-mint/.test(a.className || '');
+    });
+    if (loginLinks.length === 0 && registerLinks.length === 0) return;
+
+    var portalUrl = u.role === 'landlord'
+      ? prefix + 'portal/propietario/index.html'
+      : prefix + 'portal/estudiante/index.html';
+    var homeUrl = prefix + 'index.html';
+
+    // Build the new user pill
+    var pill = document.createElement('a');
+    pill.href = portalUrl;
+    pill.className = 'flex items-center gap-2 text-gray-text hover:text-blue-medium transition';
+    pill.innerHTML = '<i class="fas fa-user-circle text-xl"></i><span class="font-medium">' +
+                     escapeHtml(u.name || 'Usuario') + '</span>';
+
+    var logout = document.createElement('a');
+    logout.href = 'javascript:void(0)';
+    logout.className = 'text-sm text-gray-text hover:text-danger transition';
+    logout.textContent = 'Salir';
+    logout.onclick = function(){
+      localStorage.removeItem('tu_aval_user');
+      localStorage.removeItem('tu_aval_session');
+      localStorage.removeItem('onboardingProgress');
+      window.location.href = homeUrl;
+    };
+
+    // Replace the first login link's parent block with [pill, logout]
+    if (loginLinks.length > 0) {
+      var loginEl = loginLinks[0];
+      var parent = loginEl.parentNode;
+      // Remove all login + register links inside this parent
+      Array.from(parent.querySelectorAll('a')).forEach(function(a){
+        var h = a.getAttribute('href') || '';
+        if (/auth\/(login|register)/.test(h)) a.remove();
+      });
+      parent.appendChild(pill);
+      parent.appendChild(logout);
+    }
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  // Run after DOM is ready (body already exists since we're at end of body)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', rewriteNav);
+  } else {
+    rewriteNav();
+  }
+
+  // Also expose a global "reset demo" helper
+  window.resetTuAvalDemo = function() {
+    localStorage.clear();
+    window.location.href = relPrefix() + 'index.html';
+  };
+})();
+</script>
+</body>
+    </html>
+  

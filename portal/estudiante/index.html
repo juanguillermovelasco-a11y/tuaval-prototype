@@ -1,0 +1,483 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portal del Estudiante | Tu Aval</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+          rel="stylesheet"
+        />
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  'blue-night': '#0A2540',
+                  'mint': '#3BE2B0',
+                  'blue-medium': '#4A90E2',
+                  'gray-text': '#425466',
+                  'success': '#24B47E',
+                  'warning': '#F6A609',
+                  'danger': '#E45858'
+                }
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                heading: ['Poppins', 'system-ui', 'sans-serif']
+              }
+            }
+          }
+        </script>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+          .portal-hero { position: relative; overflow: hidden; background: #0A2540; }
+          .portal-hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%); }
+          .portal-glow-a { position: absolute; width: 420px; height: 420px; border-radius: 9999px; filter: blur(80px); opacity: .35; background: #3BE2B0; top: -160px; left: -120px; }
+          .portal-glow-b { position: absolute; width: 380px; height: 380px; border-radius: 9999px; filter: blur(80px); opacity: .25; background: #4A90E2; bottom: -180px; right: -100px; }
+          .headline-gradient { background: linear-gradient(135deg, #ffffff 0%, #3BE2B0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+          .live-dot { position: relative; display: inline-block; width: 8px; height: 8px; background: #3BE2B0; border-radius: 9999px; }
+          .live-dot::after { content: ''; position: absolute; inset: 0; border-radius: 9999px; background: #3BE2B0; animation: pulseDot 2s ease-out infinite; }
+          @keyframes pulseDot { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(2.6); opacity: 0; } }
+          .glass-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); }
+        </style>
+      </head>
+      <body class="bg-gray-50 text-gray-text">
+        
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="../../index.html" class="flex items-center space-x-2">
+              <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+                <i class="fas fa-shield-alt text-white text-xl"></i>
+              </div>
+              <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
+            </a>
+          </div>
+          
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="../../como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
+            <a href="../../nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a>
+            <a href="../../estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
+            <a href="../../propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
+            <a href="../../inversionista.html" class="text-gray-text hover:text-blue-medium transition">Inversionistas</a>
+            <a href="../../validar-qr.html" class="text-mint hover:text-mint/80 transition font-semibold">
+              <i class="fas fa-qrcode mr-1"></i>Validar QR
+            </a>
+            <a href="../../precios.html" class="text-gray-text hover:text-blue-medium transition">Precios</a>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            
+              <a href="../../auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+              <a href="../../auth/register.html" 
+                 class="bg-mint text-white px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                Comenzar
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+        <main>
+        
+  <script>
+    // Progress tracking
+    function getProgress() {
+      return JSON.parse(localStorage.getItem('onboardingProgress') || '{"step": 0, "data": {}}');
+    }
+    
+    function saveProgress(step, data) {
+      const progress = getProgress();
+      progress.step = Math.max(progress.step, step);
+      progress.data = {...progress.data, ...data};
+      localStorage.setItem('onboardingProgress', JSON.stringify(progress));
+    }
+    
+    function getProgressPercentage() {
+      const progress = getProgress();
+      return (progress.step / 6) * 100;
+    }
+  </script>
+
+        <div class="min-h-screen bg-gray-50">
+          <!-- DARK PORTAL HERO -->
+          <section class="portal-hero text-white">
+            <div class="portal-glow-a"></div>
+            <div class="portal-glow-b"></div>
+            <div class="portal-hero-grid"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="live-dot"></span>
+                <span class="text-xs uppercase tracking-wider text-mint font-semibold">Sesión activa · Estudiante</span>
+              </div>
+              <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-3 leading-tight">
+                Hola, <span class="headline-gradient">Ana</span>.
+              </h1>
+              <p class="text-lg text-gray-300 max-w-2xl">
+                Completa tu verificación conversacional para emitir tu garantía QR y firmar tu próximo contrato de alquiler.
+              </p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="onboarding/chat.html" class="inline-flex items-center gap-2 bg-mint text-blue-night px-5 py-3 rounded-xl font-bold hover:shadow-[0_10px_40px_-10px_#3BE2B0] transition">
+                  <i class="fas fa-comment-dots"></i> Continuar verificación
+                </a>
+                <a href="lease-invitations.html" class="inline-flex items-center gap-2 glass-card text-white px-5 py-3 rounded-xl font-medium hover:bg-white/10 transition">
+                  <i class="fas fa-envelope"></i> Ver invitaciones
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 -mt-6 relative">
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <!-- Progress Card -->
+              <div class="lg:col-span-2">
+                <!-- Lease Invitations Alert -->
+                <div class="bg-warning bg-opacity-10 border-2 border-warning rounded-2xl p-6 mb-6">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <i class="fas fa-envelope text-warning text-3xl mr-4"></i>
+                      <div>
+                        <h3 class="text-lg font-bold text-blue-night mb-1">
+                          Tienes 1 invitación de arriendo pendiente
+                        </h3>
+                        <p class="text-sm text-gray-700">
+                          Revisa y firma el contrato de Calle Castellana 280, 7ºA
+                        </p>
+                      </div>
+                    </div>
+                    <a href="lease-invitations.html" 
+                       class="bg-warning text-white px-6 py-3 rounded-xl font-medium hover:bg-opacity-90 transition whitespace-nowrap">
+                      Ver invitación →
+                    </a>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm p-6 mb-6">
+                  <h2 class="text-xl font-heading font-bold text-blue-night mb-4">
+                    Tu verificación
+                  </h2>
+
+                  <div class="mb-6">
+                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                      <span id="progressText">Sin iniciar</span>
+                      <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3">
+                      <div id="progressBar" class="bg-mint h-3 rounded-full transition-all" style="width: 0%"></div>
+                    </div>
+                  </div>
+
+                  <div id="onboardingCta" class="bg-gradient-to-br from-mint/10 to-blue-medium/10 rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-br from-mint to-blue-medium rounded-full flex items-center justify-center mb-4">
+                      <i class="fas fa-comments text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-blue-night text-lg mb-2">Verificación conversacional</h3>
+                    <p class="text-sm text-gray-600 mb-4">
+                      Sin formularios ni archivos. Solo una charla de 3-4 minutos con nuestro asistente y emitimos tu garantía.
+                    </p>
+                    <a href="onboarding/chat.html" class="inline-block bg-mint text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-90 transition">
+                      <i class="fas fa-comment-dots mr-2"></i>Empezar conversación
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- QR Card (empty state) -->
+              <div class="lg:col-span-1">
+                <div class="bg-white rounded-2xl shadow-sm p-6 mb-6">
+                  <h2 class="text-xl font-heading font-bold text-blue-night mb-4">
+                    Mi Garantía QR
+                  </h2>
+                  
+                  <div class="bg-gray-100 rounded-xl p-8 text-center mb-4" id="qrContainer">
+                    <i class="fas fa-qrcode text-gray-400 text-6xl mb-4"></i>
+                    <p class="text-sm text-gray-600">
+                      Completa la verificación para obtener tu QR
+                    </p>
+                  </div>
+
+                  <div class="space-y-3 text-sm">
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Estado:</span>
+                      <span class="font-medium text-gray-900" id="qrStatus">Pendiente</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Cobertura:</span>
+                      <span class="font-medium text-gray-900" id="qrCoverage">-</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Vigencia:</span>
+                      <span class="font-medium text-gray-900" id="qrValidity">-</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Help Card -->
+                <div class="bg-mint bg-opacity-10 rounded-2xl p-6">
+                  <h3 class="font-semibold text-blue-night mb-2">
+                    <i class="fas fa-lightbulb mr-2"></i>
+                    ¿Necesitas ayuda?
+                  </h3>
+                  <p class="text-sm text-gray-700 mb-4">
+                    Consulta nuestra guía o contacta con soporte
+                  </p>
+                  <a href="../../ayuda.html" class="text-mint hover:underline text-sm font-medium">
+                    Ver centro de ayuda →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          function loadDashboard() {
+            const progress = JSON.parse(localStorage.getItem('onboardingProgress') || '{"step":0,"data":{},"completed":false}');
+            const completed = progress.completed === true;
+            const percentage = completed ? 100 : 0;
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressText').textContent = completed ? 'Verificación completada' : 'Sin iniciar';
+            document.getElementById('progressPercent').textContent = percentage + '%';
+
+            if (completed) {
+              document.getElementById('onboardingCta').innerHTML = `
+                <div class="w-16 h-16 mx-auto bg-success rounded-full flex items-center justify-center mb-4">
+                  <i class="fas fa-check text-white text-2xl"></i>
+                </div>
+                <h3 class="font-heading font-bold text-blue-night text-lg mb-2">¡Verificación completa!</h3>
+                <p class="text-sm text-gray-600 mb-4">Tu garantía está activa. Mira tu QR aquí al lado.</p>
+                <a href="onboarding/chat.html" class="text-mint text-sm font-medium hover:underline">Repetir conversación</a>
+              `;
+            }
+
+            if (completed) {
+              document.getElementById('qrContainer').innerHTML = `
+                <div class="bg-mint bg-opacity-10 p-6 rounded-xl">
+                  <i class="fas fa-qrcode text-mint text-6xl mb-4"></i>
+                  <div class="font-mono font-bold text-lg text-blue-night mb-2">AVAL-LF11-2025</div>
+                </div>
+              `;
+              document.getElementById('qrStatus').innerHTML = '<span class="text-green-600"><i class="fas fa-check-circle mr-1"></i>Activa</span>';
+              document.getElementById('qrCoverage').textContent = '12 meses';
+              document.getElementById('qrValidity').textContent = '12 meses';
+            }
+          }
+          
+          loadDashboard();
+        </script>
+      </main>
+        
+    <footer class="bg-blue-night text-white mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-heading font-bold mb-4">Tu Aval</h3>
+            <p class="text-gray-400 text-sm">
+              Garantía de alquiler verificada para estudiantes internacionales en España.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Producto</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="../../como-funciona.html" class="hover:text-mint transition">Cómo funciona</a></li>
+              <li><a href="../../estudiante.html" class="hover:text-mint transition">Para estudiantes</a></li>
+              <li><a href="../../propietario.html" class="hover:text-mint transition">Para propietarios</a></li>
+              <li><a href="../../precios.html" class="hover:text-mint transition">Precios</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Empresa</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="../../nosotros.html" class="hover:text-mint transition">Nosotros</a></li>
+              <li><a href="../../partners.html" class="hover:text-mint transition">Partners</a></li>
+              <li><a href="../../blog.html" class="hover:text-mint transition">Blog</a></li>
+              <li><a href="../../contacto.html" class="hover:text-mint transition">Contacto</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="../../legal/privacidad.html" class="hover:text-mint transition">Privacidad</a></li>
+              <li><a href="../../legal/terminos.html" class="hover:text-mint transition">Términos</a></li>
+              <li><a href="../../legal/modelo-garantia.html" class="hover:text-mint transition">Modelo de garantía</a></li>
+              <li><a href="../../legal/reclamaciones.html" class="hover:text-mint transition">Reclamaciones</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400">
+          <p>
+            © 2026 Tu Aval. Garantías directas de alquiler respaldadas por fondo propio.
+          </p>
+        </div>
+      </div>
+    </footer>
+  
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+      
+<script>
+(function() {
+  // --- Fake login ---
+  // Intercept any form that posts to /auth/login. Accept anything. If the
+  // email contains "land" or "propiet" -> landlord, else -> student.
+  document.addEventListener('submit', function(e) {
+    var f = e.target;
+    if (!f || f.tagName !== 'FORM') return;
+    var action = f.getAttribute('action') || '';
+    // Normalize: it may have been rewritten already
+    if (action.indexOf('login.html') !== -1 || action.indexOf('auth/login') !== -1) {
+      e.preventDefault();
+      var email = (f.querySelector('input[name=email]') || {}).value || '';
+      var role = /land|propiet/i.test(email) ? 'landlord' : 'student';
+      localStorage.setItem('tu_aval_user', JSON.stringify({
+        id: 'demo', name: role === 'student' ? 'Ana García' : 'Carlos Propietario', role: role
+      }));
+      window.location.href = role === 'student' ? "index.html" : "../propietario/index.html";
+      return;
+    }
+    if (action.indexOf('register.html') !== -1 || action.indexOf('auth/register') !== -1) {
+      e.preventDefault();
+      var roleInput = f.querySelector('input[name=role]');
+      var role = roleInput ? roleInput.value : 'student';
+      // Re-read from URL if hidden input absent
+      if (!roleInput) {
+        var u = new URL(window.location.href);
+        role = u.searchParams.get('role') || 'student';
+      }
+      var nameEl = f.querySelector('input[name=name]');
+      var name = nameEl ? nameEl.value : (role === 'student' ? 'Ana García' : 'Carlos Propietario');
+      localStorage.setItem('tu_aval_user', JSON.stringify({ id: 'demo', name: name, role: role }));
+      window.location.href = role === 'student' ? "index.html" : "../propietario/index.html";
+      return;
+    }
+    // Any other form: prevent default (they'd 404 statically) and show a toast.
+    if (action && action !== '#' && action.indexOf('javascript:') !== 0) {
+      e.preventDefault();
+      showToast('Formulario enviado (demo estático — no hay backend).');
+    }
+  }, true);
+
+  // --- Toast helper ---
+  window.showToast = function(msg) {
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0A2540;color:#fff;padding:14px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);z-index:99999;opacity:0;transition:opacity .25s;';
+    document.body.appendChild(t);
+    requestAnimationFrame(function() { t.style.opacity = '1'; });
+    setTimeout(function() { t.style.opacity = '0'; setTimeout(function(){ t.remove(); }, 300); }, 2400);
+  };
+
+  // --- Navbar: show logged-in user if present ---
+  try {
+    var u = JSON.parse(localStorage.getItem('tu_aval_user') || 'null');
+    if (u && u.name) {
+      var loginLinks = document.querySelectorAll('a[href*="auth/login"], a[href*="auth/register"]');
+      // We don't mutate these here; the portal pages are already "logged in" visually.
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function() {
+  function getUser() {
+    try { return JSON.parse(localStorage.getItem('tu_aval_user') || 'null'); }
+    catch (e) { return null; }
+  }
+  function relPrefix() {
+    // Count how deep the current page is so we can build a relative path back
+    // to the site root. e.g. /portal/estudiante/index.html -> "../../"
+    var p = window.location.pathname;
+    var i = p.indexOf('/tuaval-static/');
+    var rel;
+    if (i >= 0) rel = p.substring(i + '/tuaval-static/'.length);
+    else rel = p.replace(/^\/+/, '');
+    var depth = (rel.match(/\//g) || []).length;
+    return '../'.repeat(depth);
+  }
+  function rewriteNav() {
+    var u = getUser();
+    if (!u) return;
+    var prefix = relPrefix();
+    // Find login/register links in the top nav (skip ones inside the shim itself)
+    var loginLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      return /auth\/login\.html$/.test(h) || /^auth\/login\.html/.test(h) ||
+             /\.\.\/auth\/login\.html/.test(h) || /\.\.\/\.\.\/auth\/login\.html/.test(h);
+    });
+    var registerLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      // Match the "Comenzar" CTA — has bg-mint class and points to register
+      return (/auth\/register\.html/.test(h)) && /bg-mint/.test(a.className || '');
+    });
+    if (loginLinks.length === 0 && registerLinks.length === 0) return;
+
+    var portalUrl = u.role === 'landlord'
+      ? prefix + 'portal/propietario/index.html'
+      : prefix + 'portal/estudiante/index.html';
+    var homeUrl = prefix + 'index.html';
+
+    // Build the new user pill
+    var pill = document.createElement('a');
+    pill.href = portalUrl;
+    pill.className = 'flex items-center gap-2 text-gray-text hover:text-blue-medium transition';
+    pill.innerHTML = '<i class="fas fa-user-circle text-xl"></i><span class="font-medium">' +
+                     escapeHtml(u.name || 'Usuario') + '</span>';
+
+    var logout = document.createElement('a');
+    logout.href = 'javascript:void(0)';
+    logout.className = 'text-sm text-gray-text hover:text-danger transition';
+    logout.textContent = 'Salir';
+    logout.onclick = function(){
+      localStorage.removeItem('tu_aval_user');
+      localStorage.removeItem('tu_aval_session');
+      localStorage.removeItem('onboardingProgress');
+      window.location.href = homeUrl;
+    };
+
+    // Replace the first login link's parent block with [pill, logout]
+    if (loginLinks.length > 0) {
+      var loginEl = loginLinks[0];
+      var parent = loginEl.parentNode;
+      // Remove all login + register links inside this parent
+      Array.from(parent.querySelectorAll('a')).forEach(function(a){
+        var h = a.getAttribute('href') || '';
+        if (/auth\/(login|register)/.test(h)) a.remove();
+      });
+      parent.appendChild(pill);
+      parent.appendChild(logout);
+    }
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  // Run after DOM is ready (body already exists since we're at end of body)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', rewriteNav);
+  } else {
+    rewriteNav();
+  }
+
+  // Also expose a global "reset demo" helper
+  window.resetTuAvalDemo = function() {
+    localStorage.clear();
+    window.location.href = relPrefix() + 'index.html';
+  };
+})();
+</script>
+</body>
+    </html>
+  

@@ -1,0 +1,1293 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inicio | Tu Aval</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+          rel="stylesheet"
+        />
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  'blue-night': '#0A2540',
+                  'mint': '#3BE2B0',
+                  'blue-medium': '#4A90E2',
+                  'gray-text': '#425466',
+                  'success': '#24B47E',
+                  'warning': '#F6A609',
+                  'danger': '#E45858'
+                }
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                heading: ['Poppins', 'system-ui', 'sans-serif']
+              }
+            }
+          }
+        </script>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+          /* Hero grid background */
+          .hero-grid {
+            background-image:
+              linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 56px 56px;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+          }
+          .hero-glow-a, .hero-glow-b {
+            position: absolute; border-radius: 9999px; filter: blur(80px); opacity: .35; pointer-events: none;
+          }
+          .hero-glow-a { width: 520px; height: 520px; background: #3BE2B0; top: -120px; left: -120px; animation: floatA 14s ease-in-out infinite; }
+          .hero-glow-b { width: 600px; height: 600px; background: #4A90E2; bottom: -180px; right: -160px; animation: floatB 18s ease-in-out infinite; }
+          @keyframes floatA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(40px,30px) scale(1.05); } }
+          @keyframes floatB { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-30px,-40px) scale(1.08); } }
+          /* Hero headline gradient */
+          .headline-gradient { background: linear-gradient(135deg, #ffffff 0%, #3BE2B0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+          /* Live pulse */
+          .live-dot { position: relative; display: inline-block; width: 8px; height: 8px; background: #3BE2B0; border-radius: 9999px; }
+          .live-dot::after { content: ''; position: absolute; inset: 0; border-radius: 9999px; background: #3BE2B0; animation: pulseDot 2s ease-out infinite; }
+          @keyframes pulseDot { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(2.6); opacity: 0; } }
+          /* Slide entrance */
+          .hero-slide { animation: slideIn .55s cubic-bezier(.16,.84,.32,1); }
+          @keyframes slideIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+          /* Flow connectors */
+          .flow-connector { position: relative; }
+          .flow-connector::before, .flow-connector::after { content: ''; position: absolute; top: 50%; height: 2px; background: linear-gradient(90deg, #3BE2B0, #4A90E2); }
+          /* Floating card hover */
+          .float-card { transition: transform .4s ease, box-shadow .4s ease; }
+          .float-card:hover { transform: translateY(-4px); }
+          /* Actor pulse */
+          .actor-card { position: relative; overflow: hidden; }
+          .actor-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 0%, rgba(59,226,176,0.08), transparent 70%); pointer-events: none; }
+        </style>
+      </head>
+      <body class="bg-gray-50 text-gray-text">
+        
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+              <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+                <i class="fas fa-shield-alt text-white text-xl"></i>
+              </div>
+              <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
+            </a>
+          </div>
+          
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
+            <a href="nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a>
+            <a href="estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
+            <a href="propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
+            <a href="inversionista.html" class="text-gray-text hover:text-blue-medium transition">Inversionistas</a>
+            <a href="validar-qr.html" class="text-mint hover:text-mint/80 transition font-semibold">
+              <i class="fas fa-qrcode mr-1"></i>Validar QR
+            </a>
+            <a href="precios.html" class="text-gray-text hover:text-blue-medium transition">Precios</a>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            
+              <a href="auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+              <a href="auth/register.html" 
+                 class="bg-mint text-white px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                Comenzar
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+        <main>
+        <!-- Hero Section: rotating slides -->
+        <section class="bg-blue-night text-white py-24 relative overflow-hidden min-h-[680px]">
+          <!-- Decorative background -->
+          <div class="hero-glow-a"></div>
+          <div class="hero-glow-b"></div>
+          <div class="absolute inset-0 hero-grid"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-blue-night/0 via-blue-night/0 to-blue-night/60"></div>
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+            <!-- SLIDE 1: ESTUDIANTE -->
+            <div class="hero-slide" data-slide="0">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <span class="inline-flex items-center gap-2 bg-mint/10 text-mint border border-mint/30 px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur">
+                    <span class="live-dot"></span> Para estudiantes internacionales
+                  </span>
+                  <h1 class="text-5xl md:text-6xl font-heading font-extrabold mb-6 leading-[1.05] tracking-tight">
+                    Alquila en España <span class="headline-gradient">sin aval español</span>.
+                  </h1>
+                  <p class="text-xl text-gray-300 mb-8 max-w-xl leading-relaxed">
+                    Convertimos tu solvencia internacional en una garantía local verificable por QR. Lista para mostrar en visitas, portales y agencias.
+                  </p>
+                  <div class="flex flex-wrap gap-3 mb-8">
+                    <a href="auth/register.html?role=student"
+                       class="group inline-flex items-center gap-2 bg-mint text-blue-night px-7 py-4 rounded-xl hover:shadow-[0_10px_40px_-10px_#3BE2B0] transition font-semibold">
+                      Empezar verificación <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition"></i>
+                    </a>
+                    <a href="como-funciona.html" class="inline-flex items-center gap-2 border border-white/20 text-white px-7 py-4 rounded-xl hover:bg-white/5 transition font-medium">
+                      Cómo funciona
+                    </a>
+                  </div>
+                  <div class="flex items-center gap-6 text-sm text-gray-400">
+                    <div class="flex items-center gap-2"><i class="fas fa-bolt text-mint"></i> Aprobación en 10 min</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-lock text-mint"></i> Datos cifrados</div>
+                  </div>
+                </div>
+                <div class="hidden lg:block relative">
+                  <!-- Floating accent badges -->
+                  <div class="absolute -top-6 -left-6 bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-4 py-3 z-10 float-card">
+                    <div class="text-xs text-gray-300">Aprobación</div>
+                    <div class="text-mint font-bold flex items-center gap-1"><i class="fas fa-check-circle"></i> Verificada</div>
+                  </div>
+                  <div class="absolute -bottom-4 -right-2 bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-4 py-3 z-10 float-card">
+                    <div class="text-xs text-gray-300">Tiempo</div>
+                    <div class="text-white font-bold">8 min 23 s</div>
+                  </div>
+                  <div class="bg-white rounded-3xl shadow-[0_30px_80px_-15px_rgba(0,0,0,0.5)] p-8 float-card">
+                    <div class="flex items-center justify-between mb-6">
+                      <div>
+                        <div class="text-xs text-gray-500 uppercase tracking-wider font-semibold">Garantía QR</div>
+                        <div class="text-blue-night font-heading font-bold text-lg">AVAL-AG85-2025</div>
+                      </div>
+                      <span class="bg-success/10 text-success text-xs font-semibold px-3 py-1 rounded-full"><i class="fas fa-circle text-[6px] mr-1"></i>Vigente</span>
+                    </div>
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 mb-5 flex justify-center">
+                      <div class="bg-white p-4 rounded-xl shadow-inner">
+                        <i class="fas fa-qrcode text-blue-night text-7xl"></i>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 text-xs mb-5">
+                      <div class="bg-gray-50 rounded-lg p-3">
+                        <div class="text-gray-500">Cobertura</div>
+                        <div class="text-blue-night font-bold text-sm">12 meses</div>
+                      </div>
+                      <div class="bg-gray-50 rounded-lg p-3">
+                        <div class="text-gray-500">Vigencia</div>
+                        <div class="text-blue-night font-bold text-sm">12/2026</div>
+                      </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <span class="text-[10px] text-gray-400 uppercase tracking-wider">Partner</span>
+                      <span class="text-base font-bold" style="color:#00A86B;letter-spacing:-0.5px;">idealista</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2: PROPIETARIO -->
+            <div class="hero-slide hidden" data-slide="1">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <span class="inline-flex items-center gap-2 bg-blue-medium/15 text-white border border-blue-medium/40 px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur">
+                    <span class="live-dot"></span> Para propietarios
+                  </span>
+                  <h1 class="text-5xl md:text-6xl font-heading font-extrabold mb-6 leading-[1.05] tracking-tight">
+                    Si dejan de pagar, <span class="headline-gradient">te pagamos nosotros</span>.
+                  </h1>
+                  <p class="text-xl text-gray-300 mb-8 max-w-xl leading-relaxed">
+                    Verifica al inquilino con un QR. Cobro garantizado por nuestro fondo. Sin aseguradoras intermediarias.
+                  </p>
+                  <div class="flex flex-wrap gap-3 mb-8">
+                    <a href="auth/register.html?role=landlord"
+                       class="group inline-flex items-center gap-2 bg-mint text-blue-night px-7 py-4 rounded-xl hover:shadow-[0_10px_40px_-10px_#3BE2B0] transition font-semibold">
+                      Crear cuenta gratis <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition"></i>
+                    </a>
+                    <a href="validar-qr.html" class="inline-flex items-center gap-2 border border-white/20 text-white px-7 py-4 rounded-xl hover:bg-white/5 transition font-medium">
+                      <i class="fas fa-qrcode"></i> Validar un QR
+                    </a>
+                  </div>
+                  <div class="flex items-center gap-6 text-sm text-gray-400">
+                    <div class="flex items-center gap-2"><i class="fas fa-bolt text-mint"></i> Pago en 15 días</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-gavel text-mint"></i> Defensa jurídica</div>
+                  </div>
+                </div>
+                <div class="hidden lg:block relative">
+                  <div class="absolute -top-6 -left-4 bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-4 py-3 z-10 float-card">
+                    <div class="text-xs text-gray-300">Inquilino</div>
+                    <div class="text-mint font-bold flex items-center gap-1"><i class="fas fa-check-circle"></i> Cubierto</div>
+                  </div>
+                  <div class="absolute -bottom-4 -right-2 bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-4 py-3 z-10 float-card">
+                    <div class="text-xs text-gray-300">Pago</div>
+                    <div class="text-white font-bold">15 días</div>
+                  </div>
+                  <div class="bg-white rounded-3xl shadow-[0_30px_80px_-15px_rgba(0,0,0,0.5)] p-8 float-card">
+                    <div class="flex items-center gap-4 mb-6">
+                      <div class="w-14 h-14 bg-blue-medium/10 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-blue-medium text-2xl"></i>
+                      </div>
+                      <div>
+                        <div class="text-blue-night font-heading font-bold text-lg leading-tight">Ana García</div>
+                        <div class="text-xs text-gray-500">AVAL-AG85-2025 · 🇲🇽 → Madrid</div>
+                      </div>
+                    </div>
+                    <div class="space-y-2 text-sm mb-5">
+                      <div class="flex justify-between border-b border-gray-100 pb-2">
+                        <span class="text-gray-500">Renta cubierta</span>
+                        <span class="text-blue-night font-bold">€950/mes</span>
+                      </div>
+                      <div class="flex justify-between border-b border-gray-100 pb-2">
+                        <span class="text-gray-500">Cobertura</span>
+                        <span class="text-blue-night font-bold">12 meses</span>
+                      </div>
+                      <div class="flex justify-between border-b border-gray-100 pb-2">
+                        <span class="text-gray-500">Plazo pago</span>
+                        <span class="text-blue-night font-bold">15 días</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span class="text-gray-500">Estado</span>
+                        <span class="text-success font-bold"><i class="fas fa-circle text-[6px] mr-1"></i>Garantía activa</span>
+                      </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-mint/10 to-blue-medium/10 rounded-xl p-3 text-center text-xs text-gray-600">
+                      Respaldado por fondo de <strong class="text-blue-night">€42M</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3: INVERSIONISTA -->
+            <div class="hero-slide hidden" data-slide="2">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <span class="inline-flex items-center gap-2 bg-mint/10 text-mint border border-mint/30 px-4 py-2 rounded-full text-sm font-semibold mb-6 backdrop-blur">
+                    <span class="live-dot"></span> Para inversionistas
+                  </span>
+                  <h1 class="text-5xl md:text-6xl font-heading font-extrabold mb-6 leading-[1.05] tracking-tight">
+                    Renta fija <span class="headline-gradient">respaldada en alquileres</span>.
+                  </h1>
+                  <p class="text-xl text-gray-300 mb-8 max-w-xl leading-relaxed">
+                    Aporta capital al fondo que respalda contratos de alquiler verificados en España. <strong class="text-mint">8% anual fijo</strong>, liquidez trimestral, riesgo diversificado.
+                  </p>
+                  <div class="flex flex-wrap gap-3 mb-8">
+                    <a href="auth/register-investor.html"
+                       class="group inline-flex items-center gap-2 bg-mint text-blue-night px-7 py-4 rounded-xl hover:shadow-[0_10px_40px_-10px_#3BE2B0] transition font-semibold">
+                      Quiero invertir <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition"></i>
+                    </a>
+                    <a href="inversionista.html" class="inline-flex items-center gap-2 border border-white/20 text-white px-7 py-4 rounded-xl hover:bg-white/5 transition font-medium">
+                      Ver tesis completa
+                    </a>
+                  </div>
+                  <div class="flex items-center gap-6 text-sm text-gray-400">
+                    <div class="flex items-center gap-2"><i class="fas fa-bolt text-mint"></i> Desde €1.000</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-mint"></i> Auditado Big 4</div>
+                  </div>
+                </div>
+                <div class="hidden lg:block relative">
+                  <div class="absolute -top-6 -left-4 bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-4 py-3 z-10 float-card">
+                    <div class="text-xs text-gray-300">Pagos</div>
+                    <div class="text-mint font-bold">Trimestrales</div>
+                  </div>
+                  <div class="absolute -bottom-4 -right-2 bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-4 py-3 z-10 float-card">
+                    <div class="text-xs text-gray-300">Plazo</div>
+                    <div class="text-white font-bold">12 meses</div>
+                  </div>
+                  <div class="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur border border-white/20 rounded-3xl shadow-[0_30px_80px_-15px_rgba(0,0,0,0.5)] p-8 float-card">
+                    <div class="text-mint text-xs font-semibold uppercase tracking-wider mb-3">Rentabilidad estimada</div>
+                    <div class="flex items-baseline gap-2 mb-6">
+                      <span class="text-7xl font-heading font-extrabold text-white tracking-tight">9.4<span class="text-3xl">%</span></span>
+                      <span class="text-gray-300 text-sm">/ anual neto</span>
+                    </div>
+                    <div class="h-20 mb-5 flex items-end gap-1">
+                      <div class="flex-1 bg-mint/40 rounded-t" style="height:35%"></div>
+                      <div class="flex-1 bg-mint/50 rounded-t" style="height:50%"></div>
+                      <div class="flex-1 bg-mint/60 rounded-t" style="height:42%"></div>
+                      <div class="flex-1 bg-mint/70 rounded-t" style="height:62%"></div>
+                      <div class="flex-1 bg-mint/80 rounded-t" style="height:55%"></div>
+                      <div class="flex-1 bg-mint/90 rounded-t" style="height:75%"></div>
+                      <div class="flex-1 bg-mint rounded-t" style="height:90%"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 text-xs">
+                      <div class="bg-white/5 rounded-lg p-3">
+                        <div class="text-gray-400">Fondo</div>
+                        <div class="text-white font-bold text-base">€42M</div>
+                      </div>
+                      <div class="bg-white/5 rounded-lg p-3">
+                        <div class="text-gray-400">Siniestros</div>
+                        <div class="text-white font-bold text-base">&lt; 1.2%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DOTS -->
+            <div class="flex justify-center gap-3 mt-12">
+              <button class="hero-dot w-10 h-2 rounded-full bg-mint transition" data-dot="0" aria-label="Estudiante"></button>
+              <button class="hero-dot w-10 h-2 rounded-full bg-white/30 transition" data-dot="1" aria-label="Propietario"></button>
+              <button class="hero-dot w-10 h-2 rounded-full bg-white/30 transition" data-dot="2" aria-label="Inversionista"></button>
+            </div>
+          </div>
+
+          <script>
+            (function() {
+              const slides = document.querySelectorAll('.hero-slide');
+              const dots = document.querySelectorAll('.hero-dot');
+              let current = 0;
+              let timer;
+              function show(idx) {
+                slides.forEach((s, i) => s.classList.toggle('hidden', i !== idx));
+                dots.forEach((d, i) => {
+                  d.classList.toggle('bg-mint', i === idx);
+                  d.classList.toggle('bg-white/30', i !== idx);
+                });
+                current = idx;
+              }
+              function next() {
+                show((current + 1) % slides.length);
+              }
+              function start() {
+                stop();
+                timer = setInterval(next, 6000);
+              }
+              function stop() {
+                if (timer) clearInterval(timer);
+              }
+              dots.forEach((d, i) => d.addEventListener('click', () => { show(i); start(); }));
+              start();
+            })();
+          </script>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="py-12 bg-white border-b border-gray-200">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+              <p class="text-gray-600 font-medium">Confiado por estudiantes y propietarios</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-8 items-center">
+              <!-- IE University -->
+              <div class="flex justify-center items-center h-20">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-gray-600 opacity-60 hover:opacity-100 transition">
+                    IE University
+                  </div>
+                </div>
+              </div>
+              
+              <!-- UC3M -->
+              <div class="flex justify-center items-center h-20">
+                <div class="text-center">
+                  <div class="text-xl font-bold text-gray-600 opacity-60 hover:opacity-100 transition">
+                    Universidad Carlos III
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Belvo -->
+              <div class="flex justify-center items-center h-20">
+                <div class="text-center">
+                  <div class="text-xl font-bold text-gray-600 opacity-60 hover:opacity-100 transition">
+                    Belvo
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Tu Aval -->
+              <div class="flex justify-center items-center h-20">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-gray-600 opacity-60 hover:opacity-100 transition">
+                    Tu Aval
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Idealista -->
+              <div class="flex justify-center items-center h-20">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-gray-600 opacity-60 hover:opacity-100 transition" style="color: #00A86B;">
+                    idealista
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Fotocasa -->
+              <div class="flex justify-center items-center h-20">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-gray-600 opacity-60 hover:opacity-100 transition" style="color: #FF6B00;">
+                    Fotocasa
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- How it works: 3-actor flow -->
+        <section class="py-24 bg-white relative overflow-hidden">
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-mint/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+              <span class="inline-block bg-mint/10 text-success px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                <i class="fas fa-diagram-project mr-2"></i>Cómo funciona
+              </span>
+              <h2 class="text-4xl md:text-5xl font-heading font-extrabold text-blue-night mb-4 tracking-tight">
+                Tres partes. Un sistema. <span class="headline-gradient" style="background:linear-gradient(135deg,#0A2540,#3BE2B0);-webkit-background-clip:text;background-clip:text;color:transparent;">Cero fricción.</span>
+              </h2>
+              <p class="text-xl text-gray-text max-w-2xl mx-auto">
+                Así interactúan estudiantes, propietarios e inversionistas dentro de Tu Aval.
+              </p>
+            </div>
+
+            <!-- 3 ACTOR CARDS -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16 relative">
+              <!-- Connector lines (desktop only) -->
+              <div class="hidden lg:block absolute top-1/2 left-[33%] right-[33%] h-px bg-gradient-to-r from-mint via-blue-medium to-mint -translate-y-1/2 z-0"></div>
+
+              <!-- ESTUDIANTE -->
+              <div class="actor-card bg-white border border-gray-200 rounded-3xl p-8 relative z-10 shadow-sm hover:shadow-xl transition">
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-14 h-14 bg-mint/15 rounded-2xl flex items-center justify-center">
+                    <i class="fas fa-user-graduate text-mint text-2xl"></i>
+                  </div>
+                  <span class="text-xs font-bold text-mint bg-mint/10 px-3 py-1 rounded-full">ESTUDIANTE</span>
+                </div>
+                <h3 class="text-2xl font-heading font-bold text-blue-night mb-3">Verifica su solvencia</h3>
+                <p class="text-gray-text mb-6 leading-relaxed">Conecta sus cuentas internacionales en 8 minutos. Recibe un QR único que reemplaza el aval español.</p>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-center gap-3"><span class="w-6 h-6 bg-mint/15 rounded-full flex items-center justify-center text-[10px] font-bold text-mint">1</span> Conecta banco origen</li>
+                  <li class="flex items-center gap-3"><span class="w-6 h-6 bg-mint/15 rounded-full flex items-center justify-center text-[10px] font-bold text-mint">2</span> Scoring instantáneo</li>
+                  <li class="flex items-center gap-3"><span class="w-6 h-6 bg-mint/15 rounded-full flex items-center justify-center text-[10px] font-bold text-mint">3</span> Recibe QR garantía</li>
+                </ul>
+              </div>
+
+              <!-- TU AVAL CORE -->
+              <div class="actor-card bg-blue-night text-white border border-mint/30 rounded-3xl p-8 relative z-10 shadow-2xl lg:scale-105">
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-14 h-14 bg-mint rounded-2xl flex items-center justify-center">
+                    <i class="fas fa-shield-alt text-blue-night text-2xl"></i>
+                  </div>
+                  <span class="text-xs font-bold text-blue-night bg-mint px-3 py-1 rounded-full">TU AVAL</span>
+                </div>
+                <h3 class="text-2xl font-heading font-bold text-white mb-3">Conecta y respalda</h3>
+                <p class="text-gray-300 mb-6 leading-relaxed">Emite la garantía respaldada por el fondo. Si hay impago, paga al propietario directo.</p>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-center gap-3"><span class="w-6 h-6 bg-mint/20 rounded-full flex items-center justify-center text-[10px] font-bold text-mint">A</span> Fondo €42M</li>
+                  <li class="flex items-center gap-3"><span class="w-6 h-6 bg-mint/20 rounded-full flex items-center justify-center text-[10px] font-bold text-mint">B</span> Validación QR pública</li>
+                  <li class="flex items-center gap-3"><span class="w-6 h-6 bg-mint/20 rounded-full flex items-center justify-center text-[10px] font-bold text-mint">C</span> Pago directo en 15 días</li>
+                </ul>
+              </div>
+
+              <!-- PROPIETARIO -->
+              <div class="actor-card bg-white border border-gray-200 rounded-3xl p-8 relative z-10 shadow-sm hover:shadow-xl transition">
+                <div class="flex items-center justify-between mb-6">
+                  <div class="w-14 h-14 bg-blue-medium/15 rounded-2xl flex items-center justify-center">
+                    <i class="fas fa-home text-blue-medium text-2xl"></i>
+                  </div>
+                  <span class="text-xs font-bold text-blue-medium bg-blue-medium/10 px-3 py-1 rounded-full">PROPIETARIO</span>
+                </div>
+                <h3 class="text-2xl font-heading font-bold text-blue-night mb-3">Valida y alquila tranquilo</h3>
+                <p class="text-gray-text mb-6 leading-relaxed">Escanea el QR del estudiante. En 10 segundos sabe que el alquiler está respaldado y firma el contrato.</p>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex items-center gap-3"><span class="w-6 h-6 bg-blue-medium/15 rounded-full flex items-center justify-center text-[10px] font-bold text-blue-medium">1</span> Escanea QR del candidato</li>
+                  <li class="flex items-center gap-3"><span class="w-6 h-6 bg-blue-medium/15 rounded-full flex items-center justify-center text-[10px] font-bold text-blue-medium">2</span> Ve cobertura y vigencia</li>
+                  <li class="flex items-center gap-3"><span class="w-6 h-6 bg-blue-medium/15 rounded-full flex items-center justify-center text-[10px] font-bold text-blue-medium">3</span> Firma con confianza</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- INVESTOR LAYER -->
+            <div class="bg-gradient-to-br from-blue-night to-blue-medium rounded-3xl p-8 md:p-10 text-white relative overflow-hidden">
+              <div class="absolute -top-20 -right-20 w-80 h-80 bg-mint/10 rounded-full blur-3xl"></div>
+              <div class="grid lg:grid-cols-3 gap-8 items-center relative">
+                <div class="lg:col-span-2">
+                  <span class="inline-flex items-center gap-2 bg-mint/20 text-mint px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                    <i class="fas fa-layer-group"></i> Capa de capital
+                  </span>
+                  <h3 class="text-3xl md:text-4xl font-heading font-bold mb-3 leading-tight">
+                    Un <span class="headline-gradient">fondo propio</span> respalda cada garantía emitida.
+                  </h3>
+                  <p class="text-gray-300 text-lg max-w-2xl">
+                    El capital de inversores acreditados cubre el riesgo de impago de los contratos verificados. Retorno fijo del 8% anual con liquidez trimestral y diversificación automática.
+                  </p>
+                </div>
+                <div class="text-center lg:text-right">
+                  <a href="inversionista.html" class="inline-flex items-center gap-2 bg-mint text-blue-night px-6 py-4 rounded-xl font-bold hover:shadow-[0_10px_40px_-10px_#3BE2B0] transition">
+                    Ver tesis de inversión <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Benefits comparison -->
+        <section class="py-20 bg-gray-50">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-heading font-bold text-blue-night mb-12 text-center">
+              Beneficios para todos
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Student benefits -->
+              <div class="bg-white rounded-2xl shadow-sm p-8">
+                <div class="flex items-center mb-6">
+                  <div class="bg-mint bg-opacity-10 p-3 rounded-xl">
+                    <i class="fas fa-user-graduate text-mint text-2xl"></i>
+                  </div>
+                  <h3 class="text-2xl font-heading font-bold text-blue-night ml-4">
+                    Para estudiantes
+                  </h3>
+                </div>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-mint mt-1 mr-3"></i>
+                    <span class="text-gray-700">Menor desembolso inicial - evita depósitos extra</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-mint mt-1 mr-3"></i>
+                    <span class="text-gray-700">Servicio de cerrajero incluido</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-mint mt-1 mr-3"></i>
+                    <span class="text-gray-700">Contrato formal y protección legal</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-mint mt-1 mr-3"></i>
+                    <span class="text-gray-700">Proceso 100% online en minutos</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-mint mt-1 mr-3"></i>
+                    <span class="text-gray-700">QR verificable en segundos</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Landlord benefits -->
+              <div class="bg-white rounded-2xl shadow-sm p-8">
+                <div class="flex items-center mb-6">
+                  <div class="bg-blue-medium bg-opacity-10 p-3 rounded-xl">
+                    <i class="fas fa-home text-blue-medium text-2xl"></i>
+                  </div>
+                  <h3 class="text-2xl font-heading font-bold text-blue-night ml-4">
+                    Para propietarios
+                  </h3>
+                </div>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-blue-medium mt-1 mr-3"></i>
+                    <span class="text-gray-700">Cobertura de 6-12 meses de renta</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-blue-medium mt-1 mr-3"></i>
+                    <span class="text-gray-700">Verificación instantánea por QR</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-blue-medium mt-1 mr-3"></i>
+                    <span class="text-gray-700">Documentación estándar incluida</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-blue-medium mt-1 mr-3"></i>
+                    <span class="text-gray-700">Gestión de siniestros simplificada</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20">
+          <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-heading font-bold text-blue-night mb-6">
+              ¿Listo para comenzar?
+            </h2>
+            <p class="text-xl text-gray-600 mb-8">
+              Crea tu cuenta gratis y obtén tu Garantía QR en minutos
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="auth/register.html?role=student" 
+                 class="bg-mint text-white px-8 py-4 rounded-xl hover:bg-opacity-90 transition font-semibold">
+                <i class="fas fa-user-graduate mr-2"></i>
+                Comenzar como estudiante
+              </a>
+              <a href="auth/register.html?role=landlord" 
+                 class="bg-blue-night text-white px-8 py-4 rounded-xl hover:bg-opacity-90 transition font-semibold">
+                <i class="fas fa-home mr-2"></i>
+                Comenzar como propietario
+              </a>
+              <a href="validar-qr.html" 
+                 class="bg-white text-blue-medium border-2 border-blue-medium px-8 py-4 rounded-xl hover:bg-blue-50 transition font-semibold">
+                <i class="fas fa-qrcode mr-2"></i>
+                Validar un QR
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials (Simple Preview) -->
+        <section class="py-20 bg-blue-night text-white overflow-hidden">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-heading font-bold mb-4 text-center">
+              Lo que dicen nuestros usuarios
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 text-center">
+              Más de 3,000 estudiantes ya confían en Tu Aval
+            </p>
+            
+            <div class="relative">
+              <div class="testimonial-slider flex gap-6 animate-scroll">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white bg-opacity-10 backdrop-blur rounded-2xl p-6 min-w-[280px] flex-shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/150?img=47" alt="Valentina" class="w-14 h-14 rounded-full object-cover border-2 border-mint" />
+                    <div class="ml-4">
+                      <div class="font-semibold text-lg">Valentina Rodríguez</div>
+                      <div class="text-sm text-mint">🇲🇽 México → Madrid</div>
+                    </div>
+                  </div>
+                  <div class="flex mb-3">
+                    <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <p class="text-gray-200 leading-relaxed">"Encontré piso en 4 días mostrando el QR. Los propietarios confiaban al instante."</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white bg-opacity-10 backdrop-blur rounded-2xl p-6 min-w-[280px] flex-shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Carlos" class="w-14 h-14 rounded-full object-cover border-2 border-mint" />
+                    <div class="ml-4">
+                      <div class="font-semibold text-lg">Carlos Martínez</div>
+                      <div class="text-sm text-mint">🏠 Propietario en Chamberí</div>
+                    </div>
+                  </div>
+                  <div class="flex mb-3">
+                    <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <p class="text-gray-200 leading-relaxed">"Con la garantía me quedé tranquilo. Proceso súper fácil. Ahora solo alquilo con Tu Aval."</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white bg-opacity-10 backdrop-blur rounded-2xl p-6 min-w-[280px] flex-shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/150?img=32" alt="Ana" class="w-14 h-14 rounded-full object-cover border-2 border-mint" />
+                    <div class="ml-4">
+                      <div class="font-semibold text-lg">Ana Gómez</div>
+                      <div class="text-sm text-mint">🇨🇴 Colombia → Barcelona</div>
+                    </div>
+                  </div>
+                  <div class="flex mb-3">
+                    <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <p class="text-gray-200 leading-relaxed">"Tu Aval me dio la oportunidad de estudiar mi MBA tranquila sin conseguir aval español."</p>
+                </div>
+
+                <!-- Duplicate for infinite scroll -->
+                <div class="testimonial-card bg-white bg-opacity-10 backdrop-blur rounded-2xl p-6 min-w-[280px] flex-shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/150?img=47" alt="Valentina" class="w-14 h-14 rounded-full object-cover border-2 border-mint" />
+                    <div class="ml-4">
+                      <div class="font-semibold text-lg">Valentina Rodríguez</div>
+                      <div class="text-sm text-mint">🇲🇽 México → Madrid</div>
+                    </div>
+                  </div>
+                  <div class="flex mb-3">
+                    <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <p class="text-gray-200 leading-relaxed">"Encontré piso en 4 días mostrando el QR. Los propietarios confiaban al instante."</p>
+                </div>
+
+                <div class="testimonial-card bg-white bg-opacity-10 backdrop-blur rounded-2xl p-6 min-w-[280px] flex-shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Carlos" class="w-14 h-14 rounded-full object-cover border-2 border-mint" />
+                    <div class="ml-4">
+                      <div class="font-semibold text-lg">Carlos Martínez</div>
+                      <div class="text-sm text-mint">🏠 Propietario en Chamberí</div>
+                    </div>
+                  </div>
+                  <div class="flex mb-3">
+                    <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <p class="text-gray-200 leading-relaxed">"Con la garantía me quedé tranquilo. Proceso súper fácil. Ahora solo alquilo con Tu Aval."</p>
+                </div>
+
+                <div class="testimonial-card bg-white bg-opacity-10 backdrop-blur rounded-2xl p-6 min-w-[280px] flex-shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/150?img=32" alt="Ana" class="w-14 h-14 rounded-full object-cover border-2 border-mint" />
+                    <div class="ml-4">
+                      <div class="font-semibold text-lg">Ana Gómez</div>
+                      <div class="text-sm text-mint">🇨🇴 Colombia → Barcelona</div>
+                    </div>
+                  </div>
+                  <div class="flex mb-3">
+                    <i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i><i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <p class="text-gray-200 leading-relaxed">"Tu Aval me dio la oportunidad de estudiar mi MBA tranquila sin conseguir aval español."</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-8">
+              <a href="nosotros.html" class="inline-flex items-center text-mint hover:text-white transition font-medium">
+                Ver todos los testimonios
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Press Section -->
+        <section class="py-20 bg-gray-50">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-heading font-bold text-blue-night mb-4 text-center">
+              Apariciones en prensa
+            </h2>
+            <p class="text-xl text-gray-600 mb-12 text-center">
+              Cómo estamos ayudando a miles de estudiantes con sus problemas de arrendamiento
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Press Article 1 -->
+              <article onclick="openArticleModal('article1')" class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition group cursor-pointer">
+                <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                  <i class="fas fa-newspaper text-white text-6xl opacity-50 group-hover:opacity-70 transition"></i>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-mint bg-opacity-10 text-mint px-3 py-1 rounded-full text-xs font-semibold">
+                      El País
+                    </span>
+                    <span class="text-gray-500 text-xs">15 dic 2025</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-blue-night mb-2 group-hover:text-mint transition">
+                    La startup que está revolucionando el alquiler para estudiantes internacionales
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    Tu Aval ha facilitado el acceso a vivienda para más de 3,000 estudiantes latinoamericanos en España mediante su innovadora garantía digital verificable por QR.
+                  </p>
+                  <span class="text-mint font-medium text-sm hover:underline">
+                    Leer artículo completo →
+                  </span>
+                </div>
+              </article>
+
+              <!-- Press Article 2 -->
+              <article onclick="openArticleModal('article2')" class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition group cursor-pointer">
+                <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                  <i class="fas fa-newspaper text-white text-6xl opacity-50 group-hover:opacity-70 transition"></i>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-blue-medium bg-opacity-10 text-blue-medium px-3 py-1 rounded-full text-xs font-semibold">
+                      TechCrunch
+                    </span>
+                    <span class="text-gray-500 text-xs">8 ene 2026</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-blue-night mb-2 group-hover:text-mint transition">
+                    Tu Aval cierra ronda seed de €2M para expandirse por Europa
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    La fintech española Tu Aval ha cerrado una ronda de financiación de 2 millones de euros liderada por Seaya Ventures para expandir su solución de garantía de alquiler.
+                  </p>
+                  <span class="text-mint font-medium text-sm hover:underline">
+                    Leer artículo completo →
+                  </span>
+                </div>
+              </article>
+
+              <!-- Press Article 3 -->
+              <article onclick="openArticleModal('article3')" class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg transition group cursor-pointer">
+                <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                  <i class="fas fa-newspaper text-white text-6xl opacity-50 group-hover:opacity-70 transition"></i>
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="bg-success bg-opacity-10 text-success px-3 py-1 rounded-full text-xs font-semibold">
+                      Expansión
+                    </span>
+                    <span class="text-gray-500 text-xs">12 ene 2026</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-blue-night mb-2 group-hover:text-mint transition">
+                    Cómo la tecnología está solucionando el problema del aval en España
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    Empresas como Tu Aval están democratizando el acceso a la vivienda de alquiler mediante la digitalización de las garantías y el uso de open banking para verificar solvencia.
+                  </p>
+                  <span class="text-mint font-medium text-sm hover:underline">
+                    Leer artículo completo →
+                  </span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Article Modals -->
+        <div id="articleModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4" onclick="closeArticleModal()">
+          <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl" onclick="event.stopPropagation()">
+            <div id="modalContent"></div>
+          </div>
+        </div>
+
+        <script>
+          const articles = {
+            article1: {
+              source: 'El País',
+              date: '15 de diciembre de 2025',
+              color: 'from-blue-500 to-blue-600',
+              title: 'La startup que está revolucionando el alquiler para estudiantes internacionales',
+              author: 'María García Sánchez',
+              content: `
+                <p class="text-lg leading-relaxed mb-6">
+                  <strong>Madrid.</strong> En pleno centro de la capital española, un grupo de jóvenes emprendedores latinoamericanos ha creado una solución que está transformando el acceso a la vivienda para miles de estudiantes internacionales que cada año llegan a España con el sueño de estudiar en sus prestigiosas universidades.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  Tu Aval, la startup fundada en 2023, ha logrado en menos de dos años facilitar el acceso a vivienda a más de 3,000 estudiantes mediante un sistema de garantía digital verificable por código QR. Una solución tan simple como revolucionaria que elimina uno de los mayores obstáculos que enfrentan los estudiantes extranjeros: conseguir un aval español.
+                </p>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">El problema de siempre</h3>
+                <p class="leading-relaxed mb-6">
+                  "Cuando llegamos a Madrid en 2022, pasamos tres meses durmiendo en hostales porque ningún propietario quería alquilarnos sin un aval español", cuenta Diego Martínez, cofundador de Tu Aval. "Teníamos el dinero, teníamos ingresos demostrables de nuestras familias, pero el sistema español no estaba preparado para validar nuestra solvencia".
+                </p>
+                <p class="leading-relaxed mb-6">
+                  Esta experiencia, compartida por miles de estudiantes latinoamericanos, asiáticos y africanos cada año, fue el origen de Tu Aval. La startup identificó que el problema no era la capacidad de pago de los estudiantes, sino la falta de herramientas para validar su confiabilidad de forma rápida y transparente.
+                </p>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">La solución tecnológica</h3>
+                <p class="leading-relaxed mb-6">
+                  Tu Aval funciona mediante una combinación de tecnología financiera (open banking), verificación de identidad y garantías de garantía respaldadas por Tu Aval, una de las garantes más grandes de Europa. El estudiante conecta sus cuentas bancarias de forma segura, Tu Aval verifica sus ingresos y genera una garantía de alquiler que se materializa en un código QR.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  Este QR puede ser verificado instantáneamente por cualquier propietario o agencia inmobiliaria, mostrando la cobertura de la garantía (hasta 13,800€), la vigencia de la garantía y los datos del asegurador. Todo en menos de 5 segundos.
+                </p>
+                <blockquote class="border-l-4 border-mint bg-gray-50 p-6 my-8 italic">
+                  "Hemos reducido el tiempo de conseguir un piso de meses a días. Nuestros estudiantes firman contratos en menos de una semana después de recibir su QR", explica Laura Chen, directora de operaciones de Tu Aval.
+                </blockquote>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">Impacto social y económico</h3>
+                <p class="leading-relaxed mb-6">
+                  El impacto de Tu Aval va más allá de facilitar alquileres. La startup está contribuyendo a hacer de España un destino más atractivo para estudiantes internacionales, un sector que aporta más de 3,000 millones de euros anuales a la economía española según datos del Ministerio de Universidades.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  Universidades como IE University, Carlos III y Complutense han comenzado a recomendar Tu Aval a sus estudiantes internacionales. Incluso algunas agencias inmobiliarias especializadas en alquiler a estudiantes ya incluyen el QR de Tu Aval como método válido de garantía en sus requisitos.
+                </p>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">Planes de expansión</h3>
+                <p class="leading-relaxed mb-6">
+                  Aunque Tu Aval comenzó enfocándose en estudiantes latinoamericanos en Madrid y Barcelona, la startup ya opera en 15 ciudades españolas y tiene planes de expandirse a Portugal, Italia y Francia en 2026.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  "Nuestro objetivo es que ningún estudiante tenga que pasar por lo que nosotros pasamos", concluye Martínez. "El talento no debería tener fronteras, y una vivienda digna es el primer paso para que los estudiantes puedan enfocarse en lo que realmente importa: su educación".
+                </p>
+              `
+            },
+            article2: {
+              source: 'TechCrunch',
+              date: '8 de enero de 2026',
+              color: 'from-purple-500 to-purple-600',
+              title: 'Tu Aval cierra ronda seed de €2M para expandirse por Europa',
+              author: 'James Peterson',
+              content: `
+                <p class="text-lg leading-relaxed mb-6">
+                  <strong>Madrid, Spain.</strong> Spanish fintech startup Tu Aval has closed a €2 million seed round led by Seaya Ventures, with participation from Bankinter's venture arm and several angel investors from the proptech and insurtech sectors.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  The startup, which provides digital rental guarantees for international students, plans to use the funding to expand its operations across Southern Europe and enhance its technology platform with AI-powered risk assessment capabilities.
+                </p>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">Addressing a €50B Market Gap</h3>
+                <p class="leading-relaxed mb-6">
+                  Tu Aval tackles a significant pain point in the European rental market: the traditional guarantee system that effectively locks out international students and young professionals who lack local family connections or employment history.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  "We've identified a market gap worth over €50 billion across Europe," explains Diego Martínez, CEO and co-founder. "There are approximately 2.5 million international students in Europe, and most of them struggle to secure housing due to outdated guarantee requirements."
+                </p>
+                <blockquote class="border-l-4 border-mint bg-gray-50 p-6 my-8 italic">
+                  "Tu Aval is bringing much-needed innovation to a sector that has remained largely unchanged for decades. Their combination of open banking, insurtech, and UX design is exceptional." - Beatriz González, Partner at Seaya Ventures
+                </blockquote>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">Technology and Business Model</h3>
+                <p class="leading-relaxed mb-6">
+                  The platform leverages open banking APIs to verify student income (typically from family support or scholarships), issues insurance-backed guarantees through partnerships with major insurers like Tu Aval, and delivers everything through a mobile-first interface with QR code verification.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  Tu Aval charges students a one-time fee of €89-149 depending on the rental amount and contract duration, with no recurring charges. The company has maintained a default rate below 2%, significantly lower than the industry average of 5-7%.
+                </p>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">Impressive Growth Metrics</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                  <li>3,000+ students served since launch in 2023</li>
+                  <li>Average time to guarantee issuance: 24 hours</li>
+                  <li>95% customer satisfaction rating</li>
+                  <li>Partnership with 500+ landlords and property management companies</li>
+                  <li>Operating in 15 Spanish cities</li>
+                </ul>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">Expansion Plans</h3>
+                <p class="leading-relaxed mb-6">
+                  With this fresh capital, Tu Aval aims to launch operations in Portugal (Q2 2026), Italy (Q3 2026), and France (Q4 2026). The company is also developing partnerships with major European universities to integrate its service directly into student onboarding processes.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  "We're also building an AI layer that will make risk assessment even more accurate while maintaining our commitment to transparency and fairness," adds Laura Chen, COO. "Our goal is to approve more students while keeping our default rates low."
+                </p>
+              `
+            },
+            article3: {
+              source: 'Expansión',
+              date: '12 de enero de 2026',
+              color: 'from-green-500 to-green-600',
+              title: 'Cómo la tecnología está solucionando el problema del aval en España',
+              author: 'Carlos Ruiz',
+              content: `
+                <p class="text-lg leading-relaxed mb-6">
+                  <strong>Madrid.</strong> El mercado de alquiler español está experimentando una transformación digital impulsada por startups que están democratizando el acceso a la vivienda mediante soluciones tecnológicas innovadoras. Entre estas empresas destaca Tu Aval, que ha logrado eliminar una de las barreras más significativas: el requisito del aval tradicional.
+                </p>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">El problema estructural del aval</h3>
+                <p class="leading-relaxed mb-6">
+                  En España, el 78% de los propietarios exigen un aval bancario o personal que garantice el pago de entre 6 y 12 mensualidades de alquiler. Para estudiantes internacionales y jóvenes profesionales sin familia en España, este requisito es prácticamente imposible de cumplir.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  "El sistema tradicional de avales fue diseñado en los años 80 y no ha evolucionado con la realidad demográfica actual", explica María Torres, economista especializada en vivienda de IESE Business School. "Estamos excluyendo a un segmento completo de inquilinos solventes simplemente por falta de herramientas de verificación modernas".
+                </p>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">La solución: Open Banking + Insurtech</h3>
+                <p class="leading-relaxed mb-6">
+                  Tu Aval y otras startups similares están utilizando tecnología de open banking para verificar la capacidad de pago de los inquilinos de forma instantánea. En lugar de depender de documentos físicos y avales personales, analizan datos bancarios en tiempo real con el consentimiento explícito del usuario.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  Una vez verificada la solvencia, emiten garantías de garantía respaldadas por garantes establecidas. En el caso de Tu Aval, su socio Tu Aval garantiza hasta €13,800 por impago de renta, daños en la propiedad y gastos legales.
+                </p>
+                <div class="bg-mint bg-opacity-10 rounded-xl p-6 my-8">
+                  <h4 class="font-bold text-lg text-blue-night mb-3">Ventajas del sistema digital vs. tradicional:</h4>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <div class="font-semibold text-mint mb-2">Sistema tradicional:</div>
+                      <ul class="text-sm space-y-1">
+                        <li>• Requiere aval personal o bancario</li>
+                        <li>• Proceso de 2-4 semanas</li>
+                        <li>• Costos de €300-1,000</li>
+                        <li>• Excluye a extranjeros</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <div class="font-semibold text-mint mb-2">Sistema digital (Tu Aval):</div>
+                      <ul class="text-sm space-y-1">
+                        <li>• Solo requiere cuenta bancaria</li>
+                        <li>• Proceso de 24-48 horas</li>
+                        <li>• Costo de €89-149</li>
+                        <li>• Inclusivo para todos</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">Impacto en el mercado inmobiliario</h3>
+                <p class="leading-relaxed mb-6">
+                  La adopción de estas soluciones digitales está teniendo un efecto dominó en el ecosistema inmobiliario. Según datos de Fotocasa, los pisos anunciados que aceptan garantías digitales como Tu Aval reciben un 35% más de solicitudes de alquiler que los que solo aceptan avales tradicionales.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  "Para nosotros como agencia inmobiliaria, trabajar con Tu Aval nos ha abierto un segmento de mercado completamente nuevo", comenta Roberto Sánchez, director de una agencia en Chamberí. "Ahora podemos alquilar a estudiantes internacionales con la misma confianza que a inquilinos locales".
+                </p>
+                <h3 class="text-2xl font-bold text-blue-night mb-4 mt-8">Regulación y futuro del sector</h3>
+                <p class="leading-relaxed mb-6">
+                  El Ministerio de Vivienda ha mostrado interés en regular este nuevo segmento de garantías digitales, con el objetivo de establecer estándares de protección tanto para inquilinos como para propietarios.
+                </p>
+                <p class="leading-relaxed mb-6">
+                  "Vemos estas innovaciones como positivas para el mercado", declara un portavoz del ministerio. "Cualquier herramienta que facilite el acceso a vivienda digna sin comprometer la seguridad de los propietarios merece ser estudiada y potencialmente apoyada desde las instituciones".
+                </p>
+                <p class="leading-relaxed mb-6">
+                  Con más de 3,000 estudiantes ya utilizando Tu Aval y planes de expansión por toda Europa, parece que el futuro del sector de garantías de alquiler será definitivamente digital.
+                </p>
+              `
+            }
+          };
+
+          function openArticleModal(articleId) {
+            const article = articles[articleId];
+            const modal = document.getElementById('articleModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+              <div class="sticky top-0 bg-gradient-to-r ${article.color} text-white p-8 rounded-t-3xl">
+                <button onclick="closeArticleModal()" class="absolute top-6 right-6 w-10 h-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center transition">
+                  <i class="fas fa-times text-xl"></i>
+                </button>
+                <div class="max-w-3xl">
+                  <div class="flex items-center gap-3 mb-4">
+                    <span class="bg-white bg-opacity-20 px-4 py-1 rounded-full text-sm font-semibold">
+                      ${article.source}
+                    </span>
+                    <span class="text-sm opacity-90">${article.date}</span>
+                  </div>
+                  <h2 class="text-4xl font-heading font-bold mb-4">${article.title}</h2>
+                  <p class="text-sm opacity-90">Por ${article.author}</p>
+                </div>
+              </div>
+              <div class="p-8 md:p-12">
+                <div class="max-w-3xl mx-auto text-gray-700">
+                  ${article.content}
+                  <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+                    <button onclick="closeArticleModal()" class="bg-mint text-white px-8 py-3 rounded-xl font-semibold hover:bg-opacity-90 transition">
+                      Cerrar artículo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+          }
+
+          function closeArticleModal() {
+            const modal = document.getElementById('articleModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+          }
+
+          // Close modal with ESC key
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+              closeArticleModal();
+            }
+          });
+        </script>
+
+        <!-- Made in Spain -->
+        <section class="py-12 bg-white border-t border-gray-200">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+              <p class="text-gray-500 text-sm mb-2">
+                Made in Spain with
+                <span class="text-red-500 text-lg mx-1">❤️</span>
+              </p>
+              <p class="text-gray-400 text-xs">
+                Helping international students find their home in Spain since 2025
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <style>
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          .animate-scroll {
+            animation: scroll 30s linear infinite;
+          }
+          
+          .testimonial-slider:hover {
+            animation-play-state: paused;
+          }
+        </style>
+      </main>
+        
+    <footer class="bg-blue-night text-white mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-heading font-bold mb-4">Tu Aval</h3>
+            <p class="text-gray-400 text-sm">
+              Garantía de alquiler verificada para estudiantes internacionales en España.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Producto</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="como-funciona.html" class="hover:text-mint transition">Cómo funciona</a></li>
+              <li><a href="estudiante.html" class="hover:text-mint transition">Para estudiantes</a></li>
+              <li><a href="propietario.html" class="hover:text-mint transition">Para propietarios</a></li>
+              <li><a href="precios.html" class="hover:text-mint transition">Precios</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Empresa</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="nosotros.html" class="hover:text-mint transition">Nosotros</a></li>
+              <li><a href="partners.html" class="hover:text-mint transition">Partners</a></li>
+              <li><a href="blog.html" class="hover:text-mint transition">Blog</a></li>
+              <li><a href="contacto.html" class="hover:text-mint transition">Contacto</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="legal/privacidad.html" class="hover:text-mint transition">Privacidad</a></li>
+              <li><a href="legal/terminos.html" class="hover:text-mint transition">Términos</a></li>
+              <li><a href="legal/modelo-garantia.html" class="hover:text-mint transition">Modelo de garantía</a></li>
+              <li><a href="legal/reclamaciones.html" class="hover:text-mint transition">Reclamaciones</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400">
+          <p>
+            © 2026 Tu Aval. Garantías directas de alquiler respaldadas por fondo propio.
+          </p>
+        </div>
+      </div>
+    </footer>
+  
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+      
+<script>
+(function() {
+  // --- Fake login ---
+  // Intercept any form that posts to /auth/login. Accept anything. If the
+  // email contains "land" or "propiet" -> landlord, else -> student.
+  document.addEventListener('submit', function(e) {
+    var f = e.target;
+    if (!f || f.tagName !== 'FORM') return;
+    var action = f.getAttribute('action') || '';
+    // Normalize: it may have been rewritten already
+    if (action.indexOf('login.html') !== -1 || action.indexOf('auth/login') !== -1) {
+      e.preventDefault();
+      var email = (f.querySelector('input[name=email]') || {}).value || '';
+      var role = /land|propiet/i.test(email) ? 'landlord' : 'student';
+      localStorage.setItem('tu_aval_user', JSON.stringify({
+        id: 'demo', name: role === 'student' ? 'Ana García' : 'Carlos Propietario', role: role
+      }));
+      window.location.href = role === 'student' ? "portal/estudiante/index.html" : "portal/propietario/index.html";
+      return;
+    }
+    if (action.indexOf('register.html') !== -1 || action.indexOf('auth/register') !== -1) {
+      e.preventDefault();
+      var roleInput = f.querySelector('input[name=role]');
+      var role = roleInput ? roleInput.value : 'student';
+      // Re-read from URL if hidden input absent
+      if (!roleInput) {
+        var u = new URL(window.location.href);
+        role = u.searchParams.get('role') || 'student';
+      }
+      var nameEl = f.querySelector('input[name=name]');
+      var name = nameEl ? nameEl.value : (role === 'student' ? 'Ana García' : 'Carlos Propietario');
+      localStorage.setItem('tu_aval_user', JSON.stringify({ id: 'demo', name: name, role: role }));
+      window.location.href = role === 'student' ? "portal/estudiante/index.html" : "portal/propietario/index.html";
+      return;
+    }
+    // Any other form: prevent default (they'd 404 statically) and show a toast.
+    if (action && action !== '#' && action.indexOf('javascript:') !== 0) {
+      e.preventDefault();
+      showToast('Formulario enviado (demo estático — no hay backend).');
+    }
+  }, true);
+
+  // --- Toast helper ---
+  window.showToast = function(msg) {
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0A2540;color:#fff;padding:14px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);z-index:99999;opacity:0;transition:opacity .25s;';
+    document.body.appendChild(t);
+    requestAnimationFrame(function() { t.style.opacity = '1'; });
+    setTimeout(function() { t.style.opacity = '0'; setTimeout(function(){ t.remove(); }, 300); }, 2400);
+  };
+
+  // --- Navbar: show logged-in user if present ---
+  try {
+    var u = JSON.parse(localStorage.getItem('tu_aval_user') || 'null');
+    if (u && u.name) {
+      var loginLinks = document.querySelectorAll('a[href*="auth/login"], a[href*="auth/register"]');
+      // We don't mutate these here; the portal pages are already "logged in" visually.
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function() {
+  function getUser() {
+    try { return JSON.parse(localStorage.getItem('tu_aval_user') || 'null'); }
+    catch (e) { return null; }
+  }
+  function relPrefix() {
+    // Count how deep the current page is so we can build a relative path back
+    // to the site root. e.g. /portal/estudiante/index.html -> "../../"
+    var p = window.location.pathname;
+    var i = p.indexOf('/tuaval-static/');
+    var rel;
+    if (i >= 0) rel = p.substring(i + '/tuaval-static/'.length);
+    else rel = p.replace(/^\/+/, '');
+    var depth = (rel.match(/\//g) || []).length;
+    return '../'.repeat(depth);
+  }
+  function rewriteNav() {
+    var u = getUser();
+    if (!u) return;
+    var prefix = relPrefix();
+    // Find login/register links in the top nav (skip ones inside the shim itself)
+    var loginLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      return /auth\/login\.html$/.test(h) || /^auth\/login\.html/.test(h) ||
+             /\.\.\/auth\/login\.html/.test(h) || /\.\.\/\.\.\/auth\/login\.html/.test(h);
+    });
+    var registerLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      // Match the "Comenzar" CTA — has bg-mint class and points to register
+      return (/auth\/register\.html/.test(h)) && /bg-mint/.test(a.className || '');
+    });
+    if (loginLinks.length === 0 && registerLinks.length === 0) return;
+
+    var portalUrl = u.role === 'landlord'
+      ? prefix + 'portal/propietario/index.html'
+      : prefix + 'portal/estudiante/index.html';
+    var homeUrl = prefix + 'index.html';
+
+    // Build the new user pill
+    var pill = document.createElement('a');
+    pill.href = portalUrl;
+    pill.className = 'flex items-center gap-2 text-gray-text hover:text-blue-medium transition';
+    pill.innerHTML = '<i class="fas fa-user-circle text-xl"></i><span class="font-medium">' +
+                     escapeHtml(u.name || 'Usuario') + '</span>';
+
+    var logout = document.createElement('a');
+    logout.href = 'javascript:void(0)';
+    logout.className = 'text-sm text-gray-text hover:text-danger transition';
+    logout.textContent = 'Salir';
+    logout.onclick = function(){
+      localStorage.removeItem('tu_aval_user');
+      localStorage.removeItem('tu_aval_session');
+      localStorage.removeItem('onboardingProgress');
+      window.location.href = homeUrl;
+    };
+
+    // Replace the first login link's parent block with [pill, logout]
+    if (loginLinks.length > 0) {
+      var loginEl = loginLinks[0];
+      var parent = loginEl.parentNode;
+      // Remove all login + register links inside this parent
+      Array.from(parent.querySelectorAll('a')).forEach(function(a){
+        var h = a.getAttribute('href') || '';
+        if (/auth\/(login|register)/.test(h)) a.remove();
+      });
+      parent.appendChild(pill);
+      parent.appendChild(logout);
+    }
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  // Run after DOM is ready (body already exists since we're at end of body)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', rewriteNav);
+  } else {
+    rewriteNav();
+  }
+
+  // Also expose a global "reset demo" helper
+  window.resetTuAvalDemo = function() {
+    localStorage.clear();
+    window.location.href = relPrefix() + 'index.html';
+  };
+})();
+</script>
+</body>
+    </html>
+  

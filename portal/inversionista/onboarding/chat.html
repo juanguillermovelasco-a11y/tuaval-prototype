@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onboarding inversionista | Tu Aval</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'blue-night': '#0A2540',
+              'mint': '#3BE2B0',
+              'blue-medium': '#4A90E2',
+              'gray-text': '#425466',
+              'success': '#24B47E'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            heading: ['Poppins', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+      body { font-family: Inter, system-ui, sans-serif; }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-text">
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <a href="../../../index.html" class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
+          </a>
+          <a href="../index.html" class="text-sm text-gray-text hover:text-blue-medium">
+            <i class="fas fa-times mr-1"></i> Salir del onboarding
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div id="chat-root"></div>
+    </main>
+
+    <script src="../../../static/chat-engine.js"></script>
+    <script>
+      const script = [
+        { bot: '¡Hola! 👋 Soy el asistente de Tu Aval Capital. Voy a contarte cómo invertir en el fondo y conocer un poco tu perfil. Todo por aquí, sin formularios. ¿Empezamos?' },
+        { id: 'ready', bot: '', input: 'choice', choices: ['Sí, vamos', 'Primero cuéntame el modelo'] },
+        {
+          bot: (d) => d.ready === 'Primero cuéntame el modelo'
+            ? 'Claro. Tu Aval gestiona un fondo que respalda garantías de alquiler para estudiantes y migrantes en España. Ese fondo cobra primas en cada contrato. Las primas, menos los pocos siniestros (<1.2% histórico), se reparten como retorno a los inversionistas: 8-10% anual neto. ¿Cuadra?'
+            : '¡Perfecto! 🚀'
+        },
+        { id: 'name', bot: '¿Cómo te llamas?', input: 'text', placeholder: 'Tu nombre' },
+        { id: 'origin_story', bot: (d) => `Mucho gusto, ${d.name.split(' ')[0]} 🤝. Una pregunta importante para nosotros: ¿tú o tu familia migraron en algún momento?`, input: 'choice', choices: ['Sí, yo migré', 'Mis padres/abuelos migraron', 'No, pero conozco la realidad', 'Prefiero no decir'] },
+        {
+          bot: (d) => {
+            if (d.origin_story === 'Sí, yo migré') return 'Entonces sabes exactamente lo que sentía nuestro primer estudiante: la cara del casero pidiendo un avalista español. Bienvenido a la red. 💚';
+            if (d.origin_story === 'Mis padres/abuelos migraron') return 'Eres parte de la historia que estamos honrando. Tus padres abrieron tu camino — ahora tú abres el de otros.';
+            return 'Gracias por sumarte. No hace falta haber pasado por ahí para entender que esto importa.';
+          }
+        },
+        { id: 'investor_type', bot: '¿Cómo te defines como inversionista?', input: 'choice', choices: ['Particular (primera vez)', 'Particular con experiencia', 'Family office', 'Fondo institucional'] },
+        { id: 'risk', bot: '¿Cuál es tu tolerancia al riesgo?', input: 'choice', choices: ['Muy conservador', 'Conservador', 'Moderado', 'Agresivo'] },
+        { bot: 'Tranquilo — el fondo Tu Aval encaja con perfiles conservadores y moderados. Capital senior, diversificación radical, y reservas obligatorias.' },
+        { id: 'amount', bot: '¿Cuánto te gustaría invertir inicialmente? (en euros, mínimo €1.000)', input: 'number', placeholder: 'Ej: 10000', min: 1000 },
+        {
+          bot: (d) => {
+            const amt = parseInt(d.amount) || 10000;
+            const low = Math.round(amt * 0.08);
+            const high = Math.round(amt * 0.10);
+            return `Con €${amt.toLocaleString('es-ES')} podrías generar entre <strong>€${low.toLocaleString('es-ES')} y €${high.toLocaleString('es-ES')}</strong> al año. Pagos trimestrales.`;
+          }
+        },
+        { id: 'horizon', bot: '¿Por cuánto tiempo te gustaría mantener la inversión?', input: 'choice', choices: ['12 meses (mínimo)', '2-3 años', '5 años', 'Indefinido'] },
+        { id: 'motivation', bot: '¿Qué te llevó a interesarte por Tu Aval?', input: 'choice', choices: ['La rentabilidad', 'El propósito', 'Ambos por igual', 'Me lo recomendó alguien'] },
+        {
+          bot: (d) => d.motivation === 'La rentabilidad'
+            ? 'Honesto. La buena noticia: aquí no tienes que elegir entre rentabilidad y propósito. Ambas vienen juntas.'
+            : 'Eso nos llena. Aquí tu dinero hace dos cosas a la vez.'
+        },
+        { id: 'country', bot: '¿En qué país resides actualmente?', input: 'choice', choices: ['España', 'México', 'Colombia', 'Chile', 'Argentina', 'EE.UU.', 'Otro'] },
+        { id: 'phone', bot: 'Para coordinar la transferencia y los reportes, ¿cuál es tu teléfono?', input: 'text', placeholder: '+34 ...' },
+        { bot: (d) => `¡Listo, ${d.name.split(' ')[0]}! Tengo todo lo necesario. Voy a preparar tu cuenta de inversionista...` },
+        { bot: '🔄 Verificando perfil KYC...', delay: 1200 },
+        { bot: '🔄 Asignando tu posición en el fondo...', delay: 1200 },
+        { bot: '🔄 Generando proyección personalizada...', delay: 1200 },
+        { bot: '✅ ¡Bienvenido al fondo Tu Aval Capital! Tu portal está activo.' },
+        { bot: 'En tu portal verás tu posición, los pagos trimestrales esperados, y a cuántos estudiantes/migrantes está respaldando tu capital ahora mismo.' },
+        { id: 'final', bot: '¿Quieres ir ahora a tu portal?', input: 'choice', choices: ['Sí, ir al portal', 'Más tarde'] }
+      ];
+
+      TuAvalChat.init({
+        mountSelector: '#chat-root',
+        storageKey: 'tu_aval_onboarding_inversionista',
+        botName: 'Asistente Tu Aval Capital',
+        script,
+        onComplete: (data) => {
+          localStorage.setItem('investorOnboardingComplete', 'true');
+          localStorage.setItem('investorData', JSON.stringify(data));
+          if (data.final === 'Sí, ir al portal') {
+            setTimeout(() => { window.location.href = '../index.html'; }, 800);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

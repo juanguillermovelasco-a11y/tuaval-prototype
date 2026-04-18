@@ -1,0 +1,594 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Invitaciones de Arriendo | Tu Aval</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+          rel="stylesheet"
+        />
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  'blue-night': '#0A2540',
+                  'mint': '#3BE2B0',
+                  'blue-medium': '#4A90E2',
+                  'gray-text': '#425466',
+                  'success': '#24B47E',
+                  'warning': '#F6A609',
+                  'danger': '#E45858'
+                }
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', 'sans-serif'],
+                heading: ['Poppins', 'system-ui', 'sans-serif']
+              }
+            }
+          }
+        </script>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+        </style>
+      </head>
+      <body class="bg-gray-50 text-gray-text">
+        
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="../../index.html" class="flex items-center space-x-2">
+              <div class="w-10 h-10 bg-gradient-to-br from-mint to-blue-medium rounded-lg flex items-center justify-center">
+                <i class="fas fa-shield-alt text-white text-xl"></i>
+              </div>
+              <span class="text-2xl font-heading font-bold text-blue-night">Tu Aval</span>
+            </a>
+          </div>
+          
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="../../como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
+            <a href="../../nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a>
+            <a href="../../estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
+            <a href="../../propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
+            <a href="../../inversionista.html" class="text-gray-text hover:text-blue-medium transition">Inversionistas</a>
+            <a href="../../validar-qr.html" class="text-mint hover:text-mint/80 transition font-semibold">
+              <i class="fas fa-qrcode mr-1"></i>Validar QR
+            </a>
+            <a href="../../precios.html" class="text-gray-text hover:text-blue-medium transition">Precios</a>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            
+              <a href="../../auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+              <a href="../../auth/register.html" 
+                 class="bg-mint text-white px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                Comenzar
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+        <main>
+        <div class="min-h-screen bg-gray-50 py-8">
+          <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+              <div class="flex items-center text-sm text-gray-600 mb-4">
+                <a href="index.html" class="hover:text-mint">Portal</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <span>Invitaciones de Arriendo</span>
+              </div>
+              <h1 class="text-3xl font-heading font-bold text-blue-night mb-2">
+                Invitaciones de Arriendo
+              </h1>
+              <p class="text-gray-600">
+                Revisa y firma los contratos de arrendamiento pendientes
+              </p>
+            </div>
+
+            <!-- Active Invitation -->
+            <div class="bg-white rounded-2xl shadow-sm p-8 mb-6">
+              <div class="flex items-start justify-between mb-6">
+                <div>
+                  <div class="inline-block bg-warning bg-opacity-10 border-2 border-warning text-warning px-4 py-2 rounded-lg font-semibold mb-3">
+                    <i class="fas fa-clock mr-2"></i>
+                    Pendiente de firma
+                  </div>
+                  <h2 class="text-2xl font-bold text-blue-night mb-2">
+                    Contrato de Arrendamiento - Calle Castellana 280
+                  </h2>
+                  <p class="text-gray-600">
+                    Enviado por: <strong>Juan Martínez</strong> • Recibido el 14 enero 2026
+                  </p>
+                </div>
+              </div>
+
+              <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 mb-6">
+                <div class="flex items-center mb-4">
+                  <i class="fas fa-info-circle text-blue-600 text-2xl mr-3"></i>
+                  <div>
+                    <h3 class="font-bold text-blue-night">Proceso de firma digital</h3>
+                    <p class="text-sm text-gray-700">El contrato será firmado mediante DocuSign. Tu garantía se activará automáticamente tras la firma.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Property Details -->
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h3 class="text-lg font-bold text-blue-night mb-4">
+                    <i class="fas fa-home mr-2"></i>
+                    Detalles de la Propiedad
+                  </h3>
+                  <div class="space-y-3 text-sm">
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Dirección:</span>
+                      <span class="font-medium text-right">Calle Castellana 280, 7ºA<br/>28046 Madrid</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Tipo:</span>
+                      <span class="font-medium">Apartamento</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Habitaciones:</span>
+                      <span class="font-medium">2 habitaciones, 1 baño</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Metros cuadrados:</span>
+                      <span class="font-medium">85 m²</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Amueblado:</span>
+                      <span class="font-medium text-green-600">Sí</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-bold text-blue-night mb-4">
+                    <i class="fas fa-file-contract mr-2"></i>
+                    Condiciones del Contrato
+                  </h3>
+                  <div class="space-y-3 text-sm">
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Renta mensual:</span>
+                      <span class="font-bold text-xl text-mint">€1,150</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Fianza:</span>
+                      <span class="font-medium">€1,150 (1 mes)</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Duración:</span>
+                      <span class="font-medium">12 meses</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Fecha de inicio:</span>
+                      <span class="font-medium">01 septiembre 2025</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-gray-600">Fecha de fin:</span>
+                      <span class="font-medium">31 agosto 2026</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lease Terms -->
+              <div class="border-t-2 border-gray-200 pt-6 mb-6">
+                <h3 class="text-lg font-bold text-blue-night mb-4">
+                  <i class="fas fa-list-check mr-2"></i>
+                  Términos y Condiciones del Arrendamiento
+                </h3>
+                <div class="bg-gray-50 rounded-xl p-6 max-h-96 overflow-y-auto text-sm">
+                  <div class="space-y-4">
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-2">1. OBJETO DEL CONTRATO</h4>
+                      <p class="text-gray-700">El ARRENDADOR cede en arrendamiento al ARRENDATARIO la vivienda sita en Calle Castellana 280, 7ºA, 28046 Madrid, para uso exclusivo de vivienda habitual.</p>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-2">2. DURACIÓN</h4>
+                      <p class="text-gray-700">El contrato tendrá una duración de 12 meses, desde el 01/09/2025 hasta el 31/08/2026. A la finalización del plazo, el contrato se entenderá prorrogado por períodos anuales, salvo denuncia por cualquiera de las partes con un mínimo de 30 días de antelación.</p>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-2">3. RENTA</h4>
+                      <p class="text-gray-700">El ARRENDATARIO abonará una renta mensual de €1,150 (MIL CIENTO CINCUENTA EUROS), pagadera dentro de los 5 primeros días de cada mes. El pago se realizará mediante transferencia bancaria a la cuenta proporcionada por el ARRENDADOR.</p>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-2">4. FIANZA</h4>
+                      <p class="text-gray-700">Se establece una fianza legal de €1,150 (equivalente a una mensualidad), que será depositada en el organismo competente de la Comunidad de Madrid. Esta fianza será devuelta al finalizar el contrato, previa comprobación del buen estado de la vivienda.</p>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-2">5. GASTOS Y SUMINISTROS</h4>
+                      <p class="text-gray-700">Los gastos de suministros (agua, electricidad, gas, internet) correrán a cargo del ARRENDATARIO. La comunidad de propietarios está incluida en la renta mensual.</p>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-2">6. USO Y CONSERVACIÓN</h4>
+                      <p class="text-gray-700">El ARRENDATARIO se obliga a destinar la vivienda exclusivamente para uso habitacional, mantenerla en buen estado de conservación y realizar las reparaciones necesarias derivadas del uso ordinario.</p>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-2">7. GARANTÍA DE PAGO - TU AVAL</h4>
+                      <p class="text-gray-700 font-semibold">El ARRENDATARIO cuenta con una Garantía Directa de Alquiler emitida por Tu Aval con código <span class="text-mint">AVAL-LF11-2025</span>, que garantiza el pago de hasta 12 meses de renta en caso de impago. Esta garantía se activará automáticamente al firmarse el presente contrato.</p>
+                      <div class="bg-mint bg-opacity-10 border-2 border-mint rounded-lg p-4 mt-3">
+                        <p class="text-sm font-medium text-blue-night">
+                          <i class="fas fa-shield-check mr-2"></i>
+                          Cobertura total: €13,800 (12 meses × €1,150/mes)
+                        </p>
+                        <p class="text-sm text-gray-700 mt-2">
+                          <i class="fas fa-check mr-2"></i>
+                          Incluye servicio de cerrajero y defensa jurídica
+                        </p>
+                        <p class="text-sm text-gray-700 mt-1">
+                          <i class="fas fa-check mr-2"></i>
+                          Activación inmediata tras firma digital
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-2">8. RESOLUCIÓN</h4>
+                      <p class="text-gray-700">El incumplimiento de cualquiera de las obligaciones pactadas facultará a la parte cumplidora para solicitar la resolución del contrato, con derecho a indemnización por daños y perjuicios.</p>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-900 mb-2">9. JURISDICCIÓN</h4>
+                      <p class="text-gray-700">Las partes se someten a los Juzgados y Tribunales de Madrid para cualquier controversia derivada del presente contrato.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Attached Documents -->
+              <div class="border-t-2 border-gray-200 pt-6 mb-6">
+                <h3 class="text-lg font-bold text-blue-night mb-4">
+                  <i class="fas fa-paperclip mr-2"></i>
+                  Documentos Adjuntos
+                </h3>
+                <div class="space-y-3">
+                  <a href="#" class="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition">
+                    <i class="fas fa-file-pdf text-red-500 text-2xl mr-4"></i>
+                    <div class="flex-1">
+                      <div class="font-semibold text-gray-900">Contrato_Arrendamiento_Completo.pdf</div>
+                      <div class="text-sm text-gray-600">2.1 MB • Contrato completo con todos los anexos</div>
+                    </div>
+                    <i class="fas fa-download text-gray-400"></i>
+                  </a>
+                  <a href="#" class="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition">
+                    <i class="fas fa-file-pdf text-blue-500 text-2xl mr-4"></i>
+                    <div class="flex-1">
+                      <div class="font-semibold text-gray-900">Certificado_Eficiencia_Energetica.pdf</div>
+                      <div class="text-sm text-gray-600">845 KB • Certificado energético de la vivienda</div>
+                    </div>
+                    <i class="fas fa-download text-gray-400"></i>
+                  </a>
+                  <a href="#" class="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition">
+                    <i class="fas fa-file-image text-green-500 text-2xl mr-4"></i>
+                    <div class="flex-1">
+                      <div class="font-semibold text-gray-900">Inventario_Mobiliario.pdf</div>
+                      <div class="text-sm text-gray-600">1.3 MB • Listado de muebles y electrodomésticos</div>
+                    </div>
+                    <i class="fas fa-download text-gray-400"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="bg-mint bg-opacity-5 border-2 border-mint rounded-xl p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h4 class="font-bold text-blue-night mb-1">¿Listo para firmar?</h4>
+                    <p class="text-sm text-gray-700">Al hacer clic en "Firmar con DocuSign", se abrirá una ventana segura para completar tu firma digital.</p>
+                  </div>
+                  <div class="flex gap-3 ml-6">
+                    <button 
+                      onclick="declineInvitation()"
+                      class="bg-gray-200 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-300 transition">
+                      Rechazar
+                    </button>
+                    <button 
+                      onclick="signWithDocuSign()"
+                      class="bg-mint text-white px-6 py-3 rounded-xl font-medium hover:bg-opacity-90 transition">
+                      <i class="fas fa-signature mr-2"></i>
+                      Firmar con DocuSign
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Help Section -->
+            <div class="bg-blue-50 rounded-xl p-6">
+              <h3 class="font-semibold text-blue-night mb-3">
+                <i class="fas fa-question-circle mr-2"></i>
+                ¿Tienes dudas sobre el contrato?
+              </h3>
+              <p class="text-sm text-gray-700 mb-4">
+                Puedes contactar directamente con el propietario o con nuestro equipo de soporte para resolver cualquier consulta antes de firmar.
+              </p>
+              <div class="flex gap-3">
+                <a href="mailto:juan.martinez@example.com" 
+                   class="text-sm text-mint hover:underline font-medium">
+                  <i class="fas fa-envelope mr-1"></i>
+                  Contactar propietario
+                </a>
+                <span class="text-gray-400">•</span>
+                <a href="../../ayuda.html" 
+                   class="text-sm text-mint hover:underline font-medium">
+                  <i class="fas fa-life-ring mr-1"></i>
+                  Centro de ayuda
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          function signWithDocuSign() {
+            // Simulate DocuSign integration
+            const confirmed = confirm(
+              '🔐 Firma Digital con DocuSign
+
+' +
+              'Serás redirigido a DocuSign para completar la firma digital del contrato.
+
+' +
+              '✓ Tu garantía AVAL-LF11-2025 se activará automáticamente
+' +
+              '✓ Recibirás una copia firmada por email
+' +
+              '✓ El propietario será notificado
+
+' +
+              '¿Deseas continuar con la firma?'
+            );
+            
+            if (confirmed) {
+              // In production, this would redirect to DocuSign
+              alert(
+                '✅ Firma completada exitosamente
+
+' +
+                'Tu contrato ha sido firmado digitalmente.
+
+' +
+                'Próximos pasos:
+' +
+                '• Recibirás el contrato firmado por email
+' +
+                '• Tu garantía AVAL-LF11-2025 está ahora ACTIVA
+' +
+                '• El propietario ha sido notificado
+' +
+                '• Ya puedes mudarte el 01/09/2025'
+              );
+              window.location.href='index.html';
+            }
+          }
+
+          function declineInvitation() {
+            const confirmed = confirm(
+              '¿Estás seguro de que deseas rechazar esta invitación?
+
+' +
+              'Esta acción notificará al propietario y la invitación será cancelada.'
+            );
+            
+            if (confirmed) {
+              alert('La invitación ha sido rechazada.
+El propietario ha sido notificado.');
+              window.location.href='index.html';
+            }
+          }
+        </script>
+      </main>
+        
+    <footer class="bg-blue-night text-white mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-heading font-bold mb-4">Tu Aval</h3>
+            <p class="text-gray-400 text-sm">
+              Garantía de alquiler verificada para estudiantes internacionales en España.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Producto</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="../../como-funciona.html" class="hover:text-mint transition">Cómo funciona</a></li>
+              <li><a href="../../estudiante.html" class="hover:text-mint transition">Para estudiantes</a></li>
+              <li><a href="../../propietario.html" class="hover:text-mint transition">Para propietarios</a></li>
+              <li><a href="../../precios.html" class="hover:text-mint transition">Precios</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Empresa</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="../../nosotros.html" class="hover:text-mint transition">Nosotros</a></li>
+              <li><a href="../../partners.html" class="hover:text-mint transition">Partners</a></li>
+              <li><a href="../../blog.html" class="hover:text-mint transition">Blog</a></li>
+              <li><a href="../../contacto.html" class="hover:text-mint transition">Contacto</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-sm font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="../../legal/privacidad.html" class="hover:text-mint transition">Privacidad</a></li>
+              <li><a href="../../legal/terminos.html" class="hover:text-mint transition">Términos</a></li>
+              <li><a href="../../legal/modelo-garantia.html" class="hover:text-mint transition">Modelo de garantía</a></li>
+              <li><a href="../../legal/reclamaciones.html" class="hover:text-mint transition">Reclamaciones</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400">
+          <p>
+            © 2026 Tu Aval. Garantías directas de alquiler respaldadas por fondo propio.
+          </p>
+        </div>
+      </div>
+    </footer>
+  
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+      
+<script>
+(function() {
+  // --- Fake login ---
+  // Intercept any form that posts to /auth/login. Accept anything. If the
+  // email contains "land" or "propiet" -> landlord, else -> student.
+  document.addEventListener('submit', function(e) {
+    var f = e.target;
+    if (!f || f.tagName !== 'FORM') return;
+    var action = f.getAttribute('action') || '';
+    // Normalize: it may have been rewritten already
+    if (action.indexOf('login.html') !== -1 || action.indexOf('auth/login') !== -1) {
+      e.preventDefault();
+      var email = (f.querySelector('input[name=email]') || {}).value || '';
+      var role = /land|propiet/i.test(email) ? 'landlord' : 'student';
+      localStorage.setItem('tu_aval_user', JSON.stringify({
+        id: 'demo', name: role === 'student' ? 'Ana García' : 'Carlos Propietario', role: role
+      }));
+      window.location.href = role === 'student' ? "index.html" : "../propietario/index.html";
+      return;
+    }
+    if (action.indexOf('register.html') !== -1 || action.indexOf('auth/register') !== -1) {
+      e.preventDefault();
+      var roleInput = f.querySelector('input[name=role]');
+      var role = roleInput ? roleInput.value : 'student';
+      // Re-read from URL if hidden input absent
+      if (!roleInput) {
+        var u = new URL(window.location.href);
+        role = u.searchParams.get('role') || 'student';
+      }
+      var nameEl = f.querySelector('input[name=name]');
+      var name = nameEl ? nameEl.value : (role === 'student' ? 'Ana García' : 'Carlos Propietario');
+      localStorage.setItem('tu_aval_user', JSON.stringify({ id: 'demo', name: name, role: role }));
+      window.location.href = role === 'student' ? "index.html" : "../propietario/index.html";
+      return;
+    }
+    // Any other form: prevent default (they'd 404 statically) and show a toast.
+    if (action && action !== '#' && action.indexOf('javascript:') !== 0) {
+      e.preventDefault();
+      showToast('Formulario enviado (demo estático — no hay backend).');
+    }
+  }, true);
+
+  // --- Toast helper ---
+  window.showToast = function(msg) {
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0A2540;color:#fff;padding:14px 22px;border-radius:12px;font-family:Inter,system-ui,sans-serif;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);z-index:99999;opacity:0;transition:opacity .25s;';
+    document.body.appendChild(t);
+    requestAnimationFrame(function() { t.style.opacity = '1'; });
+    setTimeout(function() { t.style.opacity = '0'; setTimeout(function(){ t.remove(); }, 300); }, 2400);
+  };
+
+  // --- Navbar: show logged-in user if present ---
+  try {
+    var u = JSON.parse(localStorage.getItem('tu_aval_user') || 'null');
+    if (u && u.name) {
+      var loginLinks = document.querySelectorAll('a[href*="auth/login"], a[href*="auth/register"]');
+      // We don't mutate these here; the portal pages are already "logged in" visually.
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script>
+(function() {
+  function getUser() {
+    try { return JSON.parse(localStorage.getItem('tu_aval_user') || 'null'); }
+    catch (e) { return null; }
+  }
+  function relPrefix() {
+    // Count how deep the current page is so we can build a relative path back
+    // to the site root. e.g. /portal/estudiante/index.html -> "../../"
+    var p = window.location.pathname;
+    var i = p.indexOf('/tuaval-static/');
+    var rel;
+    if (i >= 0) rel = p.substring(i + '/tuaval-static/'.length);
+    else rel = p.replace(/^\/+/, '');
+    var depth = (rel.match(/\//g) || []).length;
+    return '../'.repeat(depth);
+  }
+  function rewriteNav() {
+    var u = getUser();
+    if (!u) return;
+    var prefix = relPrefix();
+    // Find login/register links in the top nav (skip ones inside the shim itself)
+    var loginLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      return /auth\/login\.html$/.test(h) || /^auth\/login\.html/.test(h) ||
+             /\.\.\/auth\/login\.html/.test(h) || /\.\.\/\.\.\/auth\/login\.html/.test(h);
+    });
+    var registerLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
+      var h = a.getAttribute('href') || '';
+      // Match the "Comenzar" CTA — has bg-mint class and points to register
+      return (/auth\/register\.html/.test(h)) && /bg-mint/.test(a.className || '');
+    });
+    if (loginLinks.length === 0 && registerLinks.length === 0) return;
+
+    var portalUrl = u.role === 'landlord'
+      ? prefix + 'portal/propietario/index.html'
+      : prefix + 'portal/estudiante/index.html';
+    var homeUrl = prefix + 'index.html';
+
+    // Build the new user pill
+    var pill = document.createElement('a');
+    pill.href = portalUrl;
+    pill.className = 'flex items-center gap-2 text-gray-text hover:text-blue-medium transition';
+    pill.innerHTML = '<i class="fas fa-user-circle text-xl"></i><span class="font-medium">' +
+                     escapeHtml(u.name || 'Usuario') + '</span>';
+
+    var logout = document.createElement('a');
+    logout.href = 'javascript:void(0)';
+    logout.className = 'text-sm text-gray-text hover:text-danger transition';
+    logout.textContent = 'Salir';
+    logout.onclick = function(){
+      localStorage.removeItem('tu_aval_user');
+      localStorage.removeItem('tu_aval_session');
+      localStorage.removeItem('onboardingProgress');
+      window.location.href = homeUrl;
+    };
+
+    // Replace the first login link's parent block with [pill, logout]
+    if (loginLinks.length > 0) {
+      var loginEl = loginLinks[0];
+      var parent = loginEl.parentNode;
+      // Remove all login + register links inside this parent
+      Array.from(parent.querySelectorAll('a')).forEach(function(a){
+        var h = a.getAttribute('href') || '';
+        if (/auth\/(login|register)/.test(h)) a.remove();
+      });
+      parent.appendChild(pill);
+      parent.appendChild(logout);
+    }
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  // Run after DOM is ready (body already exists since we're at end of body)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', rewriteNav);
+  } else {
+    rewriteNav();
+  }
+
+  // Also expose a global "reset demo" helper
+  window.resetTuAvalDemo = function() {
+    localStorage.clear();
+    window.location.href = relPrefix() + 'index.html';
+  };
+})();
+</script>
+</body>
+    </html>
+  
