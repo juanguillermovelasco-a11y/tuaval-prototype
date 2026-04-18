@@ -339,6 +339,8 @@
 
     var portalUrl = u.role === 'landlord'
       ? prefix + 'portal/propietario/index.html'
+      : u.role === 'investor'
+      ? prefix + 'portal/inversionista/index.html'
       : prefix + 'portal/estudiante/index.html';
     var homeUrl = prefix + 'index.html';
 
