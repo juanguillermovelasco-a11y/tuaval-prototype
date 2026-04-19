@@ -35,6 +35,32 @@
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
           [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
           [data-reveal].revealed { opacity: 1; transform: translateY(0); }
+
+          /* Register page animations */
+          @keyframes fadeUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+          @keyframes cardFadeIn { 0% { opacity: 0; transform: translateY(40px) scale(0.95); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+          @keyframes iconWiggle { 0%, 100% { transform: rotate(0deg) scale(1); } 25% { transform: rotate(-4deg) scale(1.05); } 75% { transform: rotate(4deg) scale(1.05); } }
+          @keyframes bubbleIn { 0% { opacity: 0; transform: translateY(10px) scale(0.9); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+          @keyframes mintPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+          @keyframes glowPulse { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.15); } }
+          @keyframes badgeFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+          .reg-header { animation: fadeUp 0.8s cubic-bezier(.16,1,.3,1) both; }
+          .role-card { animation: cardFadeIn 0.7s cubic-bezier(.34,1.56,.64,1) both; }
+          .role-card-1 { animation-delay: 0.2s; }
+          .role-card-2 { animation-delay: 0.35s; }
+          .role-card-3 { animation-delay: 0.5s; }
+          .role-card:hover .role-icon { animation: iconWiggle 0.6s ease-in-out; }
+          .investor-glow { animation: glowPulse 3s ease-in-out infinite; }
+          .yield-badge { animation: badgeFloat 3s ease-in-out infinite; }
+          .mint-dot-pulse { animation: mintPulse 2s ease-in-out infinite; }
+
+          .chat-preview { animation: fadeUp 0.8s cubic-bezier(.16,1,.3,1) 0.8s both; }
+          .preview-bubble { animation: bubbleIn 0.5s cubic-bezier(.34,1.56,.64,1) both; }
+          .preview-bubble-1 { animation-delay: 1.4s; }
+          .preview-bubble-2 { animation-delay: 2.0s; }
+          .preview-bubble-3 { animation-delay: 2.6s; }
+          .preview-bubble-4 { animation-delay: 3.2s; }
         </style>
       </head>
       <body class="bg-white text-gray-500 leading-relaxed">
@@ -91,174 +117,164 @@
     </nav>
   
         <main>
-        <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-          <div class="max-w-2xl mx-auto">
-            <div class="text-center mb-8">
-              <h2 class="text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-blue-night">
-                Crear cuenta
-              </h2>
-              <p class="text-gray-600 mt-2">
-                Únete a Tu Aval y comienza tu verificación
-              </p>
-            </div>
+          <!-- HERO: conversational onboarding intro -->
+          <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-24 md:pt-24 md:pb-32">
+            <!-- Ambient glows -->
+            <div class="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-mint/20 blur-[120px] pointer-events-none"></div>
+            <div class="absolute -top-20 -right-32 w-[500px] h-[500px] rounded-full bg-blue-medium/10 blur-[120px] pointer-events-none"></div>
+            <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(#0A2540 1px, transparent 1px), linear-gradient(90deg, #0A2540 1px, transparent 1px); background-size: 48px 48px;"></div>
 
-            <!-- Role selector -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
-              <a href="register.html?role=student"
-                 class="bg-blue-night text-white p-4 rounded-full text-center font-semibold hover:shadow-lg transition">
-                <i class="fas fa-user-graduate text-2xl block mb-2"></i>
-                Estudiante
-              </a>
-              <a href="register.html?role=landlord"
-                 class="bg-white text-gray-700 border-2 border-gray-300 p-4 rounded-xl text-center font-semibold hover:shadow-lg transition">
-                <i class="fas fa-home text-2xl block mb-2"></i>
-                Propietario
-              </a>
-              <a href="register-investor.html"
-                 class="bg-blue-night text-white border-2 border-mint p-4 rounded-xl text-center font-semibold hover:shadow-lg transition relative">
-                <span class="absolute top-1 right-1 bg-blue-night text-white text-[9px] font-bold px-2 py-0.5 rounded-full">8-10%</span>
-                <i class="fas fa-chart-line text-2xl block mb-2 text-mint-text"></i>
-                Inversionista
-              </a>
-            </div>
-
-            <div class="bg-white border border-gray-100 rounded-2xl p-8">
-              <form method="POST" action="register.html" class="space-y-6">
-                <input type="hidden" name="role" value="student" />
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
-                      Nombre completo *
-                    </label>
-                    <input 
-                      type="text" 
-                      name="name" 
-                      required
-                      class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition"
-                      placeholder="Ana Gómez"
-                    />
-                  </div>
-
-                  <div>
-                    <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
-                      Correo electrónico *
-                    </label>
-                    <input 
-                      type="email" 
-                      name="email" 
-                      required
-                      class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition"
-                      placeholder="ana@email.com"
-                    />
-                  </div>
+            <div class="relative max-w-5xl mx-auto px-6">
+              <!-- Header -->
+              <div class="text-center mb-16 reg-header">
+                <div class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-1.5 mb-8 text-xs font-medium text-gray-500">
+                  <span class="w-1.5 h-1.5 rounded-full bg-mint mint-dot-pulse"></span>
+                  Sin formularios · 100% conversacional
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
-                      Contraseña *
-                    </label>
-                    <input 
-                      type="password" 
-                      name="password" 
-                      required
-                      minlength="8"
-                      class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition"
-                      placeholder="••••••••"
-                    />
-                  </div>
-
-                  <div>
-                    <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
-                      Teléfono
-                    </label>
-                    <input 
-                      type="tel" 
-                      name="phone" 
-                      class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition"
-                      placeholder="+34 612 345 678"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
-                    País de origen *
-                  </label>
-                  <select 
-                    name="country" 
-                    required
-                    class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition">
-                    <option value="">Selecciona un país</option>
-                    
-                      <optgroup label="Latinoamérica">
-                        <option value="Mexico">México</option>
-                        <option value="Colombia">Colombia</option>
-                        <option value="Argentina">Argentina</option>
-                        <option value="Chile">Chile</option>
-                        <option value="Peru">Perú</option>
-                        <option value="Brazil">Brasil</option>
-                        <option value="Ecuador">Ecuador</option>
-                        <option value="Venezuela">Venezuela</option>
-                      </optgroup>
-                    
-                    <option value="Spain">España</option>
-                    <optgroup label="Europa">
-                      <option value="France">Francia</option>
-                      <option value="Germany">Alemania</option>
-                      <option value="Italy">Italia</option>
-                      <option value="UK">Reino Unido</option>
-                    </optgroup>
-                  </select>
-                </div>
-
-                
-                  <div>
-                    <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
-                      Universidad (opcional)
-                    </label>
-                    <input 
-                      type="text" 
-                      name="university" 
-                      class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition"
-                      placeholder="IE University, UC3M, etc."
-                    />
-                  </div>
-                
-
-                <div class="flex items-start">
-                  <input 
-                    type="checkbox" 
-                    name="terms" 
-                    required
-                    class="mt-1 mr-3 w-5 h-5 text-mint-text border-gray-300 rounded focus:ring-mint"
-                  />
-                  <label class="text-sm text-gray-500">
-                    Acepto los <a href="../placeholder.html" class="text-mint-text hover:underline">términos y condiciones</a> 
-                    y la <a href="../placeholder.html" class="text-mint-text hover:underline">política de privacidad</a> de Tu Aval
-                  </label>
-                </div>
-
-                <button 
-                  type="submit"
-                  class="w-full bg-blue-night text-white py-3 rounded-full font-semibold hover:bg-blue-night/90 transition text-lg">
-                  Crear cuenta
-                </button>
-              </form>
-
-              <div class="mt-6 text-center">
-                <p class="text-sm text-gray-500">
-                  ¿Ya tienes cuenta?
-                  <a href="login.html" class="text-mint-text hover:underline font-medium ml-1">
-                    Inicia sesión aquí
-                  </a>
+                <h1 class="text-5xl md:text-7xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">
+                  Cuéntanos quién<br>eres y te <span class="text-mint">guiamos</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                  Nuestro asistente te hace las preguntas adecuadas en un chat. Sin subir documentos, sin formularios largos.
                 </p>
               </div>
+
+              <!-- Role cards -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+                <!-- Estudiante -->
+                <button onclick="pickRole('student')" class="role-card role-card-1 group relative bg-white border border-gray-100 rounded-3xl p-8 text-left overflow-hidden transition-all duration-300 hover:border-blue-night hover:shadow-[0_20px_60px_-20px_rgba(10,37,64,0.2)] hover:-translate-y-1">
+                  <!-- Glow hover -->
+                  <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-mint/30 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                  <!-- Icon chip -->
+                  <div class="relative w-12 h-12 rounded-2xl bg-[#f0faf6] flex items-center justify-center mb-6 role-icon">
+                    <svg class="w-6 h-6 text-mint-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                  </div>
+                  <p class="text-xs uppercase tracking-widest text-gray-400 font-medium mb-2">Estudiante</p>
+                  <h3 class="text-2xl font-semibold tracking-[-0.02em] text-blue-night mb-3">Busco piso</h3>
+                  <p class="text-sm text-gray-500 leading-relaxed mb-6">Quiero alquilar en España y necesito una garantía sin aval español.</p>
+                  <div class="flex items-center justify-between pt-5 border-t border-gray-100">
+                    <span class="text-xs text-gray-400">3 minutos</span>
+                    <span class="inline-flex items-center gap-1 text-sm font-medium text-blue-night group-hover:gap-2 transition-all">
+                      Empezar <span>→</span>
+                    </span>
+                  </div>
+                </button>
+
+                <!-- Propietario -->
+                <button onclick="pickRole('landlord')" class="role-card role-card-2 group relative bg-white border border-gray-100 rounded-3xl p-8 text-left overflow-hidden transition-all duration-300 hover:border-blue-night hover:shadow-[0_20px_60px_-20px_rgba(10,37,64,0.2)] hover:-translate-y-1">
+                  <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-blue-medium/30 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                  <div class="relative w-12 h-12 rounded-2xl bg-blue-medium/10 flex items-center justify-center mb-6 role-icon">
+                    <svg class="w-6 h-6 text-blue-medium" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                      <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                  </div>
+                  <p class="text-xs uppercase tracking-widest text-gray-400 font-medium mb-2">Propietario</p>
+                  <h3 class="text-2xl font-semibold tracking-[-0.02em] text-blue-night mb-3">Alquilo pisos</h3>
+                  <p class="text-sm text-gray-500 leading-relaxed mb-6">Quiero cubrir mis rentas ante impagos y verificar inquilinos al instante.</p>
+                  <div class="flex items-center justify-between pt-5 border-t border-gray-100">
+                    <span class="text-xs text-gray-400">3 minutos</span>
+                    <span class="inline-flex items-center gap-1 text-sm font-medium text-blue-night group-hover:gap-2 transition-all">
+                      Empezar <span>→</span>
+                    </span>
+                  </div>
+                </button>
+
+                <!-- Inversionista -->
+                <button onclick="pickRole('investor')" class="role-card role-card-3 group relative bg-blue-night text-white rounded-3xl p-8 text-left overflow-hidden transition-all duration-300 hover:shadow-[0_20px_60px_-20px_rgba(10,37,64,0.5)] hover:-translate-y-1">
+                  <!-- Animated grid bg -->
+                  <div class="absolute inset-0 opacity-[0.08]" style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 32px 32px;"></div>
+                  <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-mint/40 blur-[60px] pointer-events-none investor-glow"></div>
+
+                  <!-- Yield badge -->
+                  <div class="absolute top-5 right-5 bg-mint text-blue-night text-[10px] font-bold px-2.5 py-1 rounded-full yield-badge">
+                    8-10% anual
+                  </div>
+
+                  <div class="relative w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center mb-6 role-icon">
+                    <svg class="w-6 h-6 text-mint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="3 17 9 11 13 15 21 7"/>
+                      <polyline points="14 7 21 7 21 14"/>
+                    </svg>
+                  </div>
+                  <p class="text-xs uppercase tracking-widest text-mint font-medium mb-2">Inversionista</p>
+                  <h3 class="text-2xl font-semibold tracking-[-0.02em] text-white mb-3">Invierto capital</h3>
+                  <p class="text-sm text-gray-300 leading-relaxed mb-6">Quiero exposición a alquileres verificados con retorno fijo y liquidez trimestral.</p>
+                  <div class="relative flex items-center justify-between pt-5 border-t border-white/10">
+                    <span class="text-xs text-gray-400">3 minutos</span>
+                    <span class="inline-flex items-center gap-1 text-sm font-medium text-white group-hover:gap-2 transition-all">
+                      Empezar <span class="text-mint">→</span>
+                    </span>
+                  </div>
+                </button>
+              </div>
+
+              <!-- Chat preview animation -->
+              <div class="max-w-2xl mx-auto bg-white border border-gray-100 rounded-3xl p-6 shadow-[0_20px_60px_-20px_rgba(10,37,64,0.1)] chat-preview">
+                <div class="flex items-center gap-3 pb-4 border-b border-gray-100 mb-4">
+                  <div class="w-9 h-9 rounded-xl bg-blue-night flex items-center justify-center text-white text-sm font-semibold relative">
+                    a
+                    <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-mint rounded-full border-2 border-white"></span>
+                  </div>
+                  <div>
+                    <p class="text-sm font-semibold text-blue-night leading-none">Asistente de Tu Aval</p>
+                    <p class="text-xs text-gray-400 leading-none mt-1.5 flex items-center gap-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-mint-text mint-dot-pulse"></span>
+                      Te preguntará lo siguiente...
+                    </p>
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <div class="preview-bubble preview-bubble-1 bg-gray-100 rounded-2xl rounded-bl-md px-4 py-2.5 text-sm text-blue-night inline-block max-w-[85%]">
+                    ¿Cómo te llamas?
+                  </div>
+                  <div class="preview-bubble preview-bubble-2 bg-gray-100 rounded-2xl rounded-bl-md px-4 py-2.5 text-sm text-blue-night inline-block max-w-[85%]">
+                    ¿De qué país vienes?
+                  </div>
+                  <div class="preview-bubble preview-bubble-3 bg-gray-100 rounded-2xl rounded-bl-md px-4 py-2.5 text-sm text-blue-night inline-block max-w-[85%]">
+                    ¿En qué ciudad buscas piso?
+                  </div>
+                  <div class="preview-bubble preview-bubble-4 bg-gray-100 rounded-2xl rounded-bl-md px-4 py-2.5 text-sm text-blue-night inline-block max-w-[85%]">
+                    ¿Cuál es tu presupuesto mensual?
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sign in link -->
+              <p class="text-center mt-10 text-sm text-gray-500">
+                ¿Ya tienes cuenta?
+                <a href="login.html" class="text-blue-night hover:opacity-60 font-medium ml-1 transition">Inicia sesión →</a>
+              </p>
             </div>
-          </div>
-        </div>
-      </main>
+          </section>
+
+          <script>
+            function pickRole(role) {
+              // Set demo user with just role (name will come from chat)
+              const demoNames = {
+                student: 'Estudiante',
+                landlord: 'Propietario',
+                investor: 'Inversionista'
+              };
+              localStorage.setItem('tu_aval_user', JSON.stringify({
+                id: 'demo',
+                name: demoNames[role],
+                role: role
+              }));
+              const routes = {
+                student: '../portal/estudiante/onboarding/chat.html',
+                landlord: '../portal/propietario/onboarding/chat.html',
+                investor: '../portal/inversionista/onboarding/chat.html'
+              };
+              window.location.href = routes[role];
+            }
+          </script>
+        </main>
         
     <footer class="bg-blue-night text-white">
       <div class="max-w-5xl mx-auto px-6 py-12">
