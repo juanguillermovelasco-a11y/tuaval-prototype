@@ -81,25 +81,142 @@
   
         <main>
 
-        <!-- HERO: Apple-style centered, white bg, massive type -->
-        <section class="min-h-[90vh] flex items-center bg-white">
-          <div class="max-w-5xl mx-auto px-6 text-center py-32" data-reveal>
-            <h1 class="text-6xl md:text-8xl font-semibold text-blue-night tracking-[-0.04em] leading-[0.92] mb-8">
-              Alquila en España<br>
-              <span class="text-mint">sin aval español.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-12 leading-relaxed tracking-[-0.01em]">
-              Tu solvencia internacional, convertida en una garantía<br class="hidden md:block">
-              que cualquier propietario puede verificar al instante.
-            </p>
-            <a href="auth/register.html?role=student"
-               class="inline-flex items-center bg-mint text-blue-night px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 hover:shadow-[0_8px_30px_-4px_rgba(59,226,176,0.4)]">
-              Comenzar verificación
-            </a>
-            <a href="como-funciona.html"
-               class="block mt-6 text-blue-night text-base font-medium hover:underline transition">
-              Cómo funciona &rarr;
-            </a>
+        <!-- HERO: Apple-style with ambient glow + iPhone mockup -->
+        <section class="relative overflow-hidden bg-[#FAFAFA]">
+          <!-- Ambient glows -->
+          <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/20 blur-[120px] pointer-events-none"></div>
+          <div class="absolute -top-20 -right-40 w-[500px] h-[500px] rounded-full bg-blue-medium/10 blur-[120px] pointer-events-none"></div>
+          <!-- Grid pattern -->
+          <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(#0A2540 1px, transparent 1px), linear-gradient(90deg, #0A2540 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+          <div class="relative max-w-6xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-24">
+            <div class="grid md:grid-cols-[1.2fr_1fr] gap-16 items-center">
+              <div data-reveal>
+                <div class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-1.5 mb-8 text-xs font-medium text-gray-500">
+                  <span class="w-1.5 h-1.5 rounded-full bg-mint"></span>
+                  Verificación en 3 minutos
+                </div>
+                <h1 class="text-5xl md:text-7xl font-semibold text-blue-night tracking-[-0.04em] leading-[0.95] mb-8">
+                  Alquila en España<br>
+                  <span class="text-mint">sin aval español.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-500 max-w-xl mb-10 leading-relaxed">
+                  Tu solvencia internacional, convertida en una garantía que cualquier propietario puede verificar al instante.
+                </p>
+                <div class="flex flex-wrap gap-3 items-center">
+                  <a href="auth/register.html?role=student"
+                     class="inline-flex items-center bg-blue-night text-white px-7 py-3.5 rounded-full text-sm font-medium hover:bg-blue-night/90 transition">
+                    Comenzar verificación
+                  </a>
+                  <a href="como-funciona.html"
+                     class="inline-flex items-center text-blue-night text-sm font-medium px-5 py-3.5 hover:opacity-60 transition">
+                    Cómo funciona →
+                  </a>
+                </div>
+              </div>
+
+              <!-- iPhone mockup: QR verification live -->
+              <div class="relative mx-auto" data-reveal>
+                <div class="relative w-[280px] md:w-[320px] mx-auto">
+                  <!-- Phone frame -->
+                  <div class="relative bg-blue-night rounded-[44px] p-2 shadow-[0_30px_80px_-20px_rgba(10,37,64,0.4)]">
+                    <div class="bg-white rounded-[36px] overflow-hidden aspect-[9/19.5]">
+                      <!-- Notch -->
+                      <div class="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-blue-night rounded-b-2xl z-10"></div>
+                      <!-- Screen content -->
+                      <div class="h-full bg-white flex flex-col">
+                        <!-- Status bar -->
+                        <div class="pt-3 px-6 pb-2 flex justify-between items-center text-[10px] text-blue-night font-semibold">
+                          <span>9:41</span>
+                          <span class="opacity-40">● ● ●</span>
+                        </div>
+                        <!-- Header -->
+                        <div class="px-6 pt-10 pb-4">
+                          <p class="text-[10px] uppercase tracking-widest text-gray-400 font-medium">Tu Aval</p>
+                          <p class="text-sm font-semibold text-blue-night mt-1 tracking-tight">Garantía activa</p>
+                        </div>
+                        <!-- QR card -->
+                        <div class="mx-5 bg-[#f0faf6] border border-mint/30 rounded-2xl p-5 mb-3">
+                          <div class="flex items-center justify-between mb-3">
+                            <span class="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-mint-text/10 text-mint-text font-medium">
+                              <span class="w-1 h-1 rounded-full bg-mint-text"></span>
+                              Verificada
+                            </span>
+                            <span class="text-[9px] text-gray-400 font-mono">LF11·2025</span>
+                          </div>
+                          <!-- QR code (simplified SVG grid) -->
+                          <div class="bg-white rounded-xl p-3 mb-3">
+                            <svg viewBox="0 0 64 64" class="w-full h-auto">
+                              <rect width="64" height="64" fill="white"/>
+                              <!-- Corner markers -->
+                              <rect x="4" y="4" width="14" height="14" stroke="#0A2540" stroke-width="2" fill="none" rx="1"/>
+                              <rect x="8" y="8" width="6" height="6" fill="#0A2540"/>
+                              <rect x="46" y="4" width="14" height="14" stroke="#0A2540" stroke-width="2" fill="none" rx="1"/>
+                              <rect x="50" y="8" width="6" height="6" fill="#0A2540"/>
+                              <rect x="4" y="46" width="14" height="14" stroke="#0A2540" stroke-width="2" fill="none" rx="1"/>
+                              <rect x="8" y="50" width="6" height="6" fill="#0A2540"/>
+                              <!-- Data dots -->
+                              <g fill="#0A2540">
+                                <rect x="22" y="6" width="2" height="2"/><rect x="26" y="6" width="2" height="2"/><rect x="32" y="8" width="2" height="2"/><rect x="38" y="6" width="2" height="2"/>
+                                <rect x="6" y="22" width="2" height="2"/><rect x="10" y="26" width="2" height="2"/><rect x="6" y="32" width="2" height="2"/><rect x="10" y="38" width="2" height="2"/>
+                                <rect x="22" y="22" width="4" height="4"/><rect x="30" y="24" width="2" height="2"/><rect x="36" y="22" width="4" height="4"/><rect x="44" y="24" width="2" height="2"/>
+                                <rect x="22" y="32" width="2" height="2"/><rect x="28" y="30" width="4" height="4"/><rect x="38" y="32" width="2" height="2"/><rect x="44" y="34" width="2" height="2"/>
+                                <rect x="22" y="40" width="4" height="4"/><rect x="30" y="42" width="2" height="2"/><rect x="36" y="40" width="2" height="2"/><rect x="42" y="42" width="2" height="2"/>
+                                <rect x="22" y="50" width="2" height="2"/><rect x="26" y="54" width="2" height="2"/><rect x="32" y="50" width="4" height="4"/><rect x="40" y="52" width="2" height="2"/>
+                                <rect x="48" y="22" width="2" height="2"/><rect x="52" y="26" width="4" height="4"/><rect x="48" y="34" width="2" height="2"/><rect x="54" y="38" width="2" height="2"/>
+                                <rect x="50" y="44" width="2" height="2"/><rect x="54" y="50" width="2" height="2"/><rect x="48" y="54" width="4" height="4"/>
+                              </g>
+                              <!-- Center logo -->
+                              <rect x="26" y="26" width="12" height="12" fill="white"/>
+                              <rect x="27" y="27" width="10" height="10" rx="2" fill="#3BE2B0"/>
+                            </svg>
+                          </div>
+                          <p class="text-[9px] text-gray-400 font-mono text-center mb-2">AVAL-LF11-2025</p>
+                          <div class="flex items-center gap-1.5 justify-center">
+                            <svg class="w-3 h-3 text-mint-text" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-[9px] text-mint-text font-medium">Cobertura 12 meses · €13.800</span>
+                          </div>
+                        </div>
+                        <!-- Tenant info -->
+                        <div class="px-5 py-3 border-t border-gray-100">
+                          <div class="flex justify-between text-[10px]">
+                            <span class="text-gray-400">Inquilino</span>
+                            <span class="text-blue-night font-medium">Laura F. García</span>
+                          </div>
+                          <div class="flex justify-between text-[10px] mt-1">
+                            <span class="text-gray-400">Propiedad</span>
+                            <span class="text-blue-night font-medium">Castellana 280</span>
+                          </div>
+                          <div class="flex justify-between text-[10px] mt-1">
+                            <span class="text-gray-400">Renta</span>
+                            <span class="text-blue-night font-medium">€1.150/mes</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Floating check badge -->
+                  <div class="absolute -right-4 top-20 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-2 border border-gray-100">
+                    <div class="w-8 h-8 rounded-full bg-mint-text/10 flex items-center justify-center">
+                      <svg class="w-4 h-4 text-mint-text" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-[10px] text-gray-400 leading-none mb-0.5">Verificada en</p>
+                      <p class="text-xs font-semibold text-blue-night leading-none">1,2s</p>
+                    </div>
+                  </div>
+                  <!-- Floating amount badge -->
+                  <div class="absolute -left-6 bottom-24 bg-blue-night rounded-2xl shadow-xl px-4 py-3 text-white">
+                    <p class="text-[9px] uppercase tracking-widest text-mint mb-0.5 font-medium">Cobertura</p>
+                    <p class="text-lg font-semibold tracking-tight">€13.800</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

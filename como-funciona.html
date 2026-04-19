@@ -64,16 +64,151 @@
 
 <main>
 
-  <!-- HERO — white bg, massive text -->
-  <section class="bg-white py-20 md:py-28">
-    <div class="max-w-5xl mx-auto px-6 text-center" data-reveal>
-      <p class="text-sm text-mint-text font-semibold tracking-wide uppercase mb-6">Cómo funciona Tu Aval</p>
-      <h1 class="text-5xl md:text-7xl font-semibold tracking-[-0.03em] text-blue-night leading-[1.08] mb-6">
+  <!-- HERO — ambient glow + 3 mini-screens flow -->
+  <section class="relative overflow-hidden bg-[#FAFAFA] py-20 md:py-28">
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full bg-mint/15 blur-[140px] pointer-events-none"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(#0A2540 1px, transparent 1px), linear-gradient(90deg, #0A2540 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+    <div class="relative max-w-5xl mx-auto px-6 text-center mb-20" data-reveal>
+      <p class="text-xs text-mint-text font-medium tracking-[0.2em] uppercase mb-6">Cómo funciona</p>
+      <h1 class="text-5xl md:text-7xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">
         Tres partes.<br>Un sistema circular.
       </h1>
-      <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-        Estudiantes que necesitan vivienda. Propietarios que necesitan tranquilidad. Inversionistas que cubren el riesgo. Esto es lo que pasa por debajo.
+      <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+        Estudiantes que buscan piso. Propietarios que buscan tranquilidad. Inversionistas que cubren el riesgo.
       </p>
+    </div>
+
+    <!-- 3 Mini-screens: flow in 3 acts -->
+    <div class="relative max-w-6xl mx-auto px-6" data-reveal>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+        <!-- ACT 1: Student connects bank -->
+        <div class="relative">
+          <div class="absolute -top-3 left-6 z-10 bg-blue-night text-white text-xs px-3 py-1 rounded-full font-medium">01</div>
+          <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_20px_50px_-20px_rgba(10,37,64,0.15)]">
+            <!-- Browser chrome -->
+            <div class="bg-gray-50 px-4 py-2.5 flex items-center gap-1.5 border-b border-gray-100">
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+              <span class="ml-3 text-[10px] text-gray-400 font-mono">tuaval.com/verificar</span>
+            </div>
+            <!-- Screen content -->
+            <div class="p-6 h-56 flex flex-col">
+              <p class="text-[10px] uppercase tracking-widest text-gray-400 font-medium mb-2">Conecta tu banco</p>
+              <p class="text-sm font-semibold text-blue-night mb-4 tracking-tight">Verificamos tu solvencia</p>
+              <!-- Bank list -->
+              <div class="space-y-2 mb-auto">
+                <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2">
+                  <div class="w-6 h-6 rounded bg-blue-medium/20 flex items-center justify-center text-[9px] font-bold text-blue-medium">BBVA</div>
+                  <span class="text-[11px] text-blue-night flex-1">BBVA México</span>
+                  <svg class="w-3 h-3 text-mint-text" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4z" clip-rule="evenodd"/></svg>
+                </div>
+                <div class="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2">
+                  <div class="w-6 h-6 rounded bg-mint/20 flex items-center justify-center text-[9px] font-bold text-mint-text">Nu</div>
+                  <span class="text-[11px] text-blue-night flex-1">Nubank</span>
+                  <svg class="w-3 h-3 text-mint-text" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4z" clip-rule="evenodd"/></svg>
+                </div>
+              </div>
+              <div class="mt-3 pt-3 border-t border-gray-100">
+                <div class="flex justify-between text-[10px]">
+                  <span class="text-gray-400">Score</span>
+                  <span class="text-mint-text font-semibold">AAA · 92/100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm font-medium text-blue-night mt-5 text-center">Conecta bancos internacionales</p>
+          <p class="text-xs text-gray-400 mt-1 text-center">Open banking · 3 minutos</p>
+        </div>
+
+        <!-- ACT 2: QR issued -->
+        <div class="relative md:mt-10">
+          <div class="absolute -top-3 left-6 z-10 bg-blue-night text-white text-xs px-3 py-1 rounded-full font-medium">02</div>
+          <div class="bg-blue-night rounded-3xl overflow-hidden shadow-[0_20px_50px_-20px_rgba(10,37,64,0.4)]">
+            <!-- Header -->
+            <div class="px-5 pt-5 pb-3">
+              <p class="text-[10px] uppercase tracking-widest text-mint font-medium">Tu garantía</p>
+              <p class="text-sm font-semibold text-white mt-1 tracking-tight">AVAL-LF11-2025</p>
+            </div>
+            <!-- QR -->
+            <div class="mx-5 bg-white rounded-2xl p-4 mb-4">
+              <svg viewBox="0 0 64 64" class="w-full h-auto">
+                <rect width="64" height="64" fill="white"/>
+                <rect x="4" y="4" width="14" height="14" stroke="#0A2540" stroke-width="2" fill="none" rx="1"/>
+                <rect x="8" y="8" width="6" height="6" fill="#0A2540"/>
+                <rect x="46" y="4" width="14" height="14" stroke="#0A2540" stroke-width="2" fill="none" rx="1"/>
+                <rect x="50" y="8" width="6" height="6" fill="#0A2540"/>
+                <rect x="4" y="46" width="14" height="14" stroke="#0A2540" stroke-width="2" fill="none" rx="1"/>
+                <rect x="8" y="50" width="6" height="6" fill="#0A2540"/>
+                <g fill="#0A2540">
+                  <rect x="22" y="6" width="2" height="2"/><rect x="26" y="6" width="2" height="2"/><rect x="32" y="8" width="2" height="2"/><rect x="38" y="6" width="2" height="2"/>
+                  <rect x="6" y="22" width="2" height="2"/><rect x="10" y="26" width="2" height="2"/><rect x="6" y="32" width="2" height="2"/><rect x="10" y="38" width="2" height="2"/>
+                  <rect x="22" y="22" width="4" height="4"/><rect x="30" y="24" width="2" height="2"/><rect x="36" y="22" width="4" height="4"/><rect x="44" y="24" width="2" height="2"/>
+                  <rect x="22" y="32" width="2" height="2"/><rect x="28" y="30" width="4" height="4"/><rect x="38" y="32" width="2" height="2"/><rect x="44" y="34" width="2" height="2"/>
+                  <rect x="22" y="40" width="4" height="4"/><rect x="30" y="42" width="2" height="2"/><rect x="36" y="40" width="2" height="2"/><rect x="42" y="42" width="2" height="2"/>
+                  <rect x="22" y="50" width="2" height="2"/><rect x="26" y="54" width="2" height="2"/><rect x="32" y="50" width="4" height="4"/><rect x="40" y="52" width="2" height="2"/>
+                  <rect x="48" y="22" width="2" height="2"/><rect x="52" y="26" width="4" height="4"/><rect x="48" y="34" width="2" height="2"/><rect x="54" y="38" width="2" height="2"/>
+                </g>
+                <rect x="26" y="26" width="12" height="12" fill="white"/>
+                <rect x="27" y="27" width="10" height="10" rx="2" fill="#3BE2B0"/>
+              </svg>
+            </div>
+            <!-- Coverage -->
+            <div class="px-5 pb-5 space-y-2 h-[4.5rem]">
+              <div class="flex justify-between text-[10px]">
+                <span class="text-gray-400">Cobertura</span>
+                <span class="text-white font-medium">12 meses</span>
+              </div>
+              <div class="flex justify-between text-[10px]">
+                <span class="text-gray-400">Monto</span>
+                <span class="text-mint font-semibold">€13.800</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm font-medium text-blue-night mt-5 text-center">Recibes tu garantía QR</p>
+          <p class="text-xs text-gray-400 mt-1 text-center">Respaldada por el fondo</p>
+        </div>
+
+        <!-- ACT 3: Landlord verifies -->
+        <div class="relative">
+          <div class="absolute -top-3 left-6 z-10 bg-blue-night text-white text-xs px-3 py-1 rounded-full font-medium">03</div>
+          <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_20px_50px_-20px_rgba(10,37,64,0.15)]">
+            <div class="bg-gray-50 px-4 py-2.5 flex items-center gap-1.5 border-b border-gray-100">
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+              <span class="ml-3 text-[10px] text-gray-400 font-mono">tuaval.com/verificar</span>
+            </div>
+            <div class="p-6 h-56 flex flex-col">
+              <p class="text-[10px] uppercase tracking-widest text-gray-400 font-medium mb-2">Verificación</p>
+              <p class="text-sm font-semibold text-blue-night mb-4 tracking-tight">Garantía confirmada</p>
+              <!-- Big check -->
+              <div class="flex-1 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-full bg-mint-text/10 flex items-center justify-center">
+                  <svg class="w-10 h-10 text-mint-text" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="space-y-1 pt-4 border-t border-gray-100">
+                <div class="flex justify-between text-[10px]">
+                  <span class="text-gray-400">Inquilino</span>
+                  <span class="text-blue-night font-medium">Laura F. García</span>
+                </div>
+                <div class="flex justify-between text-[10px]">
+                  <span class="text-gray-400">Renta cubierta</span>
+                  <span class="text-blue-night font-medium">€1.150/mes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-sm font-medium text-blue-night mt-5 text-center">Propietario verifica al instante</p>
+          <p class="text-xs text-gray-400 mt-1 text-center">Si hay impago, cobra en 15 días</p>
+        </div>
+
+      </div>
     </div>
   </section>
 

@@ -81,18 +81,123 @@
       </div>
     </nav>
 
-    <!-- 1. HERO -->
-    <section class="py-28 md:py-36">
-      <div class="max-w-5xl mx-auto px-6 text-center" data-reveal>
-        <h1 class="text-5xl md:text-7xl font-semibold text-blue-night tracking-tight leading-[1.08] mb-6">
-          Renta fija respaldada<br>en alquileres verificados.
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-text max-w-2xl mx-auto mb-10 leading-relaxed">
-          Aporta capital al fondo que respalda contratos de alquiler en España. <strong class="text-blue-night">8% anual fijo</strong>, liquidez trimestral, diversificación automática y reportes auditados.
-        </p>
-        <a href="auth/register-investor.html" class="inline-block bg-blue-night text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition">
-          Quiero invertir <i class="fas fa-arrow-right ml-2"></i>
-        </a>
+    <!-- 1. HERO with performance chart mockup -->
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-24 pb-20 md:pt-32 md:pb-28">
+      <div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-mint/20 blur-[120px] pointer-events-none"></div>
+      <div class="absolute top-40 -left-40 w-[450px] h-[450px] rounded-full bg-blue-medium/10 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(#0A2540 1px, transparent 1px), linear-gradient(90deg, #0A2540 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+      <div class="relative max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-[1fr_1.15fr] gap-16 items-center">
+          <div data-reveal>
+            <div class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-1.5 mb-8 text-xs font-medium text-gray-500">
+              <span class="w-1.5 h-1.5 rounded-full bg-mint"></span>
+              Para inversionistas
+            </div>
+            <h1 class="text-5xl md:text-7xl font-semibold text-blue-night tracking-[-0.04em] leading-[0.95] mb-6">
+              Renta fija en<br>alquileres <span class="text-mint">verificados</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-500 max-w-xl mb-10 leading-relaxed">
+              Aporta capital al fondo que respalda contratos en España. <span class="text-blue-night font-medium">8% anual fijo</span>, liquidez trimestral, auditado.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="auth/register-investor.html" class="inline-flex items-center bg-blue-night text-white px-7 py-3.5 rounded-full text-sm font-medium hover:bg-blue-night/90 transition">
+                Quiero invertir
+              </a>
+              <a href="#como-funciona" class="inline-flex items-center text-blue-night text-sm font-medium px-5 py-3.5 hover:opacity-60 transition">
+                Ver track record →
+              </a>
+            </div>
+          </div>
+
+          <!-- Browser mockup with performance chart -->
+          <div class="relative" data-reveal>
+            <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(10,37,64,0.2)]">
+              <!-- Browser chrome -->
+              <div class="bg-gray-50 px-4 py-3 flex items-center gap-1.5 border-b border-gray-100">
+                <span class="w-3 h-3 rounded-full bg-gray-200"></span>
+                <span class="w-3 h-3 rounded-full bg-gray-200"></span>
+                <span class="w-3 h-3 rounded-full bg-gray-200"></span>
+                <span class="ml-3 text-[10px] text-gray-400 font-mono">tuaval.com/inversor</span>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-5">
+                  <div>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 font-medium mb-1">Tu posición</p>
+                    <p class="text-3xl font-semibold text-blue-night tracking-[-0.03em]">€52.400</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-[10px] text-gray-400 mb-1">Rendimiento YTD</p>
+                    <p class="text-sm font-semibold text-mint-text">+8,4%</p>
+                  </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="relative mb-5 h-40">
+                  <svg viewBox="0 0 340 140" class="w-full h-full" preserveAspectRatio="none">
+                    <!-- Grid lines -->
+                    <line x1="0" y1="35" x2="340" y2="35" stroke="#f3f4f6" stroke-width="1"/>
+                    <line x1="0" y1="70" x2="340" y2="70" stroke="#f3f4f6" stroke-width="1"/>
+                    <line x1="0" y1="105" x2="340" y2="105" stroke="#f3f4f6" stroke-width="1"/>
+                    <!-- Area fill -->
+                    <defs>
+                      <linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stop-color="#3BE2B0" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#3BE2B0" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M 0 110 L 28 100 L 56 95 L 85 88 L 113 80 L 141 72 L 170 65 L 198 55 L 226 48 L 255 38 L 283 30 L 312 25 L 340 20 L 340 140 L 0 140 Z" fill="url(#chartGradient)"/>
+                    <!-- Line -->
+                    <path d="M 0 110 L 28 100 L 56 95 L 85 88 L 113 80 L 141 72 L 170 65 L 198 55 L 226 48 L 255 38 L 283 30 L 312 25 L 340 20" fill="none" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Endpoint dot -->
+                    <circle cx="340" cy="20" r="5" fill="#3BE2B0" stroke="white" stroke-width="2"/>
+                    <!-- Points along the line -->
+                    <circle cx="85" cy="88" r="2.5" fill="#0A2540"/>
+                    <circle cx="170" cy="65" r="2.5" fill="#0A2540"/>
+                    <circle cx="255" cy="38" r="2.5" fill="#0A2540"/>
+                  </svg>
+                  <!-- X-axis labels -->
+                  <div class="flex justify-between text-[9px] text-gray-400 mt-1 font-mono">
+                    <span>Ene</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span>
+                  </div>
+                </div>
+
+                <!-- Breakdown -->
+                <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-xl overflow-hidden border border-gray-100">
+                  <div class="bg-white p-3">
+                    <p class="text-[9px] text-gray-400 mb-1">Capital</p>
+                    <p class="text-sm font-semibold text-blue-night">€50.000</p>
+                  </div>
+                  <div class="bg-white p-3">
+                    <p class="text-[9px] text-gray-400 mb-1">Rentabilidad</p>
+                    <p class="text-sm font-semibold text-mint-text">€2.400</p>
+                  </div>
+                  <div class="bg-white p-3">
+                    <p class="text-[9px] text-gray-400 mb-1">Contratos</p>
+                    <p class="text-sm font-semibold text-blue-night">12</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating "próximo pago" badge -->
+            <div class="absolute -right-4 -top-4 bg-white rounded-2xl shadow-xl px-4 py-3 border border-gray-100">
+              <div class="flex items-center gap-2 mb-1">
+                <div class="w-7 h-7 rounded-full bg-mint-text/10 flex items-center justify-center">
+                  <span class="text-[11px]">💰</span>
+                </div>
+                <p class="text-[10px] text-gray-400 leading-none">Próximo pago</p>
+              </div>
+              <p class="text-sm font-semibold text-blue-night tracking-tight">€1.050 · 15 mar</p>
+            </div>
+
+            <!-- Floating stability badge -->
+            <div class="absolute -left-4 -bottom-4 bg-blue-night rounded-2xl shadow-xl px-4 py-3 text-white">
+              <p class="text-[9px] uppercase tracking-widest text-mint mb-0.5 font-medium">Tasa impago</p>
+              <p class="text-lg font-semibold tracking-tight">&lt;1,2%</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
