@@ -26,45 +26,46 @@
                 }
               },
               fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-                heading: ['Poppins', 'system-ui', 'sans-serif']
+                sans: ['-apple-system', 'Inter', 'system-ui', 'sans-serif']
               }
             }
           }
         </script>
         <style>
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+          [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+          [data-reveal].revealed { opacity: 1; transform: translateY(0); }
         </style>
       </head>
-      <body class="bg-gray-50 text-gray-text">
+      <body class="bg-white text-gray-500 leading-relaxed">
         
-    <nav class="bg-white shadow-sm border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
           <div class="flex items-center">
             <a href="index.html" class="flex items-center gap-2.5">
-              <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="url(#ta-g)"/><path d="M16 7L23 10.5V17C23 21 20 24.5 16 26C12 24.5 9 21 9 17V10.5L16 7Z" fill="white" fill-opacity="0.2"/><path d="M13 16.5L15 18.5L19.5 13.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ta-g" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3BE2B0"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs></svg>
+              <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
             <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
             </a>
           </div>
           
           <div class="hidden md:flex items-center space-x-8">
-            <a href="como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
-            <a href="nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a>
-            <a href="estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
-            <a href="propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
-            <a href="inversionista.html" class="text-gray-text hover:text-blue-medium transition">Inversionistas</a>
+            <a href="como-funciona.html" class="text-sm text-gray-400 hover:text-blue-night transition">Cómo funciona</a>
+            <a href="nosotros.html" class="text-sm text-gray-400 hover:text-blue-night transition">Nosotros</a>
+            <a href="estudiante.html" class="text-sm text-gray-400 hover:text-blue-night transition">Estudiantes</a>
+            <a href="propietario.html" class="text-sm text-gray-400 hover:text-blue-night transition">Propietarios</a>
+            <a href="inversionista.html" class="text-sm text-gray-400 hover:text-blue-night transition">Inversionistas</a>
             <!-- HIDDEN: <a href="validar-qr.html" class="text-mint-text hover:text-mint-text/80 transition font-semibold">
               <i class="fas fa-qrcode mr-1"></i>Validar QR
             </a> -->
-            <a href="precios.html" class="text-gray-text hover:text-blue-medium transition">Precios</a>
+            <a href="precios.html" class="text-sm text-gray-400 hover:text-blue-night transition">Precios</a>
           </div>
 
           <div class="flex items-center space-x-4">
             
-              <a href="auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+              <a href="auth/login.html" class="text-sm text-gray-400 hover:text-blue-night transition">Iniciar sesión</a>
               <a href="auth/register.html" 
-                 class="bg-mint text-blue-night px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                 class="bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition">
                 Comenzar
               </a>
             
@@ -77,7 +78,7 @@
         <!-- Hero -->
         <section class="py-20 bg-gradient-to-br from-blue-night to-blue-medium text-white">
           <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-heading font-bold mb-6">
+            <h1 class="text-5xl font-semibold font-bold mb-6">
               Sobre Tu Aval
             </h1>
             <p class="text-xl text-gray-200 max-w-3xl mx-auto">
@@ -100,7 +101,7 @@
               </div>
               <div class="md:col-span-3">
                 <div class="text-sm uppercase tracking-wider text-mint-text font-semibold mb-3">El fundador</div>
-                <h2 class="text-3xl font-heading font-bold text-blue-night mb-4">
+                <h2 class="text-3xl font-semibold font-bold text-blue-night mb-4">
                   Juan Velasco
                 </h2>
                 <p class="text-lg text-gray-600 mb-4 leading-relaxed">
@@ -117,7 +118,7 @@
         <!-- Muros invisibles -->
         <section class="py-20 bg-gray-50">
           <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-heading font-bold text-blue-night mb-4 text-center">
+            <h2 class="text-4xl font-semibold font-bold text-blue-night mb-4 text-center">
               Los muros invisibles del alquiler en España
             </h2>
             <p class="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
@@ -131,7 +132,7 @@
                     <i class="fas fa-file-signature text-mint-text text-2xl"></i>
                   </div>
                   <div>
-                    <h3 class="text-xl font-heading font-bold text-blue-night mb-2">
+                    <h3 class="text-xl font-semibold font-bold text-blue-night mb-2">
                       Exigencia de nómina española
                     </h3>
                     <p class="text-gray-600 leading-relaxed">
@@ -147,7 +148,7 @@
                     <i class="fas fa-user-shield text-blue-medium text-2xl"></i>
                   </div>
                   <div>
-                    <h3 class="text-xl font-heading font-bold text-blue-night mb-2">
+                    <h3 class="text-xl font-semibold font-bold text-blue-night mb-2">
                       Requisito de avalista español
                     </h3>
                     <p class="text-gray-600 leading-relaxed">
@@ -163,7 +164,7 @@
                     <i class="fas fa-euro-sign text-warning text-2xl"></i>
                   </div>
                   <div>
-                    <h3 class="text-xl font-heading font-bold text-blue-night mb-2">
+                    <h3 class="text-xl font-semibold font-bold text-blue-night mb-2">
                       Pagos por adelantado desproporcionados
                     </h3>
                     <p class="text-gray-600 leading-relaxed">
@@ -179,7 +180,7 @@
                     <i class="fas fa-clock text-danger text-2xl"></i>
                   </div>
                   <div>
-                    <h3 class="text-xl font-heading font-bold text-blue-night mb-2">
+                    <h3 class="text-xl font-semibold font-bold text-blue-night mb-2">
                       Costes de transición elevados
                     </h3>
                     <p class="text-gray-600 leading-relaxed">
@@ -196,7 +197,7 @@
         <section class="py-20 bg-white">
           <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-              <h2 class="text-4xl font-heading font-bold text-blue-night mb-4">
+              <h2 class="text-4xl font-semibold font-bold text-blue-night mb-4">
                 Nuestra tesis
               </h2>
             </div>
@@ -218,7 +219,7 @@
         <!-- Modelo -->
         <section class="py-20 bg-gray-50">
           <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-heading font-bold text-blue-night mb-4 text-center">
+            <h2 class="text-4xl font-semibold font-bold text-blue-night mb-4 text-center">
               Cómo resolvemos el problema
             </h2>
             <p class="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
@@ -230,21 +231,21 @@
                 <div class="bg-mint/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <i class="fas fa-globe-americas text-mint-text text-2xl"></i>
                 </div>
-                <h3 class="font-heading font-bold text-blue-night mb-2">Verificación cross-border</h3>
+                <h3 class="font-semibold font-bold text-blue-night mb-2">Verificación cross-border</h3>
                 <p class="text-sm text-gray-600">Integramos agregadores financieros regulados (Belvo para Latinoamérica, Tink para la Unión Europea) para verificar la solvencia del candidato en su país de origen, siempre con consentimiento explícito.</p>
               </div>
               <div class="bg-white rounded-xl p-6 shadow-sm">
                 <div class="bg-blue-medium/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <i class="fas fa-landmark text-blue-medium text-2xl"></i>
                 </div>
-                <h3 class="font-heading font-bold text-blue-night mb-2">Fondo de garantía propio</h3>
+                <h3 class="font-semibold font-bold text-blue-night mb-2">Fondo de garantía propio</h3>
                 <p class="text-sm text-gray-600">Tu Aval emite garantías directas respaldadas por su propio fondo de capital. Ante un impago, pagamos al propietario sin aseguradoras intermedias, con plazos definidos y auditoría trimestral independiente.</p>
               </div>
               <div class="bg-white rounded-xl p-6 shadow-sm">
                 <div class="bg-success/10 w-16 h-16 rounded-full flex items-center justify-center mb-4">
                   <i class="fas fa-qrcode text-success text-2xl"></i>
                 </div>
-                <h3 class="font-heading font-bold text-blue-night mb-2">Verificación instantánea</h3>
+                <h3 class="font-semibold font-bold text-blue-night mb-2">Verificación instantánea</h3>
                 <p class="text-sm text-gray-600">El propietario valida la garantía escaneando un código QR o introduciéndolo manualmente en nuestra plataforma. El proceso toma segundos y no requiere registro previo.</p>
               </div>
             </div>
@@ -261,7 +262,7 @@
         <!-- CTA -->
         <section class="py-20 bg-blue-night text-white">
           <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-heading font-bold mb-4">
+            <h2 class="text-3xl font-semibold font-bold mb-4">
               Trabajamos para que llegar a España sea una decisión, no una gestión
             </h2>
             <p class="text-xl text-gray-300 mb-8">
@@ -285,11 +286,11 @@
 
         
     <footer class="bg-blue-night text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div class="flex items-center gap-2.5 mb-4">
-              <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="url(#ta-gf)"/><path d="M16 7L23 10.5V17C23 21 20 24.5 16 26C12 24.5 9 21 9 17V10.5L16 7Z" fill="white" fill-opacity="0.2"/><path d="M13 16.5L15 18.5L19.5 13.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ta-gf" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3BE2B0"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs></svg>
+              <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="white"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#0A2540" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
               <span class="text-lg font-semibold">Tu Aval</span>
             </div>
             <p class="text-gray-400 text-sm">
@@ -431,7 +432,7 @@
     var registerLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
       var h = a.getAttribute('href') || '';
       // Match the "Comenzar" CTA — has bg-mint class and points to register
-      return (/auth\/register\.html/.test(h)) && /bg-mint/.test(a.className || '');
+      return (/auth\/register\.html/.test(h)) && /bg-blue-night/.test(a.className || '');
     });
     if (loginLinks.length === 0 && registerLinks.length === 0) return;
 
@@ -492,6 +493,19 @@
     window.location.href = relPrefix() + 'index.html';
   };
 })();
+</script>
+<script>
+requestAnimationFrame(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '50px' });
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+});
 </script>
 </body>
     </html>

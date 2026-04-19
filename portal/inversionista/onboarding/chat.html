@@ -20,43 +20,42 @@
             }
           },
           fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            heading: ['Poppins', 'system-ui', 'sans-serif']
-          }
+                sans: ['-apple-system', 'Inter', 'system-ui', 'sans-serif']
+              }
         }
       }
     </script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
       body { font-family: Inter, system-ui, sans-serif; }
-    </style>
+      [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+          [data-reveal].revealed { opacity: 1; transform: translateY(0); }
+        </style>
   </head>
-  <body class="bg-gray-50 text-gray-text">
-    <nav class="bg-white shadow-sm border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+  <body class="bg-white text-gray-500 leading-relaxed">
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
           <a href="../../../index.html" class="flex items-center gap-2.5">
-            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="url(#ta-g)"/><path d="M16 7L23 10.5V17C23 21 20 24.5 16 26C12 24.5 9 21 9 17V10.5L16 7Z" fill="white" fill-opacity="0.2"/><path d="M13 16.5L15 18.5L19.5 13.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ta-g" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3BE2B0"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs></svg>
+            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
             <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
           </a>
-          <a href="../index.html" class="hidden md:inline text-sm text-gray-text hover:text-blue-medium">
-            <i class="fas fa-times mr-1"></i> Salir del onboarding
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="../index.html" class="text-sm text-gray-400 hover:text-blue-night transition">Dashboard</a>
+            <a href="../onboarding/chat.html" class="text-sm text-blue-night font-semibold transition">Perfil inversor</a>
+          </div>
+
+          <a href="../index.html" class="hidden md:inline text-sm text-gray-400 hover:text-blue-night transition">
+            Salir <span class="ml-1">×</span>
           </a>
-          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-blue-night text-2xl">
+          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-blue-night text-xl">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 px-4 py-4 space-y-3">
-        <a href="../../../como-funciona.html" class="block text-gray-text hover:text-blue-medium transition py-2">Cómo funciona</a>
-        <a href="../../../estudiante.html" class="block text-gray-text hover:text-blue-medium transition py-2">Estudiantes</a>
-        <a href="../../../propietario.html" class="block text-gray-text hover:text-blue-medium transition py-2">Propietarios</a>
-        <a href="../../../inversionista.html" class="block text-gray-text hover:text-blue-medium transition py-2">Inversionistas</a>
-        <a href="../../../precios.html" class="block text-gray-text hover:text-blue-medium transition py-2">Precios</a>
-        <div class="pt-3 border-t border-gray-200 flex gap-3">
-          <a href="../../../auth/login.html" class="text-gray-text hover:text-blue-medium transition py-2">Iniciar sesión</a>
-          <a href="../../../auth/register.html" class="bg-mint text-blue-night px-5 py-2 rounded-xl font-medium">Comenzar</a>
-        </div>
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 px-6 py-4 space-y-3 bg-white">
+        <a href="../index.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Dashboard</a>
+        <a href="../onboarding/chat.html" class="block text-blue-night font-semibold transition py-2 text-sm">Perfil inversor</a>
       </div>
     </nav>
 
@@ -64,68 +63,44 @@
       <div id="chat-root"></div>
     </main>
 
-    <script src="../../../static/chat-engine.js"></script>
+    <script src="../../../static/chat-engine.js?v=20260419-ai"></script>
     <script>
-      const script = [
-        { bot: '¡Hola! 👋 Soy el asistente de Tu Aval Capital. Voy a contarte cómo invertir en el fondo y conocer un poco tu perfil. Todo por aquí, sin formularios. ¿Empezamos?' },
-        { id: 'ready', bot: '', input: 'choice', choices: ['Sí, vamos', 'Primero cuéntame el modelo'] },
-        {
-          bot: (d) => d.ready === 'Primero cuéntame el modelo'
-            ? 'Claro. Tu Aval gestiona un fondo que respalda garantías de alquiler para estudiantes y migrantes en España. Ese fondo cobra primas en cada contrato. Las primas, menos los pocos siniestros (<1.2% histórico), se reparten como retorno a los inversionistas: 8-10% anual neto. ¿Cuadra?'
-            : '¡Perfecto! 🚀'
-        },
-        { id: 'name', bot: '¿Cómo te llamas?', input: 'text', placeholder: 'Tu nombre' },
-        { id: 'origin_story', bot: (d) => `Mucho gusto, ${d.name.split(' ')[0]} 🤝. Una pregunta importante para nosotros: ¿tú o tu familia migraron en algún momento?`, input: 'choice', choices: ['Sí, yo migré', 'Mis padres/abuelos migraron', 'No, pero conozco la realidad', 'Prefiero no decir'] },
-        {
-          bot: (d) => {
-            if (d.origin_story === 'Sí, yo migré') return 'Entonces sabes exactamente lo que sentía nuestro primer estudiante: la cara del casero pidiendo un avalista español. Bienvenido a la red. 💚';
-            if (d.origin_story === 'Mis padres/abuelos migraron') return 'Eres parte de la historia que estamos honrando. Tus padres abrieron tu camino — ahora tú abres el de otros.';
-            return 'Gracias por sumarte. No hace falta haber pasado por ahí para entender que esto importa.';
-          }
-        },
-        { id: 'investor_type', bot: '¿Cómo te defines como inversionista?', input: 'choice', choices: ['Particular (primera vez)', 'Particular con experiencia', 'Family office', 'Fondo institucional'] },
-        { id: 'risk', bot: '¿Cuál es tu tolerancia al riesgo?', input: 'choice', choices: ['Muy conservador', 'Conservador', 'Moderado', 'Agresivo'] },
-        { bot: 'Tranquilo — el fondo Tu Aval encaja con perfiles conservadores y moderados. Capital senior, diversificación radical, y reservas obligatorias.' },
-        { id: 'amount', bot: '¿Cuánto te gustaría invertir inicialmente? (en euros, mínimo €1.000)', input: 'number', placeholder: 'Ej: 10000', min: 1000 },
-        {
-          bot: (d) => {
-            const amt = parseInt(d.amount) || 10000;
-            const low = Math.round(amt * 0.08);
-            const high = Math.round(amt * 0.10);
-            return `Con €${amt.toLocaleString('es-ES')} podrías generar entre <strong>€${low.toLocaleString('es-ES')} y €${high.toLocaleString('es-ES')}</strong> al año. Pagos trimestrales.`;
-          }
-        },
-        { id: 'horizon', bot: '¿Por cuánto tiempo te gustaría mantener la inversión?', input: 'choice', choices: ['12 meses (mínimo)', '2-3 años', '5 años', 'Indefinido'] },
-        { id: 'motivation', bot: '¿Qué te llevó a interesarte por Tu Aval?', input: 'choice', choices: ['La rentabilidad', 'El propósito', 'Ambos por igual', 'Me lo recomendó alguien'] },
-        {
-          bot: (d) => d.motivation === 'La rentabilidad'
-            ? 'Honesto. La buena noticia: aquí no tienes que elegir entre rentabilidad y propósito. Ambas vienen juntas.'
-            : 'Eso nos llena. Aquí tu dinero hace dos cosas a la vez.'
-        },
-        { id: 'country', bot: '¿En qué país resides actualmente?', input: 'choice', choices: ['España', 'México', 'Colombia', 'Chile', 'Argentina', 'EE.UU.', 'Otro'] },
-        { id: 'phone', bot: 'Para coordinar la transferencia y los reportes, ¿cuál es tu teléfono?', input: 'text', placeholder: '+34 ...' },
-        { bot: (d) => `¡Listo, ${d.name.split(' ')[0]}! Tengo todo lo necesario. Voy a preparar tu cuenta de inversionista...` },
-        { bot: '🔄 Verificando perfil KYC...', delay: 1200 },
-        { bot: '🔄 Asignando tu posición en el fondo...', delay: 1200 },
-        { bot: '🔄 Generando proyección personalizada...', delay: 1200 },
-        { bot: '✅ ¡Bienvenido al fondo Tu Aval Capital! Tu portal está activo.' },
-        { bot: 'En tu portal verás tu posición, los pagos trimestrales esperados, y a cuántos estudiantes/migrantes está respaldando tu capital ahora mismo.' },
-        { id: 'final', bot: '¿Quieres ir ahora a tu portal?', input: 'choice', choices: ['Sí, ir al portal', 'Más tarde'] }
-      ];
-
       TuAvalChat.init({
         mountSelector: '#chat-root',
+        role: 'investor',
         storageKey: 'tu_aval_onboarding_inversionista',
-        botName: 'Asistente Tu Aval Capital',
-        script,
         onComplete: (data) => {
           localStorage.setItem('investorOnboardingComplete', 'true');
-          localStorage.setItem('investorData', JSON.stringify(data));
-          if (data.final === 'Sí, ir al portal') {
-            setTimeout(() => { window.location.href = '../index.html'; }, 800);
+          if (data) {
+            const investorData = {
+              name: data.name,
+              capital: data.capital || 10000,
+              retorno: data.capital ? Math.round(data.capital * 0.094) : 940,
+              contratos: 12
+            };
+            localStorage.setItem('investorData', JSON.stringify(investorData));
+            try {
+              const u = JSON.parse(localStorage.getItem('tu_aval_user') || '{}');
+              if (data.name) u.name = data.name;
+              localStorage.setItem('tu_aval_user', JSON.stringify(u));
+            } catch (e) {}
           }
+          setTimeout(() => { window.location.href = '../index.html'; }, 2000);
         }
       });
     </script>
-  </body>
+  <script>
+requestAnimationFrame(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '50px' });
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+});
+</script>
+</body>
 </html>

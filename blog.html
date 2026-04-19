@@ -25,65 +25,66 @@
                 }
               },
               fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-                heading: ['Poppins', 'system-ui', 'sans-serif']
+                sans: ['-apple-system', 'Inter', 'system-ui', 'sans-serif']
               }
             }
           }
         </script>
         <style>
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+          [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+          [data-reveal].revealed { opacity: 1; transform: translateY(0); }
         </style>
       </head>
-      <body class="bg-gray-50 text-gray-text">
+      <body class="bg-white text-gray-500 leading-relaxed">
         
-    <nav class="bg-white shadow-sm border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
           <div class="flex items-center">
             <a href="index.html" class="flex items-center gap-2.5">
-              <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="url(#ta-g)"/><path d="M16 7L23 10.5V17C23 21 20 24.5 16 26C12 24.5 9 21 9 17V10.5L16 7Z" fill="white" fill-opacity="0.2"/><path d="M13 16.5L15 18.5L19.5 13.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ta-g" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3BE2B0"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs></svg>
+              <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
             <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
             </a>
           </div>
           
           <div class="hidden md:flex items-center space-x-8">
-            <a href="como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
-            <!-- HIDDEN: <a href="nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a> -->
-            <a href="estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
-            <a href="propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
-            <a href="inversionista.html" class="text-gray-text hover:text-blue-medium transition">Inversionistas</a>
+            <a href="como-funciona.html" class="text-sm text-gray-400 hover:text-blue-night transition">Cómo funciona</a>
+            <!-- HIDDEN: <a href="nosotros.html" class="text-sm text-gray-400 hover:text-blue-night transition">Nosotros</a> -->
+            <a href="estudiante.html" class="text-sm text-gray-400 hover:text-blue-night transition">Estudiantes</a>
+            <a href="propietario.html" class="text-sm text-gray-400 hover:text-blue-night transition">Propietarios</a>
+            <a href="inversionista.html" class="text-sm text-gray-400 hover:text-blue-night transition">Inversionistas</a>
             <!-- HIDDEN: <a href="validar-qr.html" class="text-mint-text hover:text-mint-text/80 transition font-semibold">
               <i class="fas fa-qrcode mr-1"></i>Validar QR
             </a> -->
-            <a href="precios.html" class="text-gray-text hover:text-blue-medium transition">Precios</a>
+            <a href="precios.html" class="text-sm text-gray-400 hover:text-blue-night transition">Precios</a>
           </div>
 
           <div class="hidden md:flex items-center space-x-4">
             
-              <a href="auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+              <a href="auth/login.html" class="text-sm text-gray-400 hover:text-blue-night transition">Iniciar sesión</a>
               <a href="auth/register.html" 
-                 class="bg-mint text-blue-night px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                 class="bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition">
                 Comenzar
               </a>
             
           </div>
 
-          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-blue-night text-2xl">
+          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-blue-night text-xl">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
 
-      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 px-4 py-4 space-y-3">
-        <a href="como-funciona.html" class="block text-gray-text hover:text-blue-medium transition py-2">Cómo funciona</a>
-        <a href="estudiante.html" class="block text-gray-text hover:text-blue-medium transition py-2">Estudiantes</a>
-        <a href="propietario.html" class="block text-gray-text hover:text-blue-medium transition py-2">Propietarios</a>
-        <a href="inversionista.html" class="block text-gray-text hover:text-blue-medium transition py-2">Inversionistas</a>
-        <a href="precios.html" class="block text-gray-text hover:text-blue-medium transition py-2">Precios</a>
-        <div class="pt-3 border-t border-gray-200 flex gap-3">
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 px-6 py-4 space-y-3 bg-white">
+        <a href="como-funciona.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Cómo funciona</a>
+        <a href="estudiante.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Estudiantes</a>
+        <a href="propietario.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Propietarios</a>
+        <a href="inversionista.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Inversionistas</a>
+        <a href="precios.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Precios</a>
+        <div class="pt-3 border-t border-gray-100 flex gap-4 items-center">
           <a href="auth/login.html" class="text-gray-text hover:text-blue-medium transition py-2">Iniciar sesión</a>
-          <a href="auth/register.html" class="bg-mint text-blue-night px-5 py-2 rounded-xl font-medium">Comenzar</a>
+          <a href="auth/register.html" class="bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium">Comenzar</a>
         </div>
       </div>
     </nav>
@@ -91,7 +92,7 @@
 
 <section class="py-16 bg-gradient-to-br from-blue-night to-blue-medium text-white">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h1 class="text-5xl font-heading font-bold mb-4">Blog Tu Aval</h1>
+    <h1 class="text-5xl font-semibold font-bold mb-4">Blog Tu Aval</h1>
     <p class="text-xl text-gray-200 max-w-2xl mx-auto">Guías, historias y consejos para inquilinos y propietarios.</p>
   </div>
 </section><section class="py-16 bg-white"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,7 +103,7 @@
     </div>
     <div class="p-6">
       <span class="text-xs uppercase tracking-wider text-mint-text font-semibold">Guía estudiantes</span>
-      <h2 class="text-xl font-heading font-bold text-blue-night mt-2 mb-3">Cómo encontrar piso en Madrid sin nómina española</h2>
+      <h2 class="text-xl font-semibold font-bold text-blue-night mt-2 mb-3">Cómo encontrar piso en Madrid sin nómina española</h2>
       <p class="text-gray-600 text-sm mb-4">La guía paso a paso que me hubiera gustado tener cuando llegué. Qué documentos preparar, qué decir en las visitas, y cómo evitar los errores más comunes.</p>
       <span class="text-xs text-gray-500">8 min de lectura</span>
     </div>
@@ -114,7 +115,7 @@
     </div>
     <div class="p-6">
       <span class="text-xs uppercase tracking-wider text-blue-medium font-semibold">Para propietarios</span>
-      <h2 class="text-xl font-heading font-bold text-blue-night mt-2 mb-3">Aval bancario vs. garantía directa de pago: cuál protege más</h2>
+      <h2 class="text-xl font-semibold font-bold text-blue-night mt-2 mb-3">Aval bancario vs. garantía directa de pago: cuál protege más</h2>
       <p class="text-gray-600 text-sm mb-4">Comparativa legal y económica entre los dos sistemas de garantía más comunes en España, con casos reales y números concretos.</p>
       <span class="text-xs text-gray-500">6 min de lectura</span>
     </div>
@@ -126,7 +127,7 @@
     </div>
     <div class="p-6">
       <span class="text-xs uppercase tracking-wider text-success font-semibold">Open Banking</span>
-      <h2 class="text-xl font-heading font-bold text-blue-night mt-2 mb-3">Qué es exactamente Belvo y por qué es seguro conectar tu cuenta</h2>
+      <h2 class="text-xl font-semibold font-bold text-blue-night mt-2 mb-3">Qué es exactamente Belvo y por qué es seguro conectar tu cuenta</h2>
       <p class="text-gray-600 text-sm mb-4">Explicamos con manzanas qué hace un agregador de cuentas, qué información ve y qué información NO ve. Spoiler: nunca tu contraseña.</p>
       <span class="text-xs text-gray-500">5 min de lectura</span>
     </div>
@@ -138,7 +139,7 @@
     </div>
     <div class="p-6">
       <span class="text-xs uppercase tracking-wider text-warning font-semibold">Legal</span>
-      <h2 class="text-xl font-heading font-bold text-blue-night mt-2 mb-3">Lo que la nueva Ley de Vivienda cambia para inquilinos extranjeros</h2>
+      <h2 class="text-xl font-semibold font-bold text-blue-night mt-2 mb-3">Lo que la nueva Ley de Vivienda cambia para inquilinos extranjeros</h2>
       <p class="text-gray-600 text-sm mb-4">Análisis de las modificaciones recientes en la LAU y cómo afectan a estudiantes internacionales que buscan alquilar en zonas tensionadas.</p>
       <span class="text-xs text-gray-500">10 min de lectura</span>
     </div>
@@ -150,7 +151,7 @@
     </div>
     <div class="p-6">
       <span class="text-xs uppercase tracking-wider text-purple-600 font-semibold">Historias reales</span>
-      <h2 class="text-xl font-heading font-bold text-blue-night mt-2 mb-3">"Llegué un domingo y firmé el martes": la historia de Sofía</h2>
+      <h2 class="text-xl font-semibold font-bold text-blue-night mt-2 mb-3">"Llegué un domingo y firmé el martes": la historia de Sofía</h2>
       <p class="text-gray-600 text-sm mb-4">Estudiante mexicana de máster en IE University. Cómo organizó toda su búsqueda desde Ciudad de México y firmó contrato 48 horas después de aterrizar.</p>
       <span class="text-xs text-gray-500">7 min de lectura</span>
     </div>
@@ -162,7 +163,7 @@
     </div>
     <div class="p-6">
       <span class="text-xs uppercase tracking-wider text-blue-night font-semibold">Mercado</span>
-      <h2 class="text-xl font-heading font-bold text-blue-night mt-2 mb-3">El mercado del alquiler en Madrid en 2026: datos y tendencias</h2>
+      <h2 class="text-xl font-semibold font-bold text-blue-night mt-2 mb-3">El mercado del alquiler en Madrid en 2026: datos y tendencias</h2>
       <p class="text-gray-600 text-sm mb-4">Precios medios por zona, tiempo medio de ocupación, perfil del inquilino más demandado, y por qué los pisos para estudiantes internacionales son cada vez más rentables.</p>
       <span class="text-xs text-gray-500">12 min de lectura</span>
     </div>
@@ -174,11 +175,11 @@
 </div></div></section>
 </main>
 <footer class="bg-blue-night text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div class="flex items-center gap-2.5 mb-4">
-              <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="url(#ta-gf)"/><path d="M16 7L23 10.5V17C23 21 20 24.5 16 26C12 24.5 9 21 9 17V10.5L16 7Z" fill="white" fill-opacity="0.2"/><path d="M13 16.5L15 18.5L19.5 13.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ta-gf" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3BE2B0"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs></svg>
+              <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="white"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#0A2540" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
               <span class="text-lg font-semibold">Tu Aval</span>
             </div>
             <p class="text-gray-400 text-sm">
@@ -320,7 +321,7 @@
     var registerLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
       var h = a.getAttribute('href') || '';
       // Match the "Comenzar" CTA — has bg-mint class and points to register
-      return (/auth\/register\.html/.test(h)) && /bg-mint/.test(a.className || '');
+      return (/auth\/register\.html/.test(h)) && /bg-blue-night/.test(a.className || '');
     });
     if (loginLinks.length === 0 && registerLinks.length === 0) return;
 
@@ -381,5 +382,18 @@
     window.location.href = relPrefix() + 'index.html';
   };
 })();
+</script>
+<script>
+requestAnimationFrame(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '50px' });
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+});
 </script>
 </body>

@@ -26,271 +26,250 @@
                 }
               },
               fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-                heading: ['Poppins', 'system-ui', 'sans-serif']
+                sans: ['-apple-system', 'Inter', 'system-ui', 'sans-serif']
               }
             }
           }
         </script>
         <style>
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
-          .portal-hero { position: relative; overflow: hidden; background: #0A2540; }
-          .portal-hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%); }
-          .portal-glow-a { position: absolute; width: 420px; height: 420px; border-radius: 9999px; filter: blur(80px); opacity: .35; background: #3BE2B0; top: -160px; left: -120px; }
-          .portal-glow-b { position: absolute; width: 380px; height: 380px; border-radius: 9999px; filter: blur(80px); opacity: .25; background: #4A90E2; bottom: -180px; right: -100px; }
-          .headline-gradient { background: linear-gradient(135deg, #ffffff 0%, #3BE2B0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-          .live-dot { position: relative; display: inline-block; width: 8px; height: 8px; background: #3BE2B0; border-radius: 9999px; }
-          .live-dot::after { content: ''; position: absolute; inset: 0; border-radius: 9999px; background: #3BE2B0; animation: pulseDot 2s ease-out infinite; }
-          @keyframes pulseDot { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(2.6); opacity: 0; } }
-          .glass-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.12); }
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+          [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+          [data-reveal].revealed { opacity: 1; transform: translateY(0); }
         </style>
       </head>
-      <body class="bg-gray-50 text-gray-text">
+      <body class="bg-white text-gray-500 leading-relaxed">
         
-    <nav class="bg-white shadow-sm border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
           <div class="flex items-center">
             <a href="../../index.html" class="flex items-center gap-2.5">
-              <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="url(#ta-g)"/><path d="M16 7L23 10.5V17C23 21 20 24.5 16 26C12 24.5 9 21 9 17V10.5L16 7Z" fill="white" fill-opacity="0.2"/><path d="M13 16.5L15 18.5L19.5 13.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ta-g" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3BE2B0"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs></svg>
+              <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
             <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
             </a>
           </div>
           
           <div class="hidden md:flex items-center space-x-8">
-            <a href="index.html" class="text-blue-medium font-semibold transition">Dashboard</a>
-            <a href="properties.html" class="text-gray-text hover:text-blue-medium transition">Propiedades</a>
-            <a href="verifications.html" class="text-gray-text hover:text-blue-medium transition">Verificaciones</a>
-            <a href="policies.html" class="text-gray-text hover:text-blue-medium transition">Garantías</a>
-            <a href="claims.html" class="text-gray-text hover:text-blue-medium transition">Siniestros</a>
+            <a href="index.html" class="text-sm text-blue-night font-semibold transition">Dashboard</a>
+            <a href="properties.html" class="text-sm text-gray-400 hover:text-blue-night transition">Propiedades</a>
+            <a href="verifications.html" class="text-sm text-gray-400 hover:text-blue-night transition">Verificaciones</a>
+            <a href="policies.html" class="text-sm text-gray-400 hover:text-blue-night transition">Garantías</a>
+            <a href="claims.html" class="text-sm text-gray-400 hover:text-blue-night transition">Siniestros</a>
           </div>
 
           <div class="hidden md:flex items-center space-x-4">
 
-              <a href="../../auth/login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+              <a href="../../auth/login.html" class="text-sm text-gray-400 hover:text-blue-night transition">Iniciar sesión</a>
               <a href="../../auth/register.html"
-                 class="bg-mint text-blue-night px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                 class="bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition">
                 Comenzar
               </a>
 
           </div>
-          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-blue-night text-2xl">
+          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-blue-night text-xl">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 px-4 py-4 space-y-3">
-        <a href="../../como-funciona.html" class="block text-gray-text hover:text-blue-medium transition py-2">Cómo funciona</a>
-        <a href="../../estudiante.html" class="block text-gray-text hover:text-blue-medium transition py-2">Estudiantes</a>
-        <a href="../../propietario.html" class="block text-gray-text hover:text-blue-medium transition py-2">Propietarios</a>
-        <a href="../../inversionista.html" class="block text-gray-text hover:text-blue-medium transition py-2">Inversionistas</a>
-        <a href="../../precios.html" class="block text-gray-text hover:text-blue-medium transition py-2">Precios</a>
-        <div class="pt-3 border-t border-gray-200 flex gap-3">
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 px-6 py-4 space-y-3 bg-white">
+        <a href="index.html" class="block text-blue-night font-semibold transition py-2 text-sm">Dashboard</a>
+            <a href="properties.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Propiedades</a>
+            <a href="verifications.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Verificaciones</a>
+            <a href="policies.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Garantías</a>
+            <a href="claims.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Siniestros</a>
+        <div class="pt-3 border-t border-gray-100 flex gap-4 items-center">
           <a href="../../auth/login.html" class="text-gray-text hover:text-blue-medium transition py-2">Iniciar sesión</a>
-          <a href="../../auth/register.html" class="bg-mint text-blue-night px-5 py-2 rounded-xl font-medium">Comenzar</a>
+          <a href="../../auth/register.html" class="bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium">Comenzar</a>
         </div>
       </div>
     </nav>
   
         <main>
-        <div class="min-h-screen bg-gray-50">
-          <!-- DARK PORTAL HERO -->
-          <section class="portal-hero text-white">
-            <div class="portal-glow-a"></div>
-            <div class="portal-glow-b"></div>
-            <div class="portal-hero-grid"></div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative">
-              <div class="flex items-center gap-2 mb-4">
-                <span class="live-dot"></span>
-                <span class="text-xs uppercase tracking-wider text-mint-text font-semibold">Sesión activa · Propietario</span>
-              </div>
-              <h1 class="text-4xl md:text-5xl font-heading font-extrabold mb-3 leading-tight">
-                Hola, <span class="headline-gradient">Carlos</span>.
+          <!-- HERO -->
+          <section class="bg-blue-night text-white">
+            <div class="max-w-5xl mx-auto px-6 py-24 md:py-32" data-reveal>
+              <p class="text-xs uppercase tracking-[0.2em] text-mint font-medium mb-6">Sesión activa · Propietario</p>
+              <h1 class="text-5xl md:text-7xl font-semibold tracking-[-0.03em] leading-none mb-6">
+                Hola, Carlos.
               </h1>
-              <p class="text-lg text-gray-300 max-w-2xl">
-                Verifica inquilinos al instante con un código QR y gestiona tus garantías activas en un solo lugar.
+              <p class="text-xl text-gray-300 max-w-2xl leading-relaxed mb-10">
+                Verifica inquilinos al instante y gestiona tus garantías activas en un solo lugar.
               </p>
-              <div class="mt-6 flex flex-wrap gap-3">
-                <a href="#verificador" class="inline-flex items-center gap-2 bg-mint text-blue-night px-5 py-3 rounded-xl font-bold hover:shadow-[0_10px_40px_-10px_#3BE2B0] transition">
-                  <i class="fas fa-qrcode"></i> Verificar QR
+              <div class="flex flex-wrap gap-3">
+                <a href="#verificador" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition">
+                  Verificar QR
                 </a>
-                <a href="invitations.html" class="inline-flex items-center gap-2 glass-card text-white px-5 py-3 rounded-xl font-medium hover:bg-white/10 transition">
-                  <i class="fas fa-envelope"></i> Ver invitaciones
+                <a href="invitations.html" class="inline-flex items-center gap-2 border border-white/20 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/5 transition">
+                  Ver invitaciones
                 </a>
               </div>
             </div>
           </section>
 
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 -mt-6 relative">
-            <!-- Stats -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-              <a href="verifications.html" class="bg-white rounded-xl shadow-sm p-6 hover:shadow-lg transition cursor-pointer">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-gray-600 text-sm">Verificaciones</span>
-                  <i class="fas fa-check-circle text-mint-text text-xl"></i>
-                </div>
-                <div class="text-3xl font-bold text-blue-night">3</div>
-              </a>
-
-              <a href="policies.html" class="bg-white rounded-xl shadow-sm p-6 hover:shadow-lg transition cursor-pointer">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-gray-600 text-sm">Garantías vigentes</span>
-                  <i class="fas fa-shield-alt text-blue-medium text-xl"></i>
-                </div>
-                <div class="text-3xl font-bold text-blue-night">2</div>
-              </a>
-
-              <a href="properties.html" class="bg-white rounded-xl shadow-sm p-6 hover:shadow-lg transition cursor-pointer">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-gray-600 text-sm">Propiedades</span>
-                  <i class="fas fa-home text-success text-xl"></i>
-                </div>
-                <div class="text-3xl font-bold text-blue-night">3</div>
-              </a>
-
-              <a href="invitations.html" class="bg-white rounded-xl shadow-sm p-6 hover:shadow-lg transition cursor-pointer">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-gray-600 text-sm">Invitaciones</span>
-                  <i class="fas fa-envelope text-warning text-xl"></i>
-                </div>
-                <div class="text-3xl font-bold text-blue-night">1</div>
-              </a>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <!-- QR Verifier -->
-              <div class="lg:col-span-2">
-                <div id="verificador" class="bg-white rounded-2xl shadow-sm p-8 mb-6">
-                  <h2 class="text-2xl font-heading font-bold text-blue-night mb-6">
-                    <i class="fas fa-qrcode mr-2"></i>
-                    Verificador de Garantía QR
-                  </h2>
-                  
-                  <p class="text-gray-600 mb-6">
-                    Ingresa el código QR del estudiante para validar su garantía al instante
-                  </p>
-
-                  <div class="space-y-4">
-                    <div>
-                      <input 
-                        type="text" 
-                        id="qrCodeInput"
-                        placeholder="AVAL-XXXX-YYYY" 
-                        value="AVAL-LF11-2025"
-                        class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:border-mint focus:outline-none text-center text-xl font-mono uppercase"
-                      />
-                    </div>
-                    <button 
-                      onclick="window.location.href='../../poliza/' + document.getElementById('qrCodeInput').value + '.html'"
-                      class="w-full bg-mint text-white py-4 rounded-xl font-semibold hover:bg-opacity-90 transition text-lg">
-                      <i class="fas fa-search mr-2"></i>
-                      Verificar Garantía
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Recent verifications -->
-                <div class="bg-white rounded-2xl shadow-sm p-8">
-                  <h2 class="text-xl font-heading font-bold text-blue-night mb-4">
-                    Verificaciones recientes
-                  </h2>
-                  
-                  <div class="space-y-3">
-                    <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border border-green-200">
-                      <div class="flex items-center flex-1">
-                        <i class="fas fa-check-circle text-green-500 text-2xl mr-4"></i>
-                        <div>
-                          <div class="font-semibold text-gray-900">Laura Fernández García</div>
-                          <div class="text-sm text-gray-600">AVAL-LF11-2025 • €1,150/mes</div>
-                        </div>
-                      </div>
-                      <a href="../../poliza/AVAL-LF11-2025.html" class="text-mint-text hover:underline text-sm font-medium">
-                        Ver garantía →
-                      </a>
-                    </div>
-
-                    <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border border-green-200">
-                      <div class="flex items-center flex-1">
-                        <i class="fas fa-check-circle text-green-500 text-2xl mr-4"></i>
-                        <div>
-                          <div class="font-semibold text-gray-900">Ana Gómez</div>
-                          <div class="text-sm text-gray-600">AVAL-AG85-2025 • €800/mes</div>
-                        </div>
-                      </div>
-                      <a href="../../poliza/AVAL-AG85-2025.html" class="text-mint-text hover:underline text-sm font-medium">
-                        Ver garantía →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Quick Actions -->
-              <div class="lg:col-span-1">
-                <div class="bg-white rounded-2xl shadow-sm p-6 mb-6">
-                  <h3 class="font-heading font-bold text-blue-night mb-4">
-                    Acciones rápidas
-                  </h3>
-                  
-                  <div class="space-y-3">
-                    <a href="../../validar-qr.html" 
-                       class="block bg-mint bg-opacity-10 border-2 border-mint text-mint-text px-4 py-3 rounded-xl hover:bg-opacity-20 transition text-center font-medium">
-                      <i class="fas fa-qrcode mr-2"></i>
-                      Verificar QR
-                    </a>
-                    
-                    <a href="add-property.html" 
-                       class="block bg-blue-medium bg-opacity-10 border-2 border-blue-medium text-blue-medium px-4 py-3 rounded-xl hover:bg-opacity-20 transition text-center font-medium">
-                      <i class="fas fa-plus mr-2"></i>
-                      Añadir propiedad
-                    </a>
-                    
-                    <a href="invite-tenant.html" 
-                       class="block bg-success bg-opacity-10 border-2 border-success text-success px-4 py-3 rounded-xl hover:bg-opacity-20 transition text-center font-medium">
-                      <i class="fas fa-user-plus mr-2"></i>
-                      Invitar a arrendatario
-                    </a>
-                    
-                    <a href="claims.html" 
-                       class="block bg-red-500 bg-opacity-10 border-2 border-red-500 text-red-500 px-4 py-3 rounded-xl hover:bg-opacity-20 transition text-center font-medium">
-                      <i class="fas fa-exclamation-triangle mr-2"></i>
-                      Gestionar siniestros
-                    </a>
-                    
-                    <a href="link-policy.html" 
-                       class="block bg-purple-600 bg-opacity-10 border-2 border-purple-600 text-purple-600 px-4 py-3 rounded-xl hover:bg-opacity-20 transition text-center font-medium text-sm">
-                      <i class="fas fa-link mr-2"></i>
-                      Usar Garantía para Propiedad NO Gestionada en esta Plataforma
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Help -->
-                <div class="bg-blue-night text-white rounded-2xl p-6">
-                  <h3 class="font-heading font-bold mb-2">
-                    <i class="fas fa-headset mr-2"></i>
-                    Soporte
-                  </h3>
-                  <p class="text-sm text-gray-300 mb-4">
-                    ¿Necesitas ayuda? Elige cómo contactarnos
-                  </p>
-                  <a href="support.html" 
-                     class="block bg-mint text-white px-4 py-2 rounded-lg text-center font-medium hover:bg-opacity-90 transition">
-                    Opciones de soporte
-                  </a>
-                </div>
+          <!-- STATS -->
+          <section class="bg-white">
+            <div class="max-w-5xl mx-auto px-6 py-20" data-reveal>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-100 rounded-2xl overflow-hidden border border-gray-100">
+                <a href="verifications.html" class="bg-white p-8 hover:bg-gray-50 transition">
+                  <p class="text-sm text-gray-400 mb-3">Verificaciones</p>
+                  <p class="text-5xl font-semibold text-blue-night tracking-[-0.03em]">3</p>
+                </a>
+                <a href="policies.html" class="bg-white p-8 hover:bg-gray-50 transition">
+                  <p class="text-sm text-gray-400 mb-3">Garantías vigentes</p>
+                  <p class="text-5xl font-semibold text-blue-night tracking-[-0.03em]">2</p>
+                </a>
+                <a href="properties.html" class="bg-white p-8 hover:bg-gray-50 transition">
+                  <p class="text-sm text-gray-400 mb-3">Propiedades</p>
+                  <p class="text-5xl font-semibold text-blue-night tracking-[-0.03em]">3</p>
+                </a>
+                <a href="invitations.html" class="bg-white p-8 hover:bg-gray-50 transition">
+                  <p class="text-sm text-gray-400 mb-3">Invitaciones</p>
+                  <p class="text-5xl font-semibold text-blue-night tracking-[-0.03em]">1</p>
+                </a>
               </div>
             </div>
-          </div>
-        </div>
+          </section>
+
+          <!-- QR VERIFIER -->
+          <section id="verificador" class="bg-[#f0faf6]">
+            <div class="max-w-3xl mx-auto px-6 py-24 md:py-28 text-center" data-reveal>
+              <p class="text-xs uppercase tracking-[0.2em] text-mint-text font-medium mb-6">Verificador QR</p>
+              <h2 class="text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-blue-night mb-6">
+                Valida una garantía.
+              </h2>
+              <p class="text-lg text-gray-500 mb-12 max-w-xl mx-auto">
+                Ingresa el código del estudiante y confirma la cobertura al instante.
+              </p>
+
+              <div class="max-w-lg mx-auto">
+                <input
+                  type="text"
+                  id="qrCodeInput"
+                  placeholder="AVAL-XXXX-YYYY"
+                  value="AVAL-LF11-2025"
+                  class="w-full px-6 py-5 bg-white border border-gray-200 rounded-full focus:border-blue-night focus:outline-none text-center text-lg font-mono uppercase tracking-wider text-blue-night mb-4"
+                />
+                <button
+                  onclick="window.location.href='../../poliza/' + document.getElementById('qrCodeInput').value + '.html'"
+                  class="w-full bg-blue-night text-white py-4 rounded-full font-medium hover:bg-blue-night/90 transition">
+                  Verificar garantía
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- RECENT VERIFICATIONS -->
+          <section class="bg-white">
+            <div class="max-w-5xl mx-auto px-6 py-24" data-reveal>
+              <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-12">
+                Verificaciones recientes
+              </h2>
+
+              <div class="divide-y divide-gray-100 border-t border-b border-gray-100">
+                <a href="../../poliza/AVAL-LF11-2025.html" class="flex items-center justify-between py-6 hover:bg-gray-50 transition px-4 -mx-4 rounded-2xl">
+                  <div>
+                    <p class="text-lg font-medium text-blue-night mb-1">Laura Fernández García</p>
+                    <p class="text-sm text-gray-400 font-mono">AVAL-LF11-2025 · €1.150/mes</p>
+                  </div>
+                  <div class="flex items-center gap-6">
+                    <span class="inline-flex items-center gap-2 text-sm text-mint-text">
+                      <span class="w-1.5 h-1.5 rounded-full bg-mint-text"></span>
+                      Verificada
+                    </span>
+                    <span class="text-gray-300">→</span>
+                  </div>
+                </a>
+
+                <a href="../../poliza/AVAL-AG85-2025.html" class="flex items-center justify-between py-6 hover:bg-gray-50 transition px-4 -mx-4 rounded-2xl">
+                  <div>
+                    <p class="text-lg font-medium text-blue-night mb-1">Ana Gómez</p>
+                    <p class="text-sm text-gray-400 font-mono">AVAL-AG85-2025 · €800/mes</p>
+                  </div>
+                  <div class="flex items-center gap-6">
+                    <span class="inline-flex items-center gap-2 text-sm text-mint-text">
+                      <span class="w-1.5 h-1.5 rounded-full bg-mint-text"></span>
+                      Verificada
+                    </span>
+                    <span class="text-gray-300">→</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- QUICK ACTIONS -->
+          <section class="bg-white">
+            <div class="max-w-5xl mx-auto px-6 pb-24" data-reveal>
+              <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-12">
+                Acciones rápidas
+              </h2>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="../../validar-qr.html" class="group flex items-center justify-between p-6 border border-gray-100 rounded-2xl hover:border-blue-night transition">
+                  <div>
+                    <p class="text-lg font-medium text-blue-night mb-1">Verificar QR</p>
+                    <p class="text-sm text-gray-400">Validar garantía de un inquilino</p>
+                  </div>
+                  <span class="text-gray-300 group-hover:text-blue-night transition">→</span>
+                </a>
+
+                <a href="add-property.html" class="group flex items-center justify-between p-6 border border-gray-100 rounded-2xl hover:border-blue-night transition">
+                  <div>
+                    <p class="text-lg font-medium text-blue-night mb-1">Añadir propiedad</p>
+                    <p class="text-sm text-gray-400">Registrar un nuevo inmueble</p>
+                  </div>
+                  <span class="text-gray-300 group-hover:text-blue-night transition">→</span>
+                </a>
+
+                <a href="invite-tenant.html" class="group flex items-center justify-between p-6 border border-gray-100 rounded-2xl hover:border-blue-night transition">
+                  <div>
+                    <p class="text-lg font-medium text-blue-night mb-1">Invitar arrendatario</p>
+                    <p class="text-sm text-gray-400">Enviar invitación a un futuro inquilino</p>
+                  </div>
+                  <span class="text-gray-300 group-hover:text-blue-night transition">→</span>
+                </a>
+
+                <a href="claims.html" class="group flex items-center justify-between p-6 border border-gray-100 rounded-2xl hover:border-blue-night transition">
+                  <div>
+                    <p class="text-lg font-medium text-blue-night mb-1">Gestionar siniestros</p>
+                    <p class="text-sm text-gray-400">Reclamar sobre una garantía</p>
+                  </div>
+                  <span class="text-gray-300 group-hover:text-blue-night transition">→</span>
+                </a>
+
+                <a href="link-policy.html" class="group flex items-center justify-between p-6 border border-gray-100 rounded-2xl hover:border-blue-night transition md:col-span-2">
+                  <div>
+                    <p class="text-lg font-medium text-blue-night mb-1">Vincular garantía externa</p>
+                    <p class="text-sm text-gray-400">Aplica una garantía a una propiedad que no gestionas en Tu Aval</p>
+                  </div>
+                  <span class="text-gray-300 group-hover:text-blue-night transition">→</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- SUPPORT -->
+          <section class="bg-blue-night text-white">
+            <div class="max-w-3xl mx-auto px-6 py-24 text-center" data-reveal>
+              <h2 class="text-4xl md:text-5xl font-semibold tracking-[-0.03em] mb-6">
+                ¿Necesitas ayuda?
+              </h2>
+              <p class="text-lg text-gray-300 mb-10">
+                Nuestro equipo responde en menos de 24 horas.
+              </p>
+              <a href="support.html" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition">
+                Contactar soporte
+              </a>
+            </div>
+          </section>
       </main>
         
     <footer class="bg-blue-night text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div class="flex items-center gap-2.5 mb-4">
-              <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="url(#ta-gf)"/><path d="M16 7L23 10.5V17C23 21 20 24.5 16 26C12 24.5 9 21 9 17V10.5L16 7Z" fill="white" fill-opacity="0.2"/><path d="M13 16.5L15 18.5L19.5 13.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ta-gf" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3BE2B0"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs></svg>
+              <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="white"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#0A2540" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
               <span class="text-lg font-semibold">Tu Aval</span>
             </div>
             <p class="text-gray-400 text-sm">
@@ -432,7 +411,7 @@
     var registerLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
       var h = a.getAttribute('href') || '';
       // Match the "Comenzar" CTA — has bg-mint class and points to register
-      return (/auth\/register\.html/.test(h)) && /bg-mint/.test(a.className || '');
+      return (/auth\/register\.html/.test(h)) && /bg-blue-night/.test(a.className || '');
     });
     if (loginLinks.length === 0 && registerLinks.length === 0) return;
 
@@ -493,6 +472,19 @@
     window.location.href = relPrefix() + 'index.html';
   };
 })();
+</script>
+<script>
+requestAnimationFrame(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '50px' });
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+});
 </script>
 </body>
     </html>

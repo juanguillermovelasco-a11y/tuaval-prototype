@@ -26,65 +26,66 @@
                 }
               },
               fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-                heading: ['Poppins', 'system-ui', 'sans-serif']
+                sans: ['-apple-system', 'Inter', 'system-ui', 'sans-serif']
               }
             }
           }
         </script>
         <style>
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+          [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+          [data-reveal].revealed { opacity: 1; transform: translateY(0); }
         </style>
       </head>
-      <body class="bg-gray-50 text-gray-text">
+      <body class="bg-white text-gray-500 leading-relaxed">
         
-    <nav class="bg-white shadow-sm border-b border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
           <div class="flex items-center">
             <a href="../index.html" class="flex items-center gap-2.5">
-              <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="url(#ta-g)"/><path d="M16 7L23 10.5V17C23 21 20 24.5 16 26C12 24.5 9 21 9 17V10.5L16 7Z" fill="white" fill-opacity="0.2"/><path d="M13 16.5L15 18.5L19.5 13.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ta-g" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3BE2B0"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs></svg>
+              <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
             <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
             </a>
           </div>
           
           <div class="hidden md:flex items-center space-x-8">
-            <a href="../como-funciona.html" class="text-gray-text hover:text-blue-medium transition">Cómo funciona</a>
-            <!-- HIDDEN: <a href="../nosotros.html" class="text-gray-text hover:text-blue-medium transition">Nosotros</a> -->
-            <a href="../estudiante.html" class="text-gray-text hover:text-blue-medium transition">Estudiantes</a>
-            <a href="../propietario.html" class="text-gray-text hover:text-blue-medium transition">Propietarios</a>
-            <a href="../inversionista.html" class="text-gray-text hover:text-blue-medium transition">Inversionistas</a>
+            <a href="../como-funciona.html" class="text-sm text-gray-400 hover:text-blue-night transition">Cómo funciona</a>
+            <!-- HIDDEN: <a href="../nosotros.html" class="text-sm text-gray-400 hover:text-blue-night transition">Nosotros</a> -->
+            <a href="../estudiante.html" class="text-sm text-gray-400 hover:text-blue-night transition">Estudiantes</a>
+            <a href="../propietario.html" class="text-sm text-gray-400 hover:text-blue-night transition">Propietarios</a>
+            <a href="../inversionista.html" class="text-sm text-gray-400 hover:text-blue-night transition">Inversionistas</a>
             <!-- HIDDEN: <a href="../validar-qr.html" class="text-mint-text hover:text-mint-text/80 transition font-semibold">
               <i class="fas fa-qrcode mr-1"></i>Validar QR
             </a> -->
-            <a href="../precios.html" class="text-gray-text hover:text-blue-medium transition">Precios</a>
+            <a href="../precios.html" class="text-sm text-gray-400 hover:text-blue-night transition">Precios</a>
           </div>
 
           <div class="hidden md:flex items-center space-x-4">
             
-              <a href="login.html" class="text-gray-text hover:text-blue-medium transition">Iniciar sesión</a>
+              <a href="login.html" class="text-sm text-gray-400 hover:text-blue-night transition">Iniciar sesión</a>
               <a href="register.html" 
-                 class="bg-mint text-blue-night px-6 py-2 rounded-xl hover:bg-opacity-90 transition font-medium">
+                 class="bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition">
                 Comenzar
               </a>
             
           </div>
 
-          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-blue-night text-2xl">
+          <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-blue-night text-xl">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
 
-      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 px-4 py-4 space-y-3">
-        <a href="../como-funciona.html" class="block text-gray-text hover:text-blue-medium transition py-2">Cómo funciona</a>
-        <a href="../estudiante.html" class="block text-gray-text hover:text-blue-medium transition py-2">Estudiantes</a>
-        <a href="../propietario.html" class="block text-gray-text hover:text-blue-medium transition py-2">Propietarios</a>
-        <a href="../inversionista.html" class="block text-gray-text hover:text-blue-medium transition py-2">Inversionistas</a>
-        <a href="../precios.html" class="block text-gray-text hover:text-blue-medium transition py-2">Precios</a>
-        <div class="pt-3 border-t border-gray-200 flex gap-3">
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 px-6 py-4 space-y-3 bg-white">
+        <a href="../como-funciona.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Cómo funciona</a>
+        <a href="../estudiante.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Estudiantes</a>
+        <a href="../propietario.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Propietarios</a>
+        <a href="../inversionista.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Inversionistas</a>
+        <a href="../precios.html" class="block text-gray-500 hover:text-blue-night transition py-2 text-sm">Precios</a>
+        <div class="pt-3 border-t border-gray-100 flex gap-4 items-center">
           <a href="../auth/login.html" class="text-gray-text hover:text-blue-medium transition py-2">Iniciar sesión</a>
-          <a href="../auth/register.html" class="bg-mint text-blue-night px-5 py-2 rounded-xl font-medium">Comenzar</a>
+          <a href="../auth/register.html" class="bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium">Comenzar</a>
         </div>
       </div>
     </nav>
@@ -93,10 +94,7 @@
         <div class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
           <div class="max-w-2xl mx-auto">
             <div class="text-center mb-8">
-              <div class="inline-block bg-mint p-4 rounded-2xl mb-4">
-                <i class="fas fa-user-plus text-white text-4xl"></i>
-              </div>
-              <h2 class="text-3xl font-heading font-bold text-blue-night">
+              <h2 class="text-4xl md:text-5xl font-semibold tracking-[-0.03em] text-blue-night">
                 Crear cuenta
               </h2>
               <p class="text-gray-600 mt-2">
@@ -107,7 +105,7 @@
             <!-- Role selector -->
             <div class="flex gap-4 mb-8">
               <a href="register.html?role=student" 
-                 class="bg-mint text-white flex-1 p-4 rounded-xl text-center font-semibold hover:shadow-lg transition">
+                 class="bg-blue-night text-white flex-1 p-4 rounded-full text-center font-semibold hover:shadow-lg transition">
                 <i class="fas fa-user-graduate text-2xl block mb-2"></i>
                 Estudiante
               </a>
@@ -118,33 +116,33 @@
               </a>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-lg p-8">
+            <div class="bg-white border border-gray-100 rounded-2xl p-8">
               <form method="POST" action="register.html" class="space-y-6">
                 <input type="hidden" name="role" value="student" />
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
                       Nombre completo *
                     </label>
                     <input 
                       type="text" 
                       name="name" 
                       required
-                      class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-mint focus:outline-none"
+                      class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition"
                       placeholder="Ana Gómez"
                     />
                   </div>
 
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
                       Correo electrónico *
                     </label>
                     <input 
                       type="email" 
                       name="email" 
                       required
-                      class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-mint focus:outline-none"
+                      class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition"
                       placeholder="ana@email.com"
                     />
                   </div>
@@ -152,7 +150,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
                       Contraseña *
                     </label>
                     <input 
@@ -160,32 +158,32 @@
                       name="password" 
                       required
                       minlength="8"
-                      class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-mint focus:outline-none"
+                      class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition"
                       placeholder="••••••••"
                     />
                   </div>
 
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
                       Teléfono
                     </label>
                     <input 
                       type="tel" 
                       name="phone" 
-                      class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-mint focus:outline-none"
+                      class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition"
                       placeholder="+34 612 345 678"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">
+                  <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
                     País de origen *
                   </label>
                   <select 
                     name="country" 
                     required
-                    class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-mint focus:outline-none">
+                    class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition">
                     <option value="">Selecciona un país</option>
                     
                       <optgroup label="Latinoamérica">
@@ -211,13 +209,13 @@
 
                 
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                    <label class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
                       Universidad (opcional)
                     </label>
                     <input 
                       type="text" 
                       name="university" 
-                      class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-mint focus:outline-none"
+                      class="w-full px-5 py-3 border border-gray-200 rounded-2xl focus:border-blue-night focus:outline-none transition"
                       placeholder="IE University, UC3M, etc."
                     />
                   </div>
@@ -230,7 +228,7 @@
                     required
                     class="mt-1 mr-3 w-5 h-5 text-mint-text border-gray-300 rounded focus:ring-mint"
                   />
-                  <label class="text-sm text-gray-700">
+                  <label class="text-sm text-gray-500">
                     Acepto los <a href="../placeholder.html" class="text-mint-text hover:underline">términos y condiciones</a> 
                     y la <a href="../placeholder.html" class="text-mint-text hover:underline">política de privacidad</a> de Tu Aval
                   </label>
@@ -238,13 +236,13 @@
 
                 <button 
                   type="submit"
-                  class="w-full bg-mint text-white py-3 rounded-xl font-semibold hover:bg-opacity-90 transition text-lg">
+                  class="w-full bg-blue-night text-white py-3 rounded-full font-semibold hover:bg-blue-night/90 transition text-lg">
                   Crear cuenta
                 </button>
               </form>
 
               <div class="mt-6 text-center">
-                <p class="text-sm text-gray-600">
+                <p class="text-sm text-gray-500">
                   ¿Ya tienes cuenta?
                   <a href="login.html" class="text-mint-text hover:underline font-medium ml-1">
                     Inicia sesión aquí
@@ -257,11 +255,11 @@
       </main>
         
     <footer class="bg-blue-night text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-5xl mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div class="flex items-center gap-2.5 mb-4">
-              <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="url(#ta-gf)"/><path d="M16 7L23 10.5V17C23 21 20 24.5 16 26C12 24.5 9 21 9 17V10.5L16 7Z" fill="white" fill-opacity="0.2"/><path d="M13 16.5L15 18.5L19.5 13.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ta-gf" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3BE2B0"/><stop offset="1" stop-color="#0A2540"/></linearGradient></defs></svg>
+              <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="white"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="#0A2540" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
               <span class="text-lg font-semibold">Tu Aval</span>
             </div>
             <p class="text-gray-400 text-sm">
@@ -403,7 +401,7 @@
     var registerLinks = Array.from(document.querySelectorAll('a')).filter(function(a) {
       var h = a.getAttribute('href') || '';
       // Match the "Comenzar" CTA — has bg-mint class and points to register
-      return (/auth\/register\.html/.test(h)) && /bg-mint/.test(a.className || '');
+      return (/auth\/register\.html/.test(h)) && /bg-blue-night/.test(a.className || '');
     });
     if (loginLinks.length === 0 && registerLinks.length === 0) return;
 
@@ -464,6 +462,19 @@
     window.location.href = relPrefix() + 'index.html';
   };
 })();
+</script>
+<script>
+requestAnimationFrame(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '50px' });
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+});
 </script>
 </body>
     </html>
