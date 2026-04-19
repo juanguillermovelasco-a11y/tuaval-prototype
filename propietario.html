@@ -38,6 +38,30 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Hero mockup animations */
+    @keyframes dashFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes badgeFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes badgePop { 0% { transform: scale(0); opacity: 0; } 70% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+    @keyframes countUp { 0% { opacity: 0; transform: translateY(8px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes rowFadeIn { 0% { opacity: 0; transform: translateX(-10px); } 100% { opacity: 1; transform: translateX(0); } }
+    @keyframes mintRowGlow { 0%, 100% { background: rgba(59, 226, 176, 0); } 50% { background: rgba(59, 226, 176, 0.08); } }
+
+    .hero-dashboard { animation: dashFloat 6s ease-in-out infinite; }
+    .hero-badge-pay { animation: badgePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s both, badgeFloat 4s ease-in-out 1.6s infinite; }
+    .hero-badge-coverage { animation: badgePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.1s both, badgeFloat 5s ease-in-out 1.9s infinite; }
+
+    .metric-value { animation: countUp 0.8s ease-out both; }
+    .metric-1 { animation-delay: 0.4s; }
+    .metric-2 { animation-delay: 0.6s; }
+    .metric-3 { animation-delay: 0.8s; }
+
+    .property-row { animation: rowFadeIn 0.6s ease-out both; }
+    .property-row-1 { animation-delay: 1.0s; }
+    .property-row-2 { animation-delay: 1.2s; }
+    .property-row-3 { animation-delay: 1.4s; }
+
+    .new-payment-row { animation: mintRowGlow 3s ease-in-out 2s infinite; border-radius: 12px; margin: 0 -8px; padding-left: 8px; padding-right: 8px; }
   </style>
 </head>
 <body class="bg-white text-gray-500 leading-relaxed">
@@ -116,7 +140,7 @@
 
           <!-- Dashboard mockup: browser frame + metrics + properties list -->
           <div class="relative" data-reveal>
-            <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(10,37,64,0.2)]">
+            <div class="hero-dashboard bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-[0_30px_80px_-20px_rgba(10,37,64,0.2)]">
               <!-- Browser chrome -->
               <div class="bg-gray-50 px-4 py-3 flex items-center gap-1.5 border-b border-gray-100">
                 <span class="w-3 h-3 rounded-full bg-gray-200"></span>
@@ -138,22 +162,22 @@
                 <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-xl overflow-hidden border border-gray-100 mb-4">
                   <div class="bg-white p-3">
                     <p class="text-[9px] text-gray-400 mb-1">Ingresos/mes</p>
-                    <p class="text-lg font-semibold text-blue-night tracking-tight">€2.900</p>
+                    <p class="text-lg font-semibold text-blue-night tracking-tight metric-value metric-1">€2.900</p>
                   </div>
                   <div class="bg-white p-3">
                     <p class="text-[9px] text-gray-400 mb-1">Propiedades</p>
-                    <p class="text-lg font-semibold text-blue-night tracking-tight">3</p>
+                    <p class="text-lg font-semibold text-blue-night tracking-tight metric-value metric-2">3</p>
                   </div>
                   <div class="bg-white p-3">
                     <p class="text-[9px] text-gray-400 mb-1">Siniestros</p>
-                    <p class="text-lg font-semibold text-mint-text tracking-tight">0</p>
+                    <p class="text-lg font-semibold text-mint-text tracking-tight metric-value metric-3">0</p>
                   </div>
                 </div>
 
                 <!-- Properties list -->
                 <p class="text-[10px] uppercase tracking-widest text-gray-400 font-medium mb-2">Garantías vigentes</p>
                 <div class="space-y-2">
-                  <div class="flex items-center justify-between py-2 border-b border-gray-50">
+                  <div class="property-row property-row-1 new-payment-row flex items-center justify-between py-2">
                     <div class="flex items-center gap-2">
                       <div class="w-6 h-6 rounded-full bg-mint-text/10 flex items-center justify-center">
                         <svg class="w-3 h-3 text-mint-text" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4z" clip-rule="evenodd"/></svg>
@@ -165,7 +189,7 @@
                     </div>
                     <p class="text-[11px] font-semibold text-blue-night">€1.150</p>
                   </div>
-                  <div class="flex items-center justify-between py-2 border-b border-gray-50">
+                  <div class="property-row property-row-2 flex items-center justify-between py-2 border-b border-gray-50">
                     <div class="flex items-center gap-2">
                       <div class="w-6 h-6 rounded-full bg-mint-text/10 flex items-center justify-center">
                         <svg class="w-3 h-3 text-mint-text" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4z" clip-rule="evenodd"/></svg>
@@ -177,7 +201,7 @@
                     </div>
                     <p class="text-[11px] font-semibold text-blue-night">€800</p>
                   </div>
-                  <div class="flex items-center justify-between py-2">
+                  <div class="property-row property-row-3 flex items-center justify-between py-2">
                     <div class="flex items-center gap-2">
                       <div class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
                         <span class="text-[9px] text-gray-400">+</span>
@@ -191,7 +215,7 @@
             </div>
 
             <!-- Floating "pago recibido" badge -->
-            <div class="absolute -right-6 -top-6 bg-white rounded-2xl shadow-xl px-4 py-3 border border-gray-100 max-w-[220px]">
+            <div class="hero-badge-pay absolute -right-6 -top-6 bg-white rounded-2xl shadow-xl px-4 py-3 border border-gray-100 max-w-[220px]">
               <div class="flex items-center gap-2 mb-1.5">
                 <div class="w-7 h-7 rounded-full bg-mint-text/10 flex items-center justify-center">
                   <svg class="w-3.5 h-3.5 text-mint-text" viewBox="0 0 20 20" fill="currentColor">
@@ -204,7 +228,7 @@
             </div>
 
             <!-- Floating cobertura badge -->
-            <div class="absolute -left-4 -bottom-4 bg-blue-night rounded-2xl shadow-xl px-4 py-3 text-white">
+            <div class="hero-badge-coverage absolute -left-4 -bottom-4 bg-blue-night rounded-2xl shadow-xl px-4 py-3 text-white">
               <p class="text-[9px] uppercase tracking-widest text-mint mb-0.5 font-medium">Cobertura activa</p>
               <p class="text-lg font-semibold tracking-tight">€23.400</p>
             </div>
