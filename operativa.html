@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modelo operativo · Tu Aval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'blue-night': '#0A2540',
+            'mint': '#3BE2B0',
+            'mint-text': '#0D9B6A',
+            'blue-medium': '#4A90E2',
+            'gray-text': '#425466'
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+    body { font-feature-settings: "ss01", "cv11"; }
+
+    [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    [data-reveal].revealed { opacity: 1; transform: translateY(0); }
+
+    .step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-feature-settings: "tnum";
+    }
+
+    /* Subtle animation for step numbers */
+    @keyframes numberReveal {
+      0% { opacity: 0; transform: translateY(8px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .step-block { animation: numberReveal 0.6s ease-out both; }
+
+    /* Print styles */
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; }
+      .step-block { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-gray-500 leading-relaxed">
+
+  <!-- NAV -->
+  <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 no-print">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
+        </a>
+        <div class="flex items-center gap-5">
+          <span class="hidden md:inline text-xs uppercase tracking-widest text-gray-400 font-medium">Documento interno · v1.0</span>
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition">
+            <i class="fas fa-print text-xs"></i> Imprimir
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-16 md:pt-28 md:pb-20">
+      <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute -top-20 -right-40 w-[500px] h-[500px] rounded-full bg-blue-medium/10 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(#0A2540 1px, transparent 1px), linear-gradient(90deg, #0A2540 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+      <div class="relative max-w-3xl mx-auto px-6" data-reveal>
+        <div class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-1.5 mb-8 text-xs font-medium text-gray-500">
+          <span class="w-1.5 h-1.5 rounded-full bg-mint"></span>
+          Modelo operativo · Confidencial
+        </div>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">
+          Proceso<br>operativo.
+        </h1>
+        <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl">
+          Los 12 pasos que definen cómo Tu Aval emite, monitorea y ejecuta garantías de alquiler bajo la figura de fianza solidaria española. Pensado como hoja de ruta para el lanzamiento.
+        </p>
+      </div>
+    </section>
+
+    <!-- TOC -->
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-14" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-6">Índice</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3 text-sm">
+          <a href="#s1" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">01</span><span class="text-gray-500">Constitución legal</span></a>
+          <a href="#s2" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">02</span><span class="text-gray-500">Estructura societaria</span></a>
+          <a href="#s3" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">03</span><span class="text-gray-500">Cuentas bancarias</span></a>
+          <a href="#s4" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">04</span><span class="text-gray-500">Contratos tipo</span></a>
+          <a href="#s5" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">05</span><span class="text-gray-500">Scoring del estudiante</span></a>
+          <a href="#s6" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">06</span><span class="text-gray-500">Emisión de la garantía</span></a>
+          <a href="#s7" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">07</span><span class="text-gray-500">Gestión del dinero</span></a>
+          <a href="#s8" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">08</span><span class="text-gray-500">Monitoreo de pólizas</span></a>
+          <a href="#s9" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">09</span><span class="text-gray-500">Gestión de impago</span></a>
+          <a href="#s10" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">10</span><span class="text-gray-500">Recobro en origen</span></a>
+          <a href="#s11" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">11</span><span class="text-gray-500">Cierre y reporting</span></a>
+          <a href="#s12" class="flex items-baseline gap-3 hover:text-blue-night transition"><span class="step-num text-gray-300 w-6">12</span><span class="text-gray-500">Distribución a inversores</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEPS -->
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16 md:py-24 space-y-20">
+
+        <!-- STEP 1 -->
+        <div id="s1" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">01</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Constitución legal</h2>
+          <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500">
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Constituir <span class="text-blue-night font-medium">Tu Aval S.L.</span> en España ante notario (~€2.000, 1 semana).</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Objeto social: <em>"prestación de servicios de garantía y fianza solidaria en contratos de arrendamiento"</em>.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Capital social mínimo legal: €3.000. Aporte recomendado para credibilidad: €50.000–100.000.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Alta en Registro Mercantil, CIF, licencia de actividad municipal.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Contratar asesor fiscal, laboral y despacho legal civil-mercantil.</span></li>
+          </ul>
+        </div>
+
+        <!-- STEP 2 -->
+        <div id="s2" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">02</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Estructura societaria</h2>
+          <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500">
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Crear <span class="text-blue-night font-medium">holding matriz</span> (SL o SCR) que capta la inversión.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>El holding aporta capital a Tu Aval S.L. vía ampliación de capital o préstamo participativo.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Firmar <span class="text-blue-night font-medium">pacto de socios</span>: gobierno, reparto, salidas, cupón a inversores.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Los inversores entran al holding, nunca directo a la operadora.</span></li>
+          </ul>
+        </div>
+
+        <!-- STEP 3 -->
+        <div id="s3" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">03</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Cuentas bancarias</h2>
+          <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500">
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><span class="text-blue-night font-medium">Cuenta operativa</span>: gastos, nómina, marketing.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><span class="text-blue-night font-medium">Cuenta de caja de garantía</span>: segregada internamente, misma titularidad pero uso restringido a siniestros.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Alta en TPV / Stripe para cobrar primas de estudiantes con tarjeta.</span></li>
+          </ul>
+        </div>
+
+        <!-- STEP 4 -->
+        <div id="s4" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">04</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Contratos tipo</h2>
+          <p class="text-[15px] text-gray-500 mb-5 leading-relaxed">Tres piezas contractuales sustentan toda la operación:</p>
+          <div class="space-y-5">
+            <div class="border-l-2 border-mint pl-5">
+              <p class="text-xs uppercase tracking-widest text-mint-text font-medium mb-1">Contrato A</p>
+              <p class="text-blue-night font-medium text-[15px] mb-1">Fianza solidaria · Tu Aval ↔ Propietario</p>
+              <p class="text-sm text-gray-500 leading-relaxed">2–3 páginas. Incluye renuncia a beneficios de orden, excusión y división. Plazo de ejecución 15 días. Cobertura máxima X meses o €Y.</p>
+            </div>
+            <div class="border-l-2 border-mint pl-5">
+              <p class="text-xs uppercase tracking-widest text-mint-text font-medium mb-1">Contrato B</p>
+              <p class="text-blue-night font-medium text-[15px] mb-1">Solicitud de garantía + pagaré · Estudiante ↔ Tu Aval</p>
+              <p class="text-sm text-gray-500 leading-relaxed">Solicitud, consentimiento de open banking, pagaré a la vista por cobertura máxima, cláusula de jurisdicción del país de origen.</p>
+            </div>
+            <div class="border-l-2 border-mint pl-5">
+              <p class="text-xs uppercase tracking-widest text-mint-text font-medium mb-1">Contrato C</p>
+              <p class="text-blue-night font-medium text-[15px] mb-1">Mandato de cobranza · Tu Aval España ↔ Despacho local</p>
+              <p class="text-sm text-gray-500 leading-relaxed">Poder formal al despacho en México/Colombia/Argentina para ejecutar el pagaré en caso de siniestro.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div id="s5" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">05</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Scoring y verificación del estudiante</h2>
+          <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500">
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Integrar <span class="text-blue-night font-medium">open banking internacional</span>: Belvo (LatAm), Plaid (US), TrueLayer (UE).</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Reglas de scoring: ingresos familiares, ahorro, historial crediticio, documentos, país de origen.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Aprobación o rechazo automático en menos de 24 horas.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Cálculo de prima según nivel de riesgo: 5–8% de la renta anual.</span></li>
+          </ul>
+        </div>
+
+        <!-- STEP 6 -->
+        <div id="s6" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">06</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Emisión de la garantía</h2>
+          <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500">
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>El estudiante acepta condiciones y paga la prima (tarjeta o transferencia).</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Firma digital del pagaré (DocuSign, Signaturit).</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Sistema genera <span class="text-blue-night font-medium">certificado QR único</span> con código AVAL-XXXX-YYYY y vigencia.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>El propietario firma el contrato de fianza (firma digital).</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Cobertura activa desde ese instante.</span></li>
+          </ul>
+        </div>
+
+        <!-- STEP 7 -->
+        <div id="s7" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">07</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Gestión del dinero cobrado</h2>
+          <p class="text-[15px] text-gray-500 mb-5 leading-relaxed">La prima cobrada se divide automáticamente en tres destinos:</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-[#f0faf6] rounded-2xl p-5">
+              <p class="text-xs uppercase tracking-widest text-mint-text font-medium mb-2">50–60%</p>
+              <p class="text-blue-night font-medium text-sm mb-1">Caja de garantía</p>
+              <p class="text-xs text-gray-500">Reserva técnica</p>
+            </div>
+            <div class="bg-gray-50 rounded-2xl p-5">
+              <p class="text-xs uppercase tracking-widest text-gray-400 font-medium mb-2">25–35%</p>
+              <p class="text-blue-night font-medium text-sm mb-1">Operativa</p>
+              <p class="text-xs text-gray-500">Salarios, gastos, marketing</p>
+            </div>
+            <div class="bg-blue-night rounded-2xl p-5 text-white">
+              <p class="text-xs uppercase tracking-widest text-mint font-medium mb-2">10–15%</p>
+              <p class="text-sm font-medium mb-1">Cupón inversores</p>
+              <p class="text-xs text-gray-400">Rentabilidad trimestral</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 mt-5 leading-relaxed">Registro contable de cada póliza activa con su exposición total y vigencia.</p>
+        </div>
+
+        <!-- STEP 8 -->
+        <div id="s8" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">08</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Monitoreo de pólizas activas</h2>
+          <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500">
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Dashboard interno: contratos vigentes, exposición total, caja disponible en tiempo real.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Alertas de vencimiento, renovaciones, cambios de inquilino.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Comunicación mensual al propietario sobre el estado de su garantía.</span></li>
+          </ul>
+        </div>
+
+        <!-- STEP 9 -->
+        <div id="s9" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">09</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Gestión de impago (siniestro)</h2>
+          <ol class="space-y-3 text-[15px] leading-relaxed text-gray-500">
+            <li class="flex gap-3"><span class="step-num text-gray-300 w-6 flex-shrink-0">1.</span><span>Propietario notifica el impago vía web o email.</span></li>
+            <li class="flex gap-3"><span class="step-num text-gray-300 w-6 flex-shrink-0">2.</span><span>Verificación en 48 horas: burofax al inquilino, contacto telefónico.</span></li>
+            <li class="flex gap-3"><span class="step-num text-gray-300 w-6 flex-shrink-0">3.</span><span>Confirmado: Tu Aval paga al propietario en <span class="text-blue-night font-medium">15 días</span> desde la caja de garantía.</span></li>
+            <li class="flex gap-3"><span class="step-num text-gray-300 w-6 flex-shrink-0">4.</span><span>Activación paralela del pagaré en país de origen (despacho local).</span></li>
+            <li class="flex gap-3"><span class="step-num text-gray-300 w-6 flex-shrink-0">5.</span><span>Inicio del desahucio con abogado designado por Tu Aval.</span></li>
+          </ol>
+        </div>
+
+        <!-- STEP 10 -->
+        <div id="s10" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">10</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Recobro en país de origen</h2>
+          <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500">
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>El despacho local activa el pagaré mediante juicio ejecutivo mercantil.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Tiempo de recuperación típico en LatAm: <span class="text-blue-night font-medium">45–90 días</span>.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Lo recuperado regresa directo a la caja de garantía.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Costes de cobranza se cargan al estudiante: hasta 30–40% adicional sobre el monto.</span></li>
+          </ul>
+        </div>
+
+        <!-- STEP 11 -->
+        <div id="s11" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">11</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Cierre contable y reporting</h2>
+          <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500">
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><span class="text-blue-night font-medium">Mensual</span>: primas cobradas, siniestros pagados, caja disponible.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><span class="text-blue-night font-medium">Trimestral</span>: informe de solvencia para auditoría.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><span class="text-blue-night font-medium">Anual</span>: auditoría externa por firma independiente (recomendado desde el día uno).</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Depósito de cuentas en el Registro Mercantil (obligación legal).</span></li>
+          </ul>
+        </div>
+
+        <!-- STEP 12 -->
+        <div id="s12" class="step-block" data-reveal>
+          <div class="flex items-baseline gap-4 mb-6">
+            <span class="step-num text-mint-text text-sm font-semibold">12</span>
+            <div class="flex-1 h-px bg-gray-100"></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-5">Distribución a inversores</h2>
+          <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500">
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Cierre de año fiscal: cálculo del resultado operativo.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Pago de cupón pactado a inversores del holding (ej: <span class="text-blue-night font-medium">8% anual</span>, distribución trimestral).</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Reinversión o distribución del exceso según pacto de socios.</span></li>
+            <li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Reporte trimestral a inversores con métricas clave: exposición, siniestralidad, caja.</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <section class="bg-blue-night text-white">
+      <div class="max-w-3xl mx-auto px-6 py-20 md:py-28" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-mint font-medium mb-6">En resumen</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] leading-tight mb-8">
+          Figura civil clásica, ejecución digital.
+        </h2>
+        <div class="space-y-5 text-lg text-gray-300 leading-relaxed">
+          <p>Tu Aval opera como <span class="text-white font-medium">SL española bajo fianza solidaria</span> del Código Civil, sin licencia de seguros. La credibilidad se construye con escrow visible, auditoría externa y track record publicado.</p>
+          <p>El dinero fluye en tres tramos <span class="text-white font-medium">(garantía / operativa / cupón)</span> y se respalda con un pagaré transnacional que se ejecuta en el país de origen del inquilino en caso de impago.</p>
+          <p>Es el mismo modelo que hoy usan Oasiss, Avalbox y Masteos en España, con un diferenciador: <span class="text-mint font-medium">onboarding conversacional con IA y scoring internacional automatizado</span>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-gray-100 no-print">
+      <div class="max-w-3xl mx-auto px-6 py-10 flex items-center justify-between text-sm">
+        <div class="flex items-center gap-2.5">
+          <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-gray-400">Tu Aval · Documento interno</span>
+        </div>
+        <span class="text-gray-400 text-xs">v1.0 · abril 2026</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    requestAnimationFrame(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('revealed');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '50px' });
+      document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
