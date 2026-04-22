@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08 · Monitoreo de pólizas · Tu Aval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'blue-night':'#0A2540','mint':'#3BE2B0','mint-text':'#0D9B6A','blue-medium':'#4A90E2','warning':'#F6A609','danger':'#E45858'},fontFamily:{sans:['-apple-system','Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+    .mono{font-family:'JetBrains Mono',monospace}
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+    [data-reveal].revealed{opacity:1;transform:translateY(0)}
+    @media print{.no-print{display:none!important}}
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-gray-500 leading-relaxed">
+  <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 no-print">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system,Inter,system-ui,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
+        </a>
+        <div class="flex items-center gap-5">
+          <a href="../operativa.html" class="text-sm text-gray-400 hover:text-blue-night transition">← Volver al índice</a>
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition"><i class="fas fa-print text-xs"></i> Imprimir</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-14 md:pt-24 md:pb-16">
+      <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image:linear-gradient(#0A2540 1px,transparent 1px),linear-gradient(90deg,#0A2540 1px,transparent 1px);background-size:48px 48px"></div>
+      <div class="relative max-w-3xl mx-auto px-6" data-reveal>
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <a href="../operativa.html" class="hover:text-blue-night transition">Operativa</a><span class="text-gray-300">/</span>
+          <span class="text-gray-500">08 · Monitoreo de pólizas</span>
+        </nav>
+        <p class="mono text-sm text-mint-text font-semibold mb-4">PASO 08 · DE 12</p>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">Monitoreo<br>de pólizas.</h1>
+        <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">Dashboard interno con todas las pólizas vivas, exposición total, caja disponible, alertas de vencimiento, y comunicación proactiva con propietarios. Lo que evita siniestros sorpresa.</p>
+        <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-2xl overflow-hidden border border-gray-100 max-w-2xl">
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Dashboard</p><p class="text-xl font-semibold text-blue-night tracking-tight">Real-time</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Comms</p><p class="text-xl font-semibold text-blue-night tracking-tight">Mensual</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Alertas</p><p class="text-xl font-semibold text-blue-night tracking-tight">Automáticas</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Resumen ejecutivo</p>
+        
+        <div class="bg-[#f0faf6] border border-mint/30 rounded-2xl p-6"><p class="text-[15px] text-blue-night leading-relaxed">Construyes un dashboard interno (Next.js + Supabase/Neon) que muestra: pólizas activas, vencimientos próximos, exposición total, caja disponible, alertas de siniestros incipientes. Envías comunicación mensual automática al propietario con estado de su garantía. Detectas señales tempranas de impago con webhooks de banco del inquilino.</p></div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Dashboard</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Qué métricas mirar diario</h2>
+        <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500"><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Pólizas vivas</strong> total + nuevas/vencidas esta semana</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Exposición total</strong>: suma de cobertura máxima de todas las pólizas activas</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Caja disponible</strong> en tiempo real (API del banco) y ratio caja/exposición</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Siniestros activos</strong>: cuántos, en qué fase, cuánto pagado, cuánto recobrado</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Pipeline de scoring</strong>: solicitudes pendientes, aprobadas hoy, rechazadas</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Ingresos del mes</strong>: primas cobradas vs objetivo</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Siniestralidad 30d / 90d / 12m</strong>: tendencia</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Cohort analysis</strong>: siniestralidad por mes de emisión (detecta degradación de scoring)</span></li></ul>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Alertas automáticas</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Lo que dispara acción</h2>
+        <div class="space-y-4">
+                    <div class="border-l-2 border-warning pl-5">
+                      <p class="text-blue-night font-medium mb-1">30 días antes de vencimiento</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Email al propietario: "tu garantía vence en 30 días. Si vas a renovar contrato, renueva la garantía aquí".</p>
+                    </div>
+                    <div class="border-l-2 border-warning pl-5">
+                      <p class="text-blue-night font-medium mb-1">Señal temprana de impago</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Si el estudiante autorizó webhook de su banco, detectas caída brusca de saldo / pérdida de empleo / movimiento inusual. Intervención proactiva antes del impago.</p>
+                    </div>
+                    <div class="border-l-2 border-danger pl-5">
+                      <p class="text-blue-night font-medium mb-1">Notificación de impago del propietario</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Formulario en el dashboard del propietario. Email + SMS al equipo de siniestros. Activa workflow del paso 9.</p>
+                    </div>
+                    <div class="border-l-2 border-mint pl-5">
+                      <p class="text-blue-night font-medium mb-1">Ratio caja/exposición cae del 3%</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Alerta interna al equipo ejecutivo. Decisión: subir prima, pausar emisión, pedir inyección de capital.</p>
+                    </div>
+                    <div class="border-l-2 border-mint pl-5">
+                      <p class="text-blue-night font-medium mb-1">Cohort con siniestralidad &gt; 2%</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Revisar scoring del periodo. Probable degradación del modelo. Recalibrar.</p>
+                    </div>
+                  </div>
+      </div>
+    </section>
+    <section class="bg-[#f0faf6] border-y border-mint/20">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-mint-text font-medium mb-3">Comunicación con propietario</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Mantener la confianza viva</h2>
+        <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500"><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Email mensual</strong>: estado de la garantía (activa, monto cubierto, días restantes), sin pedir acción</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Recordatorios de renovación</strong>: 30 / 15 / 7 días antes del vencimiento</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Notificaciones push</strong> si detectas señal de riesgo (opcional, con consentimiento)</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Portal del propietario</strong>: ver todas las garantías que tiene activas, pagar renovaciones, reportar impagos</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Newsletter trimestral</strong>: métricas agregadas de Tu Aval (tasa de impago, siniestros pagados, nuevos contratos) — refuerza credibilidad</span></li></ul>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Errores comunes</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Lo que destruye confianza</h2>
+        <div class="space-y-5">
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Silencio post-emisión</p><p class="text-sm text-gray-500 leading-relaxed">Emitir la garantía y desaparecer hasta el vencimiento genera desconfianza. El propietario quiere recordarte que existes y funcionas.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Detectar impago solo por el propietario</p><p class="text-sm text-gray-500 leading-relaxed">Si descubres el impago cuando el propietario avisa con 2 meses de retraso, recobrar es mucho más difícil. Monitorea proactivamente.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Métricas que no se usan</p><p class="text-sm text-gray-500 leading-relaxed">Dashboard bonito sin decisiones automáticas encima no vale nada. Cada alerta debe disparar workflow.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">No tener cohort analysis</p><p class="text-sm text-gray-500 leading-relaxed">Si no segmentas siniestralidad por mes/campaña, no ves degradación del scoring hasta que ya te costó dinero.</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="bg-blue-night text-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <div class="flex items-start justify-between gap-8 flex-wrap">
+          <div class="flex-1 min-w-0">
+            <p class="mono text-xs text-mint font-semibold mb-3">Siguiente paso</p>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-4">09 · Gestión de impago</h2>
+            <p class="text-gray-300 text-[15px] leading-relaxed max-w-xl">Del burofax al pago al propietario en 15 días, con activación paralela del cobro en país de origen.</p>
+          </div>
+          <a href="09-gestion-impago.html" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition whitespace-nowrap">Siguiente <span>→</span></a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-white border-t border-gray-100 no-print">
+      <div class="max-w-3xl mx-auto px-6 py-10 flex items-center justify-between text-sm">
+        <a href="07-gestion-dinero.html" class="text-gray-400 hover:text-blue-night transition">← Anterior</a>
+        <span class="text-gray-400 text-xs">08 / 12</span>
+        <a href="09-gestion-impago.html" class="text-gray-400 hover:text-blue-night transition">Siguiente →</a>
+      </div>
+    </footer>
+  </main>
+  <script>requestAnimationFrame(()=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('revealed');o.unobserve(x.target)}})},{threshold:.05,rootMargin:'50px'});document.querySelectorAll('[data-reveal]').forEach(e=>o.observe(e))})</script>
+</body>
+</html>

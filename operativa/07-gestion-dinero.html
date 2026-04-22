@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07 · Gestión del dinero · Tu Aval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'blue-night':'#0A2540','mint':'#3BE2B0','mint-text':'#0D9B6A','blue-medium':'#4A90E2','warning':'#F6A609','danger':'#E45858'},fontFamily:{sans:['-apple-system','Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+    .mono{font-family:'JetBrains Mono',monospace}
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+    [data-reveal].revealed{opacity:1;transform:translateY(0)}
+    @media print{.no-print{display:none!important}}
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-gray-500 leading-relaxed">
+  <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 no-print">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system,Inter,system-ui,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
+        </a>
+        <div class="flex items-center gap-5">
+          <a href="../operativa.html" class="text-sm text-gray-400 hover:text-blue-night transition">← Volver al índice</a>
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition"><i class="fas fa-print text-xs"></i> Imprimir</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-14 md:pt-24 md:pb-16">
+      <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image:linear-gradient(#0A2540 1px,transparent 1px),linear-gradient(90deg,#0A2540 1px,transparent 1px);background-size:48px 48px"></div>
+      <div class="relative max-w-3xl mx-auto px-6" data-reveal>
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <a href="../operativa.html" class="hover:text-blue-night transition">Operativa</a><span class="text-gray-300">/</span>
+          <span class="text-gray-500">07 · Gestión del dinero</span>
+        </nav>
+        <p class="mono text-sm text-mint-text font-semibold mb-4">PASO 07 · DE 12</p>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">Gestión del<br>dinero.</h1>
+        <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">Cada prima cobrada se parte automáticamente en tres destinos: caja de garantía, operativa, y cupón para inversores. Sin disciplina aquí, el fondo no aguanta ni 6 meses.</p>
+        <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-2xl overflow-hidden border border-gray-100 max-w-2xl">
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Split</p><p class="text-xl font-semibold text-blue-night tracking-tight">50/30/15</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Reserva mínima</p><p class="text-xl font-semibold text-blue-night tracking-tight">15%</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Frecuencia</p><p class="text-xl font-semibold text-blue-night tracking-tight">Cada prima</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Resumen ejecutivo</p>
+        
+        <div class="bg-[#f0faf6] border border-mint/30 rounded-2xl p-6"><p class="text-[15px] text-blue-night leading-relaxed">La prima cobrada se divide en 3 tramos automáticamente vía reglas programadas en el TPV/banco. 50–60% a caja de garantía, 25–35% a operativa, 10–15% apartado para pago del cupón a inversores. Reserva técnica mínima definida = 15% del total de exposición activa.</p></div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Split por prima</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Dónde va cada euro que entra</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-[#f0faf6] rounded-2xl p-6 border border-mint/30">
+                      <p class="mono text-xs text-mint-text font-semibold mb-3">50–60%</p>
+                      <p class="text-blue-night font-medium mb-2">Caja de garantía</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Reserva técnica. Colchón ante siniestros. Se puede invertir en instrumentos de renta fija de bajo riesgo (letras del Tesoro, bonos investment grade) para generar yield adicional.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                      <p class="mono text-xs text-gray-400 font-semibold mb-3">25–35%</p>
+                      <p class="text-blue-night font-medium mb-2">Operativa</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Salarios, marketing, tecnología, legal, impuestos. Cubre el OPEX del negocio. No debe depender de una sola campaña de primas.</p>
+                    </div>
+                    <div class="bg-blue-night rounded-2xl p-6 text-white">
+                      <p class="mono text-xs text-mint font-semibold mb-3">10–15%</p>
+                      <p class="font-medium mb-2">Cupón inversores</p>
+                      <p class="text-sm text-gray-300 leading-relaxed">Apartado en cuenta específica para pago trimestral del 8% prometido a los socios del holding. Lo sobrante al cierre anual es beneficio equity.</p>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500 mt-6 leading-relaxed">Estos porcentajes se ajustan según volumen. En <strong>fase temprana</strong> (< 200 contratos), aumenta caja de garantía al 60% para crear colchón. En <strong>fase estable</strong>, reduce a 50% y destina más a crecimiento.</p>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Unit economics</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Números reales de un contrato</h2>
+        <div class="space-y-4">
+                    <div class="border border-gray-100 rounded-2xl p-6">
+                      <p class="text-blue-night font-medium mb-3">Caso base: estudiante con alquiler €1.150/mes</p>
+                      <div class="divide-y divide-gray-100">
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Renta anual</span><span class="mono text-blue-night">€13.800</span></div>
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Prima Tu Aval (6%)</span><span class="mono text-mint-text font-semibold">€828</span></div>
+                        <div class="flex justify-between py-2.5 text-sm pl-4"><span class="text-gray-500">→ a caja de garantía (55%)</span><span class="mono text-blue-night">€455</span></div>
+                        <div class="flex justify-between py-2.5 text-sm pl-4"><span class="text-gray-500">→ a operativa (30%)</span><span class="mono text-blue-night">€248</span></div>
+                        <div class="flex justify-between py-2.5 text-sm pl-4"><span class="text-gray-500">→ a cupón inversores (15%)</span><span class="mono text-blue-night">€124</span></div>
+                      </div>
+                    </div>
+                    <div class="border border-mint/30 rounded-2xl p-6 bg-[#f0faf6]">
+                      <p class="text-blue-night font-medium mb-3">Con 1.000 contratos activos</p>
+                      <div class="divide-y divide-mint/20">
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Primas totales anuales</span><span class="mono text-blue-night font-semibold">€828.000</span></div>
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Caja de garantía acumulada</span><span class="mono text-blue-night">€455.000</span></div>
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Exposición total (1000 × €13.800)</span><span class="mono text-blue-night">€13.8M</span></div>
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Ratio cobertura caja/exposición</span><span class="mono text-mint-text font-semibold">3.3%</span></div>
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Siniestros esperados (1.5%)</span><span class="mono text-blue-night">€207.000</span></div>
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Caja neta post-siniestros</span><span class="mono text-mint-text font-semibold">€248.000 libres</span></div>
+                      </div>
+                    </div>
+                  </div>
+      </div>
+    </section>
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Reserva mínima</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Cuánto dinero debe haber siempre</h2>
+        <p class="text-[15px] text-gray-500 leading-relaxed mb-6">La <strong>ratio de cobertura</strong> (caja / exposición) es la métrica que salva o hunde el negocio. Debe ser monitoreada semanalmente y nunca bajar de ciertos umbrales.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div class="border border-gray-100 rounded-2xl p-5">
+                        <p class="mono text-xs text-gray-400 mb-2">Crítico</p>
+                        <p class="text-2xl font-semibold text-danger tracking-tight mb-2">&lt; 2%</p>
+                        <p class="text-xs text-gray-500">Zona roja. Parar emisión nuevas pólizas. Llamar a inversores para inyectar capital de emergencia.</p>
+                      </div>
+                      <div class="border border-gray-100 rounded-2xl p-5">
+                        <p class="mono text-xs text-warning mb-2">Alerta</p>
+                        <p class="text-2xl font-semibold text-warning tracking-tight mb-2">2–3%</p>
+                        <p class="text-xs text-gray-500">Subir prima promedio o acelerar recobros. Monitoreo diario.</p>
+                      </div>
+                      <div class="border border-mint/30 bg-[#f0faf6] rounded-2xl p-5">
+                        <p class="mono text-xs text-mint-text mb-2">Óptimo</p>
+                        <p class="text-2xl font-semibold text-mint-text tracking-tight mb-2">3–5%</p>
+                        <p class="text-xs text-gray-500">Zona saludable. Permite absorber pico de siniestros sin problema.</p>
+                      </div>
+                    </div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Errores comunes</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Lo que quiebra fondos jóvenes</h2>
+        <div class="space-y-5">
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Pagar cupón con capital en vez de margen</p><p class="text-sm text-gray-500 leading-relaxed">Si en año 1 pagas 8% al inversor tomándolo de la caja de garantía, tu exposición real se reduce y colapsas. El cupón solo se paga con margen operativo.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Tocar caja de garantía para gastos</p><p class="text-sm text-gray-500 leading-relaxed">Una vez fondeada, la caja solo sale en siniestros o movimiento a instrumentos de renta fija. Nunca a nómina o marketing.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Split fijo sin recalibración</p><p class="text-sm text-gray-500 leading-relaxed">Si siniestralidad sube del 1.5% al 3%, el split debe ajustarse (más a caja, menos a operativa). Revisa trimestralmente.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">No invertir la caja</p><p class="text-sm text-gray-500 leading-relaxed">Tener €500K parados en cuenta corriente al 0% es regalarle yield a los inversores. Mueve 60–70% a letras del Tesoro (2–3% anual seguro).</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="bg-blue-night text-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <div class="flex items-start justify-between gap-8 flex-wrap">
+          <div class="flex-1 min-w-0">
+            <p class="mono text-xs text-mint font-semibold mb-3">Siguiente paso</p>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-4">08 · Monitoreo de pólizas</h2>
+            <p class="text-gray-300 text-[15px] leading-relaxed max-w-xl">Dashboard interno, alertas de vencimiento, comunicación con propietarios.</p>
+          </div>
+          <a href="08-monitoreo-polizas.html" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition whitespace-nowrap">Siguiente <span>→</span></a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-white border-t border-gray-100 no-print">
+      <div class="max-w-3xl mx-auto px-6 py-10 flex items-center justify-between text-sm">
+        <a href="06-emision-garantia.html" class="text-gray-400 hover:text-blue-night transition">← Anterior</a>
+        <span class="text-gray-400 text-xs">07 / 12</span>
+        <a href="08-monitoreo-polizas.html" class="text-gray-400 hover:text-blue-night transition">Siguiente →</a>
+      </div>
+    </footer>
+  </main>
+  <script>requestAnimationFrame(()=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('revealed');o.unobserve(x.target)}})},{threshold:.05,rootMargin:'50px'});document.querySelectorAll('[data-reveal]').forEach(e=>o.observe(e))})</script>
+</body>
+</html>

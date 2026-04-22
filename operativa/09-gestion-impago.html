@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09 · Gestión de impago · Tu Aval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'blue-night':'#0A2540','mint':'#3BE2B0','mint-text':'#0D9B6A','blue-medium':'#4A90E2','warning':'#F6A609','danger':'#E45858'},fontFamily:{sans:['-apple-system','Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+    .mono{font-family:'JetBrains Mono',monospace}
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+    [data-reveal].revealed{opacity:1;transform:translateY(0)}
+    @media print{.no-print{display:none!important}}
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-gray-500 leading-relaxed">
+  <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 no-print">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system,Inter,system-ui,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
+        </a>
+        <div class="flex items-center gap-5">
+          <a href="../operativa.html" class="text-sm text-gray-400 hover:text-blue-night transition">← Volver al índice</a>
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition"><i class="fas fa-print text-xs"></i> Imprimir</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-14 md:pt-24 md:pb-16">
+      <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image:linear-gradient(#0A2540 1px,transparent 1px),linear-gradient(90deg,#0A2540 1px,transparent 1px);background-size:48px 48px"></div>
+      <div class="relative max-w-3xl mx-auto px-6" data-reveal>
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <a href="../operativa.html" class="hover:text-blue-night transition">Operativa</a><span class="text-gray-300">/</span>
+          <span class="text-gray-500">09 · Gestión de impago</span>
+        </nav>
+        <p class="mono text-sm text-mint-text font-semibold mb-4">PASO 09 · DE 12</p>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">Gestión<br>de impago.</h1>
+        <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">Del aviso del propietario al pago en 15 días. Workflow disciplinado: verificación, pago al propietario desde la caja de garantía, activación paralela del pagaré en país de origen, inicio del desahucio. La velocidad define la satisfacción.</p>
+        <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-2xl overflow-hidden border border-gray-100 max-w-2xl">
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Pago al propietario</p><p class="text-xl font-semibold text-blue-night tracking-tight">15 días</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Recobro</p><p class="text-xl font-semibold text-blue-night tracking-tight">45–90 d</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Abogado</p><p class="text-xl font-semibold text-blue-night tracking-tight">Incluido</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Resumen ejecutivo</p>
+        
+        <div class="bg-[#f0faf6] border border-mint/30 rounded-2xl p-6"><p class="text-[15px] text-blue-night leading-relaxed">Propietario reporta → Tu Aval verifica en 48h con burofax al inquilino → si confirma, paga al propietario desde caja de garantía en 15 días hábiles → activa pagaré en país de origen (contrato C) → inicia desahucio con abogado. Todo el flujo con SLA medibles y dashboard público de cumplimiento.</p></div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Workflow</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Los 7 pasos operativos</h2>
+        <div class="space-y-6">
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">1</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Reporte del propietario</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Formulario en portal: fecha primer impago, mensualidades pendientes, comunicación previa al inquilino. Subida de justificantes (extractos).</p>
+          </div>
+        </div>
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">2</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Verificación en 48 horas</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Equipo de siniestros: burofax al inquilino (reclamación formal con acuse), contacto telefónico, verificación del extracto bancario del propietario.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">3</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Decisión: cubierto o no</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Si el impago entra en la cobertura (no exclusiones), se activa el pago. Si no (ej: daños excluidos), se comunica al propietario con justificación escrita.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">4</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Pago al propietario en 15 días</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Transferencia desde la caja de garantía a la cuenta del propietario por los meses impagados. Factura/documento de liquidación.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">5</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Activación del pagaré en país de origen</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">En paralelo con el pago: se notifica al despacho local (contrato C) con documentación. Empieza el proceso de ejecución mercantil.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">6</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Inicio del desahucio</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Abogado designado por Tu Aval inicia demanda de desahucio por impago. España es lenta (12–18 meses) pero el propietario sigue cobrando de Tu Aval durante todo ese tiempo.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 ">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">7</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Seguimiento hasta cierre</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Se sigue cobrando del pagaré hasta que: (a) inquilino reembolsa, (b) se agota la vía ejecutiva, (c) desahucio consumado. En paralelo, cobertura al propietario continua según póliza.</p>
+          </div>
+        </div></div>
+      </div>
+    </section>
+    <section class="bg-[#f0faf6] border-y border-mint/20">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-mint-text font-medium mb-3">SLA</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Lo que prometes y cumples</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                    <div class="bg-white border border-mint/30 rounded-2xl p-4 text-center">
+                      <p class="text-2xl font-semibold text-blue-night tracking-tight mb-1">48h</p>
+                      <p class="text-xs text-gray-500 leading-relaxed">Verificación del impago</p>
+                    </div>
+                    <div class="bg-white border border-mint/30 rounded-2xl p-4 text-center">
+                      <p class="text-2xl font-semibold text-blue-night tracking-tight mb-1">15d</p>
+                      <p class="text-xs text-gray-500 leading-relaxed">Pago al propietario</p>
+                    </div>
+                    <div class="bg-white border border-mint/30 rounded-2xl p-4 text-center">
+                      <p class="text-2xl font-semibold text-blue-night tracking-tight mb-1">30d</p>
+                      <p class="text-xs text-gray-500 leading-relaxed">Inicio desahucio</p>
+                    </div>
+                    <div class="bg-white border border-mint/30 rounded-2xl p-4 text-center">
+                      <p class="text-2xl font-semibold text-blue-night tracking-tight mb-1">30d</p>
+                      <p class="text-xs text-gray-500 leading-relaxed">Demanda ejecutiva país origen</p>
+                    </div>
+                  </div>
+                  <p class="text-sm text-gray-500 mt-6 leading-relaxed"><strong class="text-blue-night">Publicar estos SLA en la web</strong> y medirlos públicamente (dashboard de transparencia). En siniestros pagados: %SLA cumplido. Esto genera mucha más credibilidad que cualquier aval.</p>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Equipo de siniestros</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Quién lo hace</h2>
+        <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500"><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Responsable de siniestros</strong> (full-time): gestiona cada caso desde reporte hasta cierre. Perfil: abogado o especialista en seguros.</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Abogado colaborador en España</strong>: inicia desahucios. Coste por caso: €800–1.500 + costas. Retenedor mensual posible con despacho pequeño.</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Despachos locales en LatAm</strong> (contrato C): uno por país. Ejecutan pagarés vía juicio ejecutivo mercantil.</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Equipo de cobranza amistosa</strong>: mensaje al estudiante antes de ir a juicio. A veces paga voluntariamente.</span></li></ul>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Errores comunes</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Lo que rompe el SLA</h2>
+        <div class="space-y-5">
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Pagar sin verificar bien</p><p class="text-sm text-gray-500 leading-relaxed">Pagar en 15 días sin asegurar que el impago existe y no hay exclusiones aplicables lleva a fraudes y pagos indebidos.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">No activar pagaré en paralelo</p><p class="text-sm text-gray-500 leading-relaxed">Si esperas a pagar al propietario y luego iniciar el pagaré, pierdes 15 días críticos donde el estudiante todavía está localizable.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Delegar al abogado sin seguimiento</p><p class="text-sm text-gray-500 leading-relaxed">Los abogados van a su ritmo. Revisión semanal del estado de cada caso. Dashboard por caso obligatorio.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Incumplir SLA una vez</p><p class="text-sm text-gray-500 leading-relaxed">Un propietario que no cobra en 15 días cuando le prometiste lo cuenta a 10 propietarios más. Los SLA son el producto.</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="bg-blue-night text-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <div class="flex items-start justify-between gap-8 flex-wrap">
+          <div class="flex-1 min-w-0">
+            <p class="mono text-xs text-mint font-semibold mb-3">Siguiente paso</p>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-4">10 · Recobro en origen</h2>
+            <p class="text-gray-300 text-[15px] leading-relaxed max-w-xl">Cómo ejecutar el pagaré en México/Colombia/Argentina y recuperar lo pagado.</p>
+          </div>
+          <a href="10-recobro-origen.html" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition whitespace-nowrap">Siguiente <span>→</span></a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-white border-t border-gray-100 no-print">
+      <div class="max-w-3xl mx-auto px-6 py-10 flex items-center justify-between text-sm">
+        <a href="08-monitoreo-polizas.html" class="text-gray-400 hover:text-blue-night transition">← Anterior</a>
+        <span class="text-gray-400 text-xs">09 / 12</span>
+        <a href="10-recobro-origen.html" class="text-gray-400 hover:text-blue-night transition">Siguiente →</a>
+      </div>
+    </footer>
+  </main>
+  <script>requestAnimationFrame(()=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('revealed');o.unobserve(x.target)}})},{threshold:.05,rootMargin:'50px'});document.querySelectorAll('[data-reveal]').forEach(e=>o.observe(e))})</script>
+</body>
+</html>

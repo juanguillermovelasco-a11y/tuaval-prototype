@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>01 · Constitución legal · Tu Aval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'blue-night': '#0A2540',
+            'mint': '#3BE2B0',
+            'mint-text': '#0D9B6A',
+            'blue-medium': '#4A90E2',
+            'gray-text': '#425466',
+            'warning': '#F6A609',
+            'danger': '#E45858'
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+    [data-reveal].revealed { opacity: 1; transform: translateY(0); }
+    @media print { .no-print { display: none !important; } }
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-gray-500 leading-relaxed">
+
+  <!-- NAV -->
+  <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 no-print">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system, Inter, system-ui, sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
+        </a>
+        <div class="flex items-center gap-5">
+          <a href="../operativa.html" class="text-sm text-gray-400 hover:text-blue-night transition">← Volver al índice</a>
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition">
+            <i class="fas fa-print text-xs"></i> Imprimir
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-14 md:pt-24 md:pb-16">
+      <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(#0A2540 1px, transparent 1px), linear-gradient(90deg, #0A2540 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+      <div class="relative max-w-3xl mx-auto px-6" data-reveal>
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <a href="../operativa.html" class="hover:text-blue-night transition">Operativa</a>
+          <span class="text-gray-300">/</span>
+          <span class="text-gray-500">01 · Constitución legal</span>
+        </nav>
+
+        <!-- Step number giant -->
+        <p class="mono text-sm text-mint-text font-semibold mb-4">PASO 01 · DE 12</p>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">
+          Constitución<br>legal.
+        </h1>
+        <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">
+          Crear Tu Aval S.L. en España, dejar el objeto social bien redactado, y aportar el capital inicial que da credibilidad sin exagerar. Base sobre la que se monta todo lo demás.
+        </p>
+
+        <!-- Meta stats -->
+        <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-2xl overflow-hidden border border-gray-100 max-w-2xl">
+          <div class="bg-white p-5">
+            <p class="text-xs text-gray-400 mb-1.5">Tiempo</p>
+            <p class="text-xl font-semibold text-blue-night tracking-tight">1–2 sem</p>
+          </div>
+          <div class="bg-white p-5">
+            <p class="text-xs text-gray-400 mb-1.5">Coste total</p>
+            <p class="text-xl font-semibold text-blue-night tracking-tight">€2.500–5.000</p>
+          </div>
+          <div class="bg-white p-5">
+            <p class="text-xs text-gray-400 mb-1.5">Capital recom.</p>
+            <p class="text-xl font-semibold text-blue-night tracking-tight">€50–100K</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TLDR -->
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-14" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-5">Resumen ejecutivo</p>
+        <div class="bg-[#f0faf6] border border-mint/30 rounded-2xl p-6">
+          <p class="text-[15px] text-blue-night leading-relaxed">
+            Vas al notario con un proyecto de estatutos, depositas el capital en una cuenta de constitución, firmas la escritura pública, y la inscribes en el Registro Mercantil. En paralelo tramitas NIF, alta censal (modelo 036) y la licencia municipal de apertura. Total: <strong>1–2 semanas</strong> si vas con gestoría, <strong>€2.500–5.000</strong> todo incluido.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-14" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Checklist</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-10">Los 7 hitos en orden</h2>
+
+        <div class="space-y-6">
+          <div class="flex gap-5 pb-6 border-b border-gray-100">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+              <span class="mono text-mint-text font-semibold text-sm">1</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Solicitar denominación social</h3>
+              <p class="text-[15px] text-gray-500 leading-relaxed">Pides al Registro Mercantil Central el certificado de denominación ("Tu Aval S.L." o alternativa disponible). Online, 24–48h, €20.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5 pb-6 border-b border-gray-100">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+              <span class="mono text-mint-text font-semibold text-sm">2</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Abrir cuenta de constitución en banco</h3>
+              <p class="text-[15px] text-gray-500 leading-relaxed">Abres cuenta provisional a nombre de la sociedad en constitución (BBVA, Santander, CaixaBank). Depositas el capital social declarado. El banco emite certificado de ingreso.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5 pb-6 border-b border-gray-100">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+              <span class="mono text-mint-text font-semibold text-sm">3</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Redactar estatutos con abogado</h3>
+              <p class="text-[15px] text-gray-500 leading-relaxed">Estatutos incluyen: denominación, domicilio, objeto social, capital, participaciones, órgano de administración, reparto de beneficios. <strong>Crítico</strong>: redactar bien el objeto social (ver sección siguiente).</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5 pb-6 border-b border-gray-100">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+              <span class="mono text-mint-text font-semibold text-sm">4</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Firmar escritura ante notario</h3>
+              <p class="text-[15px] text-gray-500 leading-relaxed">Vas al notario con DNI/NIE de socios, certificado denominación, certificado bancario, estatutos firmados. Coste notaría: €150–300.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5 pb-6 border-b border-gray-100">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+              <span class="mono text-mint-text font-semibold text-sm">5</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Liquidar ITP y obtener NIF provisional</h3>
+              <p class="text-[15px] text-gray-500 leading-relaxed">Modelo 600 en Hacienda Autonómica (exento desde 2010 para constituciones de SL) y NIF provisional en Agencia Tributaria (modelo 036).</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5 pb-6 border-b border-gray-100">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+              <span class="mono text-mint-text font-semibold text-sm">6</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Inscripción en Registro Mercantil</h3>
+              <p class="text-[15px] text-gray-500 leading-relaxed">El notario presenta telemáticamente. Plazo efectivo: 5–10 días hábiles. Coste: €100–200. Recibes NIF definitivo y libro de actas sellado.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+              <span class="mono text-mint-text font-semibold text-sm">7</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Licencias y altas operativas</h3>
+              <p class="text-[15px] text-gray-500 leading-relaxed">Licencia de apertura municipal (€200–500), alta en Seguridad Social si tendrás empleados, alta de autónomos para administradores, contratación de seguro de RC profesional (~€800/año).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OBJETO SOCIAL -->
+    <section class="bg-[#f0faf6] border-y border-mint/20">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-mint-text font-medium mb-3">Crítico</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-6">El objeto social</h2>
+        <p class="text-[15px] text-gray-500 leading-relaxed mb-6">
+          Este es el texto más importante de la escritura. Define qué puedes hacer legalmente. Si lo redactas mal, un juez puede declarar que operas fuera de tu objeto y anular contratos. Redacción recomendada por despachos especializados:
+        </p>
+
+        <div class="bg-white border border-mint/30 rounded-2xl p-6 mono text-sm text-blue-night leading-relaxed">
+          "La prestación de servicios de <strong>garantía y fianza solidaria</strong> en contratos de arrendamiento urbano, incluyendo la <strong>intermediación, gestión, verificación de solvencia y emisión de certificados de garantía</strong> entre arrendadores y arrendatarios, así como la <strong>gestión de cobro y recobro</strong> de rentas y cantidades asimiladas. Igualmente, el <strong>asesoramiento, diseño y comercialización</strong> de productos y servicios relacionados con la garantía contractual privada, sin comprender en ningún caso actividades reservadas a entidades aseguradoras o financieras reguladas."
+        </div>
+
+        <div class="mt-8 space-y-4">
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 w-5 h-5 rounded-full bg-mint-text/10 flex items-center justify-center mt-0.5">
+              <svg class="w-3 h-3 text-mint-text" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </div>
+            <p class="text-sm text-gray-500"><span class="text-blue-night font-medium">Por qué</span>: deja claro que operas fianza solidaria (figura civil, no seguro), incluyes scoring y cobranza, y <strong>excluye explícitamente</strong> actividad aseguradora o financiera regulada — tu escudo legal ante DGSFP/Banco de España.</p>
+          </div>
+          <div class="flex gap-3">
+            <div class="flex-shrink-0 w-5 h-5 rounded-full bg-mint-text/10 flex items-center justify-center mt-0.5">
+              <svg class="w-3 h-3 text-mint-text" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.707-9.293a1 1 0 0 0-1.414-1.414L9 10.586 7.707 9.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </div>
+            <p class="text-sm text-gray-500"><span class="text-blue-night font-medium">No pongas</span>: "seguros", "aseguradora", "intermediación de seguros", "crédito al consumo", "servicios financieros". Cualquiera de estas disparan alertas regulatorias.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPITAL -->
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Capital social</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-6">Cuánto aportar y por qué</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div class="border border-gray-100 rounded-2xl p-5">
+            <p class="mono text-xs text-gray-400 mb-2">Mínimo legal</p>
+            <p class="text-2xl font-semibold text-blue-night tracking-tight mb-2">€3.000</p>
+            <p class="text-xs text-gray-500 leading-relaxed">Lo que marca la Ley de Sociedades de Capital. Operativa, pero <strong>da la peor imagen</strong> a propietarios e inversores.</p>
+          </div>
+          <div class="border border-blue-night rounded-2xl p-5 bg-blue-night text-white relative">
+            <div class="absolute -top-2 -right-2 bg-mint text-blue-night text-[9px] font-bold px-2 py-0.5 rounded-full">Recomendado</div>
+            <p class="mono text-xs text-mint mb-2">Recomendado</p>
+            <p class="text-2xl font-semibold tracking-tight mb-2">€50–100K</p>
+            <p class="text-xs text-gray-300 leading-relaxed">Capital visible en Registro Mercantil. Da credibilidad real y permite operar con colchón. Mayor parte va a caja de garantía.</p>
+          </div>
+          <div class="border border-gray-100 rounded-2xl p-5">
+            <p class="mono text-xs text-gray-400 mb-2">Institucional</p>
+            <p class="text-2xl font-semibold text-blue-night tracking-tight mb-2">€500K+</p>
+            <p class="text-xs text-gray-500 leading-relaxed">Sólo si vienes de una ronda seed cerrada. Bloqueas capital que podrías usar operativamente. No es necesario día 1.</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <p class="text-sm text-blue-night font-medium mb-2">Regla práctica</p>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            Arranca con <strong>€50K</strong>. De ahí: <strong>€30K a caja de garantía</strong> (reserva técnica visible), <strong>€15K operativo</strong> (6 meses de gastos mínimos), <strong>€5K colchón</strong>. Amplía capital vía ampliaciones sucesivas cuando cierres ronda o acumules márgenes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COSTES -->
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Costes desglosados</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-10">Presupuesto total</h2>
+
+        <div class="divide-y divide-gray-100 border-t border-b border-gray-100">
+          <div class="flex justify-between items-baseline py-4">
+            <span class="text-[15px] text-gray-500">Certificado denominación social</span>
+            <span class="mono text-[15px] text-blue-night font-medium">€20</span>
+          </div>
+          <div class="flex justify-between items-baseline py-4">
+            <span class="text-[15px] text-gray-500">Honorarios abogado (estatutos + revisión)</span>
+            <span class="mono text-[15px] text-blue-night font-medium">€800–1.500</span>
+          </div>
+          <div class="flex justify-between items-baseline py-4">
+            <span class="text-[15px] text-gray-500">Notaría (escritura pública)</span>
+            <span class="mono text-[15px] text-blue-night font-medium">€150–300</span>
+          </div>
+          <div class="flex justify-between items-baseline py-4">
+            <span class="text-[15px] text-gray-500">Registro Mercantil (inscripción)</span>
+            <span class="mono text-[15px] text-blue-night font-medium">€100–200</span>
+          </div>
+          <div class="flex justify-between items-baseline py-4">
+            <span class="text-[15px] text-gray-500">Gestoría (modelos 036, 600, altas)</span>
+            <span class="mono text-[15px] text-blue-night font-medium">€300–500</span>
+          </div>
+          <div class="flex justify-between items-baseline py-4">
+            <span class="text-[15px] text-gray-500">Licencia de apertura municipal</span>
+            <span class="mono text-[15px] text-blue-night font-medium">€200–500</span>
+          </div>
+          <div class="flex justify-between items-baseline py-4">
+            <span class="text-[15px] text-gray-500">Seguro RC profesional (primer año)</span>
+            <span class="mono text-[15px] text-blue-night font-medium">€600–900</span>
+          </div>
+          <div class="flex justify-between items-baseline py-4">
+            <span class="text-[15px] text-gray-500">Contingencia (imprevistos)</span>
+            <span class="mono text-[15px] text-blue-night font-medium">€300–500</span>
+          </div>
+          <div class="flex justify-between items-baseline py-5 bg-[#f0faf6] -mx-6 px-6 rounded-xl">
+            <span class="text-[15px] text-blue-night font-semibold">Total</span>
+            <span class="mono text-xl text-blue-night font-semibold">€2.470–4.420</span>
+          </div>
+        </div>
+
+        <p class="text-xs text-gray-400 mt-4">No incluye el capital social depositado (€50K–100K recomendado), que queda en la sociedad.</p>
+      </div>
+    </section>
+
+    <!-- PROVIDERS -->
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Proveedores</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-10">Quién te puede ayudar</h2>
+
+        <div class="space-y-5">
+          <div class="border border-gray-100 rounded-2xl p-6">
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="text-lg font-semibold text-blue-night tracking-tight">Despachos legales (serios)</h3>
+              <span class="text-xs text-gray-400 mono">€800–2.500</span>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">Para constitución + redacción pacto de socios + review regulatorio: <span class="text-blue-night">Uría Menéndez, Cuatrecasas, Hogan Lovells, Garrigues</span>. Caros pero seguros si vas a levantar inversión.</p>
+          </div>
+
+          <div class="border border-gray-100 rounded-2xl p-6">
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="text-lg font-semibold text-blue-night tracking-tight">Despachos startup-friendly</h3>
+              <span class="text-xs text-gray-400 mono">€500–1.200</span>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">Más ágiles para fase seed: <span class="text-blue-night">Sanguino Abogados, Ontier, Letslaw, Bamboo Legal, Casanovas Abogados</span>. Muchos ofrecen paquete de constitución a precio fijo.</p>
+          </div>
+
+          <div class="border border-gray-100 rounded-2xl p-6">
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="text-lg font-semibold text-blue-night tracking-tight">Gestorías online (rápidas)</h3>
+              <span class="text-xs text-gray-400 mono">€300–600 todo incluido</span>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed"><span class="text-blue-night">Captio, Taxdown, Holded, Crea tu empresa</span>, o gestorías locales. Útil para trámites operativos, <strong>no para redactar los estatutos complejos</strong>. Combina gestoría (trámite) + abogado (estatutos + pacto).</p>
+          </div>
+
+          <div class="border border-gray-100 rounded-2xl p-6">
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="text-lg font-semibold text-blue-night tracking-tight">Notarías</h3>
+              <span class="text-xs text-gray-400 mono">€150–300</span>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">Cualquier notaría española sirve. Buscar una cercana a tu domicilio social que tenga firma digital y experiencia con startups tecnológicas. Aranceles están regulados, no negocian.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERRORES -->
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-warning font-medium mb-3">Errores comunes</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-10">Lo que se hace mal y arruina la operación</h2>
+
+        <div class="space-y-5">
+          <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+            <div class="flex-shrink-0 text-danger">
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="text-blue-night font-medium text-[15px] mb-1">Objeto social con la palabra "seguro"</p>
+              <p class="text-sm text-gray-500 leading-relaxed">Si el notario redacta genérico ("actividades de seguro y garantía"), DGSFP puede interpretar que operas sin licencia. <strong>Revisa cada línea antes de firmar.</strong></p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+            <div class="flex-shrink-0 text-danger">
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="text-blue-night font-medium text-[15px] mb-1">Capital mínimo legal (€3.000)</p>
+              <p class="text-sm text-gray-500 leading-relaxed">Los propietarios e inversores miran el capital social en el Registro Mercantil antes de firmar. €3.000 grita "no tienen con qué pagar". <strong>Mínimo €50.000</strong> si vas en serio.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+            <div class="flex-shrink-0 text-danger">
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="text-blue-night font-medium text-[15px] mb-1">Un solo socio administrador único sin pacto</p>
+              <p class="text-sm text-gray-500 leading-relaxed">Firmar la escritura sin pacto de socios entre fundadores crea problemas al entrar inversores. <strong>Redacta pacto antes de firmar</strong> — aunque sea el día de la escritura.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+            <div class="flex-shrink-0 text-danger">
+              <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="text-blue-night font-medium text-[15px] mb-1">No contratar seguro RC profesional</p>
+              <p class="text-sm text-gray-500 leading-relaxed">Si un propietario te demanda por impago o mala gestión, respondes con el patrimonio de la sociedad. Seguro RC cubre eso y cuesta €600–900/año. Imprescindible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Preguntas frecuentes</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-10">Dudas típicas</h2>
+
+        <div class="space-y-6">
+          <div class="border-l-2 border-mint pl-5">
+            <h3 class="text-blue-night font-medium mb-2">¿Puedo ser socio único?</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Sí. Es una <em>Sociedad Limitada Unipersonal (S.L.U.)</em>. Mismo proceso, solo declaras unipersonalidad en la escritura. Pierdes algo de credibilidad ante inversores — prefieren ver equipo fundador.</p>
+          </div>
+
+          <div class="border-l-2 border-mint pl-5">
+            <h3 class="text-blue-night font-medium mb-2">¿Constituyo SL o SA?</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">SL. Más flexible, capital mínimo menor (€3.000 vs €60.000), gobierno más simple. SA solo si planeas salir a bolsa o hacer rondas muy grandes (serie B+).</p>
+          </div>
+
+          <div class="border-l-2 border-mint pl-5">
+            <h3 class="text-blue-night font-medium mb-2">¿Puedo constituir online (CIRCE)?</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Sí, vía <em>Centro de Información y Red de Creación de Empresas</em>. Más rápido (48–72h) pero con estatutos estándar que <strong>no sirven</strong> para Tu Aval — necesitas objeto social a medida. Usa CIRCE solo si tu modelo es genérico.</p>
+          </div>
+
+          <div class="border-l-2 border-mint pl-5">
+            <h3 class="text-blue-night font-medium mb-2">¿Extranjero puede ser socio fundador?</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Sí. Necesita NIE (Número de Identidad de Extranjero). Si es no residente UE: más trámites y retenciones fiscales en dividendos. Si es residente UE: igual que un español.</p>
+          </div>
+
+          <div class="border-l-2 border-mint pl-5">
+            <h3 class="text-blue-night font-medium mb-2">¿Cuándo puedo empezar a facturar?</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Con NIF provisional (paso 5) ya puedes firmar contratos y facturar. Pero <strong>no emitas pólizas en firme</strong> hasta tener NIF definitivo (paso 6) y seguro RC contratado (paso 7).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT -->
+    <section class="bg-blue-night text-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <div class="flex items-start justify-between gap-8 flex-wrap">
+          <div class="flex-1 min-w-0">
+            <p class="mono text-xs text-mint font-semibold mb-3">Siguiente paso</p>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-4">02 · Estructura societaria</h2>
+            <p class="text-gray-300 text-[15px] leading-relaxed max-w-xl">
+              Con Tu Aval S.L. constituida, ahora montamos el holding que capta inversión, el pacto de socios y la relación legal entre ambas sociedades.
+            </p>
+          </div>
+          <a href="02-estructura-societaria.html" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition whitespace-nowrap">
+            Siguiente <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-gray-100 no-print">
+      <div class="max-w-3xl mx-auto px-6 py-10 flex items-center justify-between text-sm">
+        <a href="../operativa.html" class="text-gray-400 hover:text-blue-night transition">← Volver al índice</a>
+        <span class="text-gray-400 text-xs">01 / 12</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    requestAnimationFrame(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('revealed');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '50px' });
+      document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

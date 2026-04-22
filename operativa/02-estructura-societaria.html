@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 · Estructura societaria · Tu Aval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'blue-night':'#0A2540','mint':'#3BE2B0','mint-text':'#0D9B6A','blue-medium':'#4A90E2','warning':'#F6A609','danger':'#E45858'},fontFamily:{sans:['-apple-system','Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+    .mono{font-family:'JetBrains Mono',monospace}
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+    [data-reveal].revealed{opacity:1;transform:translateY(0)}
+    @media print{.no-print{display:none!important}}
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-gray-500 leading-relaxed">
+  <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 no-print">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system,Inter,system-ui,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
+        </a>
+        <div class="flex items-center gap-5">
+          <a href="../operativa.html" class="text-sm text-gray-400 hover:text-blue-night transition">← Volver al índice</a>
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition"><i class="fas fa-print text-xs"></i> Imprimir</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-14 md:pt-24 md:pb-16">
+      <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image:linear-gradient(#0A2540 1px,transparent 1px),linear-gradient(90deg,#0A2540 1px,transparent 1px);background-size:48px 48px"></div>
+      <div class="relative max-w-3xl mx-auto px-6" data-reveal>
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <a href="../operativa.html" class="hover:text-blue-night transition">Operativa</a><span class="text-gray-300">/</span>
+          <span class="text-gray-500">02 · Estructura societaria</span>
+        </nav>
+        <p class="mono text-sm text-mint-text font-semibold mb-4">PASO 02 · DE 12</p>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">Estructura<br>societaria.</h1>
+        <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">Holding matriz que capta inversión, operadora que emite fianzas, y un pacto de socios que define reglas desde el día uno. Sin esto, no puedes levantar capital limpio ni proteger a los fundadores.</p>
+        <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-2xl overflow-hidden border border-gray-100 max-w-2xl">
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Tiempo</p><p class="text-xl font-semibold text-blue-night tracking-tight">2–3 sem</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Coste legal</p><p class="text-xl font-semibold text-blue-night tracking-tight">€4–8K</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Complejidad</p><p class="text-xl font-semibold text-blue-night tracking-tight">Alta</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-14" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-5">Resumen ejecutivo</p>
+        <div class="bg-[#f0faf6] border border-mint/30 rounded-2xl p-6">
+          <p class="text-[15px] text-blue-night leading-relaxed">Creas <strong>dos sociedades</strong>: una holding (Tu Aval Holding S.L. o SCR) que recibe el dinero de inversores, y la operadora (Tu Aval S.L.) que emite fianzas y gestiona pólizas. El holding participa 100% en la operadora. Inversores entran al holding vía ampliación de capital o préstamo participativo con cupón fijo. Pacto de socios define gobernanza, reparto, salidas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-14" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Arquitectura</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Las dos sociedades y su relación</h2>
+        <div class="space-y-4">
+          <div class="border border-gray-100 rounded-2xl p-6">
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="text-lg font-semibold text-blue-night tracking-tight">Tu Aval Holding S.L.</h3>
+              <span class="mono text-xs text-mint-text">Matriz</span>
+            </div>
+            <p class="text-[15px] text-gray-500 leading-relaxed mb-3">Sociedad que <strong>concentra la inversión</strong>. Aquí entran los socios de capital y los fundadores. Su único activo es la participación 100% en la operadora.</p>
+            <ul class="text-sm text-gray-500 space-y-1.5">
+              <li class="flex gap-2"><span class="text-gray-300">·</span>Capital inicial: €3.000–10.000 (es un vehículo)</li>
+              <li class="flex gap-2"><span class="text-gray-300">·</span>Sin actividad operativa</li>
+              <li class="flex gap-2"><span class="text-gray-300">·</span>Permite entradas y salidas de inversores sin tocar la operadora</li>
+            </ul>
+          </div>
+          <div class="border border-gray-100 rounded-2xl p-6">
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="text-lg font-semibold text-blue-night tracking-tight">Tu Aval S.L.</h3>
+              <span class="mono text-xs text-mint-text">Operadora</span>
+            </div>
+            <p class="text-[15px] text-gray-500 leading-relaxed mb-3">Sociedad que <strong>opera</strong>: firma fianzas con propietarios, cobra primas, mantiene caja de garantía, paga siniestros.</p>
+            <ul class="text-sm text-gray-500 space-y-1.5">
+              <li class="flex gap-2"><span class="text-gray-300">·</span>100% participada por el holding</li>
+              <li class="flex gap-2"><span class="text-gray-300">·</span>Capital social robusto (€50K–100K)</li>
+              <li class="flex gap-2"><span class="text-gray-300">·</span>Contrata empleados, firma contratos, emite pólizas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6 mt-6">
+          <p class="text-sm text-blue-night font-medium mb-2">Por qué esta estructura</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Protege a la operadora de ser vendida fácilmente, facilita rondas sucesivas de inversión, permite repartir dividendos sin fricciones fiscales (régimen de matriz-filial con exención del 95%), y si quiebra la operadora el holding queda limpio para seguir.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#f0faf6] border-y border-mint/20">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-mint-text font-medium mb-3">Crítico</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-6">Cómo entra el inversor</h2>
+        <p class="text-[15px] text-gray-500 leading-relaxed mb-6">Tres figuras legales, elige según lo que prometes:</p>
+        <div class="space-y-4">
+          <div class="bg-white border border-mint/30 rounded-2xl p-5">
+            <p class="mono text-xs text-mint-text font-semibold mb-1">OPCIÓN A</p>
+            <p class="text-blue-night font-medium mb-1">Participaciones ordinarias</p>
+            <p class="text-sm text-gray-500 leading-relaxed">Inversor es socio del holding. Recibe dividendos cuando hay beneficio. <strong>No puedes prometer retorno fijo.</strong></p>
+          </div>
+          <div class="bg-white border border-mint/30 rounded-2xl p-5">
+            <p class="mono text-xs text-mint-text font-semibold mb-1">OPCIÓN B</p>
+            <p class="text-blue-night font-medium mb-1">Préstamo participativo</p>
+            <p class="text-sm text-gray-500 leading-relaxed">Inversor presta al holding con cupón fijo (ej: 8% anual) + kicker variable si hay beneficio. <strong>Esto es lo que promete la landing.</strong> Legal bajo Real Decreto-Ley 7/1996.</p>
+          </div>
+          <div class="bg-white border border-mint/30 rounded-2xl p-5">
+            <p class="mono text-xs text-mint-text font-semibold mb-1">OPCIÓN C</p>
+            <p class="text-blue-night font-medium mb-1">Participaciones preferentes</p>
+            <p class="text-sm text-gray-500 leading-relaxed">Clase especial de participación con dividendo preferente (ej: 8% prioritario). Híbrido equity-deuda. Más complejo, mejor para rondas grandes.</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 mt-6 leading-relaxed"><strong class="text-blue-night">Recomendación</strong>: empieza con <strong>préstamo participativo</strong>. Es lo más limpio para prometer 8% fijo sin ser fondo regulado. Límite: si captas de +150 inversores no profesionales, puedes entrar en régimen de oferta pública y necesitar folleto informativo de CNMV. Manténte por debajo de eso.</p>
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Pacto de socios</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Las 10 cláusulas imprescindibles</h2>
+        <div class="divide-y divide-gray-100 border-t border-b border-gray-100">
+          <div class="py-4"><span class="mono text-xs text-mint-text mr-3">01</span><span class="text-[15px] text-blue-night font-medium">Gobernanza</span> <span class="text-sm text-gray-500">— Consejo, mayorías reforzadas para decisiones clave.</span></div>
+          <div class="py-4"><span class="mono text-xs text-mint-text mr-3">02</span><span class="text-[15px] text-blue-night font-medium">Derechos de tag-along / drag-along</span> <span class="text-sm text-gray-500">— Venta conjunta.</span></div>
+          <div class="py-4"><span class="mono text-xs text-mint-text mr-3">03</span><span class="text-[15px] text-blue-night font-medium">Vesting de fundadores</span> <span class="text-sm text-gray-500">— 4 años con 1 año cliff típico.</span></div>
+          <div class="py-4"><span class="mono text-xs text-mint-text mr-3">04</span><span class="text-[15px] text-blue-night font-medium">Anti-dilución</span> <span class="text-sm text-gray-500">— Weighted average broad-based.</span></div>
+          <div class="py-4"><span class="mono text-xs text-mint-text mr-3">05</span><span class="text-[15px] text-blue-night font-medium">Liquidation preference</span> <span class="text-sm text-gray-500">— 1x non-participating estándar.</span></div>
+          <div class="py-4"><span class="mono text-xs text-mint-text mr-3">06</span><span class="text-[15px] text-blue-night font-medium">Derechos de información</span> <span class="text-sm text-gray-500">— Reporting trimestral, access rights.</span></div>
+          <div class="py-4"><span class="mono text-xs text-mint-text mr-3">07</span><span class="text-[15px] text-blue-night font-medium">Cupón (si préstamo participativo)</span> <span class="text-sm text-gray-500">— 8% fijo + 0–3% variable según EBITDA.</span></div>
+          <div class="py-4"><span class="mono text-xs text-mint-text mr-3">08</span><span class="text-[15px] text-blue-night font-medium">Reserva de caja de garantía</span> <span class="text-sm text-gray-500">— Compromiso de no tocar bajo X nivel.</span></div>
+          <div class="py-4"><span class="mono text-xs text-mint-text mr-3">09</span><span class="text-[15px] text-blue-night font-medium">No-compete de fundadores</span> <span class="text-sm text-gray-500">— Durante + 2 años.</span></div>
+          <div class="py-4"><span class="mono text-xs text-mint-text mr-3">10</span><span class="text-[15px] text-blue-night font-medium">Mecanismo de salida</span> <span class="text-sm text-gray-500">— Redención, venta, IPO.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-warning font-medium mb-3">Errores comunes</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-10">Lo que destruye valor</h2>
+        <div class="space-y-5">
+          <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+            <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+            <div><p class="text-blue-night font-medium text-[15px] mb-1">Meter inversores directo en la operadora</p><p class="text-sm text-gray-500 leading-relaxed">Complica cualquier ronda futura. Siempre entran al holding.</p></div>
+          </div>
+          <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+            <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+            <div><p class="text-blue-night font-medium text-[15px] mb-1">Prometer 8% sin estructurar como préstamo participativo</p><p class="text-sm text-gray-500 leading-relaxed">Si son participaciones ordinarias, prometer retorno fijo te puede llevar a CNMV por publicidad engañosa.</p></div>
+          </div>
+          <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+            <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+            <div><p class="text-blue-night font-medium text-[15px] mb-1">No firmar pacto antes de la primera ronda</p><p class="text-sm text-gray-500 leading-relaxed">Firmar pacto <strong>después</strong> de entrar un inversor es renegociar desde posición débil.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-blue-night text-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <div class="flex items-start justify-between gap-8 flex-wrap">
+          <div class="flex-1 min-w-0">
+            <p class="mono text-xs text-mint font-semibold mb-3">Siguiente paso</p>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-4">03 · Cuentas bancarias</h2>
+            <p class="text-gray-300 text-[15px] leading-relaxed max-w-xl">Dónde abrir, cómo segregar caja operativa de caja de garantía, y el TPV para cobrar primas.</p>
+          </div>
+          <a href="03-cuentas-bancarias.html" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition whitespace-nowrap">Siguiente <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100 no-print">
+      <div class="max-w-3xl mx-auto px-6 py-10 flex items-center justify-between text-sm">
+        <a href="01-constitucion-legal.html" class="text-gray-400 hover:text-blue-night transition">← Anterior</a>
+        <span class="text-gray-400 text-xs">02 / 12</span>
+        <a href="03-cuentas-bancarias.html" class="text-gray-400 hover:text-blue-night transition">Siguiente →</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>requestAnimationFrame(()=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('revealed');o.unobserve(x.target)}})},{threshold:.05,rootMargin:'50px'});document.querySelectorAll('[data-reveal]').forEach(e=>o.observe(e))})</script>
+</body>
+</html>

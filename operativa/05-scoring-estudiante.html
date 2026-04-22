@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 · Scoring del estudiante · Tu Aval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'blue-night':'#0A2540','mint':'#3BE2B0','mint-text':'#0D9B6A','blue-medium':'#4A90E2','warning':'#F6A609','danger':'#E45858'},fontFamily:{sans:['-apple-system','Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+    .mono{font-family:'JetBrains Mono',monospace}
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+    [data-reveal].revealed{opacity:1;transform:translateY(0)}
+    @media print{.no-print{display:none!important}}
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-gray-500 leading-relaxed">
+  <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 no-print">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system,Inter,system-ui,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
+        </a>
+        <div class="flex items-center gap-5">
+          <a href="../operativa.html" class="text-sm text-gray-400 hover:text-blue-night transition">← Volver al índice</a>
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition"><i class="fas fa-print text-xs"></i> Imprimir</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-14 md:pt-24 md:pb-16">
+      <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image:linear-gradient(#0A2540 1px,transparent 1px),linear-gradient(90deg,#0A2540 1px,transparent 1px);background-size:48px 48px"></div>
+      <div class="relative max-w-3xl mx-auto px-6" data-reveal>
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <a href="../operativa.html" class="hover:text-blue-night transition">Operativa</a><span class="text-gray-300">/</span>
+          <span class="text-gray-500">05 · Scoring del estudiante</span>
+        </nav>
+        <p class="mono text-sm text-mint-text font-semibold mb-4">PASO 05 · DE 12</p>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">Scoring del<br>estudiante.</h1>
+        <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">Conectar bancos internacionales vía open banking, puntuar solvencia con ~20 variables, y calcular prima según riesgo. Aquí se gana o se pierde el negocio: mal scoring = impagos que rompen la caja de garantía.</p>
+        <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-2xl overflow-hidden border border-gray-100 max-w-2xl">
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Decisión</p><p class="text-xl font-semibold text-blue-night tracking-tight"><24 h</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Aprobación</p><p class="text-xl font-semibold text-blue-night tracking-tight">~70%</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Coste por scoring</p><p class="text-xl font-semibold text-blue-night tracking-tight">€5–15</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Resumen ejecutivo</p>
+        
+        <div class="bg-[#f0faf6] border border-mint/30 rounded-2xl p-6"><p class="text-[15px] text-blue-night leading-relaxed">Integras Belvo (LatAm) + Plaid (US) + TrueLayer (UE) para conectar bancos del país de origen. Extraes 3–6 meses de movimientos. Procesas ~20 variables (ingresos, gastos, estabilidad, ahorros, historial). Salida: aprobado/rechazado + score 0–100 + prima 5–8% de la renta anual.</p></div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Integraciones</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Open banking por región</h2>
+        <div class="space-y-4">
+                    <div class="border border-gray-100 rounded-2xl p-5">
+                      <div class="flex items-baseline justify-between mb-1"><p class="text-blue-night font-medium">Belvo</p><span class="mono text-xs text-gray-400">LatAm</span></div>
+                      <p class="text-sm text-gray-500 leading-relaxed">México, Colombia, Brasil, Chile, Argentina. API REST sencilla. Coste: $0.20–0.50 por conexión. Cobertura: >90% de bancos principales.</p>
+                    </div>
+                    <div class="border border-gray-100 rounded-2xl p-5">
+                      <div class="flex items-baseline justify-between mb-1"><p class="text-blue-night font-medium">Plaid</p><span class="mono text-xs text-gray-400">US / Canadá</span></div>
+                      <p class="text-sm text-gray-500 leading-relaxed">Cobertura total US. Coste: $0.30–1.00. Crítico para estudiantes de intercambio de EE.UU.</p>
+                    </div>
+                    <div class="border border-gray-100 rounded-2xl p-5">
+                      <div class="flex items-baseline justify-between mb-1"><p class="text-blue-night font-medium">TrueLayer / Tink</p><span class="mono text-xs text-gray-400">UE</span></div>
+                      <p class="text-sm text-gray-500 leading-relaxed">Estudiantes europeos (Francia, Italia, Alemania). PSD2 nativo. Coste: €0.10–0.30.</p>
+                    </div>
+                    <div class="border border-gray-100 rounded-2xl p-5">
+                      <div class="flex items-baseline justify-between mb-1"><p class="text-blue-night font-medium">Fallback: subida manual</p><span class="mono text-xs text-gray-400">Paraguas</span></div>
+                      <p class="text-sm text-gray-500 leading-relaxed">Si el banco del estudiante no está cubierto: carga extractos PDF + OCR automatizado (AWS Textract, Google Document AI). Menos fiable pero no bloquea.</p>
+                    </div>
+                  </div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Variables de scoring</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">20 señales que miramos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-[15px]">
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">01</span><span class="text-gray-500">Ingresos mensuales netos (6 meses)</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">02</span><span class="text-gray-500">Estabilidad de ingresos (varianza)</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">03</span><span class="text-gray-500">Saldo medio de cuenta</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">04</span><span class="text-gray-500">Ahorro acumulado</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">05</span><span class="text-gray-500">Ratio ingresos/gastos</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">06</span><span class="text-gray-500">Sobregiros en los últimos 6m</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">07</span><span class="text-gray-500">Devoluciones de recibos</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">08</span><span class="text-gray-500">Patrón de nómina recurrente</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">09</span><span class="text-gray-500">Transferencias internacionales</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">10</span><span class="text-gray-500">País del banco (riesgo macro)</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">11</span><span class="text-gray-500">Antigüedad de la cuenta</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">12</span><span class="text-gray-500">Edad del solicitante</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">13</span><span class="text-gray-500">Universidad/centro (si valida)</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">14</span><span class="text-gray-500">Respaldo familiar declarado</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">15</span><span class="text-gray-500">Historial crediticio (si país tiene bureau)</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">16</span><span class="text-gray-500">Redes sociales (verificación identidad)</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">17</span><span class="text-gray-500">Visa y permiso de estudios</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">18</span><span class="text-gray-500">Renta solicitada / ingresos (ratio)</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">19</span><span class="text-gray-500">Duración contrato de alquiler</span></div>
+                    <div class="flex gap-3"><span class="mono text-xs text-mint-text w-5">20</span><span class="text-gray-500">Respuesta a entrevista IA (comportamiento)</span></div>
+                  </div>
+      </div>
+    </section>
+    <section class="bg-[#f0faf6] border-y border-mint/20">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-mint-text font-medium mb-3">Cálculo de prima</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">De score a precio</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="border border-gray-100 rounded-2xl p-5">
+              <p class="mono text-xs text-gray-400 mb-2">Score 85–100</p>
+              <p class="text-2xl font-semibold text-blue-night tracking-tight mb-2">5%</p>
+              <p class="text-xs text-gray-500 leading-relaxed">Perfil premium (ingresos familiares altos, universidad top, historial limpio). Prima mínima.</p>
+            </div>
+            <div class="border border-blue-night rounded-2xl p-5 bg-blue-night text-white relative">
+              <div class="absolute -top-2 -right-2 bg-mint text-blue-night text-[9px] font-bold px-2 py-0.5 rounded-full">Recomendado</div>
+              <p class="mono text-xs text-mint mb-2">Score 65–84</p>
+              <p class="text-2xl font-semibold tracking-tight mb-2">6–7%</p>
+              <p class="text-xs text-gray-300 leading-relaxed">Perfil estándar. La mayoría de aprobados entra aquí.</p>
+            </div>
+            <div class="border border-gray-100 rounded-2xl p-5">
+              <p class="mono text-xs text-gray-400 mb-2">Score 45–64</p>
+              <p class="text-2xl font-semibold text-blue-night tracking-tight mb-2">8–10%</p>
+              <p class="text-xs text-gray-500 leading-relaxed">Perfil con alguna señal de riesgo. Prima aumenta, puede requerir codeudor.</p>
+            </div></div>
+                    <p class="text-sm text-gray-500 mt-6 leading-relaxed"><strong class="text-blue-night">Score &lt;45 = rechazo automático</strong>. Mejor perder ese contrato que tener un impago que descapitalice la caja de garantía. Mantener tasa de impago &lt;2% es lo único que sostiene el modelo.</p>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Errores comunes</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Lo que descapitaliza el fondo</h2>
+        <div class="space-y-5">
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Aprobar por volumen</p><p class="text-sm text-gray-500 leading-relaxed">Bajar criterio para crecer rápido es suicida. Cada impago come €13K–15K de la caja. 5 impagos mal gestionados = €75K evaporados.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">No reentrenar modelo</p><p class="text-sm text-gray-500 leading-relaxed">Actualiza el modelo cada 6 meses con datos reales. El scoring inicial se basa en supuestos; los datos reales te afinan.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Ignorar señales no-bancarias</p><p class="text-sm text-gray-500 leading-relaxed">Universidad, visado, respuesta de entrevista dan señales baratas que mejoran mucho la precisión.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Prima plana</p><p class="text-sm text-gray-500 leading-relaxed">Si cobras 6% a todos, regalas dinero a los buenos y subvencionas a los malos. Pricing por riesgo es obligatorio.</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="bg-blue-night text-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <div class="flex items-start justify-between gap-8 flex-wrap">
+          <div class="flex-1 min-w-0">
+            <p class="mono text-xs text-mint font-semibold mb-3">Siguiente paso</p>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-4">06 · Emisión de la garantía</h2>
+            <p class="text-gray-300 text-[15px] leading-relaxed max-w-xl">Del OK del scoring al certificado QR firmado por ambas partes.</p>
+          </div>
+          <a href="06-emision-garantia.html" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition whitespace-nowrap">Siguiente <span>→</span></a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-white border-t border-gray-100 no-print">
+      <div class="max-w-3xl mx-auto px-6 py-10 flex items-center justify-between text-sm">
+        <a href="04-contratos-tipo.html" class="text-gray-400 hover:text-blue-night transition">← Anterior</a>
+        <span class="text-gray-400 text-xs">05 / 12</span>
+        <a href="06-emision-garantia.html" class="text-gray-400 hover:text-blue-night transition">Siguiente →</a>
+      </div>
+    </footer>
+  </main>
+  <script>requestAnimationFrame(()=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('revealed');o.unobserve(x.target)}})},{threshold:.05,rootMargin:'50px'});document.querySelectorAll('[data-reveal]').forEach(e=>o.observe(e))})</script>
+</body>
+</html>

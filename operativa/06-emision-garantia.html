@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 · Emisión de la garantía · Tu Aval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'blue-night':'#0A2540','mint':'#3BE2B0','mint-text':'#0D9B6A','blue-medium':'#4A90E2','warning':'#F6A609','danger':'#E45858'},fontFamily:{sans:['-apple-system','Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+    .mono{font-family:'JetBrains Mono',monospace}
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+    [data-reveal].revealed{opacity:1;transform:translateY(0)}
+    @media print{.no-print{display:none!important}}
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-gray-500 leading-relaxed">
+  <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 no-print">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system,Inter,system-ui,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
+        </a>
+        <div class="flex items-center gap-5">
+          <a href="../operativa.html" class="text-sm text-gray-400 hover:text-blue-night transition">← Volver al índice</a>
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition"><i class="fas fa-print text-xs"></i> Imprimir</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-14 md:pt-24 md:pb-16">
+      <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image:linear-gradient(#0A2540 1px,transparent 1px),linear-gradient(90deg,#0A2540 1px,transparent 1px);background-size:48px 48px"></div>
+      <div class="relative max-w-3xl mx-auto px-6" data-reveal>
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <a href="../operativa.html" class="hover:text-blue-night transition">Operativa</a><span class="text-gray-300">/</span>
+          <span class="text-gray-500">06 · Emisión de la garantía</span>
+        </nav>
+        <p class="mono text-sm text-mint-text font-semibold mb-4">PASO 06 · DE 12</p>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">Emisión de<br>la garantía.</h1>
+        <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">Del OK del scoring al certificado QR activo. Pago de prima, firma digital del pagaré, generación de certificado con código único, firma del propietario. Todo online en <30 minutos.</p>
+        <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-2xl overflow-hidden border border-gray-100 max-w-2xl">
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Tiempo</p><p class="text-xl font-semibold text-blue-night tracking-tight">&lt;30 min</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Firmas</p><p class="text-xl font-semibold text-blue-night tracking-tight">3 partes</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Entregables</p><p class="text-xl font-semibold text-blue-night tracking-tight">QR + PDF</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Resumen ejecutivo</p>
+        
+        <div class="bg-[#f0faf6] border border-mint/30 rounded-2xl p-6"><p class="text-[15px] text-blue-night leading-relaxed">Estudiante aprobado paga prima → firma pagaré digital → sistema emite certificado con código AVAL-XXXX-YYYY → propietario recibe contrato de fianza, firma → cobertura activa. Todo el flujo integrado con Stripe (pagos), Signaturit o DocuSign (firmas) y un generador de certificados con QR.</p></div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Flujo</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Los 6 pasos de la emisión</h2>
+        <div class="space-y-6">
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">1</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Estudiante acepta condiciones y prima</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Pantalla final del onboarding muestra: cobertura, prima calculada, periodo, condiciones. Acepta con checkbox doble (aceptación contrato + pagaré).</p>
+          </div>
+        </div>
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">2</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Pago de prima vía Stripe</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Cobro inmediato. Tarjeta, Bizum o transferencia SEPA. Confirmación de pago activa siguiente paso.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">3</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Firma digital del pagaré</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Signaturit o DocuSign genera documento personalizado con datos + importe + jurisdicción país origen. Firma biométrica + OTP por SMS.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">4</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Sistema genera certificado</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Código único AVAL-XXXX-YYYY (4 letras iniciales del nombre + 2 dígitos año). PDF firmado criptográficamente. QR que apunta a tuaval.com/verificar/{codigo}.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 pb-6 border-b border-gray-100">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">5</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Envío al propietario</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Email automatizado al propietario con: certificado PDF, contrato de fianza para firmar digitalmente, instrucciones de cómo activar.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 ">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#f0faf6] flex items-center justify-center">
+            <span class="mono text-mint-text font-semibold text-sm">6</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-blue-night mb-2 tracking-tight">Firma del propietario → activación</h3>
+            <p class="text-[15px] text-gray-500 leading-relaxed">Propietario firma el contrato de fianza (DocuSign). La cobertura queda activa desde esa fecha. Notificación al estudiante y registro en dashboard.</p>
+          </div>
+        </div></div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">El certificado QR</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Qué lleva y cómo se verifica</h2>
+        <div class="bg-[#f0faf6] rounded-2xl p-6 mb-6 border border-mint/30">
+                    <p class="mono text-xs text-mint-text font-semibold mb-3">FORMATO DEL CERTIFICADO (PDF A4)</p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                      <li class="flex gap-3"><span class="text-mint-text">›</span>Logo Tu Aval + datos de la sociedad emisora (CIF, registro)</li>
+                      <li class="flex gap-3"><span class="text-mint-text">›</span>Código único: <span class="mono text-blue-night">AVAL-LF11-2025</span></li>
+                      <li class="flex gap-3"><span class="text-mint-text">›</span>QR de verificación en tiempo real</li>
+                      <li class="flex gap-3"><span class="text-mint-text">›</span>Datos del inquilino (nombre, documento)</li>
+                      <li class="flex gap-3"><span class="text-mint-text">›</span>Datos de la propiedad (dirección, referencia catastral)</li>
+                      <li class="flex gap-3"><span class="text-mint-text">›</span>Cobertura: renta mensual × meses × total máximo</li>
+                      <li class="flex gap-3"><span class="text-mint-text">›</span>Vigencia: desde–hasta</li>
+                      <li class="flex gap-3"><span class="text-mint-text">›</span>Firma digital (certificado electrónico cualificado)</li>
+                    </ul>
+                  </div>
+                  <p class="text-[15px] text-gray-500 leading-relaxed">Verificación pública en <span class="mono text-blue-night">tuaval.com/verificar/AVAL-XXXX-YYYY</span>: cualquiera con el QR puede ver estado (activa / vencida / siniestro), cobertura restante, fecha de vencimiento. <strong>No muestra datos personales</strong> — sólo estado y monto.</p>
+      </div>
+    </section>
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Stack técnico</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Qué herramientas usar</h2>
+        <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500"><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Pago</strong>: Stripe (tarjetas, Bizum, SEPA) — 1.4% + €0.25</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Firma digital</strong>: Signaturit (español, ~€1/firma) o DocuSign (internacional, ~€2/firma)</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Generación PDF</strong>: React-PDF o Puppeteer server-side con template brandeado</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Almacenamiento</strong>: Vercel Blob o AWS S3 con cifrado</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Código único</strong>: 4 letras del apellido + nonce + año, verificado en DB</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">QR</strong>: librería qrcode con logo mint centrado</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Notificaciones</strong>: Resend o Postmark para emails transaccionales</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Dashboard</strong>: Next.js + Supabase/Neon para los 3 roles</span></li></ul>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Errores comunes</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Lo que rompe la experiencia</h2>
+        <div class="space-y-5">
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">No firmar contrato de fianza con propietario</p><p class="text-sm text-gray-500 leading-relaxed">Entregar solo el QR sin contrato firmado deja la cobertura en limbo legal. El QR es informativo; el contrato es ejecutable.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Cobrar prima antes de aprobar scoring</p><p class="text-sm text-gray-500 leading-relaxed">Si cobras y luego rechazas, refunds crean fricción y pérdida de confianza. Scoring primero, pago después.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Certificado sin firma digital cualificada</p><p class="text-sm text-gray-500 leading-relaxed">Un PDF sin firma con certificado electrónico cualificado (FNMT, Signaturit) es falsificable. Debe llevar firma eIDAS.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">QR que apunta a URL genérica</p><p class="text-sm text-gray-500 leading-relaxed">Cada QR debe apuntar a página específica del contrato, no al home. Genera más confianza y permite analítica.</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="bg-blue-night text-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <div class="flex items-start justify-between gap-8 flex-wrap">
+          <div class="flex-1 min-w-0">
+            <p class="mono text-xs text-mint font-semibold mb-3">Siguiente paso</p>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-4">07 · Gestión del dinero</h2>
+            <p class="text-gray-300 text-[15px] leading-relaxed max-w-xl">Cómo se divide cada prima entre caja de garantía, operativa y cupón de inversores.</p>
+          </div>
+          <a href="07-gestion-dinero.html" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition whitespace-nowrap">Siguiente <span>→</span></a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-white border-t border-gray-100 no-print">
+      <div class="max-w-3xl mx-auto px-6 py-10 flex items-center justify-between text-sm">
+        <a href="05-scoring-estudiante.html" class="text-gray-400 hover:text-blue-night transition">← Anterior</a>
+        <span class="text-gray-400 text-xs">06 / 12</span>
+        <a href="07-gestion-dinero.html" class="text-gray-400 hover:text-blue-night transition">Siguiente →</a>
+      </div>
+    </footer>
+  </main>
+  <script>requestAnimationFrame(()=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('revealed');o.unobserve(x.target)}})},{threshold:.05,rootMargin:'50px'});document.querySelectorAll('[data-reveal]').forEach(e=>o.observe(e))})</script>
+</body>
+</html>

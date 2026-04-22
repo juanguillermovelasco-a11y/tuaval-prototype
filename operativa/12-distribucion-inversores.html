@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 · Distribución a inversores · Tu Aval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'blue-night':'#0A2540','mint':'#3BE2B0','mint-text':'#0D9B6A','blue-medium':'#4A90E2','warning':'#F6A609','danger':'#E45858'},fontFamily:{sans:['-apple-system','Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+    .mono{font-family:'JetBrains Mono',monospace}
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+    [data-reveal].revealed{opacity:1;transform:translateY(0)}
+    @media print{.no-print{display:none!important}}
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-gray-500 leading-relaxed">
+  <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 no-print">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system,Inter,system-ui,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
+        </a>
+        <div class="flex items-center gap-5">
+          <a href="../operativa.html" class="text-sm text-gray-400 hover:text-blue-night transition">← Volver al índice</a>
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition"><i class="fas fa-print text-xs"></i> Imprimir</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-14 md:pt-24 md:pb-16">
+      <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image:linear-gradient(#0A2540 1px,transparent 1px),linear-gradient(90deg,#0A2540 1px,transparent 1px);background-size:48px 48px"></div>
+      <div class="relative max-w-3xl mx-auto px-6" data-reveal>
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <a href="../operativa.html" class="hover:text-blue-night transition">Operativa</a><span class="text-gray-300">/</span>
+          <span class="text-gray-500">12 · Distribución a inversores</span>
+        </nav>
+        <p class="mono text-sm text-mint-text font-semibold mb-4">PASO 12 · DE 12</p>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">Distribución<br>a inversores.</h1>
+        <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">Cálculo y pago del cupón trimestral a los socios del holding, reporte con métricas operativas, reinversión del exceso. La disciplina con los inversores es lo que abre la segunda ronda.</p>
+        <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-2xl overflow-hidden border border-gray-100 max-w-2xl">
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Cupón</p><p class="text-xl font-semibold text-blue-night tracking-tight">8% anual</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Frecuencia</p><p class="text-xl font-semibold text-blue-night tracking-tight">Trimestral</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Reporte</p><p class="text-xl font-semibold text-blue-night tracking-tight">Mensual</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Resumen ejecutivo</p>
+        
+        <div class="bg-[#f0faf6] border border-mint/30 rounded-2xl p-6"><p class="text-[15px] text-blue-night leading-relaxed">Cada trimestre calculas el cupón pactado (8% anualizado / 4 = 2% trimestral sobre el capital aportado). Pagas desde la cuenta apartada (el 10–15% de cada prima que separaste en el paso 7). Envías reporte con operativa, siniestralidad, caja. Exceso de margen se reinvierte en caja de garantía para habilitar más volumen.</p></div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Cálculo del cupón</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Cómo se paga el 8% anual</h2>
+        <div class="space-y-4">
+                    <div class="border border-gray-100 rounded-2xl p-6">
+                      <p class="text-blue-night font-medium mb-3">Ejemplo: inversor aporta €50.000</p>
+                      <div class="divide-y divide-gray-100">
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Capital aportado</span><span class="mono text-blue-night">€50.000</span></div>
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Cupón anual (8%)</span><span class="mono text-blue-night font-semibold">€4.000</span></div>
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Cupón trimestral (2%)</span><span class="mono text-blue-night">€1.000</span></div>
+                        <div class="flex justify-between py-2.5 text-sm"><span class="text-gray-500">Retención IRPF (19%)</span><span class="mono text-gray-400">−€190</span></div>
+                        <div class="flex justify-between py-2.5 text-sm font-semibold"><span class="text-blue-night">Neto al inversor</span><span class="mono text-mint-text">€810/trimestre</span></div>
+                      </div>
+                    </div>
+                    <div class="border border-mint/30 bg-[#f0faf6] rounded-2xl p-6">
+                      <p class="text-blue-night font-medium mb-3">Kicker variable (si hay exceso)</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Si al cierre anual hay beneficio por encima del cupón pagado, se reparte un variable según pacto: ejemplo, 30% del exceso a inversores, 70% a equity (fundadores). Esto alinea incentivos y eleva el retorno efectivo por encima del 8%.</p>
+                    </div>
+                  </div>
+      </div>
+    </section>
+    <section class="bg-[#f0faf6] border-y border-mint/20">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-mint-text font-medium mb-3">Reporte trimestral</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Qué envías a cada inversor</h2>
+        <div class="space-y-4">
+                    <div class="bg-white border border-mint/30 rounded-2xl p-5">
+                      <p class="text-blue-night font-medium mb-1">Métricas operativas</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Pólizas activas, pólizas emitidas en el trimestre, exposición total, primas cobradas, siniestros pagados, siniestralidad 12m, ratio caja/exposición.</p>
+                    </div>
+                    <div class="bg-white border border-mint/30 rounded-2xl p-5">
+                      <p class="text-blue-night font-medium mb-1">Estado financiero</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">P&L trimestral, balance simplificado, cuentas bancarias (caja operativa, caja de garantía, cuenta cupón). Firmado por CEO/CFO.</p>
+                    </div>
+                    <div class="bg-white border border-mint/30 rounded-2xl p-5">
+                      <p class="text-blue-night font-medium mb-1">Pago del cupón</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Justificante de transferencia con cálculo detallado, retención IRPF, neto. Fecha valor.</p>
+                    </div>
+                    <div class="bg-white border border-mint/30 rounded-2xl p-5">
+                      <p class="text-blue-night font-medium mb-1">Roadmap y próximos hitos</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">Qué se viene: expansión geográfica, nuevas integraciones, ronda de inversión futura. Los inversores aprecian transparencia táctica.</p>
+                    </div>
+                  </div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Reinversión del exceso</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Qué se hace con la rentabilidad que sobra</h2>
+        <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500"><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Primero</strong>: cubrir posibles siniestros pendientes que excedan la provisión</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Segundo</strong>: fortalecer caja de garantía para habilitar más volumen de pólizas</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Tercero</strong>: pagar kicker variable según pacto de socios</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Cuarto</strong>: bonos al equipo operativo (siempre con límite tipo phantom shares)</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span><strong class="text-blue-night">Último</strong>: dividendo extraordinario al equity (solo si caja sigue sobrada)</span></li></ul>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Errores comunes</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Lo que arruina relaciones con inversores</h2>
+        <div class="space-y-5">
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Retrasar el cupón</p><p class="text-sm text-gray-500 leading-relaxed">Pagar el cupón con 2 semanas de retraso sin aviso lo destruye todo. Calendario fijo, transferencia programada, nunca falles.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Reportes con datos inflados</p><p class="text-sm text-gray-500 leading-relaxed">Un inversor con Excel descubre inconsistencias rápido. Mejor reportar peor honesto que mejor maquillado.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Pagar cupón con caja de garantía</p><p class="text-sm text-gray-500 leading-relaxed">El cupón se paga SOLO con margen operativo. Si un trimestre no hay margen, se comunica con transparencia y se paga el trimestre siguiente (acumulativo).</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Sin follow-up entre reportes</p><p class="text-sm text-gray-500 leading-relaxed">Una reunión presencial o Zoom con los inversores principales cada 6 meses vale más que 10 emails. Cultiva la relación.</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="bg-blue-night text-white">
+      <div class="max-w-3xl mx-auto px-6 py-16 text-center" data-reveal>
+        <p class="mono text-xs text-mint font-semibold mb-3">Fin del playbook</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-4">Has completado los 12 pasos.</h2>
+        <p class="text-gray-300 text-[15px] leading-relaxed max-w-xl mx-auto mb-8">Este es el blueprint operativo completo. Ahora toca ejecutar.</p>
+        <a href="../operativa.html" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition">Volver al índice</a>
+      </div>
+    </section>
+    <footer class="bg-white border-t border-gray-100 no-print">
+      <div class="max-w-3xl mx-auto px-6 py-10 flex items-center justify-between text-sm">
+        <a href="11-cierre-reporting.html" class="text-gray-400 hover:text-blue-night transition">← Anterior</a>
+        <span class="text-gray-400 text-xs">12 / 12</span>
+        <a href="../operativa.html" class="text-gray-400 hover:text-blue-night transition">Volver al índice →</a>
+      </div>
+    </footer>
+  </main>
+  <script>requestAnimationFrame(()=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('revealed');o.unobserve(x.target)}})},{threshold:.05,rootMargin:'50px'});document.querySelectorAll('[data-reveal]').forEach(e=>o.observe(e))})</script>
+</body>
+</html>

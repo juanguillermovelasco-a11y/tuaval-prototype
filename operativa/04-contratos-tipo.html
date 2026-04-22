@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 · Contratos tipo · Tu Aval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{'blue-night':'#0A2540','mint':'#3BE2B0','mint-text':'#0D9B6A','blue-medium':'#4A90E2','warning':'#F6A609','danger':'#E45858'},fontFamily:{sans:['-apple-system','Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+    .mono{font-family:'JetBrains Mono',monospace}
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+    [data-reveal].revealed{opacity:1;transform:translateY(0)}
+    @media print{.no-print{display:none!important}}
+  </style>
+</head>
+<body class="bg-[#FAFAFA] text-gray-500 leading-relaxed">
+  <nav class="bg-white/80 backdrop-blur-lg border-b border-gray-100 sticky top-0 z-50 no-print">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-2.5">
+          <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#0A2540"/><text x="16" y="23" font-family="-apple-system,Inter,system-ui,sans-serif" font-size="19" font-weight="600" text-anchor="middle" fill="white" letter-spacing="-0.8">a</text><circle cx="24.5" cy="8" r="2.5" fill="#3BE2B0"/></svg>
+          <span class="text-xl font-semibold text-blue-night tracking-tight">Tu Aval</span>
+        </a>
+        <div class="flex items-center gap-5">
+          <a href="../operativa.html" class="text-sm text-gray-400 hover:text-blue-night transition">← Volver al índice</a>
+          <button onclick="window.print()" class="inline-flex items-center gap-2 bg-blue-night text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-night/90 transition"><i class="fas fa-print text-xs"></i> Imprimir</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative overflow-hidden bg-[#FAFAFA] pt-20 pb-14 md:pt-24 md:pb-16">
+      <div class="absolute -top-40 -left-32 w-[500px] h-[500px] rounded-full bg-mint/15 blur-[120px] pointer-events-none"></div>
+      <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image:linear-gradient(#0A2540 1px,transparent 1px),linear-gradient(90deg,#0A2540 1px,transparent 1px);background-size:48px 48px"></div>
+      <div class="relative max-w-3xl mx-auto px-6" data-reveal>
+        <nav class="flex items-center gap-2 text-sm text-gray-400 mb-8">
+          <a href="../operativa.html" class="hover:text-blue-night transition">Operativa</a><span class="text-gray-300">/</span>
+          <span class="text-gray-500">04 · Contratos tipo</span>
+        </nav>
+        <p class="mono text-sm text-mint-text font-semibold mb-4">PASO 04 · DE 12</p>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-[-0.04em] text-blue-night leading-[0.95] mb-6">Contratos<br>tipo.</h1>
+        <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-2xl mb-10">Tres documentos legales que sustentan toda la operación: fianza con el propietario, pagaré con el estudiante, mandato con el despacho local. Bien redactados, son la diferencia entre cobrar y comerte el impago.</p>
+        <div class="grid grid-cols-3 gap-px bg-gray-100 rounded-2xl overflow-hidden border border-gray-100 max-w-2xl">
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Docs</p><p class="text-xl font-semibold text-blue-night tracking-tight">3 contratos</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Revisión legal</p><p class="text-xl font-semibold text-blue-night tracking-tight">€3–6K</p></div>
+          <div class="bg-white p-5"><p class="text-xs text-gray-400 mb-1.5">Tiempo</p><p class="text-xl font-semibold text-blue-night tracking-tight">3–4 sem</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-t border-gray-100">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Resumen ejecutivo</p>
+        
+        <div class="bg-[#f0faf6] border border-mint/30 rounded-2xl p-6"><p class="text-[15px] text-blue-night leading-relaxed">Contrato A (fianza solidaria con propietario), Contrato B (solicitud de garantía + pagaré transnacional con estudiante), Contrato C (mandato de cobranza con despacho local en país de origen). Los tres funcionan como sistema: A es tu producto, B es tu colateral, C es tu enforcement.</p></div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Contrato A</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Fianza solidaria (con propietario)</h2>
+        <p class="text-[15px] text-gray-500 leading-relaxed mb-6">Tú te obligas a pagar al propietario si el inquilino no paga. Base legal: <strong>art. 1822–1856 del Código Civil español</strong>. Debe ser <strong>solidaria</strong>, no subsidiaria.</p>
+                    <div class="space-y-4">
+                      <div class="border-l-2 border-mint pl-5">
+                        <p class="text-blue-night font-medium mb-1">Cláusula crítica: renuncia a beneficios</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">El propietario puede cobrar <strong>de ti directo</strong>, sin tener que demandar antes al inquilino. "Tu Aval S.L. renuncia expresamente a los beneficios de orden, división y excusión del art. 1830 CC".</p>
+                      </div>
+                      <div class="border-l-2 border-mint pl-5">
+                        <p class="text-blue-night font-medium mb-1">Monto máximo y plazo</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Cobertura limitada: X meses de renta × monto mensual. Duración: igual al contrato de arrendamiento. Si se renueva el arrendamiento, se renueva la fianza (previo pago de nueva prima).</p>
+                      </div>
+                      <div class="border-l-2 border-mint pl-5">
+                        <p class="text-blue-night font-medium mb-1">Plazo de ejecución</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Tu Aval paga en <strong>15 días hábiles</strong> desde la comunicación fehaciente del impago por el propietario (burofax). Define qué constituye "impago" (ej: 15 días de atraso en el pago mensual).</p>
+                      </div>
+                      <div class="border-l-2 border-mint pl-5">
+                        <p class="text-blue-night font-medium mb-1">Subrogación</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Al pagar, Tu Aval se subroga en la posición del propietario frente al inquilino (art. 1839 CC). Esto habilita el recobro posterior.</p>
+                      </div>
+                      <div class="border-l-2 border-mint pl-5">
+                        <p class="text-blue-night font-medium mb-1">Exclusiones</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Daños al inmueble (salvo vandalismo por inquilino verificado), suministros, IBI, comunidad. Define con claridad qué NO cubres.</p>
+                      </div>
+                    </div>
+      </div>
+    </section>
+    <section class="bg-[#f0faf6] border-y border-mint/20">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-mint-text font-medium mb-3">Contrato B</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Solicitud + pagaré (con estudiante)</h2>
+        <p class="text-[15px] text-gray-500 leading-relaxed mb-6">El estudiante solicita la garantía, paga prima, y firma un <strong>pagaré a la vista</strong> a favor de Tu Aval por la cobertura máxima. Este pagaré es tu <strong>título ejecutivo</strong> para cobrar en país de origen.</p>
+                    <div class="space-y-4">
+                      <div class="bg-white border border-mint/30 rounded-2xl p-5">
+                        <p class="mono text-xs text-mint-text font-semibold mb-1">B.1</p>
+                        <p class="text-blue-night font-medium mb-1">Solicitud de garantía</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Datos personales, consentimiento de open banking, declaración de solvencia, aceptación de tarifas. Tratamiento de datos RGPD.</p>
+                      </div>
+                      <div class="bg-white border border-mint/30 rounded-2xl p-5">
+                        <p class="mono text-xs text-mint-text font-semibold mb-1">B.2</p>
+                        <p class="text-blue-night font-medium mb-1">Pagaré transnacional</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Pagaré a la vista o a fecha fija, firmado por el estudiante, por importe hasta la cobertura máxima × 1.4 (para incluir costes de cobranza). <strong>Cláusula de jurisdicción: tribunales de la ciudad de origen del estudiante.</strong> Esto es lo que permite ejecutar en México/Colombia sin pasar por España.</p>
+                      </div>
+                      <div class="bg-white border border-mint/30 rounded-2xl p-5">
+                        <p class="mono text-xs text-mint-text font-semibold mb-1">B.3</p>
+                        <p class="text-blue-night font-medium mb-1">Cesión condicional de crédito</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">En caso de siniestro, Tu Aval queda autorizada a ceder el pagaré al despacho local o cobrador en país de origen. Evita disputas posteriores.</p>
+                      </div>
+                    </div>
+                    <div class="mt-6 p-5 bg-white rounded-2xl border border-mint/20">
+                      <p class="text-sm text-blue-night font-medium mb-1">Por qué el pagaré y no otro instrumento</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">En México, Colombia, Argentina y Perú el pagaré es <strong>título ejecutivo mercantil</strong> — va directo a juicio ejecutivo (45–90 días) sin necesidad de demandar incumplimiento contractual (que tardaría años).</p>
+                    </div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Contrato C</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Mandato de cobranza (con despacho local)</h2>
+        <p class="text-[15px] text-gray-500 leading-relaxed mb-6">Poder notarial que das a un despacho en cada país de origen para ejecutar el pagaré cuando hay impago.</p>
+                    <ul class="space-y-3 text-[15px] leading-relaxed text-gray-500"><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Poder limitado: solo ejecución de pagarés cedidos por Tu Aval S.L.</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Honorario: % de lo recuperado (ej: 20–30%) + gastos procesales reembolsables</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Reporting: despacho reporta mensualmente estado de cada cobranza activa</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Exclusividad por país: un despacho por país, con objetivo de volumen</span></li><li class="flex gap-3"><span class="text-gray-300 mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0"></span><span>Apostilla y traducción: el poder debe ir apostillado por La Haya para validez internacional</span></li></ul>
+                    <div class="mt-6 p-5 bg-gray-50 rounded-2xl">
+                      <p class="text-sm text-blue-night font-medium mb-2">Países prioritarios para empezar</p>
+                      <p class="text-sm text-gray-500 leading-relaxed">México, Colombia, Argentina, Chile, Brasil, Perú — suman ~80% del flujo de estudiantes LatAm en España. Un despacho bueno por país y listo.</p>
+                    </div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <p class="text-xs uppercase tracking-[0.2em] text-gray-400 font-medium mb-3">Errores comunes</p>
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-blue-night mb-8">Lo que se destruye con mala redacción</h2>
+        <div class="space-y-5">
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Fianza subsidiaria en vez de solidaria</p><p class="text-sm text-gray-500 leading-relaxed">Si no renuncias expresamente a los beneficios de orden y excusión, el propietario tiene que demandar primero al inquilino. Te vuelve irrelevante como producto.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Pagaré sin jurisdicción del país de origen</p><p class="text-sm text-gray-500 leading-relaxed">Un pagaré firmado en España contra un estudiante mexicano ejecutado en España es imposible — el estudiante ya no está. Jurisdicción en país de origen es la clave de todo el modelo.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Sin apostilla en los poderes</p><p class="text-sm text-gray-500 leading-relaxed">Un poder notarial español sin apostilla de La Haya no vale en LatAm. Gasto de €50 que te salva meses.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Exclusiones vagas</p><p class="text-sm text-gray-500 leading-relaxed">Si tus exclusiones son genéricas ("caso fortuito", "daños graves"), cualquier siniestro es disputable. Define con números y ejemplos.</p></div>
+        </div>
+        <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-2xl">
+          <div class="flex-shrink-0 text-danger"><svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></div>
+          <div><p class="text-blue-night font-medium text-[15px] mb-1">Contrato de fianza no firmado por el propietario</p><p class="text-sm text-gray-500 leading-relaxed">Enviar el certificado QR sin que el propietario firme el contrato de fianza deja la cobertura en limbo. El QR es un resumen — el contrato es lo ejecutable.</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="bg-blue-night text-white">
+      <div class="max-w-3xl mx-auto px-6 py-16" data-reveal>
+        <div class="flex items-start justify-between gap-8 flex-wrap">
+          <div class="flex-1 min-w-0">
+            <p class="mono text-xs text-mint font-semibold mb-3">Siguiente paso</p>
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em] mb-4">05 · Scoring del estudiante</h2>
+            <p class="text-gray-300 text-[15px] leading-relaxed max-w-xl">Cómo evaluar solvencia internacional con open banking y calcular prima según riesgo.</p>
+          </div>
+          <a href="05-scoring-estudiante.html" class="inline-flex items-center gap-2 bg-white text-blue-night px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-100 transition whitespace-nowrap">Siguiente <span>→</span></a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-white border-t border-gray-100 no-print">
+      <div class="max-w-3xl mx-auto px-6 py-10 flex items-center justify-between text-sm">
+        <a href="03-cuentas-bancarias.html" class="text-gray-400 hover:text-blue-night transition">← Anterior</a>
+        <span class="text-gray-400 text-xs">04 / 12</span>
+        <a href="05-scoring-estudiante.html" class="text-gray-400 hover:text-blue-night transition">Siguiente →</a>
+      </div>
+    </footer>
+  </main>
+  <script>requestAnimationFrame(()=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('revealed');o.unobserve(x.target)}})},{threshold:.05,rootMargin:'50px'});document.querySelectorAll('[data-reveal]').forEach(e=>o.observe(e))})</script>
+</body>
+</html>
